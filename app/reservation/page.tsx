@@ -329,10 +329,10 @@ export default function ReservationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:0785621088"
+              href="tel:0785621089"
               className="inline-flex items-center gap-2 border-2 border-[#D4621A] text-[#D4621A] hover:bg-[#D4621A] hover:text-white font-semibold px-6 py-3 rounded-xl transition-all"
             >
-              📞 07 85 62 10 88
+              📞 07 85 62 10 89
             </a>
             <a
               href="mailto:contact@poivresale.fr"

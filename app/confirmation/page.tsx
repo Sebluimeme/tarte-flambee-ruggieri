@@ -83,16 +83,16 @@ export default function ConfirmationPage() {
           <p className="text-white/80 mb-2">
             En attendant, n&apos;hésitez pas à contacter Marc directement
           </p>
-          <p className="text-white font-bold text-xl mb-4">📞 07 85 62 10 88</p>
+          <p className="text-white font-bold text-xl mb-4">📞 07 85 62 10 89</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:0785621088"
+              href="tel:0785621089"
               className="inline-flex items-center justify-center gap-2 bg-white text-[#8B2500] hover:bg-[#FBF5E6] font-semibold px-6 py-3 rounded-xl transition-all"
             >
               📞 Appeler maintenant
             </a>
             <a
-              href="https://wa.me/33785621088"
+              href="https://wa.me/33785621089"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl transition-all"

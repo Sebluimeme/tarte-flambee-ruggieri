@@ -53,10 +53,10 @@ export default function HomePage() {
               🔥 Réserver ma soirée
             </Link>
             <a
-              href="tel:0785621088"
+              href="tel:0785621089"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/60 hover:border-white text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all hover:bg-white/10"
             >
-              📞 07 85 62 10 88
+              📞 07 85 62 10 89
             </a>
           </div>
 
@@ -371,7 +371,7 @@ export default function HomePage() {
                 <p className="text-white/70 text-sm">Rayon d&apos;intervention</p>
               </div>
               <a
-                href="tel:0785621088"
+                href="tel:0785621089"
                 className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#c4571a] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
                 📞 Vérifier ma zone
@@ -564,14 +564,14 @@ export default function HomePage() {
                   ✉️ contact@poivresale.fr
                 </a>
                 <a
-                  href="tel:0785621088"
+                  href="tel:0785621089"
                   className="flex items-center gap-2 text-sm hover:text-[#D4621A] transition-colors"
                   style={{ color: "#FBF5E6B0" }}
                 >
-                  📞 07 85 62 10 88
+                  📞 07 85 62 10 89
                 </a>
                 <a
-                  href="https://wa.me/33785621088"
+                  href="https://wa.me/33785621089"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm hover:text-[#D4621A] transition-colors"
