@@ -43,18 +43,28 @@ export default function ReservationPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    // TODO: Firebase Firestore — collection 'reservations'
-    // db.collection('reservations').add({ ...formData, createdAt: new Date(), status: 'pending' })
-    // TODO: Stripe — envoyer lien paiement après validation Marc
-    // stripe.paymentLinks.create({ ... })
-    console.log("Réservation soumise:", formData);
+    setSubmitting(true);
+    try {
+      const { db } = await import("../lib/firebase");
+      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
+      await addDoc(collection(db, "reservations"), {
+        ...formData,
+        couverts: Number(formData.couverts) || 0,
+        status: "pending",
+        createdAt: serverTimestamp(),
+      });
+    } catch (err) {
+      console.error("Firestore error:", err);
+    }
     window.location.href = "/confirmation";
   };
 
@@ -312,9 +322,10 @@ export default function ReservationPage() {
           <div className="text-center pt-2">
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-bold px-10 py-4 rounded-xl text-lg transition-all shadow-xl hover:-translate-y-0.5"
+              disabled={submitting}
+              className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-bold px-10 py-4 rounded-xl text-lg transition-all shadow-xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              🔥 Envoyer ma demande
+              {submitting ? "Envoi en cours…" : "🔥 Envoyer ma demande"}
             </button>
             <p className="text-sm mt-3" style={{ color: "#8B2500" }}>
               Devis gratuit et sans engagement • Réponse sous 24h

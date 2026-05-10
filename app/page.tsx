@@ -630,6 +630,7 @@ function ContactForm() {
     couverts: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -637,11 +638,21 @@ function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Firebase Firestore — collection 'reservations'
-    // TODO: Stripe — envoyer lien paiement après validation Marc
-    console.log("Formulaire soumis:", formData);
+    setSubmitting(true);
+    try {
+      const { db } = await import("./lib/firebase");
+      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
+      await addDoc(collection(db, "reservations"), {
+        ...formData,
+        couverts: Number(formData.couverts) || 0,
+        status: "pending",
+        createdAt: serverTimestamp(),
+      });
+    } catch (err) {
+      console.error("Firestore error:", err);
+    }
     window.location.href = "/confirmation";
   };
 
@@ -738,9 +749,10 @@ function ContactForm() {
       <div className="text-center pt-2">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 bg-white text-[#8B2500] hover:bg-[#FBF5E6] font-bold px-10 py-4 rounded-xl text-lg transition-all shadow-xl hover:-translate-y-0.5"
+          disabled={submitting}
+          className="inline-flex items-center gap-2 bg-white text-[#8B2500] hover:bg-[#FBF5E6] font-bold px-10 py-4 rounded-xl text-lg transition-all shadow-xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          🔥 Envoyer ma demande
+          {submitting ? "Envoi en cours…" : "🔥 Envoyer ma demande"}
         </button>
         <p className="text-white/60 text-sm mt-3">
           Marc vous recontacte sous 24h — Devis gratuit et sans engagement
