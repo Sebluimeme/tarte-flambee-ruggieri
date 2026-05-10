@@ -1,6 +1,13 @@
-import Link from "next/link";
+"use client";
 
-export default function ConfirmationPage() {
+import Link from "next/link";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+
+function ConfirmationContent() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+
   return (
     <main
       className="flex-1 flex items-center justify-center px-4 py-16"
@@ -26,6 +33,38 @@ export default function ConfirmationPage() {
           Marc Ruggieri vous contactera sous{" "}
           <strong className="text-[#D4621A]">24h</strong> pour confirmer votre soirée et vous envoyer un devis personnalisé.
         </p>
+
+        {/* Lien de suivi */}
+        {id && (
+          <div
+            className="rounded-2xl p-6 mb-8 text-left shadow-md"
+            style={{ backgroundColor: "#FBF5E6", border: "2px solid #D4621A40" }}
+          >
+            <div className="flex items-start gap-3 mb-3">
+              <span className="text-2xl">🔗</span>
+              <div>
+                <p className="font-bold text-[#3D2010] mb-1">Suivez votre réservation en temps réel</p>
+                <p className="text-sm text-[#8B2500] mb-3">
+                  Ce lien vous permet de voir le statut de votre demande dès que Marc la traite. Mémorisez-le ou envoyez-le vous par email.
+                </p>
+                <a
+                  href={`/suivi/${id}`}
+                  className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-5 py-2.5 rounded-xl transition-all text-sm"
+                >
+                  Voir le suivi de ma réservation →
+                </a>
+              </div>
+            </div>
+            <div
+              className="mt-3 rounded-lg px-3 py-2 text-xs font-mono break-all"
+              style={{ backgroundColor: "#3D201015", color: "#3D2010" }}
+            >
+              {typeof window !== "undefined"
+                ? `${window.location.origin}/suivi/${id}`
+                : `/suivi/${id}`}
+            </div>
+          </div>
+        )}
 
         {/* Card informative */}
         <div
@@ -111,5 +150,17 @@ export default function ConfirmationPage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={
+      <main className="flex-1 flex items-center justify-center" style={{ backgroundColor: "#FFFDF7" }}>
+        <div className="text-[#8B2500]">Chargement…</div>
+      </main>
+    }>
+      <ConfirmationContent />
+    </Suspense>
   );
 }

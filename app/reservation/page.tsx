@@ -56,12 +56,14 @@ export default function ReservationPage() {
     try {
       const { db } = await import("../lib/firebase");
       const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
-      await addDoc(collection(db, "reservations"), {
+      const docRef = await addDoc(collection(db, "reservations"), {
         ...formData,
         couverts: Number(formData.couverts) || 0,
         status: "pending",
         createdAt: serverTimestamp(),
       });
+      window.location.href = `/confirmation?id=${docRef.id}`;
+      return;
     } catch (err) {
       console.error("Firestore error:", err);
     }
