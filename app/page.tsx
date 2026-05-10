@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const BOISSONS_OPTIONS = [
   {
@@ -33,14 +34,21 @@ export default function HomePage() {
       {/* ===== HERO ===== */}
       <section
         className="relative min-h-screen flex items-center justify-center text-center px-4"
-        style={{
-          background: "linear-gradient(135deg, #3D2010 0%, #8B2500 50%, #D4621A 100%)",
-        }}
       >
+        {/* Photo de fond */}
+        <Image
+          src="https://images.unsplash.com/photo-1571501210331-41105cb1b3e7?w=1920&q=80"
+          alt="Tartes flambées alsaciennes"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        {/* Gradient overlay */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            background: "linear-gradient(135deg, rgba(61,32,16,0.92) 0%, rgba(139,37,0,0.85) 50%, rgba(212,98,26,0.80) 100%)",
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -432,36 +440,53 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { label: "Four à bois traditionnel", icon: "🔥" },
-              { label: "Soirée entreprise 80 personnes", icon: "🏢" },
-              { label: "Mariage Colmar 2024", icon: "💍" },
-              { label: "Préparation des tartes", icon: "👨‍🍳" },
-              { label: "Ambiance de soirée", icon: "✨" },
-              { label: "Tarte flambée fromage-lardons", icon: "🧀" },
+              {
+                label: "Four à bois traditionnel",
+                src: "https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?w=800&q=80",
+                alt: "Four à bois avec flammes pour tarte flambée alsacienne",
+              },
+              {
+                label: "Soirée entreprise",
+                src: "https://images.unsplash.com/photo-1576842546422-60562b9242ae?w=800&q=80",
+                alt: "Buffet soirée entreprise avec tartes flambées",
+              },
+              {
+                label: "Mariage Colmar 2024",
+                src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
+                alt: "Prestation mariage tarte flambée Alsace",
+              },
+              {
+                label: "Préparation des tartes",
+                src: "https://images.unsplash.com/photo-1637341284945-628baa4fb7cb?w=800&q=80",
+                alt: "Préparation artisanale de tarte flambée traditionnelle",
+              },
+              {
+                label: "Ambiance de soirée",
+                src: "https://images.unsplash.com/photo-1637342092490-492df069d997?w=800&q=80",
+                alt: "Ambiance soirée tarte flambée Alsace",
+              },
+              {
+                label: "Tarte flambée fromage-lardons",
+                src: "https://images.unsplash.com/photo-1637341059186-2ec2308eef53?w=800&q=80",
+                alt: "Tarte flambée traditionnelle fromage et lardons",
+              },
             ].map((item, idx) => (
               <div
                 key={idx}
                 className="relative rounded-xl overflow-hidden cursor-pointer hover:scale-[1.02] transition-transform"
                 style={{ aspectRatio: "4/3" }}
               >
-                <div
-                  className="w-full h-full flex flex-col items-center justify-center gap-3"
-                  style={{
-                    background:
-                      idx % 2 === 0
-                        ? "linear-gradient(135deg, #3D2010, #8B2500)"
-                        : "linear-gradient(135deg, #8B2500, #D4621A)",
-                  }}
-                >
-                  <span className="text-5xl">{item.icon}</span>
-                  <p className="text-white/80 text-sm text-center px-4 font-medium">
-                    {item.label}
-                  </p>
-                </div>
-                {/* TODO: Remplacer par de vraies photos de Marc */}
-                <div className="absolute top-2 right-2 bg-black/30 text-white text-xs px-2 py-1 rounded">
-                  Photo à venir
-                </div>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <p className="absolute bottom-3 left-3 right-3 text-white text-sm font-semibold drop-shadow-md">
+                  {item.label}
+                </p>
               </div>
             ))}
           </div>
