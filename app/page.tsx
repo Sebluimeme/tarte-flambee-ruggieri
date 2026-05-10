@@ -41,6 +41,7 @@ export default function HomePage() {
           alt="Tartes flambées alsaciennes"
           fill
           priority
+          unoptimized
           className="object-cover"
           sizes="100vw"
         />
@@ -480,6 +481,7 @@ export default function HomePage() {
                   src={item.src}
                   alt={item.alt}
                   fill
+                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, 33vw"
                 />
