@@ -3,11 +3,30 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const PRICE_PER_PERSON = 18;
+const BOISSONS_OPTIONS = [
+  {
+    id: "sans",
+    label: "Sans boissons",
+    desc: "Tartes flambées uniquement",
+    icon: "🍽️",
+  },
+  {
+    id: "avec",
+    label: "Avec boissons",
+    desc: "Soft, bière, vin inclus",
+    icon: "🥂",
+  },
+  {
+    id: "illimite",
+    label: "Formule illimitée",
+    desc: "Boissons & tartes à volonté",
+    icon: "✨",
+  },
+];
 
 export default function HomePage() {
   const [covers, setCovers] = useState(40);
-  const estimation = covers * PRICE_PER_PERSON;
+  const [boissons, setBoissons] = useState("sans");
 
   return (
     <main className="flex-1">
@@ -226,7 +245,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== CALCULATEUR DE PRIX ===== */}
+      {/* ===== DEMANDE DE DEVIS ===== */}
       <section className="py-20 px-4" style={{ backgroundColor: "#FBF5E6" }}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
@@ -234,23 +253,51 @@ export default function HomePage() {
               className="text-4xl font-bold mb-4"
               style={{ fontFamily: "var(--font-playfair), serif", color: "#3D2010" }}
             >
-              Estimez votre budget
+              Quelle soirée imaginez-vous ?
             </h2>
             <p className="text-lg" style={{ color: "#8B2500" }}>
-              Calculez instantanément le coût de votre soirée tarte flambée
+              Dites-nous en plus — Marc vous prépare un devis sur mesure sous 24h
             </p>
           </div>
 
           <div
-            className="rounded-2xl shadow-xl p-8 md:p-12"
+            className="rounded-2xl shadow-xl p-8 md:p-10"
             style={{ backgroundColor: "#FFFDF7", border: "1px solid #D4621A20" }}
           >
+            {/* Choix boissons */}
+            <p className="text-base font-semibold mb-4" style={{ color: "#3D2010" }}>
+              Formule boissons
+            </p>
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {BOISSONS_OPTIONS.map((opt) => (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setBoissons(opt.id)}
+                  className="flex flex-col items-center gap-2 rounded-xl p-4 border-2 transition-all text-center"
+                  style={{
+                    borderColor: boissons === opt.id ? "#D4621A" : "#D4621A30",
+                    backgroundColor: boissons === opt.id ? "#D4621A10" : "transparent",
+                  }}
+                >
+                  <span className="text-3xl">{opt.icon}</span>
+                  <span className="text-sm font-semibold" style={{ color: "#3D2010" }}>
+                    {opt.label}
+                  </span>
+                  <span className="text-xs" style={{ color: "#8B2500" }}>
+                    {opt.desc}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Nombre de convives */}
             <div className="flex items-center justify-between mb-4">
-              <label className="text-lg font-semibold" style={{ color: "#3D2010" }}>
+              <label className="text-base font-semibold" style={{ color: "#3D2010" }}>
                 Nombre de convives
               </label>
               <span
-                className="text-3xl font-bold"
+                className="text-2xl font-bold"
                 style={{ color: "#D4621A", fontFamily: "var(--font-playfair), serif" }}
               >
                 {covers} personnes
@@ -264,40 +311,27 @@ export default function HomePage() {
               step={5}
               value={covers}
               onChange={(e) => setCovers(Number(e.target.value))}
-              className="w-full h-2 rounded-full outline-none cursor-pointer mb-8"
+              className="w-full h-2 rounded-full outline-none cursor-pointer mb-2"
               style={{
                 accentColor: "#D4621A",
                 background: `linear-gradient(to right, #D4621A 0%, #D4621A ${((covers - 20) / 180) * 100}%, #FBF5E6 ${((covers - 20) / 180) * 100}%, #FBF5E6 100%)`,
               }}
             />
-
-            <div
-              className="rounded-xl p-6 text-center mb-6"
-              style={{ background: "linear-gradient(135deg, #3D2010, #8B2500)" }}
-            >
-              <p className="text-white/70 text-sm mb-1">Estimation pour votre soirée</p>
-              <p
-                className="text-5xl font-bold text-white mb-1"
-                style={{ fontFamily: "var(--font-playfair), serif" }}
-              >
-                {estimation.toLocaleString("fr-FR")} €
-              </p>
-              <p className="text-white/60 text-sm">
-                {covers} couverts × {PRICE_PER_PERSON}€ / personne
-              </p>
+            <div className="flex justify-between text-xs mb-8" style={{ color: "#8B2500" }}>
+              <span>20 pers.</span>
+              <span>200 pers.</span>
             </div>
-
-            <p className="text-center text-sm mb-6" style={{ color: "#8B2500" }}>
-              * Tarif indicatif — devis personnalisé selon votre événement, lieu et options
-            </p>
 
             <div className="text-center">
               <Link
-                href="/reservation"
+                href={`/reservation?couverts=${covers}&boissons=${boissons}`}
                 className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all shadow-lg"
               >
-                Obtenir mon devis gratuit
+                Recevoir mon devis gratuit →
               </Link>
+              <p className="text-xs mt-3" style={{ color: "#8B2500" }}>
+                Gratuit · Sans engagement · Réponse sous 24h
+              </p>
             </div>
           </div>
         </div>
@@ -628,6 +662,7 @@ function ContactForm() {
     typeEvenement: "",
     date: "",
     couverts: "",
+    boissons: "sans",
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
@@ -738,10 +773,28 @@ function ContactForm() {
           className={inputClass}
         />
       </div>
+      {/* Boissons */}
+      <div className="grid grid-cols-3 gap-2">
+        {BOISSONS_OPTIONS.map((opt) => (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => setFormData({ ...formData, boissons: opt.id })}
+            className="flex flex-col items-center gap-1 rounded-xl p-3 border-2 transition-all text-center"
+            style={{
+              borderColor: formData.boissons === opt.id ? "white" : "rgba(255,255,255,0.2)",
+              backgroundColor: formData.boissons === opt.id ? "rgba(255,255,255,0.15)" : "transparent",
+            }}
+          >
+            <span className="text-2xl">{opt.icon}</span>
+            <span className="text-xs text-white font-medium">{opt.label}</span>
+          </button>
+        ))}
+      </div>
       <textarea
         name="message"
         placeholder="Informations complémentaires (lieu, souhaits particuliers...)"
-        rows={4}
+        rows={3}
         value={formData.message}
         onChange={handleChange}
         className={inputClass}
