@@ -49,7 +49,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(61,32,16,0.92) 0%, rgba(139,37,0,0.85) 50%, rgba(212,98,26,0.80) 100%)",
+            background: "linear-gradient(135deg, rgba(61,32,16,0.62) 0%, rgba(139,37,0,0.52) 50%, rgba(212,98,26,0.40) 100%)",
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -442,9 +442,9 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
               {
-                label: "Four à bois traditionnel",
-                src: "https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?w=800&q=80",
-                alt: "Four à bois avec flammes pour tarte flambée alsacienne",
+                label: "Four à tarte flambée",
+                src: "https://images.pexels.com/photos/37290115/pexels-photo-37290115.jpeg?auto=compress&cs=tinysrgb&w=800",
+                alt: "Tartes flambées cuisant dans un four à bois traditionnel",
               },
               {
                 label: "Soirée entreprise",
@@ -457,19 +457,19 @@ export default function HomePage() {
                 alt: "Prestation mariage tarte flambée Alsace",
               },
               {
-                label: "Préparation des tartes",
-                src: "https://images.unsplash.com/photo-1637341284945-628baa4fb7cb?w=800&q=80",
-                alt: "Préparation artisanale de tarte flambée traditionnelle",
+                label: "Tarte flambée traditionnelle",
+                src: "https://images.pexels.com/photos/35583069/pexels-photo-35583069.jpeg?auto=compress&cs=tinysrgb&w=800",
+                alt: "Tarte flambée alsacienne maison vue de dessus",
               },
               {
-                label: "Ambiance de soirée",
-                src: "https://images.unsplash.com/photo-1637342092490-492df069d997?w=800&q=80",
-                alt: "Ambiance soirée tarte flambée Alsace",
+                label: "Sortie du four",
+                src: "https://images.pexels.com/photos/37290111/pexels-photo-37290111.jpeg?auto=compress&cs=tinysrgb&w=800",
+                alt: "Tartes flambées cuisant avec les flammes du four à bois",
               },
               {
-                label: "Tarte flambée fromage-lardons",
-                src: "https://images.unsplash.com/photo-1637341059186-2ec2308eef53?w=800&q=80",
-                alt: "Tarte flambée traditionnelle fromage et lardons",
+                label: "Tarte flambée dorée",
+                src: "https://images.pexels.com/photos/35583100/pexels-photo-35583100.jpeg?auto=compress&cs=tinysrgb&w=800",
+                alt: "Tarte flambée garnie sortant du four sur plaque",
               },
             ].map((item, idx) => (
               <div
