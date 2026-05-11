@@ -1,461 +1,291 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import {
-  ChevronDown,
-  Users,
-  Check,
-  MessageSquareQuote,
-  Star,
   MapPin,
-  Phone,
-  Mail,
-  Calendar,
-  ClipboardList,
-  Truck,
-  Utensils,
+  Cake,
+  CalendarDays,
+  Flame,
+  HandHeart,
+  Heart,
+  Building2,
+  Tent,
+  Star,
+  ChevronDown,
+  ChevronUp,
+  Clock,
 } from "lucide-react";
-
-// ─── Fade-in variant ───────────────────────────────────────────────────────────
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-// ─── Separator ─────────────────────────────────────────────────────────────────
-function Separator() {
-  return (
-    <div className="flex justify-center my-6">
-      <div style={{ width: 40, height: 1, backgroundColor: "#C4A882" }} />
-    </div>
-  );
-}
-
-// ─── Homepage ──────────────────────────────────────────────────────────────────
-export default function HomePage() {
-  return (
-    <main className="flex-1">
-      <Hero />
-      <AboutSection />
-      <FormulasSection />
-      <HowItWorksSection />
-      <TestimonialsSection />
-      <ZoneSection />
-      <ContactSection />
-    </main>
-  );
-}
+import Button from "../components/ui/Button";
 
 // ─── Hero ──────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center px-4">
-      <Image
-        src="https://images.unsplash.com/photo-1571501210331-41105cb1b3e7?w=1920&q=80"
-        alt="Tarte flambée alsacienne sortant du four à bois"
-        fill
-        priority
-        unoptimized
-        className="object-cover"
-        sizes="100vw"
-      />
-      {/* Gradient overlay — sombre en bas vers transparent en haut */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.10) 100%)",
-        }}
-      />
+    <section className="relative min-h-[85vh] md:min-h-screen">
+      {/* Background placeholder */}
+      <div className="absolute inset-0 bg-bark-900" />
+      <div className="absolute inset-0 bg-gradient-to-r from-bark-900/70 via-bark-900/30 to-transparent" />
 
-      <div className="relative z-10 max-w-3xl mx-auto">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          {/* Logotype */}
-          <div className="flex flex-col items-center mb-6">
-            <span
-              className="text-sm tracking-[0.3em] uppercase text-white/70 mb-1"
-              style={{ fontFamily: "var(--font-fraunces), serif" }}
-            >
-              Maison
-            </span>
-            <h1
-              className="text-6xl md:text-8xl font-bold text-white leading-none"
-              style={{ fontFamily: "var(--font-fraunces), serif" }}
-            >
-              Ruggieri
-            </h1>
-          </div>
-
-          <p className="text-lg md:text-xl text-white/80 mb-2">
-            Tarte flambée d&apos;Alsace · Prestation à domicile
+      {/* Content */}
+      <div className="relative z-10 flex items-center min-h-[85vh] md:min-h-screen py-20">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-cream-200 mb-4">
+            Alsace · Artisan tarte flambée
           </p>
-          <p className="text-base text-white/60 mb-10 max-w-xl mx-auto">
-            Four à bois traditionnel pour vos mariages, anniversaires et soirées d&apos;entreprise en Alsace.
+          <h1 className="font-display text-5xl md:text-7xl font-medium tracking-tight leading-[1.05] text-cream-50 mb-6 max-w-2xl">
+            La tarte flambée, comme une fête.
+          </h1>
+          <p className="text-lg text-cream-200/90 mb-10 max-w-lg">
+            Prestation à domicile pour mariages, anniversaires et événements d&apos;entreprise. En Alsace, depuis 2011.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold tracking-wide uppercase transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-              style={{ backgroundColor: "#D4622A", color: "#FAF7F2" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#B84E1E")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#D4622A")}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button href="/contact">Demander un devis</Button>
+            <Button
+              href="/formules"
+              variant="secondary"
+              className="text-cream-50 border-cream-50/30 hover:bg-cream-50/10 hover:border-cream-50/50"
             >
-              Demander un devis
-            </Link>
-            <Link
-              href="/#formules"
-              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold tracking-wide uppercase transition-all hover:bg-[#E8DCC8]"
-              style={{
-                border: "1.5px solid #D4622A",
-                color: "#D4622A",
-                backgroundColor: "transparent",
-              }}
-            >
-              Découvrir nos formules
-            </Link>
+              Voir les formules
+            </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <ChevronDown strokeWidth={1.5} size={28} className="text-white/40" />
-      </motion.div>
+      {/* Bottom strip */}
+      <div className="relative z-10 bg-cream-100 py-4">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+            <div className="flex items-center gap-2 text-bark-700">
+              <MapPin strokeWidth={1.5} size={18} className="text-copper-500" />
+              <span className="text-sm font-medium">Alsace & Grand Est</span>
+            </div>
+            <div className="flex items-center gap-2 text-bark-700">
+              <Cake strokeWidth={1.5} size={18} className="text-copper-500" />
+              <span className="text-sm font-medium">Four à bois authentique</span>
+            </div>
+            <div className="flex items-center gap-2 text-bark-700">
+              <CalendarDays strokeWidth={1.5} size={18} className="text-copper-500" />
+              <span className="text-sm font-medium">Devis gratuit sous 24h</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
 
-// ─── About Section ─────────────────────────────────────────────────────────────
-function AboutSection() {
-  return (
-    <motion.section
-      className="py-24 px-4"
-      style={{ backgroundColor: "#FAF7F2" }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={fadeUp}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-14 items-center">
-          {/* Photo */}
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
-            <Image
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-              alt="Marc Ruggieri artisan tarte flambée en action"
-              fill
-              unoptimized
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+// ─── Pourquoi Marc ─────────────────────────────────────────────────────────────
+function WhyMarc() {
+  const values = [
+    {
+      icon: Flame,
+      title: "Four à bois authentique",
+      text: "Pas de four électrique. Le bois, la chaleur, la fumée — c'est ça le secret.",
+    },
+    {
+      icon: HandHeart,
+      title: "Fait maison",
+      text: "Pâte, garnitures, tout est préparé artisanalement le jour J.",
+    },
+    {
+      icon: MapPin,
+      title: "On se déplace chez vous",
+      text: "Marc vient installer son four où vous voulez : jardin, salle des fêtes, entreprise.",
+    },
+  ];
 
+  return (
+    <section className="py-20 md:py-28 bg-cream-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
           {/* Text */}
           <div>
-            <span
-              className="inline-block rounded-full px-3 py-1 text-xs mb-6"
-              style={{ backgroundColor: "#E8DCC8", color: "#2B1810" }}
-            >
-              Artisan alsacien depuis 2015
-            </span>
-            <h2
-              className="text-4xl font-bold mb-4 leading-snug"
-              style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-            >
-              Qui sommes-nous ?
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+              L&apos;artisan
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900 mb-6 leading-tight">
+              Plus de 15 ans de passion pour la vraie tarte flambée alsacienne
             </h2>
-            <Separator />
-            <p className="text-base leading-relaxed mb-4" style={{ color: "#2B1810" }}>
-              Marc Ruggieri est un artisan passionné, né et grandi en Alsace. Depuis 2015, il perpétue la tradition de la tarte flambée au four à bois lors de vos événements privés et professionnels.
+            <p className="text-bark-700 mb-10 leading-relaxed">
+              Ce n&apos;est pas un traiteur qui ajoute la tarte flambée à son menu. C&apos;est un
+              artisan qui n&apos;a jamais fait que ça. Depuis 2011, Marc sillonne l&apos;Alsace avec
+              son four à bois mobile pour apporter cette convivialité unique à vos fêtes.
             </p>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#2B1810" }}>
-              Chaque prestation est préparée avec soin : pâte maison, ingrédients frais du terroir, four à bois monté sur place. Marc gère tout, de l&apos;installation à la cuisson, pour que vous profitiez pleinement de vos invités.
-            </p>
-            <Link
-              href="/#formules"
-              className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-[#B84E1E]"
-              style={{ color: "#D4622A" }}
-            >
-              En savoir plus sur nos formules
-              <ChevronDown strokeWidth={1.5} size={16} style={{ transform: "rotate(-90deg)" }} />
-            </Link>
+            <div className="space-y-6">
+              {values.map((v) => {
+                const Icon = v.icon;
+                return (
+                  <div key={v.title} className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center">
+                      <Icon strokeWidth={1.5} size={18} className="text-copper-500" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-bark-900 mb-1">{v.title}</p>
+                      <p className="text-sm text-bark-700">{v.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Image placeholder */}
+          <div className="bg-cream-200 rounded-2xl aspect-square flex items-center justify-center">
+            <p className="text-stone-400 text-sm">Photo de Marc</p>
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
-// ─── Formulas Section ──────────────────────────────────────────────────────────
-const FORMULAS = [
+// ─── Formules preview ──────────────────────────────────────────────────────────
+const CARDS = [
   {
-    name: "Essentielle",
-    price: "12€",
-    unit: "/ pers.",
-    minCouverts: "Minimum 20 couverts",
-    popular: false,
-    features: [
-      "Tartes flambées à volonté",
-      "Four à bois traditionnel",
-      "Ingrédients frais du terroir",
-      "Installation et rangement inclus",
-    ],
+    name: "Découverte",
+    guests: "20-80 pers.",
+    price: "à partir de 8€/pers.",
+    features: ["Four à bois", "Pâte artisanale", "1 garniture", "Service en autonomie"],
+    cta: "Voir le détail",
+    ctaHref: "/formules",
+    highlight: false,
+  },
+  {
+    name: "Événement",
+    guests: "80-200 pers.",
+    price: "Sur devis",
+    features: ["Four à bois", "2 garnitures", "Service complet", "Présentation sur chevalet"],
+    cta: "Demander un devis",
+    ctaHref: "/contact",
+    highlight: true,
   },
   {
     name: "Prestige",
-    price: "16€",
-    unit: "/ pers.",
-    minCouverts: "Minimum 30 couverts",
-    popular: true,
+    guests: "200-500 pers.",
+    price: "Sur devis",
     features: [
-      "Tout de la formule Essentielle",
-      "Boissons soft et bière incluses",
-      "Service à table",
-      "Installation complète clé en main",
+      "2 fours",
+      "Garnitures illimitées",
+      "Équipe de service",
+      "Décoration alsacienne",
+      "Coordination J",
     ],
-  },
-  {
-    name: "Illimitée",
-    price: "20€",
-    unit: "/ pers.",
-    minCouverts: "Minimum 40 couverts",
-    popular: false,
-    features: [
-      "Tartes et boissons à volonté",
-      "Service haut de gamme",
-      "Animation four à bois",
-      "Formule clé en main complète",
-    ],
+    cta: "Nous contacter",
+    ctaHref: "/contact",
+    highlight: false,
   },
 ];
 
-function FormulasSection() {
+function FormulasPreview() {
   return (
-    <section id="formules" className="py-24 px-4" style={{ backgroundColor: "#FAF7F2" }}>
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            className="text-4xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-          >
+    <section className="py-20 md:py-28 bg-cream-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
             Nos formules
-          </h2>
-          <Separator />
-          <p className="text-base" style={{ color: "#2B1810" }}>
-            Tarification transparente — devis personnalisé sous 24h
           </p>
-        </motion.div>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900 mb-4">
+            Choisissez la formule qui vous ressemble
+          </h2>
+          <p className="text-bark-700 max-w-xl mx-auto">
+            De la petite soirée intime au grand événement, une formule adaptée à chaque occasion.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {FORMULAS.map((f, i) => (
-            <motion.div
-              key={f.name}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={fadeUp}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative rounded-2xl shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 flex flex-col"
-              style={{
-                backgroundColor: f.popular ? "#2B1810" : "#FFFFFF",
-                border: f.popular ? "none" : "1px solid #E8DCC8",
-              }}
+        <div className="grid md:grid-cols-3 gap-8 mb-10">
+          {CARDS.map((c) => (
+            <div
+              key={c.name}
+              className={`relative rounded-2xl p-8 flex flex-col ${
+                c.highlight
+                  ? "border-2 border-copper-500 bg-cream-50"
+                  : "border border-stone-200 bg-cream-50"
+              }`}
             >
-              {f.popular && (
-                <div
-                  className="rounded-t-2xl text-center py-2 text-xs font-semibold tracking-widest uppercase"
-                  style={{ backgroundColor: "#D4622A", color: "#FAF7F2" }}
-                >
+              {c.highlight && (
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-copper-500 text-cream-50 text-xs font-medium">
                   Populaire
-                </div>
+                </span>
               )}
-              <div className="p-8 flex flex-col flex-1">
-                <h3
-                  className="text-xl font-bold mb-1"
-                  style={{
-                    fontFamily: "var(--font-fraunces), serif",
-                    color: f.popular ? "#FAF7F2" : "#2B1810",
-                  }}
-                >
-                  {f.name}
-                </h3>
-
-                <div className="flex items-center gap-2 mb-2">
-                  <Users strokeWidth={1.5} size={14} style={{ color: f.popular ? "#C4A882" : "#C4A882" }} />
-                  <span className="text-xs" style={{ color: f.popular ? "#C4A882" : "#C4A882" }}>
-                    {f.minCouverts}
-                  </span>
-                </div>
-
-                <div className="flex items-baseline gap-1 mb-6 mt-2">
-                  <span
-                    className="text-4xl font-bold"
-                    style={{
-                      fontFamily: "var(--font-fraunces), serif",
-                      color: f.popular ? "#D4622A" : "#D4622A",
-                    }}
-                  >
-                    {f.price}
-                  </span>
-                  <span className="text-sm" style={{ color: f.popular ? "rgba(250,247,242,0.55)" : "#C4A882" }}>
-                    {f.unit}
-                  </span>
-                </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {f.features.map((feat) => (
-                    <li
-                      key={feat}
-                      className="flex items-start gap-2.5 text-sm"
-                      style={{ color: f.popular ? "rgba(250,247,242,0.85)" : "#2B1810" }}
-                    >
-                      <Check strokeWidth={1.5} size={15} className="flex-shrink-0 mt-0.5" style={{ color: "#D4622A" }} />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href="/#contact"
-                  className="block text-center rounded-full py-3 text-sm font-semibold tracking-wide uppercase transition-all"
-                  style={
-                    f.popular
-                      ? { backgroundColor: "#D4622A", color: "#FAF7F2" }
-                      : { border: "1.5px solid #D4622A", color: "#D4622A", backgroundColor: "transparent" }
-                  }
-                  onMouseEnter={(e) => {
-                    if (f.popular) e.currentTarget.style.backgroundColor = "#B84E1E";
-                    else e.currentTarget.style.backgroundColor = "#E8DCC8";
-                  }}
-                  onMouseLeave={(e) => {
-                    if (f.popular) e.currentTarget.style.backgroundColor = "#D4622A";
-                    else e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  Demander un devis
-                </Link>
-              </div>
-            </motion.div>
+              <h3 className="font-display text-2xl font-medium text-bark-900 mb-1">{c.name}</h3>
+              <p className="text-sm text-stone-400 mb-2">{c.guests}</p>
+              <p className="text-xl font-medium text-copper-500 mb-6">{c.price}</p>
+              <ul className="space-y-2 mb-8 flex-1">
+                {c.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-bark-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-copper-500 flex-shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Button href={c.ctaHref} variant={c.highlight ? "primary" : "secondary"} className="justify-center">
+                {c.cta}
+              </Button>
+            </div>
           ))}
         </div>
 
-        <p className="text-center text-xs mt-5" style={{ color: "#C4A882" }}>
-          Déplacement selon zone — contactez-nous pour un devis personnalisé
-        </p>
+        <div className="text-center">
+          <Link href="/formules" className="text-copper-500 font-medium hover:text-copper-400 transition-colors">
+            Toutes nos formules en détail →
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-// ─── How It Works Section ──────────────────────────────────────────────────────
-const STEPS = [
-  {
-    icon: ClipboardList,
-    label: "Échange & devis",
-    desc: "Décrivez votre événement via le formulaire. Marc vous répond sous 24h avec un devis sur mesure.",
-  },
-  {
-    icon: Calendar,
-    label: "Préparation",
-    desc: "Marc prépare la pâte maison et sélectionne les ingrédients frais du terroir alsacien.",
-  },
-  {
-    icon: Truck,
-    label: "Installation sur place",
-    desc: "Arrivée 1h avant le service, montage du four à bois, mise en place complète.",
-  },
-  {
-    icon: Utensils,
-    label: "Service & départ",
-    desc: "Tartes cuites à la demande pendant tout l'événement. Marc range et repart sans laisser de trace.",
-  },
-];
+// ─── Événements ────────────────────────────────────────────────────────────────
+function EventsSection() {
+  const events = [
+    {
+      icon: Heart,
+      title: "Mariage",
+      text: "Le plat que vos invités vont adorer et dont ils vont parler encore des années après.",
+    },
+    {
+      icon: Cake,
+      title: "Anniversaire",
+      text: "Un moment festif et convivial, de 20 à 200 personnes, autour du four à bois.",
+    },
+    {
+      icon: Building2,
+      title: "Événement d'entreprise",
+      text: "Team buildings, séminaires, inaugurations : créez du lien autour de la tarte flambée.",
+    },
+    {
+      icon: Tent,
+      title: "Fêtes & festivals",
+      text: "Associations, marchés de Noël, fêtes de village : disponible pour les événements publics.",
+    },
+  ];
 
-function HowItWorksSection() {
   return (
-    <section id="deroulement" className="py-24 px-4" style={{ backgroundColor: "#E8DCC8" }}>
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            className="text-4xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-          >
-            Comment se déroule une prestation ?
-          </h2>
-          <Separator />
-          <p className="text-base" style={{ color: "#2B1810" }}>
-            Une organisation clé en main — vous n&apos;avez qu&apos;à accueillir vos invités
+    <section className="py-20 md:py-28 bg-cream-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            Pour qui ?
           </p>
-        </motion.div>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900">
+            Pour tous vos événements
+          </h2>
+        </div>
 
-        {/* Desktop: horizontal timeline / Mobile: vertical */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {STEPS.map((step, i) => {
-            const Icon = step.icon;
+        <div className="grid sm:grid-cols-2 gap-8">
+          {events.map((e) => {
+            const Icon = e.icon;
             return (
-              <motion.div
-                key={step.label}
-                className="flex flex-col items-center text-center md:items-center"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-60px" }}
-                variants={fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div
-                  className="flex items-center justify-center w-14 h-14 rounded-full mb-4 shadow-sm"
-                  style={{ backgroundColor: "#FAF7F2" }}
-                >
-                  <Icon strokeWidth={1.5} size={22} style={{ color: "#D4622A" }} />
+              <div key={e.title} className="flex gap-5 p-6 rounded-2xl bg-cream-100">
+                <div className="flex-shrink-0">
+                  <Icon strokeWidth={1.5} size={32} className="text-copper-500" />
                 </div>
-                <span
-                  className="text-xs font-semibold mb-1"
-                  style={{
-                    fontFamily: "var(--font-fraunces), serif",
-                    fontStyle: "italic",
-                    color: "#D4622A",
-                  }}
-                >
-                  Étape {i + 1}
-                </span>
-                <h3
-                  className="text-base font-bold mb-2"
-                  style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-                >
-                  {step.label}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#2B1810" }}>
-                  {step.desc}
-                </p>
-              </motion.div>
+                <div>
+                  <h3 className="font-display text-xl font-medium text-bark-900 mb-2">{e.title}</h3>
+                  <p className="text-bark-700 text-sm leading-relaxed">{e.text}</p>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -464,462 +294,309 @@ function HowItWorksSection() {
   );
 }
 
-// ─── Testimonials Section ──────────────────────────────────────────────────────
+// ─── Zone géographique ─────────────────────────────────────────────────────────
+function ZoneSection() {
+  const zones = [
+    "Strasbourg",
+    "Colmar",
+    "Mulhouse",
+    "Sélestat",
+    "Obernai",
+    "Saverne",
+    "Sur demande : Lorraine, Franche-Comté, Allemagne",
+  ];
+
+  return (
+    <section className="py-20 md:py-28 bg-cream-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <div>
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+              Zone d&apos;intervention
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900 mb-6">
+              On vient chez vous en Alsace
+            </h2>
+            <p className="text-bark-700 mb-8 leading-relaxed">
+              Marc intervient principalement dans le Bas-Rhin (67) et le Haut-Rhin (68), ainsi que
+              dans les départements limitrophes. Déplacement compris dans le devis.
+            </p>
+            <ul className="space-y-2">
+              {zones.map((z) => (
+                <li key={z} className="flex items-center gap-2 text-bark-700">
+                  <MapPin strokeWidth={1.5} size={16} className="text-copper-500 flex-shrink-0" />
+                  {z}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Visual block */}
+          <div className="bg-cream-200 rounded-2xl flex flex-col items-center justify-center py-16 px-8">
+            <p className="font-display text-3xl font-medium text-bark-900 mb-2">Alsace & Grand Est</p>
+            <p className="text-stone-400 text-sm">Rayon ~100 km</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Témoignages ───────────────────────────────────────────────────────────────
 const TESTIMONIALS = [
   {
-    text: "Une soirée entreprise mémorable. Marc a géré 80 couverts avec une efficacité remarquable. Les tartes flambées étaient délicieuses et l'ambiance, inoubliable.",
-    author: "Sophie M.",
-    event: "Soirée d'entreprise à Colmar",
+    name: "Sophie M.",
+    context: "Mariage Strasbourg, juin 2024",
+    text: "Nous avons eu Marc pour notre mariage en juin. Nos 180 invités ont adoré. Le four à bois crée une ambiance incroyable et les tartes étaient délicieuses. Un vrai professionnel, ponctuel, sympa, et les tartes... miam !",
   },
   {
-    text: "Pour notre mariage, Marc a créé une atmosphère unique et chaleureuse. Tous nos invités en parlent encore des mois après. Un vrai artisan passionné.",
-    author: "Julien & Céline",
-    event: "Mariage à Strasbourg",
+    name: "Thomas & Léa",
+    context: "EVJF Colmar, mars 2024",
+    text: "On a organisé un EVJF et Marc a été parfait. Il est arrivé à l'heure, tout était impeccable. Les tartes flambées faites devant nous, c'était le top. On recommande à 1000% !",
   },
   {
-    text: "Incroyable pour notre anniversaire. Chaleureux, professionnel et délicieux. Marc a su mettre tout le monde à l'aise avec sa sincérité et son savoir-faire.",
-    author: "Patrick R.",
-    event: "Anniversaire à Sélestat",
+    name: "Patrick R.",
+    context: "Soirée d'entreprise Mulhouse, nov 2023",
+    text: "Marc est intervenu pour notre soirée d'entreprise de 120 personnes. Professionnalisme au top, rapport qualité-prix imbattable. Tout le monde est reparti avec le sourire.",
+  },
+  {
+    name: "Julie D.",
+    context: "Anniversaire 50 ans Sélestat, août 2024",
+    text: "Une soirée inoubliable pour les 50 ans de mon mari. Marc a su mettre une ambiance de dingue avec son four à bois. La qualité était au rendez-vous.",
+  },
+  {
+    name: "Camille & Antoine",
+    context: "Mariage Obernai, sept 2024",
+    text: "On cherchait quelque chose d'original pour notre mariage. Marc nous a proposé la formule Prestige et c'était parfait. Nos invités n'arrêtaient pas de féliciter notre choix.",
+  },
+  {
+    name: "Bertrand K.",
+    context: "Fête de village Wissembourg, juil 2023",
+    text: "Marc est intervenu pour notre fête communale. Efficace, rapide, très bon contact. Les villageois ont adoré. On le recontactera l'année prochaine.",
   },
 ];
 
 function TestimonialsSection() {
   return (
-    <section id="temoignages" className="py-24 px-4" style={{ backgroundColor: "#FAF7F2" }}>
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            className="text-4xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-          >
-            Ils nous font confiance
+    <section id="avis" className="py-20 md:py-28 bg-cream-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            Avis clients
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900">
+            Ce qu&apos;ils disent de nous
           </h2>
-          <Separator />
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={t.author}
-              className="rounded-2xl p-8 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 flex flex-col"
-              style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8DCC8" }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={fadeUp}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+          {TESTIMONIALS.map((t) => (
+            <div
+              key={t.name}
+              className="bg-cream-50 border border-stone-200 rounded-2xl p-6 flex flex-col"
             >
-              {/* Guillemet SVG */}
-              <MessageSquareQuote
-                strokeWidth={1.5}
-                size={32}
-                className="mb-4"
-                style={{ color: "#C4A882" }}
-              />
-
-              {/* Stars */}
               <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: 5 }).map((_, si) => (
-                  <Star
-                    key={si}
-                    size={14}
-                    strokeWidth={0}
-                    fill="#D4622A"
-                    style={{ color: "#D4622A" }}
-                  />
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={14} fill="#C75A2A" className="text-copper-500" />
                 ))}
               </div>
-
-              <p
-                className="text-sm leading-relaxed italic flex-1 mb-6"
-                style={{ color: "#2B1810" }}
-              >
+              <p className="italic text-bark-700 flex-1 mb-4 text-sm leading-relaxed">
                 &ldquo;{t.text}&rdquo;
               </p>
-
               <div>
-                <p className="text-sm font-semibold" style={{ color: "#2B1810" }}>
-                  {t.author}
-                </p>
-                <p className="text-xs mt-0.5" style={{ color: "#C4A882" }}>
-                  {t.event}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Zone Section ──────────────────────────────────────────────────────────────
-const VILLES = [
-  "Colmar", "Strasbourg", "Mulhouse", "Sélestat",
-  "Obernai", "Ribeauvillé", "Saverne", "Guebwiller",
-  "Thann", "Saint-Dié", "Épinal*", "Nancy*",
-];
-
-function ZoneSection() {
-  return (
-    <motion.section
-      className="py-24 px-4"
-      style={{ backgroundColor: "#E8DCC8" }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={fadeUp}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        <MapPin strokeWidth={1.5} size={28} className="mx-auto mb-4" style={{ color: "#D4622A" }} />
-        <h2
-          className="text-4xl font-bold mb-2"
-          style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-        >
-          Nous intervenons dans toute l&apos;Alsace
-        </h2>
-        <Separator />
-        <p className="text-base mb-8" style={{ color: "#2B1810" }}>
-          Au départ de <strong>Le Bonhomme (68650)</strong>, Marc se déplace dans les départements 67 et 68, ainsi que les Vosges et régions voisines.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {VILLES.map((v) => (
-            <span
-              key={v}
-              className="rounded-full px-4 py-1.5 text-sm"
-              style={{ backgroundColor: "#FAF7F2", color: "#2B1810" }}
-            >
-              {v}
-            </span>
-          ))}
-        </div>
-
-        <p className="text-xs" style={{ color: "#C4A882" }}>
-          * Sur demande selon la distance — contactez-nous pour confirmation
-        </p>
-      </div>
-    </motion.section>
-  );
-}
-
-// ─── Contact Section ───────────────────────────────────────────────────────────
-function ContactSection() {
-  return (
-    <section id="contact" className="py-24 px-4" style={{ backgroundColor: "#FAF7F2" }}>
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          transition={{ duration: 0.6 }}
-        >
-          <h2
-            className="text-4xl font-bold mb-2"
-            style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
-          >
-            Demander un devis
-          </h2>
-          <Separator />
-          <p className="text-base" style={{ color: "#2B1810" }}>
-            Remplissez ce formulaire — Marc vous répond sous 24h avec un devis personnalisé
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-5 gap-10">
-          {/* Form */}
-          <div className="md:col-span-3">
-            <ContactForm />
-          </div>
-
-          {/* Info card */}
-          <motion.div
-            className="md:col-span-2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div
-              className="rounded-2xl p-8 h-full"
-              style={{ backgroundColor: "#2B1810" }}
-            >
-              <div className="mb-6">
-                <span
-                  className="text-xs tracking-[0.2em] uppercase"
-                  style={{ fontFamily: "var(--font-fraunces), serif", color: "#C4A882" }}
-                >
-                  Maison
-                </span>
-                <p
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "var(--font-fraunces), serif", color: "#FAF7F2" }}
-                >
-                  Ruggieri
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <a
-                  href="tel:0785621089"
-                  className="flex items-center gap-3 text-sm transition-colors hover:text-[#D4622A]"
-                  style={{ color: "rgba(250,247,242,0.75)" }}
-                >
-                  <Phone strokeWidth={1.5} size={16} className="flex-shrink-0" />
-                  07 85 62 10 89
-                </a>
-                <a
-                  href="mailto:contact@poivresale.fr"
-                  className="flex items-center gap-3 text-sm transition-colors hover:text-[#D4622A]"
-                  style={{ color: "rgba(250,247,242,0.75)" }}
-                >
-                  <Mail strokeWidth={1.5} size={16} className="flex-shrink-0" />
-                  contact@poivresale.fr
-                </a>
-                <div
-                  className="flex items-center gap-3 text-sm"
-                  style={{ color: "rgba(250,247,242,0.75)" }}
-                >
-                  <MapPin strokeWidth={1.5} size={16} className="flex-shrink-0" />
-                  Le Bonhomme, 68650 — Alsace
-                </div>
-              </div>
-
-              <div className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(196,168,130,0.25)" }}>
-                <p className="text-xs mb-2" style={{ color: "rgba(250,247,242,0.45)" }}>
-                  Réponse garantie sous
-                </p>
-                <p
-                  className="text-3xl font-bold"
-                  style={{ fontFamily: "var(--font-fraunces), serif", color: "#D4622A" }}
-                >
-                  24h
-                </p>
-                <p className="text-xs mt-1" style={{ color: "rgba(250,247,242,0.45)" }}>
-                  Devis gratuit · Sans engagement
-                </p>
+                <p className="font-medium text-bark-900">{t.name}</p>
+                <p className="text-sm text-stone-400">{t.context}</p>
               </div>
             </div>
-          </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-// ─── Contact Form ──────────────────────────────────────────────────────────────
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    prenom: "",
-    nom: "",
-    email: "",
-    telephone: "",
-    typeEvenement: "",
-    date: "",
-    couverts: "",
-    message: "",
-  });
-  const [submitting, setSubmitting] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    try {
-      const { db } = await import("./lib/firebase");
-      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
-      await addDoc(collection(db, "reservations"), {
-        ...formData,
-        couverts: Number(formData.couverts) || 0,
-        status: "pending",
-        createdAt: serverTimestamp(),
-      });
-    } catch (err) {
-      console.error("Firestore error:", err);
-    }
-    window.location.href = "/confirmation";
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    padding: "12px 16px",
-    borderRadius: "12px",
-    border: "1px solid #E8DCC8",
-    backgroundColor: "#FFFFFF",
-    color: "#2B1810",
-    fontSize: "15px",
-    outline: "none",
-    transition: "border-color 0.2s",
-  };
+// ─── Réassurance ───────────────────────────────────────────────────────────────
+function ReassuranceSection() {
+  const stats = [
+    { figure: "+200", label: "prestations réalisées" },
+    { figure: "5★", label: "de moyenne sur les avis" },
+    { figure: "2011", label: "15 ans d'expérience" },
+    { figure: "24h", label: "délai de réponse au devis" },
+  ];
 
   return (
-    <motion.form
-      onSubmit={handleSubmit}
-      className="space-y-4"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
-      variants={fadeUp}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-            Prénom *
-          </label>
-          <input
-            type="text"
-            name="prenom"
-            placeholder="Marc"
-            required
-            value={formData.prenom}
-            onChange={handleChange}
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-            Nom *
-          </label>
-          <input
-            type="text"
-            name="nom"
-            placeholder="Dupont"
-            required
-            value={formData.nom}
-            onChange={handleChange}
-            style={inputStyle}
-          />
+    <section className="py-16 bg-cream-200">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-around gap-8">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="font-display text-5xl md:text-6xl font-medium text-copper-500">
+                {s.figure}
+              </p>
+              <p className="font-sans text-sm text-stone-400 mt-1">{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
+    </section>
+  );
+}
 
-      <div>
-        <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-          Email *
-        </label>
-        <input
-          type="email"
-          name="email"
-          placeholder="marc@exemple.fr"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          style={inputStyle}
-        />
-      </div>
+// ─── Galerie ───────────────────────────────────────────────────────────────────
+const GALLERY_LABELS = [
+  "Four à bois · Mariage",
+  "Garnitures · Service",
+  "Soirée d'entreprise",
+  "Tarte flambée nature",
+  "Ambiance festive",
+  "Installation extérieure",
+];
 
-      <div>
-        <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-          Téléphone *
-        </label>
-        <input
-          type="tel"
-          name="telephone"
-          placeholder="06 12 34 56 78"
-          required
-          value={formData.telephone}
-          onChange={handleChange}
-          style={inputStyle}
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-            Type d&apos;événement *
-          </label>
-          <select
-            name="typeEvenement"
-            required
-            value={formData.typeEvenement}
-            onChange={handleChange}
-            style={{ ...inputStyle, color: formData.typeEvenement ? "#2B1810" : "#C4A882" }}
-          >
-            <option value="" disabled>
-              Choisir...
-            </option>
-            <option value="entreprise">Soirée entreprise</option>
-            <option value="mariage">Mariage</option>
-            <option value="anniversaire">Anniversaire</option>
-            <option value="fete">Fête privée</option>
-            <option value="autre">Autre</option>
-          </select>
+function GallerySection() {
+  return (
+    <section className="py-20 md:py-28 bg-cream-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            En images
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900">
+            Chaque prestation est unique
+          </h2>
         </div>
-        <div>
-          <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-            Date souhaitée *
-          </label>
-          <input
-            type="date"
-            name="date"
-            required
-            value={formData.date}
-            onChange={handleChange}
-            style={inputStyle}
-          />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {GALLERY_LABELS.map((label) => (
+            <div
+              key={label}
+              className="bg-cream-200 rounded-2xl aspect-video flex items-center justify-center"
+            >
+              <p className="text-stone-400 text-sm text-center px-4">{label}</p>
+            </div>
+          ))}
         </div>
       </div>
+    </section>
+  );
+}
 
-      <div>
-        <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-          Nombre de convives *
-        </label>
-        <input
-          type="number"
-          name="couverts"
-          placeholder="Minimum 20"
-          min={20}
-          required
-          value={formData.couverts}
-          onChange={handleChange}
-          style={inputStyle}
-        />
+// ─── FAQ ───────────────────────────────────────────────────────────────────────
+const FAQ_ITEMS = [
+  {
+    q: "Quelle est la zone de déplacement ?",
+    a: "Marc intervient dans tout le Bas-Rhin (67) et le Haut-Rhin (68), ainsi que dans les départements limitrophes. Le déplacement est inclus dans le devis pour une zone raisonnable (moins de 50 km du Bonhomme). Au-delà, des frais kilométriques peuvent s'appliquer.",
+  },
+  {
+    q: "Quel est le délai de réservation conseillé ?",
+    a: "Pour les mariages, nous recommandons de réserver 6 à 12 mois à l'avance. Pour les autres événements, 4 à 8 semaines suffisent généralement.",
+  },
+  {
+    q: "Combien de personnes pouvez-vous accueillir ?",
+    a: "De 20 à 500 personnes selon la formule. Pour les grands événements, nous pouvons mobiliser plusieurs fours à bois.",
+  },
+  {
+    q: "Est-ce que vous proposez des options sans gluten ?",
+    a: "Oui, nous proposons une pâte sans gluten sur demande. Précisez-le lors de votre demande de devis.",
+  },
+  {
+    q: "Que comprend le service ?",
+    a: "Selon la formule : installation du four, préparation des garnitures, cuisson devant vos invités, service à table ou en buffet, nettoyage et départ.",
+  },
+  {
+    q: "Comment se déroule le paiement ?",
+    a: "Un acompte de 30% est demandé à la réservation, le solde est réglé le jour de la prestation ou dans les 7 jours suivants. Nous acceptons virement, chèque et espèces.",
+  },
+  {
+    q: "Que se passe-t-il en cas de mauvais temps ?",
+    a: "Le four à bois fonctionne par tous les temps. Pour les installations en extérieur, nous recommandons une tente ou un auvent.",
+  },
+  {
+    q: "Puis-je personnaliser les garnitures ?",
+    a: "Oui, nous avons une gamme de garnitures classiques (lard, oignons, crème) mais aussi des options végétariennes et des créations maison.",
+  },
+];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 md:py-28 bg-cream-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            Questions fréquentes
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900">
+            Tout ce que vous voulez savoir
+          </h2>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          {FAQ_ITEMS.map((item, i) => (
+            <div key={i} className="border-b border-stone-200">
+              <button
+                type="button"
+                className="flex justify-between items-center py-5 w-full text-left"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              >
+                <span className="font-medium text-bark-900 pr-4">{item.q}</span>
+                {openIndex === i ? (
+                  <ChevronUp strokeWidth={1.5} size={20} className="text-stone-400 flex-shrink-0" />
+                ) : (
+                  <ChevronDown strokeWidth={1.5} size={20} className="text-stone-400 flex-shrink-0" />
+                )}
+              </button>
+              {openIndex === i && (
+                <p className="text-bark-700 pb-5 text-sm leading-relaxed">{item.a}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
+    </section>
+  );
+}
 
-      <div>
-        <label className="block text-xs font-medium mb-1.5" style={{ color: "#2B1810" }}>
-          Message (lieu, besoins spécifiques...)
-        </label>
-        <textarea
-          name="message"
-          placeholder="Lieu de la réception, accès, contraintes particulières..."
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          style={{ ...inputStyle, resize: "vertical" }}
-        />
+// ─── CTA Final ─────────────────────────────────────────────────────────────────
+function CTAFinal() {
+  return (
+    <section className="py-20 md:py-28 bg-cream-200">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+          Prêt à réserver ?
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl font-medium text-bark-900 mb-6 max-w-2xl mx-auto">
+          Votre événement mérite la vraie tarte flambée alsacienne.
+        </h2>
+        <p className="text-bark-700 mb-10 max-w-lg mx-auto">
+          Dites-nous la date, le lieu et le nombre de convives. On vous répond sous 24h avec un
+          devis personnalisé.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/contact">Demander un devis gratuit</Button>
+          <Button href="tel:+336XXXXXXXX" variant="secondary">
+            Appeler Marc directement
+          </Button>
+        </div>
       </div>
+    </section>
+  );
+}
 
-      <button
-        type="submit"
-        disabled={submitting}
-        className="w-full rounded-full py-4 text-base font-semibold tracking-wide uppercase transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
-        style={{ backgroundColor: "#D4622A", color: "#FAF7F2" }}
-        onMouseEnter={(e) => !submitting && (e.currentTarget.style.backgroundColor = "#B84E1E")}
-        onMouseLeave={(e) => !submitting && (e.currentTarget.style.backgroundColor = "#D4622A")}
-      >
-        {submitting ? "Envoi en cours…" : "Envoyer ma demande"}
-      </button>
-
-      <p className="text-xs text-center" style={{ color: "#C4A882" }}>
-        Gratuit · Sans engagement · Réponse sous 24h
-      </p>
-    </motion.form>
+// ─── Page ──────────────────────────────────────────────────────────────────────
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <WhyMarc />
+      <FormulasPreview />
+      <EventsSection />
+      <ZoneSection />
+      <TestimonialsSection />
+      <ReassuranceSection />
+      <GallerySection />
+      <FAQSection />
+      <CTAFinal />
+    </>
   );
 }

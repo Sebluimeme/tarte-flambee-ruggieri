@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tarte-flambee.vercel.app";
+const SITE_URL = "https://tarte-flambee-one.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -11,16 +11,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/reservation`,
+      url: `${SITE_URL}/formules`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/confirmation`,
+      url: `${SITE_URL}/a-propos`,
       lastModified: new Date(),
-      changeFrequency: "never",
-      priority: 0.1,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/cgv`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.2,
     },
     {
       url: `${SITE_URL}/mentions-legales`,
@@ -30,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/confidentialite`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${SITE_URL}/cookies`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.2,
