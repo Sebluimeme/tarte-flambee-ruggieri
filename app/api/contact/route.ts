@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
 
     // TODO: Envoyer l'email via Resend
     // await resend.emails.send({
-    //   from: "contact@maison-ruggieri.fr",
-    //   to: "contact@maison-ruggieri.fr",
+    //   from: "contact@poivresale.fr",
+    //   to: "contact@poivresale.fr",
     //   subject: `Demande de devis — ${data.nomComplet}`,
     //   html: `
     //     <h2>Nouvelle demande de devis</h2>

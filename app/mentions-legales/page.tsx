@@ -31,17 +31,18 @@ export default function MentionsLegalesPage() {
             </h2>
             <div className="bg-cream-100 border border-stone-200 rounded-xl p-6 text-sm leading-relaxed space-y-2">
               <p><strong>Responsable de publication :</strong> Marc Ruggieri</p>
-              <p><strong>Activité :</strong> Prestation artisanale tarte flambée à domicile</p>
-              <p><strong>Adresse :</strong> Le Bonhomme, 68650 Haut-Rhin, France</p>
-              {/* TODO: Ajouter le numéro SIRET réel */}
-              <p><strong>SIRET :</strong> XX XXX XXX XXXXX (à compléter)</p>
+              <p><strong>Raison sociale :</strong> POIVR&apos;&amp;SALE</p>
+              <p><strong>Activité :</strong> Restauration rapide — prestation tarte flambée à domicile et événementielle</p>
+              <p><strong>Adresse :</strong> 129 La Chapelle, 68650 Le Bonhomme, France</p>
+              <p><strong>SIRET :</strong> 812 751 469 00014</p>
+              <p><strong>Code APE :</strong> 5610C</p>
               <p>
                 <strong>Email :</strong>{" "}
                 <a href="mailto:contact@poivresale.fr" className="text-copper-500 hover:text-copper-400 transition-colors">
                   contact@poivresale.fr
                 </a>
               </p>
-              <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
+              <p><strong>Téléphone :</strong> 07 85 62 10 89</p>
             </div>
           </section>
 

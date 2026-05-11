@@ -1,3 +1,15 @@
+import { Image as ImageIcon } from 'lucide-react'
+
+function InstagramIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
+
 const GALLERY_ITEMS = [
   { label: "Four à bois · Mariage", caption: "Mariage à Obernai" },
   { label: "Garnitures · Service", caption: "Garnitures artisanales" },
@@ -26,11 +38,7 @@ export default function Galerie() {
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-            </svg>
+            <InstagramIcon />
             Voir sur Instagram
           </a>
         </div>
@@ -41,22 +49,7 @@ export default function Galerie() {
               key={i}
               className="aspect-square bg-cream-200 rounded-2xl flex flex-col items-center justify-center border border-stone-200 overflow-hidden group hover:shadow-md transition-all duration-200"
             >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#A89A82"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mb-3 opacity-40"
-                aria-hidden="true"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
+              <ImageIcon size={32} strokeWidth={1.5} className="mb-3 opacity-40 text-stone-400" aria-hidden="true" />
               <p
                 className="font-sans text-xs text-stone-400 text-center px-4"
                 dangerouslySetInnerHTML={{ __html: item.caption }}
@@ -72,11 +65,7 @@ export default function Galerie() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-            </svg>
+            <InstagramIcon />
             Voir sur Instagram
           </a>
         </div>

@@ -2,12 +2,11 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { MapPin } from 'lucide-react'
 
 const villes = [
   'Strasbourg', 'Colmar', 'Mulhouse', 'Sélestat',
-  'Obernai', 'Haguenau', 'Saverne', 'Wissembourg',
-  'Ribeauvillé', 'Guebwiller',
+  'Obernai', 'Haguenau', 'Saverne', 'Ribeauvillé',
+  'Guebwiller', 'Wissembourg', 'Barr', 'Munster',
 ]
 
 export default function Zone() {
@@ -22,30 +21,42 @@ export default function Zone() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          <div>
+          {/* Carte interactive OpenStreetMap */}
+          <div className="order-2 lg:order-1 rounded-2xl overflow-hidden border border-stone-200/15 aspect-[4/3]">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=6.85%2C47.35%2C8.05%2C49.05&layer=mapnik&marker=48.1743%2C7.1278"
+              className="w-full h-full"
+              title="Zone d'intervention Maison Ruggieri en Alsace"
+              loading="lazy"
+              aria-label="Carte interactive de la zone d'intervention de Maison Ruggieri en Alsace"
+            />
+          </div>
+
+          {/* Texte + villes */}
+          <div className="order-1 lg:order-2">
             <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4">
               Où nous intervenons
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-cream-50 mb-6">
               Alsace et alentours
             </h2>
-            <p className="font-sans text-base leading-relaxed text-cream-200">
-              Marc intervient principalement en Alsace (Bas-Rhin et Haut-Rhin) et dans le Grand Est. Des déplacements plus lointains sont possibles selon disponibilités.
+            <p className="font-sans text-base leading-relaxed text-cream-200 mb-8">
+              Marc se déplace principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans un rayon de 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est sont possibles — contactez-nous.
             </p>
-          </div>
-          <div>
-            <div className="grid grid-cols-2 gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-6">
               {villes.map((ville) => (
-                <div key={ville} className="flex items-center gap-2">
-                  <MapPin size={14} className="text-copper-400 shrink-0" aria-hidden="true" />
-                  <span className="font-sans text-sm text-cream-100">{ville}</span>
-                </div>
+                <span
+                  key={ville}
+                  className="font-sans text-sm text-cream-100 bg-white/5 border border-stone-200/15 rounded-full px-3 py-1"
+                >
+                  {ville}
+                </span>
               ))}
             </div>
-            <p className="font-sans text-sm text-stone-400 italic">
-              Hors zone ? Contactez-nous, nous étudions chaque demande.
+            <p className="font-sans text-sm text-stone-400">
+              Votre ville ne figure pas dans la liste ? Écrivez-nous — nous étudions chaque demande.
             </p>
           </div>
         </motion.div>

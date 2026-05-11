@@ -95,10 +95,10 @@ export default function Footer() {
                 07 85 62 10 89
               </a>
               <a
-                href="mailto:contact@maison-ruggieri.fr"
+                href="mailto:contact@poivresale.fr"
                 className="block hover:text-copper-400 transition-colors"
               >
-                contact@maison-ruggieri.fr
+                contact@poivresale.fr
               </a>
               <a
                 href="https://wa.me/33785621089"

@@ -1,27 +1,35 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Brand palette ── */
-  --color-cream-50: #FDFBF5;
+  /* ── Palette ── */
+  --color-cream-50:  #FDFBF5;
   --color-cream-100: #FAF6EE;
   --color-cream-200: #F5EDD8;
   --color-cream-300: #EDE0BF;
 
+  --color-copper-300: #E89A6A;
   --color-copper-400: #D87642;
   --color-copper-500: #C75A2A;
   --color-copper-600: #A8451B;
   --color-copper-700: #8A3614;
 
-  --color-bark-700: #5C3A1F;
-  --color-bark-800: #3D2715;
-  --color-bark-900: #2B1810;
+  --color-bark-600:  #7A4D2A;
+  --color-bark-700:  #5C3A1F;
+  --color-bark-800:  #3D2715;
+  --color-bark-900:  #2B1810;
 
+  --color-stone-100: #F2EBE0;
   --color-stone-200: #E8DFD0;
+  --color-stone-300: #D4C7B0;
   --color-stone-400: #A89A82;
+  --color-stone-500: #7C6E58;
 
-  /* ── Fonts ── */
-  --font-display: var(--font-fraunces), serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  /* ── Typography ── */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
+
+  /* ── Transitions ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root {
@@ -37,4 +45,38 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus visible global */
+:focus-visible {
+  outline: 2px solid #C75A2A;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Sélection de texte */
+::selection {
+  background: #F5EDD8;
+  color: #2B1810;
+}
+
+/* Équilibre des titres */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Utilitaire : trait séparateur cuivré */
+.copper-rule {
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background: #C75A2A;
+  border-radius: 9999px;
 }

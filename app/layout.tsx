@@ -10,33 +10,97 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
   weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
+  display: 'swap',
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Tarte Flambée Maison — Traiteur alsacien, service à domicile',
-  description: "Marc Ruggieri, artisan traiteur alsacien depuis 2012. Flammekueche authentique au four à bois pour vos mariages, anniversaires et événements d'entreprise en Alsace et Grand Est.",
-  keywords: 'tarte flambée, flammekueche, traiteur alsacien, mariage alsace, four à bois, événement entreprise',
+  title: {
+    default: 'Maison Ruggieri — Tarte flambée à domicile en Alsace',
+    template: '%s · Maison Ruggieri',
+  },
+  description:
+    "Marc Ruggieri se déplace en Alsace avec son four à bois pour vos mariages, anniversaires et soirées d'entreprise. Tarte flambée traditionnelle, ingrédients frais, dès 12 €/pers.",
+  keywords: [
+    'tarte flambée Alsace',
+    'traiteur tarte flambée',
+    'four à bois mobile',
+    'mariage Alsace',
+    'soirée entreprise Colmar',
+    'flammekueche à domicile',
+    'Le Bonhomme',
+    'Alsace traiteur événementiel',
+  ],
+  authors: [{ name: 'Marc Ruggieri' }],
+  metadataBase: new URL('https://maison-ruggieri.fr'),
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Tarte Flambée Maison — Traiteur alsacien',
-    description: 'Flammekueche authentique au four à bois pour vos événements en Alsace.',
     type: 'website',
+    locale: 'fr_FR',
+    url: 'https://maison-ruggieri.fr',
+    siteName: 'Maison Ruggieri',
+    title: 'Maison Ruggieri — Tarte flambée à domicile en Alsace',
+    description:
+      "Marc Ruggieri se déplace en Alsace avec son four à bois pour vos mariages, anniversaires et soirées d'entreprise.",
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Maison Ruggieri — Tarte flambée au four à bois en Alsace',
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FoodEstablishment',
+  name: 'Maison Ruggieri',
+  description:
+    "Traiteur spécialisé en tarte flambée (flammekueche) au four à bois, service à domicile en Alsace.",
+  url: 'https://maison-ruggieri.fr',
+  telephone: '+33785621089',
+  email: 'contact@poivresale.fr',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Le Bonhomme',
+    addressRegion: 'Alsace',
+    addressCountry: 'FR',
+  },
+  servesCuisine: ['Alsacienne', 'Tarte flambée', 'Flammekueche'],
+  priceRange: '€€',
+  openingHours: 'Mo-Su 08:00-22:00',
+  areaServed: {
+    '@type': 'State',
+    name: 'Alsace',
+  },
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-cream-50 text-bark-900 font-sans">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-copper-500 focus:text-cream-50 focus:rounded-full">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-copper-500 focus:text-cream-50 focus:rounded-full focus:font-sans focus:text-sm"
+        >
           Aller au contenu principal
         </a>
         <Header />

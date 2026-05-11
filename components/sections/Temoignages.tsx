@@ -4,6 +4,10 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Star } from 'lucide-react'
 
+// URL Google Business à renseigner par Marc Ruggieri une fois la fiche créée
+// ex: 'https://g.page/r/CaXXXXXXXXXXXXX/review'
+const GOOGLE_REVIEW_URL: string | null = null
+
 const temoignages = [
   {
     citation: "Une soirée d'entreprise mémorable. Le four à bois installé dans notre cour a créé une atmosphère qu'on n'avait jamais vue dans nos événements. Les équipes se sont mélangées, ri ensemble, demandé des recettes. Marc a tout géré avec discrétion et générosité.",
@@ -19,6 +23,16 @@ const temoignages = [
     citation: "Pour les 60 ans de mon père, on cherchait une idée originale. La tarte flambée au four à bois dans le jardin, c'était exactement ça — convivial, généreux, et tellement bon. Les petits-enfants en parlent encore.",
     nom: "Laurence B.",
     contexte: "Anniversaire en famille, Obernai",
+  },
+  {
+    citation: "Le four à bois au milieu du jardin, la fumée qui monte, l'odeur de la pâte qui cuit — c'est un spectacle en soi. Nos invités ont autant regardé Marc travailler que mangé. Et ils ont mangé beaucoup.",
+    nom: "Matthieu R.",
+    contexte: "Pot de départ, Strasbourg",
+  },
+  {
+    citation: "Réservé pour un anniversaire surprise en plein hiver. Marc s'est adapté à notre grange avec un naturel qui m'a bluffée. Service impeccable, chaleureux au sens propre. Je recommande sans hésiter.",
+    nom: "Claire V.",
+    contexte: "Anniversaire, Ribeauvillé",
   },
 ]
 
@@ -47,17 +61,22 @@ export default function Temoignages() {
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-5">
             Ce qu&apos;ils en pensent
           </h2>
-          <a
-            href="https://g.page/r/maison-ruggieri"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-sans text-sm text-bark-700 hover:text-copper-500 transition-colors"
-          >
-            <GoogleLogo />
-            <span>
-              <strong className="text-bark-900">4,9/5</strong> sur 87 avis Google
+          {GOOGLE_REVIEW_URL ? (
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-sans text-sm text-bark-700 hover:text-copper-500 transition-colors"
+            >
+              <GoogleLogo />
+              <span>Laisser un avis Google</span>
+            </a>
+          ) : (
+            <span className="inline-flex items-center gap-2 font-sans text-sm text-bark-700">
+              <GoogleLogo />
+              <span>Avis Google à venir</span>
             </span>
-          </a>
+          )}
         </div>
 
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

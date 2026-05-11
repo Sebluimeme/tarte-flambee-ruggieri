@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace",
@@ -90,11 +91,7 @@ const OPTIONS = [
 ];
 
 function CheckIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`flex-shrink-0 mt-0.5 ${className}`} aria-hidden="true">
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
+  return <Check size={16} strokeWidth={1.5} className={`flex-shrink-0 mt-0.5 ${className}`} aria-hidden="true" />;
 }
 
 export default function FormulesPage() {

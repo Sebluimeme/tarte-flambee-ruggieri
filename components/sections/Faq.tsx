@@ -33,6 +33,18 @@ const faqs = [
     q: 'Intervenez-vous pour les mariages en Alsace ?',
     a: "Oui, c'est même l'une de nos prestations les plus demandées. Nous adaptons le format (buffet cocktail, fin de soirée, déjeuner champêtre) selon vos souhaits et la configuration de votre lieu de réception.",
   },
+  {
+    q: 'Quels moyens de paiement acceptez-vous ?',
+    a: "Virement bancaire, chèque ou espèces. Un acompte de 30 % est demandé à la confirmation de commande pour bloquer la date. Le solde est réglé le jour de la prestation, avant ou après le service.",
+  },
+  {
+    q: 'Que se passe-t-il en cas de mauvais temps ?',
+    a: "En extérieur, une simple structure de type barnum suffit à protéger le four et les convives — nous vous conseillons sur les dimensions à prévoir. En intérieur ou sous abri couvert, aucun problème particulier tant que la hauteur sous plafond dépasse 3 m et que l'espace est bien ventilé.",
+  },
+  {
+    q: 'Puis-je annuler ou modifier ma réservation ?',
+    a: "Oui. Annulation à plus de 15 jours : acompte remboursé intégralement. Entre 7 et 15 jours : 50 % du montant retenu. Moins de 7 jours : 100 % retenu. Pour une modification (date, nombre de convives, lieu), signalez-le par écrit le plus tôt possible — nous ferons tout pour l'accommoder sous réserve de disponibilité. Conditions complètes dans nos CGV.",
+  },
 ]
 
 function FaqItem({ q, a }: { q: string; a: string }) {
