@@ -337,7 +337,7 @@ export default function HomePage() {
               Comment ça marche ?
             </h2>
             <p className="text-lg" style={{ color: "#FBF5E6CC" }}>
-              Simple et sans stress — Marc s&apos;occupe de tout
+              Une prestation clé en main — Marc gère l&apos;intégralité de l&apos;organisation
             </p>
           </div>
 
@@ -358,8 +358,8 @@ export default function HomePage() {
               {
                 num: "03",
                 icon: "🔥",
-                title: "On débarque chez vous",
-                desc: "Marc arrive avec son four à bois, tous les ingrédients frais et l'ambiance alsacienne. Vous n'avez qu'à profiter.",
+                title: "Intervention sur votre site",
+                desc: "Marc prend en charge l'installation complète : four à bois, ingrédients frais, mise en place. Il ne vous reste qu'à accueillir vos convives.",
               },
             ].map((step) => (
               <div key={step.num} className="text-center">
@@ -393,7 +393,7 @@ export default function HomePage() {
               href="/reservation"
               className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl"
             >
-              Commencer ma demande →
+              Demander un devis →
             </Link>
           </div>
         </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
                 href={`/reservation?couverts=${covers}&boissons=${boissons}`}
                 className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all shadow-lg"
               >
-                Recevoir mon devis gratuit →
+                Obtenir un devis gratuit →
               </Link>
               <p className="text-xs mt-3" style={{ color: "#8B2500" }}>
                 Gratuit · Sans engagement · Réponse sous 24h
@@ -500,7 +500,7 @@ export default function HomePage() {
                 className="text-4xl font-bold mb-6"
                 style={{ fontFamily: "var(--font-playfair), serif", color: "#3D2010" }}
               >
-                On vient jusqu&apos;à vous
+                Déplacement sur votre lieu d&apos;événement
               </h2>
               <p className="text-lg mb-6 leading-relaxed" style={{ color: "#3D2010" }}>
                 Marc Ruggieri se déplace en{" "}
@@ -544,7 +544,7 @@ export default function HomePage() {
               </div>
 
               <p className="mt-6 text-sm" style={{ color: "#8B2500" }}>
-                Votre ville n&apos;est pas dans la liste ? Contactez Marc — il étudiera votre demande avec plaisir.
+                Votre ville n&apos;est pas dans la liste ? Contactez-nous — nous étudierons votre demande avec attention.
               </p>
             </div>
 
@@ -943,7 +943,7 @@ function FaqSection() {
             href="tel:0785621089"
             className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
           >
-            📞 Appeler Marc directement
+            📞 Appeler maintenant
           </a>
         </div>
       </div>
@@ -1091,7 +1091,7 @@ function ContactForm() {
       </div>
       <textarea
         name="message"
-        placeholder="Informations complémentaires (lieu, souhaits particuliers...)"
+        placeholder="Informations complémentaires (lieu, besoins spécifiques...)"
         rows={3}
         value={formData.message}
         onChange={handleChange}
