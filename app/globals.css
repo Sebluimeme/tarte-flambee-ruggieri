@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-flame: #D4621A;
-  --color-cream: #FBF5E6;
-  --color-wood: #3D2010;
-  --color-ember: #8B2500;
-  --color-off-white: #FFFDF7;
+  /* Design system — Maison Ruggieri */
+  --color-cream: #FAF7F2;
+  --color-sand: #E8DCC8;
+  --color-warm: #C4A882;
+  --color-terracotta: #D4622A;
+  --color-ember: #B84E1E;
+  --color-brown: #2B1810;
+
+  /* Keep legacy names for compatibility */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
 
 :root {
-  --background: #FFFDF7;
-  --foreground: #3D2010;
+  --background: #FAF7F2;
+  --foreground: #2B1810;
 }
 
 body {
