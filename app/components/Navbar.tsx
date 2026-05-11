@@ -24,10 +24,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="sticky top-0 z-50 transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          backgroundColor: scrolled ? "rgba(250,247,242,0.95)" : "rgba(250,247,242,0.97)",
-          backdropFilter: "blur(8px)",
+          backgroundColor: scrolled ? "rgba(250,247,242,0.95)" : "transparent",
+          backdropFilter: scrolled ? "blur(8px)" : "none",
           borderBottom: scrolled ? "1px solid #E8DCC8" : "1px solid transparent",
           boxShadow: scrolled ? "0 1px 12px rgba(43,24,16,0.06)" : "none",
         }}
@@ -43,16 +43,16 @@ export default function Navbar() {
               className="text-xs tracking-[0.2em] uppercase transition-colors"
               style={{
                 fontFamily: "var(--font-fraunces), serif",
-                color: "#C4A882",
+                color: scrolled ? "#C4A882" : "rgba(250,247,242,0.7)",
               }}
             >
               Maison
             </span>
             <span
-              className="text-2xl font-bold transition-colors group-hover:text-[#D4622A]"
+              className="text-2xl font-bold transition-colors"
               style={{
                 fontFamily: "var(--font-fraunces), serif",
-                color: "#2B1810",
+                color: scrolled ? "#2B1810" : "#ffffff",
               }}
             >
               Ruggieri
@@ -66,7 +66,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 className="text-sm font-medium transition-colors hover:text-[#D4622A]"
-                style={{ color: "#2B1810" }}
+                style={{ color: scrolled ? "#2B1810" : "rgba(255,255,255,0.85)" }}
               >
                 {l.label}
               </Link>
@@ -88,9 +88,9 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="md:hidden p-2 rounded-lg transition-colors hover:bg-[#E8DCC8]"
+            className="md:hidden p-2 rounded-lg transition-colors"
             aria-label="Ouvrir le menu"
-            style={{ color: "#2B1810" }}
+            style={{ color: scrolled ? "#2B1810" : "#ffffff" }}
           >
             <Menu strokeWidth={1.5} size={24} />
           </button>
