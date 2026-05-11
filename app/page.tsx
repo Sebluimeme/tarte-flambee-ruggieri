@@ -88,9 +88,18 @@ export default function HomePage() {
             </a>
           </div>
 
-          <p className="mt-8 text-white/60 text-sm">
-            À partir de <strong className="text-[#FBF5E6]">18€/personne</strong> • Minimum 20 couverts
-          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+            <p className="text-white/60">
+              À partir de <strong className="text-[#FBF5E6]">18€/personne</strong> • Minimum 20 couverts
+            </p>
+            <span className="hidden sm:block text-white/30">•</span>
+            <div className="flex items-center gap-1.5 bg-white/10 rounded-full px-4 py-1.5 border border-white/20">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i} className="text-[#D4621A] text-xs">★</span>
+              ))}
+              <span className="text-white/80 text-xs ml-1">4,9/5 · 87 avis</span>
+            </div>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -98,6 +107,32 @@ export default function HomePage() {
           <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
+        </div>
+      </section>
+
+      {/* ===== CHIFFRES CLÉS ===== */}
+      <section className="py-12 px-4" style={{ backgroundColor: "#3D2010" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { value: "200+", label: "Événements réalisés" },
+              { value: "87", label: "Avis 5 étoiles" },
+              { value: "100 km", label: "Rayon d'intervention" },
+              { value: "100%", label: "Ingrédients frais" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p
+                  className="text-4xl font-bold text-[#D4621A] mb-1"
+                  style={{ fontFamily: "var(--font-playfair), serif" }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-sm" style={{ color: "#FBF5E6B0" }}>
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -178,6 +213,116 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== TARIFS ===== */}
+      <section className="py-20 px-4" style={{ backgroundColor: "#3D2010" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <h2
+              className="text-4xl font-bold text-white mb-4"
+              style={{ fontFamily: "var(--font-playfair), serif" }}
+            >
+              Formules & Tarifs
+            </h2>
+            <p style={{ color: "#FBF5E6CC" }} className="text-lg">
+              Tarification transparente — devis personnalisé sous 24h
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Classique",
+                price: "18€",
+                unit: "/ pers.",
+                desc: "Tartes flambées à volonté cuites au four à bois traditionnel. Recettes alsaciennes authentiques.",
+                features: ["Minimum 20 couverts", "Four à bois inclus", "Ingrédients frais", "Déplacement inclus*"],
+                highlight: false,
+              },
+              {
+                name: "Prestige",
+                price: "22€",
+                unit: "/ pers.",
+                desc: "Formule classique + boissons soft et bière. Idéale pour les soirées entreprise et mariages.",
+                features: ["Minimum 30 couverts", "Boissons soft & bière", "Installation complète", "Service à table"],
+                highlight: true,
+              },
+              {
+                name: "Illimitée",
+                price: "28€",
+                unit: "/ pers.",
+                desc: "Tout illimité — tartes, boissons, service. La formule clé en main pour les grandes occasions.",
+                features: ["Minimum 40 couverts", "Boissons à volonté", "Service haut de gamme", "Animation four à bois"],
+                highlight: false,
+              },
+            ].map((plan) => (
+              <div
+                key={plan.name}
+                className="rounded-2xl overflow-hidden shadow-xl"
+                style={{
+                  backgroundColor: plan.highlight ? "#D4621A" : "#FFFDF720",
+                  border: plan.highlight ? "none" : "1px solid #D4621A40",
+                }}
+              >
+                {plan.highlight && (
+                  <div className="text-center py-2 text-xs font-bold text-white/80 tracking-widest uppercase"
+                    style={{ backgroundColor: "#8B2500" }}>
+                    Plus populaire
+                  </div>
+                )}
+                <div className="p-8">
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      color: plan.highlight ? "white" : "#FBF5E6",
+                    }}
+                  >
+                    {plan.name}
+                  </h3>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span
+                      className="text-4xl font-bold"
+                      style={{
+                        fontFamily: "var(--font-playfair), serif",
+                        color: plan.highlight ? "white" : "#D4621A",
+                      }}
+                    >
+                      {plan.price}
+                    </span>
+                    <span style={{ color: plan.highlight ? "rgba(255,255,255,0.7)" : "#FBF5E6B0" }} className="text-sm">
+                      {plan.unit}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-6" style={{ color: plan.highlight ? "rgba(255,255,255,0.85)" : "#FBF5E6B0" }}>
+                    {plan.desc}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm" style={{ color: plan.highlight ? "white" : "#FBF5E6" }}>
+                        <span className="text-xs">✓</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/reservation"
+                    className="block text-center font-semibold py-3 rounded-xl transition-all text-sm"
+                    style={{
+                      backgroundColor: plan.highlight ? "white" : "#D4621A",
+                      color: plan.highlight ? "#8B2500" : "white",
+                    }}
+                  >
+                    Demander un devis
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs mt-4" style={{ color: "#FBF5E6B0" }}>
+            * Déplacement inclus dans un rayon de 80 km autour de Le Bonhomme. Au-delà, forfait kilométrique.
+          </p>
         </div>
       </section>
 
@@ -370,7 +515,13 @@ export default function HomePage() {
                   { city: "Mulhouse", ok: true },
                   { city: "Sélestat", ok: true },
                   { city: "Saint-Dié", ok: true },
+                  { city: "Obernai", ok: true },
+                  { city: "Saverne", ok: true },
+                  { city: "Ribeauvillé", ok: true },
+                  { city: "Guebwiller", ok: true },
+                  { city: "Thann", ok: true },
                   { city: "Épinal", ok: false, note: "sur demande" },
+                  { city: "Nancy", ok: false, note: "sur demande" },
                 ].map((loc) => (
                   <div
                     key={loc.city}
@@ -571,6 +722,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== FAQ ===== */}
+      <FaqSection />
+
       {/* ===== CTA FINAL + FORMULAIRE ===== */}
       <section
         id="contact"
@@ -677,6 +831,123 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+// ===== FAQ =====
+const FAQ_ITEMS = [
+  {
+    q: "Quelle est la zone d'intervention de Marc Ruggieri ?",
+    a: "Marc intervient dans un rayon de 100 km autour de Le Bonhomme (68650, Alsace). Cela couvre l'ensemble du Haut-Rhin, le Bas-Rhin, les Vosges, et des villes comme Colmar, Strasbourg, Mulhouse, Sélestat, Obernai, Ribeauvillé, Saverne ou Guebwiller. Au-delà de 80 km, un forfait kilométrique s'applique.",
+  },
+  {
+    q: "Quel est le nombre minimum de convives requis ?",
+    a: "La prestation est possible dès 20 couverts. Il n'y a pas de maximum — Marc a réalisé des événements pour plus de 200 personnes avec plusieurs rotations au four.",
+  },
+  {
+    q: "Combien de temps dure une prestation tarte flambée ?",
+    a: "En général, le service tarte flambée dure entre 1h30 et 3h selon le nombre de convives et la formule choisie. Marc prévoit le montage du four à bois environ 1h avant le début du service.",
+  },
+  {
+    q: "Que comprend la prestation ?",
+    a: "Marc arrive avec son four à bois traditionnel, tous les ingrédients frais (pâte, crème, lardons, oignons, fromage blanc...) et le matériel complet. Vous n'avez rien à prévoir. En formule Prestige ou Illimitée, boissons et service à table sont inclus.",
+  },
+  {
+    q: "Proposez-vous des formules avec boissons ?",
+    a: "Oui — trois formules : Classique (tartes uniquement, dès 18€/pers.), Prestige (avec soft & bière, dès 22€/pers.), et Illimitée (boissons à volonté + service haut de gamme, dès 28€/pers.).",
+  },
+  {
+    q: "Quel est le délai pour réserver ?",
+    a: "Marc vous répond sous 24h après votre demande de devis. Pour les grandes occasions (mariage, soirée d'entreprise), nous recommandons de réserver 2 à 3 mois à l'avance pour garantir la disponibilité.",
+  },
+  {
+    q: "Intervenez-vous pour les mariages en Alsace ?",
+    a: "Oui, le mariage est l'une des prestations phares de Marc. La tarte flambée au four à bois crée une ambiance unique et conviviale très appréciée des invités. Marc s'adapte à votre lieu de réception partout en Alsace.",
+  },
+  {
+    q: "Est-il possible de personnaliser les recettes ?",
+    a: "Absolument. Marc propose les recettes traditionnelles alsaciennes, mais peut adapter les garnitures selon vos préférences (versions végétariennes, sans lactose...). Mentionnez vos souhaits dans le formulaire de demande.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
+function FaqSection() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 px-4" style={{ backgroundColor: "#FBF5E6" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2
+            className="text-4xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-playfair), serif", color: "#3D2010" }}
+          >
+            Questions fréquentes
+          </h2>
+          <p style={{ color: "#8B2500" }}>
+            Tout ce que vous devez savoir avant de réserver
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {FAQ_ITEMS.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-xl overflow-hidden border"
+              style={{ borderColor: "#D4621A20", backgroundColor: "#FFFDF7" }}
+            >
+              <button
+                type="button"
+                onClick={() => setOpen(open === idx ? null : idx)}
+                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold hover:bg-[#D4621A08] transition-colors"
+                style={{ color: "#3D2010" }}
+              >
+                <span>{item.q}</span>
+                <span
+                  className="flex-shrink-0 text-xl transition-transform duration-200"
+                  style={{
+                    color: "#D4621A",
+                    transform: open === idx ? "rotate(45deg)" : "none",
+                  }}
+                >
+                  +
+                </span>
+              </button>
+              {open === idx && (
+                <div className="px-6 pb-5 text-base leading-relaxed" style={{ color: "#3D2010" }}>
+                  {item.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="text-sm mb-4" style={{ color: "#8B2500" }}>
+            Une question non listée ?
+          </p>
+          <a
+            href="tel:0785621089"
+            className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#8B2500] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+          >
+            📞 Appeler Marc directement
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 

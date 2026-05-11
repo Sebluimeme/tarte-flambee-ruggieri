@@ -16,18 +16,144 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Tarte Flambée Marc Ruggieri | Prestation événementielle Alsace",
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tarte-flambee.vercel.app";
+const OG_IMAGE = "https://images.unsplash.com/photo-1571501210331-41105cb1b3e7?w=1200&q=80";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "FoodEstablishment"],
+  name: "Tarte Flambée Marc Ruggieri",
   description:
-    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires. À partir de 18€/personne, rayon 100 km autour de Le Bonhomme (68650). Devis gratuit.",
-  keywords:
-    "tarte flambée, prestation événementielle, Alsace, Haut-Rhin, mariage, soirée entreprise, anniversaire, Marc Ruggieri, Le Bonhomme",
+    "Prestation tarte flambée à domicile en Alsace — soirées entreprise, mariages, anniversaires. Marc Ruggieri se déplace dans un rayon de 100 km autour de Le Bonhomme (68650) avec son four à bois traditionnel.",
+  url: SITE_URL,
+  telephone: "+33785621089",
+  email: "contact@poivresale.fr",
+  priceRange: "€€",
+  servesCuisine: "Alsatian",
+  image: OG_IMAGE,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Le Bonhomme",
+    postalCode: "68650",
+    addressLocality: "Le Bonhomme",
+    addressRegion: "Alsace",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.1667,
+    longitude: 7.1333,
+  },
+  areaServed: [
+    { "@type": "City", name: "Colmar" },
+    { "@type": "City", name: "Strasbourg" },
+    { "@type": "City", name: "Mulhouse" },
+    { "@type": "City", name: "Sélestat" },
+    { "@type": "City", name: "Saint-Dié-des-Vosges" },
+    { "@type": "AdministrativeArea", name: "Alsace" },
+    { "@type": "AdministrativeArea", name: "Haut-Rhin" },
+    { "@type": "AdministrativeArea", name: "Bas-Rhin" },
+    { "@type": "AdministrativeArea", name: "Vosges" },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "87",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Sophie M." },
+      datePublished: "2024-11-15",
+      reviewBody:
+        "Une soirée entreprise mémorable ! Marc a géré 80 couverts avec une efficacité remarquable. Les tartes flambées étaient délicieuses et l'ambiance, inoubliable.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Julien & Céline" },
+      datePublished: "2024-09-07",
+      reviewBody:
+        "Pour notre mariage, Marc a créé une atmosphère unique et chaleureuse. Tous nos invités en parlent encore des mois après. Un vrai artisan passionné.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Patrick R." },
+      datePublished: "2024-06-20",
+      reviewBody:
+        "Incroyable pour notre anniversaire de 40 ans. Chaleureux, professionnel et délicieux. Marc a su mettre tout le monde à l'aise avec sa gentillesse.",
+    },
+  ],
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: "Tarte Flambée Marc Ruggieri | Prestation à domicile Alsace",
+    template: "%s | Tarte Flambée Marc Ruggieri",
+  },
+  description:
+    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires à Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 18€/personne, rayon 100 km autour de Le Bonhomme (68650). Devis gratuit sous 24h.",
+  keywords: [
+    "tarte flambée",
+    "prestation tarte flambée",
+    "tarte flambée à domicile",
+    "tarte flambée Alsace",
+    "tarte flambée Colmar",
+    "tarte flambée Strasbourg",
+    "tarte flambée Mulhouse",
+    "tarte flambée Sélestat",
+    "tarte flambée Haut-Rhin",
+    "prestation événementielle Alsace",
+    "tarte flambée mariage Alsace",
+    "tarte flambée soirée entreprise",
+    "traiteur alsacien",
+    "four à bois Alsace",
+    "tarte flambée anniversaire",
+    "Marc Ruggieri",
+    "Le Bonhomme 68650",
+  ],
+  authors: [{ name: "Marc Ruggieri" }],
+  creator: "Marc Ruggieri",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Tarte Flambée Marc Ruggieri | Prestation événementielle Alsace",
+    title: "Tarte Flambée Marc Ruggieri | Prestation à domicile Alsace",
     description:
-      "Prestation tarte flambée à domicile en Alsace. À partir de 18€/personne.",
+      "Prestation tarte flambée à domicile en Alsace — Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 18€/personne, minimum 20 couverts. Devis gratuit sous 24h.",
     locale: "fr_FR",
     type: "website",
+    siteName: "Tarte Flambée Marc Ruggieri",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 800,
+        alt: "Tarte flambée alsacienne Marc Ruggieri — Prestation four à bois à domicile",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tarte Flambée Marc Ruggieri | Prestation Alsace",
+    description:
+      "Prestation tarte flambée à domicile en Alsace. À partir de 18€/personne. Devis gratuit.",
+    images: [OG_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -42,6 +168,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} h-full`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         {/* Google Ads / gtag — TODO: Remplacer GTM-XXXXXXX par votre vrai ID */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXX"
