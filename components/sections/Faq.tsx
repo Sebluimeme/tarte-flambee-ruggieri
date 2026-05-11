@@ -6,32 +6,36 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: 'Quelle est votre zone géographique ?',
-    a: "Nous intervenons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68) et dans le Grand Est. Des déplacements au-delà sont possibles selon les disponibilités. N'hésitez pas à nous contacter pour vérifier.",
+    q: 'Dans quelle zone géographique intervenez-vous ?',
+    a: "Nous intervenons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68) et dans le Grand Est. Des déplacements plus lointains sont possibles selon les disponibilités — contactez-nous pour vérifier.",
   },
   {
-    q: 'Combien de personnes pouvez-vous servir ?',
-    a: 'Nous gérons des événements de 30 à 250 convives. Au-delà, contactez-nous pour étudier votre projet.',
+    q: "Quelle surface faut-il prévoir pour l'installation ?",
+    a: "Il faut prévoir un espace minimum de 4 m² pour le four à bois, idéalement en extérieur ou sous un abri bien ventilé. Un accès véhicule pour le déchargement est nécessaire. Nous validons ensemble les contraintes de votre lieu lors de la préparation du devis.",
   },
   {
-    q: 'Fournissez-vous la vaisselle ?',
-    a: "Oui, la vaisselle (assiettes, serviettes) est incluse dans toutes nos formules. Nous gérons aussi l'installation et le rangement.",
+    q: 'Les tartes flambées sont-elles préparées sur place ?',
+    a: "Oui. La pâte est préparée le matin même, les ingrédients sont frais. Tout est cuit en direct au four à bois pendant la prestation. Vos convives voient le four, sentent la fumée de bois, et reçoivent les tartes sorties du feu — c'est l'essence de la prestation.",
   },
   {
-    q: 'Quelle est votre disponibilité ?',
-    a: "Nos dates se réservent souvent plusieurs mois à l'avance, surtout en saison (printemps-été-automne). Nous vous conseillons de prendre contact dès que votre date est fixée.",
+    q: 'Que comprend exactement la prestation ?',
+    a: "Four à bois mobile, bois de chauffe, pâte fraîche préparée le matin, tous les ingrédients (crème, lardons, oignons, fromages selon formule), service et installation. Vous n'avez à fournir que l'eau et l'électricité (220V standard).",
   },
   {
-    q: 'Quelles sont les options végétariennes ?',
-    a: 'Absolument. Nous proposons systématiquement une version végétarienne (fromage blanc, champignons, oignons). D\'autres variantes sont disponibles selon les formules.',
+    q: 'Proposez-vous des formules avec boissons ?',
+    a: "Oui, dès la formule Prestige : softs et bière locale à volonté. La formule Illimitée ajoute le Riesling d'Alsace à volonté.",
   },
   {
-    q: 'Comment se passe le paiement ?',
-    a: "Un acompte de 30% est demandé à la réservation. Le solde est réglé le jour de l'événement ou sur facture pour les entreprises.",
+    q: 'Quel est le délai pour réserver ?',
+    a: "Idéalement 2 à 3 mois à l'avance pour les samedis de mai à septembre (haute saison). Pour les autres dates, 3 à 4 semaines suffisent généralement. Contactez-nous pour vérifier la disponibilité.",
+  },
+  {
+    q: 'Intervenez-vous pour les mariages en Alsace ?',
+    a: "Oui, c'est même l'une de nos prestations les plus demandées. Nous adaptons le format (buffet cocktail, fin de soirée, déjeuner champêtre) selon vos souhaits et la configuration de votre lieu de réception.",
   },
 ]
 
-function FaqItem({ q, a }: { q: string; a: string; index: number }) {
+function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border-b border-stone-200">
@@ -87,7 +91,7 @@ export default function Faq() {
           className="max-w-3xl mx-auto"
         >
           {faqs.map((faq, i) => (
-            <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
+            <FaqItem key={i} q={faq.q} a={faq.a} />
           ))}
         </motion.div>
       </div>
