@@ -172,9 +172,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {/* Google Ads / gtag — TODO: Remplacer GTM-XXXXXXX par votre vrai ID */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-3ENEQ729D7"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -182,7 +181,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GTM-XXXXXXX');
+            gtag('config', 'G-3ENEQ729D7');
           `}
         </Script>
       </head>
