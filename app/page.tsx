@@ -820,13 +820,22 @@ export default function HomePage() {
             <p className="text-sm" style={{ color: "#FBF5E6B0" }}>
               © 2026 Marc Ruggieri — Tarte Flambée
             </p>
-            <a
-              href="#"
-              className="text-sm hover:text-[#D4621A] transition-colors"
-              style={{ color: "#FBF5E6B0" }}
-            >
-              Mentions légales
-            </a>
+            <div className="flex gap-4">
+              <Link
+                href="/mentions-legales"
+                className="text-sm hover:text-[#D4621A] transition-colors"
+                style={{ color: "#FBF5E6B0" }}
+              >
+                Mentions légales
+              </Link>
+              <Link
+                href="/confidentialite"
+                className="text-sm hover:text-[#D4621A] transition-colors"
+                style={{ color: "#FBF5E6B0" }}
+              >
+                Confidentialité
+              </Link>
+            </div>
           </div>
         </div>
       </footer>

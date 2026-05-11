@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     template: "%s | Tarte Flambée Marc Ruggieri",
   },
   description:
-    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires à Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 12€/personne, rayon 100 km autour de Le Bonhomme (68650). Devis gratuit sous 24h.",
+    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires à Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 12€/personne, départ de Le Bonhomme (68650). Devis gratuit sous 24h.",
   keywords: [
     "tarte flambée",
     "prestation tarte flambée",
