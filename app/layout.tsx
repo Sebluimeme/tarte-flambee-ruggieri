@@ -24,7 +24,7 @@ const localBusinessSchema = {
   "@type": ["LocalBusiness", "FoodEstablishment"],
   name: "Tarte Flambée Marc Ruggieri",
   description:
-    "Prestation tarte flambée à domicile en Alsace — soirées entreprise, mariages, anniversaires. Marc Ruggieri se déplace dans un rayon de 100 km autour de Le Bonhomme (68650) avec son four à bois traditionnel.",
+    "Prestation tarte flambée à domicile en Alsace — soirées entreprise, mariages, anniversaires. Marc Ruggieri se déplace autour de Le Bonhomme (68650) avec son four à bois traditionnel.",
   url: SITE_URL,
   telephone: "+33785621089",
   email: "contact@poivresale.fr",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     template: "%s | Tarte Flambée Marc Ruggieri",
   },
   description:
-    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires à Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 18€/personne, rayon 100 km autour de Le Bonhomme (68650). Devis gratuit sous 24h.",
+    "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace. Soirées entreprise, mariages, anniversaires à Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 12€/personne, rayon 100 km autour de Le Bonhomme (68650). Devis gratuit sous 24h.",
   keywords: [
     "tarte flambée",
     "prestation tarte flambée",
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tarte Flambée Marc Ruggieri | Prestation à domicile Alsace",
     description:
-      "Prestation tarte flambée à domicile en Alsace — Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 18€/personne, minimum 20 couverts. Devis gratuit sous 24h.",
+      "Prestation tarte flambée à domicile en Alsace — Colmar, Strasbourg, Mulhouse, Sélestat. À partir de 12€/personne, minimum 20 couverts. Devis gratuit sous 24h.",
     locale: "fr_FR",
     type: "website",
     siteName: "Tarte Flambée Marc Ruggieri",
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tarte Flambée Marc Ruggieri | Prestation Alsace",
     description:
-      "Prestation tarte flambée à domicile en Alsace. À partir de 18€/personne. Devis gratuit.",
+      "Prestation tarte flambée à domicile en Alsace. À partir de 12€/personne. Devis gratuit.",
     images: [OG_IMAGE],
   },
   robots: {
@@ -202,12 +202,12 @@ export default function RootLayout({
               <Link href="/#evenements" className="text-[#FBF5E6]/80 hover:text-[#D4621A] transition-colors text-sm font-medium">
                 Événements
               </Link>
-              <Link href="/reservation" className="text-[#FBF5E6]/80 hover:text-[#D4621A] transition-colors text-sm font-medium">
-                Réserver
-              </Link>
               <Link href="/#contact" className="text-[#FBF5E6]/80 hover:text-[#D4621A] transition-colors text-sm font-medium">
                 Contact
               </Link>
+              <a href="tel:0785621089" className="text-[#FBF5E6]/80 hover:text-[#D4621A] transition-colors text-sm font-medium">
+                📞 07 85 62 10 89
+              </a>
             </div>
             <Link
               href="/reservation"

@@ -54,11 +54,11 @@ export default function HomePage() {
         />
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white/80 text-sm mb-8">
-            <span>✓ Rayon 100 km</span>
-            <span className="text-white/40">•</span>
-            <span>✓ Devis gratuit</span>
+            <span>✓ Devis gratuit sous 24h</span>
             <span className="text-white/40">•</span>
             <span>✓ Alsace authentique</span>
+            <span className="text-white/40">•</span>
+            <span>✓ Four à bois traditionnel</span>
           </div>
 
           <h1
@@ -90,7 +90,7 @@ export default function HomePage() {
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
             <p className="text-white/60">
-              À partir de <strong className="text-[#FBF5E6]">18€/personne</strong> • Minimum 20 couverts
+              À partir de <strong className="text-[#FBF5E6]">12€/personne</strong> • Minimum 20 couverts
             </p>
             <span className="hidden sm:block text-white/30">•</span>
             <div className="flex items-center gap-1.5 bg-white/10 rounded-full px-4 py-1.5 border border-white/20">
@@ -117,7 +117,7 @@ export default function HomePage() {
             {[
               { value: "200+", label: "Événements réalisés" },
               { value: "87", label: "Avis 5 étoiles" },
-              { value: "100 km", label: "Rayon d'intervention" },
+              { value: "4,9/5", label: "Note moyenne" },
               { value: "100%", label: "Ingrédients frais" },
             ].map((stat) => (
               <div key={stat.label}>
@@ -235,7 +235,7 @@ export default function HomePage() {
             {[
               {
                 name: "Classique",
-                price: "18€",
+                price: "12€",
                 unit: "/ pers.",
                 desc: "Tartes flambées à volonté cuites au four à bois traditionnel. Recettes alsaciennes authentiques.",
                 features: ["Minimum 20 couverts", "Four à bois inclus", "Ingrédients frais", "Déplacement inclus*"],
@@ -243,7 +243,7 @@ export default function HomePage() {
               },
               {
                 name: "Prestige",
-                price: "22€",
+                price: "16€",
                 unit: "/ pers.",
                 desc: "Formule classique + boissons soft et bière. Idéale pour les soirées entreprise et mariages.",
                 features: ["Minimum 30 couverts", "Boissons soft & bière", "Installation complète", "Service à table"],
@@ -251,7 +251,7 @@ export default function HomePage() {
               },
               {
                 name: "Illimitée",
-                price: "28€",
+                price: "20€",
                 unit: "/ pers.",
                 desc: "Tout illimité — tartes, boissons, service. La formule clé en main pour les grandes occasions.",
                 features: ["Minimum 40 couverts", "Boissons à volonté", "Service haut de gamme", "Animation four à bois"],
@@ -321,7 +321,7 @@ export default function HomePage() {
             ))}
           </div>
           <p className="text-center text-xs mt-4" style={{ color: "#FBF5E6B0" }}>
-            * Déplacement inclus dans un rayon de 80 km autour de Le Bonhomme. Au-delà, forfait kilométrique.
+            * Déplacement inclus selon zone. Contactez-nous pour un devis personnalisé.
           </p>
         </div>
       </section>
@@ -503,9 +503,9 @@ export default function HomePage() {
                 On vient jusqu&apos;à vous
               </h2>
               <p className="text-lg mb-6 leading-relaxed" style={{ color: "#3D2010" }}>
-                Marc Ruggieri se déplace dans un rayon de{" "}
-                <strong className="text-[#D4621A]">100 km autour de Le Bonhomme (68650)</strong>{" "}
-                — Haut-Rhin, Bas-Rhin, Vosges, et au-delà sur demande.
+                Marc Ruggieri se déplace en{" "}
+                <strong className="text-[#D4621A]">Alsace et régions voisines</strong>{" "}
+                au départ de Le Bonhomme (68650) — Haut-Rhin, Bas-Rhin, Vosges. Contactez-nous pour votre zone.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
@@ -561,14 +561,14 @@ export default function HomePage() {
               </h3>
               <p className="text-white/70 mb-4">68650 Haut-Rhin, Alsace</p>
               <div className="rounded-xl p-4 mb-4" style={{ backgroundColor: "#FFFDF720" }}>
-                <p className="text-white font-semibold text-xl">⬤ 100 km</p>
-                <p className="text-white/70 text-sm">Rayon d&apos;intervention</p>
+                <p className="text-white font-semibold text-xl">📍 Alsace & alentours</p>
+                <p className="text-white/70 text-sm">Zone d&apos;intervention</p>
               </div>
               <a
                 href="tel:0785621089"
                 className="inline-flex items-center gap-2 bg-[#D4621A] hover:bg-[#c4571a] text-white font-semibold px-6 py-3 rounded-xl transition-colors"
               >
-                📞 Vérifier ma zone
+                📞 Nous contacter
               </a>
             </div>
           </div>
@@ -838,7 +838,7 @@ export default function HomePage() {
 const FAQ_ITEMS = [
   {
     q: "Quelle est la zone d'intervention de Marc Ruggieri ?",
-    a: "Marc intervient dans un rayon de 100 km autour de Le Bonhomme (68650, Alsace). Cela couvre l'ensemble du Haut-Rhin, le Bas-Rhin, les Vosges, et des villes comme Colmar, Strasbourg, Mulhouse, Sélestat, Obernai, Ribeauvillé, Saverne ou Guebwiller. Au-delà de 80 km, un forfait kilométrique s'applique.",
+    a: "Marc intervient en Alsace et régions voisines au départ de Le Bonhomme (68650). Cela couvre le Haut-Rhin, le Bas-Rhin, les Vosges, et des villes comme Colmar, Strasbourg, Mulhouse, Sélestat, Obernai, Ribeauvillé, Saverne ou Guebwiller. Contactez-nous pour confirmer votre localisation.",
   },
   {
     q: "Quel est le nombre minimum de convives requis ?",
@@ -854,7 +854,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Proposez-vous des formules avec boissons ?",
-    a: "Oui — trois formules : Classique (tartes uniquement, dès 18€/pers.), Prestige (avec soft & bière, dès 22€/pers.), et Illimitée (boissons à volonté + service haut de gamme, dès 28€/pers.).",
+    a: "Oui — trois formules : Classique (tartes uniquement, dès 12€/pers.), Prestige (avec soft & bière, dès 16€/pers.), et Illimitée (boissons à volonté + service haut de gamme, dès 20€/pers.).",
   },
   {
     q: "Quel est le délai pour réserver ?",
