@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CookieBanner from "../components/CookieBanner";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import CookieBanner from "../components/ui/CookieBanner";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -19,11 +19,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Marc Ruggieri — Tarte flambée artisanale en Alsace",
+    default: "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace",
     template: "%s | Marc Ruggieri",
   },
   description:
-    "Prestation tarte flambée à domicile pour mariages, anniversaires et événements en Alsace. Four à bois authentique. Devis gratuit sous 24h.",
+    "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Marc Ruggieri — Tarte flambée artisanale",
+  },
 };
 
 export default function RootLayout({
