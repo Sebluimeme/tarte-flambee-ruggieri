@@ -388,7 +388,7 @@ const STEPS = [
   {
     icon: Utensils,
     label: "Service & départ",
-    desc: "Tartes cuites à la demande pendant tout l&apos;événement. Marc range et repart sans laisser de trace.",
+    desc: "Tartes cuites à la demande pendant tout l'événement. Marc range et repart sans laisser de trace.",
   },
 ];
 
