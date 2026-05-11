@@ -17,7 +17,7 @@ function CheckIcon() {
 
 export default function ConfidentialitePage() {
   return (
-    <main className="bg-cream-50 min-h-screen py-20 px-6 md:px-8">
+    <main className="bg-cream-50 min-h-screen pt-24 py-20 px-6 md:px-8">
       <div className="max-w-3xl mx-auto">
         <Link
           href="/"

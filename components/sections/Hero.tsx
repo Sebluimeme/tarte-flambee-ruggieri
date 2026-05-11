@@ -1,111 +1,83 @@
-import Link from "next/link";
+'use client'
+
+import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center bg-cream-50 overflow-hidden">
-      {/* Grain noise overlay */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none"
-        aria-hidden="true"
-      >
-        <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noise)" />
-      </svg>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left — Content */}
-          <div>
-            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-6">
-              Prestation tarte flambée à domicile en Alsace
+    <section className="relative min-h-screen flex items-center bg-cream-50 pt-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 md:gap-16 items-center">
+          {/* Texte */}
+          <div className="order-2 md:order-1">
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+              Traiteur alsacien depuis 2012
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-6">
-              L&apos;authentique tarte flambée alsacienne, chez vous
+              La vraie tarte flambée,<br />
+              servie chez vous.
             </h1>
-            <p className="font-sans text-lg leading-relaxed text-bark-700 mb-10 max-w-lg">
-              Marc Ruggieri prépare et cuit vos tartes flambées sur place, devant vos invités, pour vos mariages, anniversaires et événements d&apos;entreprise.
+            <p className="font-sans text-lg leading-relaxed text-bark-700 mb-8 max-w-xl">
+              Mariage, anniversaire ou soirée d&apos;entreprise : Marc installe son four à bois en Alsace et ravit vos convives avec des flammekueches authentiques, faites sur place.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
               >
-                Demander un devis
+                Vérifier ma date de disponibilité
               </Link>
               <Link
                 href="/#formules"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
               >
-                Voir les formules
+                Découvrir les formules
               </Link>
-            </div>
-
-            {/* Badges réassurance */}
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-cream-200 border border-stone-200">
-                <span className="text-copper-500 text-sm">★★★★★</span>
-                <span className="font-sans text-sm text-bark-700">Plus de 200 événements</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-cream-200 border border-stone-200">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C75A2A" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-                <span className="font-sans text-sm text-bark-700">Livraison du matériel incluse</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-cream-200 border border-stone-200">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C75A2A" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-                <span className="font-sans text-sm text-bark-700">100% artisanal</span>
-              </div>
             </div>
           </div>
 
-          {/* Right — Flame illustration */}
-          <div className="hidden md:flex items-center justify-center">
-            <svg
-              width="380"
-              height="460"
-              viewBox="0 0 380 460"
-              fill="none"
-              className="animate-pulse"
-              style={{ animationDuration: "4s" }}
-              aria-hidden="true"
-            >
-              {/* Outer flame */}
-              <path
-                d="M190 20C190 20 80 120 80 230C80 310 128 380 190 380C252 380 320 310 320 230C320 120 190 20 190 20Z"
-                fill="#EDE0BF"
-                opacity="0.5"
-              />
-              {/* Mid flame */}
-              <path
-                d="M190 70C190 70 110 155 110 240C110 300 145 355 190 355C235 355 270 300 270 240C270 155 190 70 190 70Z"
-                fill="#D87642"
-                opacity="0.35"
-              />
-              {/* Inner flame */}
-              <path
-                d="M190 130C190 130 140 190 140 250C140 285 162 315 190 315C218 315 240 285 240 250C240 190 190 130 190 130Z"
-                fill="#C75A2A"
-                opacity="0.6"
-              />
-              {/* Core */}
-              <path
-                d="M190 195C190 195 168 220 168 248C168 263 178 275 190 275C202 275 212 263 212 248C212 220 190 195 190 195Z"
-                fill="#A8451B"
-                opacity="0.8"
-              />
-              {/* Highlight */}
-              <ellipse cx="180" cy="230" rx="8" ry="20" fill="#FAF6EE" opacity="0.4" />
-            </svg>
+          {/* Illustration flamme */}
+          <div className="order-1 md:order-2 relative flex items-center justify-center">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] w-full max-w-sm bg-cream-200 flex items-center justify-center">
+              {/* Flame SVG placeholder */}
+              <svg
+                width="200"
+                height="260"
+                viewBox="0 0 200 260"
+                fill="none"
+                className="opacity-60"
+                aria-hidden="true"
+              >
+                <path
+                  d="M100 10C100 10 40 70 40 130C40 170 65 205 100 205C135 205 160 170 160 130C160 70 100 10 100 10Z"
+                  fill="#EDE0BF"
+                />
+                <path
+                  d="M100 45C100 45 60 90 60 135C60 165 77 190 100 190C123 190 140 165 140 135C140 90 100 45 100 45Z"
+                  fill="#D87642"
+                  opacity="0.7"
+                />
+                <path
+                  d="M100 90C100 90 75 115 75 145C75 162 86 175 100 175C114 175 125 162 125 145C125 115 100 90 100 90Z"
+                  fill="#C75A2A"
+                  opacity="0.9"
+                />
+                <path
+                  d="M100 130C100 130 88 143 88 155C88 162 93 168 100 168C107 168 112 162 112 155C112 143 100 130 100 130Z"
+                  fill="#A8451B"
+                />
+                <ellipse cx="94" cy="145" rx="5" ry="12" fill="#FAF6EE" opacity="0.4" />
+              </svg>
+              {/* Grain overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cream-200/30" />
+            </div>
+            {/* Badge flottant */}
+            <div className="absolute -bottom-4 -left-4 bg-cream-50 rounded-xl shadow-sm px-4 py-3 border border-stone-200">
+              <p className="font-display text-3xl font-medium text-copper-500 leading-none">200+</p>
+              <p className="font-sans text-sm text-stone-400 mt-1">convives par soirée</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

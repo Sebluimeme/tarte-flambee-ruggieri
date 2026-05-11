@@ -1,64 +1,23 @@
-import type { Metadata } from "next";
-import Hero from "../components/sections/Hero";
-import Stats from "../components/sections/Stats";
-import Services from "../components/sections/Services";
-import Formules from "../components/sections/Formules";
-import Territoire from "../components/sections/Territoire";
-import Galerie from "../components/sections/Galerie";
-import Temoignages from "../components/sections/Temoignages";
-import Faq from "../components/sections/Faq";
-import Contact from "../components/sections/Contact";
-import CtaFinal from "../components/sections/CtaFinal";
+import Hero from '@/components/sections/Hero'
+import TrustBar from '@/components/sections/TrustBar'
+import SavoirFaire from '@/components/sections/SavoirFaire'
+import Formules from '@/components/sections/Formules'
+import Temoignages from '@/components/sections/Temoignages'
+import Zone from '@/components/sections/Zone'
+import Faq from '@/components/sections/Faq'
+import CtaFinal from '@/components/sections/CtaFinal'
 
-export const metadata: Metadata = {
-  title: "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace",
-  description:
-    "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Marc Ruggieri — Tarte flambée artisanale",
-  description:
-    "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace.",
-  url: "https://tarte-flambee-one.vercel.app",
-  telephone: "+33612345678",
-  email: "contact@poivresale.fr",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Le Bonhomme",
-    addressLocality: "Le Bonhomme",
-    postalCode: "68650",
-    addressCountry: "FR",
-  },
-  areaServed: { "@type": "State", name: "Alsace" },
-  priceRange: "€€",
-  servesCuisine: "Alsatian",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "47",
-  },
-};
-
-export default function HomePage() {
+export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Hero />
-      <Stats />
-      <Services />
+      <TrustBar />
+      <SavoirFaire />
       <Formules />
-      <Territoire />
-      <Galerie />
       <Temoignages />
+      <Zone />
       <Faq />
-      <Contact />
       <CtaFinal />
     </>
-  );
+  )
 }

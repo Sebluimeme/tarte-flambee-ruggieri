@@ -1,88 +1,96 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState, useRef } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 
-const FAQ_ITEMS = [
+const faqs = [
   {
-    q: "Quelle surface est nécessaire pour l'installation ?",
-    a: "Environ 4 m² minimum, idéalement près d'une sortie ou en extérieur avec accès électrique. Le four à bois mobile est compact et s'adapte à la plupart des configurations.",
+    q: 'Quelle est votre zone géographique ?',
+    a: "Nous intervenons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68) et dans le Grand Est. Des déplacements au-delà sont possibles selon les disponibilités. N'hésitez pas à nous contacter pour vérifier.",
   },
   {
-    q: "Intervenez-vous uniquement à domicile ou aussi en salle ?",
-    a: "Les deux ! Marc intervient en intérieur (salle des fêtes, entreprise, domicile) ou en extérieur (jardin, cour) selon les conditions météo et la configuration de l'espace.",
+    q: 'Combien de personnes pouvez-vous servir ?',
+    a: 'Nous gérons des événements de 30 à 250 convives. Au-delà, contactez-nous pour étudier votre projet.',
   },
   {
-    q: "Combien de temps à l'avance doit-on réserver ?",
-    a: "Comptez au minimum 3 semaines à l'avance pour les événements courants. Pour les mariages, nous recommandons de réserver 2 à 3 mois à l'avance afin de garantir la disponibilité.",
+    q: 'Fournissez-vous la vaisselle ?',
+    a: "Oui, la vaisselle (assiettes, serviettes) est incluse dans toutes nos formules. Nous gérons aussi l'installation et le rangement.",
   },
   {
-    q: "Proposez-vous des options végétariennes ou sans gluten ?",
-    a: "Oui, les garnitures végétariennes sont incluses dans les formules. Une option sans gluten est possible sur demande, mais nous ne pouvons pas garantir l'absence totale de traces de gluten en raison de la manipulation en cuisine ouverte.",
+    q: 'Quelle est votre disponibilité ?',
+    a: "Nos dates se réservent souvent plusieurs mois à l'avance, surtout en saison (printemps-été-automne). Nous vous conseillons de prendre contact dès que votre date est fixée.",
   },
   {
-    q: "Que se passe-t-il en cas de mauvais temps pour une prestation extérieure ?",
-    a: "Nous prévoyons toujours un plan B discuté en amont : report, installation sous une tente, ou repli en intérieur si possible. Marc est habitué à travailler dans toutes les conditions.",
+    q: 'Quelles sont les options végétariennes ?',
+    a: 'Absolument. Nous proposons systématiquement une version végétarienne (fromage blanc, champignons, oignons). D\'autres variantes sont disponibles selon les formules.',
   },
   {
-    q: "Quels sont les délais et modalités de paiement ?",
-    a: "Un acompte de 30% est demandé à la confirmation de la réservation. Le solde est réglé 48h avant la prestation par virement bancaire. Chèque et espèces acceptés sur arrangement.",
+    q: 'Comment se passe le paiement ?',
+    a: "Un acompte de 30% est demandé à la réservation. Le solde est réglé le jour de l'événement ou sur facture pour les entreprises.",
   },
-];
+]
 
-function ChevronDown() {
+function FaqItem({ q, a }: { q: string; a: string; index: number }) {
+  const [open, setOpen] = useState(false)
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  );
-}
-
-function ChevronUp() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m18 15-6-6-6 6" />
-    </svg>
-  );
+    <div className="border-b border-stone-200">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left py-5 flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm"
+        aria-expanded={open}
+      >
+        <span className="font-sans text-base font-medium text-bark-900">{q}</span>
+        <ChevronDown
+          size={20}
+          className={`text-copper-500 shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="overflow-hidden"
+          >
+            <p className="font-sans text-base leading-relaxed text-bark-700 pb-5">{a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
 }
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="bg-cream-100 py-20 md:py-28 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+    <section className="bg-cream-50 py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-12">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
             Questions fréquentes
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
-            Tout ce que vous voulez savoir
+            Tout ce que vous<br />voulez savoir
           </h2>
         </div>
-
-        <div className="max-w-3xl mx-auto">
-          {FAQ_ITEMS.map((item, i) => (
-            <div key={i} className="border-b border-stone-200">
-              <button
-                type="button"
-                className="flex justify-between items-center py-5 w-full text-left gap-4"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                aria-expanded={openIndex === i}
-              >
-                <span className="font-sans font-medium text-bark-900">{item.q}</span>
-                <span className={`flex-shrink-0 transition-colors ${openIndex === i ? "text-copper-500" : "text-stone-400"}`}>
-                  {openIndex === i ? <ChevronUp /> : <ChevronDown />}
-                </span>
-              </button>
-              {openIndex === i && (
-                <p className="font-sans text-base leading-relaxed text-bark-700 pb-5 pr-8">
-                  {item.a}
-                </p>
-              )}
-            </div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="max-w-3xl mx-auto"
+        >
+          {faqs.map((faq, i) => (
+            <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  );
+  )
 }
