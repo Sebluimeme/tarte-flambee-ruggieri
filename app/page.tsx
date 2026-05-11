@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero'
 import TrustBar from '@/components/sections/TrustBar'
+import Concept from '@/components/sections/Concept'
 import SavoirFaire from '@/components/sections/SavoirFaire'
 import Formules from '@/components/sections/Formules'
 import Temoignages from '@/components/sections/Temoignages'
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
+      <Concept />
       <SavoirFaire />
       <Formules />
       <Temoignages />
