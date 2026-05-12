@@ -25,8 +25,8 @@ const OCCASIONS = [
     description:
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
     tags: ["Dès 20 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
-    img: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=80",
-    alt: "Famille réunie autour d'une table festive",
+    img: "/media/IMG_0996.jpg",
+    alt: "Anniversaire autour du four à bois",
   },
 ]
 
@@ -45,7 +45,7 @@ export default function Occasions() {
             Chaque événement mérite sa tarte flambée
           </h2>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl">
-            De la soirée d&apos;entreprise au mariage de 200 personnes, Marc adapte sa prestation.
+            De la soirée d&apos;entreprise au mariage de 200 personnes, nous adaptons notre prestation.
           </p>
         </div>
 
