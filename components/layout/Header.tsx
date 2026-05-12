@@ -73,10 +73,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-cream-50/92 backdrop-blur-md border-b border-stone-200/70 shadow-sm'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 h-20 transition-all duration-300 bg-cream-50/95 backdrop-blur-md border-b border-stone-200/70 ${
+          isScrolled ? 'shadow-sm' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 h-full flex items-center justify-between gap-8">

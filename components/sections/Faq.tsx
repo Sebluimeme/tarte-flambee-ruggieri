@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Que comprend exactement la prestation ?',
-    a: "Four à bois mobile, bois de chauffe, pâte fraîche préparée le matin, tous les ingrédients (crème, lardons, oignons, fromages selon formule), service et installation. Vous n'avez à fournir que l'eau et l'électricité (220V standard).",
+    a: "Four à bois mobile, bois de chauffe, pâte fine préparée le matin, tous les ingrédients (crème, lardons, oignons, fromages selon formule), service et installation. Vous n'avez à fournir que l'eau et l'électricité (220V standard).",
   },
   {
     q: 'Proposez-vous des formules avec boissons ?',

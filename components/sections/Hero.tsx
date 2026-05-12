@@ -8,9 +8,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-end">
       <Image
-        src="/hero-tarte-flambee.png"
+        src="/media/hero-maison-ruggieri.jpg"
         fill
-        className="object-cover"
+        className="object-cover object-center"
         alt="Tarte flambée artisanale cuite au feu de bois"
         priority
       />
@@ -30,7 +30,7 @@ export default function Hero() {
             <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 mb-8 max-w-xl">
-            Marc Ruggieri se déplace en Alsace avec son four à bois traditionnel pour vos mariages,
+            Nous nous déplaçons en Alsace avec notre four à bois traditionnel pour vos mariages,
             anniversaires et soirées d&apos;entreprise. Recette familiale, ingrédients frais, ambiance garantie.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">

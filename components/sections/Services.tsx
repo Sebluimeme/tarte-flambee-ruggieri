@@ -8,15 +8,15 @@ const SERVICES = [
     Icon: Flame,
   },
   {
-    title: "Pâte maison",
+    title: "Pâte fine",
     description:
-      "La pâte est préparée artisanalement le jour même, à base de farine, eau, sel et levure. Croustillante, fine, et cuite en 3 minutes au four à bois.",
+      "Une pâte fine sélectionnée auprès d'un artisan spécialisé, préparée le jour même. Croustillante, légère, et cuite en 3 minutes au four à bois.",
     Icon: Wheat,
   },
   {
     title: "Animation en direct",
     description:
-      "Marc prépare et cuit les tartes devant vos invités. Le spectacle du four à bois fait partie de l'expérience — une animation culinaire unique et conviviale.",
+      "Nous préparons et cuisons les tartes devant vos invités. Le spectacle du four à bois fait partie de l'expérience — une animation culinaire unique et conviviale.",
     Icon: Users,
   },
 ];

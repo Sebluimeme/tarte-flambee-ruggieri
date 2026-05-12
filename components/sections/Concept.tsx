@@ -1,12 +1,13 @@
 'use client'
 
+import Image from 'next/image'
 import { Flame, Wheat, Users } from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const features = [
   { icon: Flame, label: 'Cuisson au feu de bois' },
-  { icon: Wheat, label: 'Pâte fraîche du jour' },
+  { icon: Wheat, label: 'Pâte fine de qualité' },
   { icon: Users, label: 'À volonté pendant 2h' },
 ]
 
@@ -33,8 +34,8 @@ export default function Concept() {
               Un four à bois qui se déplace chez vous
             </h2>
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
-              Marc Ruggieri arrive avec tout le matériel — four à bois mobile, pâte préparée le matin
-              même, ingrédients frais d&apos;Alsace. Vous accueillez vos invités, lui s&apos;occupe de tout :
+              Nous arrivons avec tout le matériel — four à bois mobile, pâte préparée le matin
+              même, ingrédients frais d&apos;Alsace. Vous accueillez vos invités, nous nous occupons de tout :
               préparation, cuisson, service. Les tartes sortent du four toutes les 90 secondes,
               croustillantes, fumantes, à volonté.
             </p>
@@ -50,11 +51,13 @@ export default function Concept() {
             </div>
           </div>
 
-          {/* Photo four à bois — remplacer par <Image src="/images/four-bois.jpg" fill className="object-cover" alt="Four à bois en action" /> */}
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-cream-200 flex items-center justify-center">
-            <p className="font-sans text-sm text-stone-400 text-center px-8">
-              Photo du four à bois en action
-            </p>
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+            <Image
+              src="/media/four-bois-action.jpg"
+              fill
+              className="object-cover"
+              alt="Four à bois en action lors d'une prestation Maison Ruggieri"
+            />
           </div>
         </motion.div>
       </div>
