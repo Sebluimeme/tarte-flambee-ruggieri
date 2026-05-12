@@ -1,13 +1,19 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 
 export default function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-end">
-      {/* Fond photo — remplacer par <Image src="/images/hero.jpg" fill className="object-cover" alt="" /> */}
-      <div className="absolute inset-0 bg-cream-300" />
+      <Image
+        src="/hero-tarte-flambee.png"
+        fill
+        className="object-cover"
+        alt="Tarte flambée artisanale cuite au feu de bois"
+        priority
+      />
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bark-900/20 to-bark-900/60" />
