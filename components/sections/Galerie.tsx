@@ -1,4 +1,4 @@
-import { Image as ImageIcon } from 'lucide-react'
+import Image from 'next/image'
 
 function InstagramIcon() {
   return (
@@ -11,12 +11,14 @@ function InstagramIcon() {
 }
 
 const GALLERY_ITEMS = [
-  { label: "Four à bois · Mariage", caption: "Mariage à Obernai" },
-  { label: "Garnitures · Service", caption: "Garnitures artisanales" },
-  { label: "Soirée d&apos;entreprise", caption: "Séminaire à Strasbourg" },
-  { label: "Tarte flambée classique", caption: "Recette traditionnelle" },
-  { label: "Ambiance festive", caption: "Anniversaire à Colmar" },
-  { label: "Installation extérieure", caption: "Fête de village" },
+  { src: '/media/img_1841.jpg', alt: 'Prestation tarte flambée' },
+  { src: '/media/img_1839.jpg', alt: 'Service tarte flambée' },
+  { src: '/media/DJI_20250622_161702_334.jpeg', alt: 'Vue aérienne prestation' },
+  { src: '/media/DJI_20250622_161640_166.jpeg', alt: 'Vue aérienne four à bois' },
+  { src: '/media/IMG_0140.JPG', alt: 'Tarte flambée artisanale' },
+  { src: '/media/img_0651.jpg', alt: 'Ambiance soirée' },
+  { src: '/media/img_0155.jpg', alt: 'Garnitures fraîches' },
+  { src: '/media/img_0153.jpg', alt: 'Four à bois en action' },
 ];
 
 export default function Galerie() {
@@ -47,12 +49,14 @@ export default function Galerie() {
           {GALLERY_ITEMS.map((item, i) => (
             <div
               key={i}
-              className="aspect-square bg-cream-200 rounded-2xl flex flex-col items-center justify-center border border-stone-200 overflow-hidden group hover:shadow-md transition-all duration-200"
+              className="aspect-square rounded-2xl overflow-hidden group hover:shadow-md transition-all duration-200 relative"
             >
-              <ImageIcon size={32} strokeWidth={1.5} className="mb-3 opacity-40 text-stone-400" aria-hidden="true" />
-              <p
-                className="font-sans text-xs text-stone-400 text-center px-4"
-                dangerouslySetInnerHTML={{ __html: item.caption }}
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 50vw, 33vw"
               />
             </div>
           ))}
