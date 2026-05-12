@@ -157,7 +157,7 @@ export default function Footer() {
 
         <div className="border-t border-stone-200/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-stone-400">
-            © 2026 Maison Ruggieri — Marc Ruggieri — SIRET&nbsp;{SIRET}
+            © 2026 Maison Ruggieri — SIRET&nbsp;{SIRET}
           </p>
           <div className="flex flex-wrap items-center gap-4 text-sm text-stone-400">
             <Link

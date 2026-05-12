@@ -43,7 +43,7 @@ export default function Zone() {
               Alsace et alentours
             </h2>
             <p className="font-sans text-base leading-relaxed text-cream-200 mb-8">
-              Marc se déplace principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans un rayon de 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est sont possibles — contactez-nous.
+              Nous nous déplaçons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans un rayon de 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est sont possibles — contactez-nous.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               {villes.map((ville) => (

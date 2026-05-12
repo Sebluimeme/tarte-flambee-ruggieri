@@ -112,7 +112,7 @@ export default function Contact() {
                   Message envoyé !
                 </h3>
                 <p className="font-sans text-base text-bark-700">
-                  Merci pour votre demande. Marc vous répondra sous 24h avec votre devis personnalisé.
+                  Merci pour votre demande. Nous vous répondrons sous 24h avec votre devis personnalisé.
                 </p>
               </div>
             ) : (
@@ -322,7 +322,7 @@ export default function Contact() {
                 </button>
 
                 <p className="font-sans text-xs text-center text-stone-400">
-                  Marc vous recontacte sous 24h · Devis gratuit · Sans engagement
+                  Nous vous recontactons sous 24h · Devis gratuit · Sans engagement
                 </p>
               </form>
             )}

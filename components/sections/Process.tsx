@@ -18,14 +18,14 @@ const STEPS = [
     Icon: FileCheck,
     title: 'Devis personnalisé sous 24h',
     description:
-      "Marc analyse votre demande, vérifie sa disponibilité et vous envoie un devis détaillé. Aucun engagement à ce stade.",
+      "Nous analysons votre demande, vérifions notre disponibilité et vous envoyons un devis détaillé. Aucun engagement à ce stade.",
   },
   {
     number: '03',
     Icon: Flame,
     title: 'Intervention sur votre site',
     description:
-      "Le jour J, Marc arrive 2h avant le service avec four et ingrédients. Vous accueillez vos invités, il s'occupe du reste.",
+      "Le jour J, nous arrivons 2h avant le service avec four et ingrédients. Vous accueillez vos invités, nous nous occupons du reste.",
   },
 ]
 

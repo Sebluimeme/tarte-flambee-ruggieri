@@ -37,7 +37,7 @@ const STATUS_CONFIG: Record<string, StatusConfig> = {
     icon: "⏳",
     title: "En cours d'examen",
     description:
-      "Marc a bien reçu votre demande et l'examine actuellement. Vous recevrez sa réponse sous 24h.",
+      "Nous avons bien reçu votre demande et l'examinons actuellement. Vous recevrez notre réponse sous 24h.",
     bgFrom: "#D97706",
     bgTo: "#92400E",
     badgeBg: "#FEF3C7",
@@ -47,7 +47,7 @@ const STATUS_CONFIG: Record<string, StatusConfig> = {
     icon: "✅",
     title: "Réservation confirmée !",
     description:
-      "Excellente nouvelle ! Marc a confirmé votre soirée tarte flambée. N'hésitez pas à le contacter pour finaliser les détails.",
+      "Excellente nouvelle ! Nous avons confirmé votre soirée tarte flambée. N'hésitez pas à nous contacter pour finaliser les détails.",
     bgFrom: "#059669",
     bgTo: "#065F46",
     badgeBg: "#D1FAE5",
@@ -57,7 +57,7 @@ const STATUS_CONFIG: Record<string, StatusConfig> = {
     icon: "❌",
     title: "Non disponible à cette date",
     description:
-      "Marc n'est malheureusement pas disponible pour cette date. Contactez-le directement pour trouver une autre date qui vous convient !",
+      "Nous ne sommes malheureusement pas disponibles pour cette date. Contactez-nous directement pour trouver une autre date qui vous convient !",
     bgFrom: "#DC2626",
     bgTo: "#991B1B",
     badgeBg: "#FEE2E2",
@@ -117,7 +117,7 @@ export default function SuiviPage({ params }: { params: Promise<{ id: string }> 
             Réservation introuvable
           </h1>
           <p className="text-[#8B2500] mb-8">
-            Ce lien de suivi n&apos;existe pas ou a expiré. Vérifiez le lien reçu ou contactez Marc directement.
+            Ce lien de suivi n&apos;existe pas ou a expiré. Vérifiez le lien reçu ou contactez-nous directement.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
@@ -230,7 +230,7 @@ export default function SuiviPage({ params }: { params: Promise<{ id: string }> 
           className="rounded-2xl p-6 text-center"
           style={{ background: "linear-gradient(135deg, #3D2010, #8B2500)" }}
         >
-          <p className="text-white/80 mb-1 text-sm">Une question ? Contactez Marc directement</p>
+          <p className="text-white/80 mb-1 text-sm">Une question ? Contactez-nous directement</p>
           <p className="text-white font-bold text-2xl mb-4">📞 07 85 62 10 89</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

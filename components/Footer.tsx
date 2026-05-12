@@ -86,7 +86,7 @@ export default function Footer() {
               Contact
             </h4>
             <div className="font-sans text-sm text-cream-100/65 space-y-2.5">
-              <p className="text-cream-100/80 font-medium">Marc Ruggieri</p>
+              <p className="text-cream-100/80 font-medium">Maison Ruggieri</p>
               <p>Le Bonhomme · 68650 Haut-Rhin</p>
               <a
                 href="tel:+33785621089"

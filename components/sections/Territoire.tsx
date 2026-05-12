@@ -12,7 +12,7 @@ export default function Territoire() {
               Toute l&apos;Alsace et le Grand Est
             </h2>
             <p className="font-sans text-lg leading-relaxed text-bark-700 mb-8">
-              Marc Ruggieri intervient principalement dans le Bas-Rhin (67) et le Haut-Rhin (68). Le déplacement est inclus dans le devis pour un rayon de 80 km. Au-delà, des frais kilométriques modérés s&apos;appliquent.
+              Nous intervenons principalement dans le Bas-Rhin (67) et le Haut-Rhin (68). Le déplacement est inclus dans le devis pour un rayon de 80 km. Au-delà, des frais kilométriques modérés s&apos;appliquent.
             </p>
 
             <ul className="space-y-3">

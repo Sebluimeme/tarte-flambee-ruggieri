@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace",
+  title: "Maison Ruggieri — Prestation tarte flambée à domicile en Alsace",
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };
@@ -17,7 +17,7 @@ const FORMULES = [
     duration: "2h de prestation",
     highlight: false,
     description:
-      "La formule idéale pour les petites réunions et anniversaires intimes. Marc arrive, installe son four, et régale vos proches avec les recettes classiques.",
+      "La formule idéale pour les petites réunions et anniversaires intimes. Nous arrivons, installons notre four, et régalons vos proches avec les recettes classiques.",
     features: [
       "Four à bois authentique",
       "Pâte artisanale maison",
@@ -58,7 +58,7 @@ const FORMULES = [
     duration: "Durée adaptée",
     highlight: false,
     description:
-      "Pour les grands événements ou les demandes particulières. Marc adapte tout à vos besoins : nombre de fours, garnitures exclusives, coordination, équipe de service.",
+      "Pour les grands événements ou les demandes particulières. Nous adaptons tout à vos besoins : nombre de fours, garnitures exclusives, coordination, équipe de service.",
     features: [
       "Tout ce dont vous avez besoin",
       "Formule entièrement personnalisée",

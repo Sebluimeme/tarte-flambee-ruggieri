@@ -30,7 +30,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "rgba(250,247,242,0.65)" }}>
-              Tarte flambée d&apos;Alsace, prestation à domicile. Marc Ruggieri vous accueille avec son four à bois traditionnel pour tous vos événements, au départ de Le Bonhomme (68650).
+              Tarte flambée d&apos;Alsace, prestation à domicile. Nous vous accueillons avec notre four à bois traditionnel pour tous vos événements, au départ de Le Bonhomme (68650).
             </p>
           </div>
 

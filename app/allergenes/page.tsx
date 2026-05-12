@@ -67,7 +67,7 @@ export default function AllergenesPage() {
 
         <div className="mt-12 pt-8 border-t border-stone-200">
           <p className="font-sans text-sm text-bark-700 mb-4">
-            Pour toute question sur les allergènes ou demande d&apos;adaptation, contactez Marc directement :
+            Pour toute question sur les allergènes ou demande d&apos;adaptation, contactez-nous directement :
           </p>
           <a
             href="tel:+33785621089"

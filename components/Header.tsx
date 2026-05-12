@@ -30,7 +30,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none">
             <span className="font-display text-xl font-medium text-bark-900">
-              Marc Ruggieri
+              Maison Ruggieri
             </span>
             <span className="text-sm text-stone-400">Tarte flambée</span>
           </Link>
@@ -82,7 +82,7 @@ export default function Header() {
             <div className="flex items-center justify-between mb-10">
               <div className="flex flex-col leading-none">
                 <span className="font-display text-xl font-medium text-bark-900">
-                  Marc Ruggieri
+                  Maison Ruggieri
                 </span>
                 <span className="text-sm text-stone-400">Tarte flambée</span>
               </div>

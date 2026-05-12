@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s · Maison Ruggieri',
   },
   description:
-    "Marc Ruggieri se déplace en Alsace avec son four à bois pour vos mariages, anniversaires et soirées d'entreprise. Tarte flambée traditionnelle, ingrédients frais, dès 12 €/pers.",
+    "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise. Tarte flambée traditionnelle, ingrédients frais, dès 12 €/pers.",
   keywords: [
     'tarte flambée Alsace',
     'traiteur tarte flambée',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     'Le Bonhomme',
     'Alsace traiteur événementiel',
   ],
-  authors: [{ name: 'Marc Ruggieri' }],
+  authors: [{ name: 'Maison Ruggieri' }],
   metadataBase: new URL('https://maison-ruggieri.fr'),
   alternates: { canonical: '/' },
   openGraph: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Maison Ruggieri',
     title: 'Maison Ruggieri — Tarte flambée à domicile en Alsace',
     description:
-      "Marc Ruggieri se déplace en Alsace avec son four à bois pour vos mariages, anniversaires et soirées d'entreprise.",
+      "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise.",
     images: [
       {
         url: '/og-image.jpg',

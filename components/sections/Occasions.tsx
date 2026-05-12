@@ -25,7 +25,7 @@ const OCCASIONS = [
     description:
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
     tags: ["Dès 20 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
-    img: "/media/IMG_0996.jpg",
+    img: "/media/anniversaire-famille.jpg",
     alt: "Anniversaire autour du four à bois",
   },
 ]

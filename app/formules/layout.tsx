@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nos formules tarte flambée — Marc Ruggieri Alsace",
+  title: "Nos formules tarte flambée — Maison Ruggieri Alsace",
   description:
     "Découvrez nos 3 formules de prestation tarte flambée à domicile, de 20 à 500 personnes. Devis sur mesure.",
 };

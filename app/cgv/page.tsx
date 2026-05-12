@@ -112,8 +112,8 @@ export default function CGVPage() {
             </h2>
             <div className="text-sm leading-relaxed space-y-3">
               <p>
-                Les prix indiqués dans les devis sont exprimés en euros toutes taxes comprises. Marc
-                Ruggieri bénéficie de la franchise de TVA conformément à l&apos;article 293 B du Code
+                Les prix indiqués dans les devis sont exprimés en euros toutes taxes comprises. Nous
+                bénéficions de la franchise de TVA conformément à l&apos;article 293 B du Code
                 Général des Impôts (mention &laquo;&nbsp;TVA non applicable&nbsp;&raquo;).
               </p>
               <p>

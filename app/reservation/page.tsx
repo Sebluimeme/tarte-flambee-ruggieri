@@ -112,7 +112,7 @@ function ReservationForm() {
             Demande de devis
           </h1>
           <p style={{ color: "#8B2500" }} className="text-lg">
-            Marc vous recontacte sous 24h avec un devis personnalisé — gratuit et sans engagement
+            Nous vous recontactons sous 24h avec un devis personnalisé — gratuit et sans engagement
           </p>
         </div>
 
@@ -236,7 +236,7 @@ function ReservationForm() {
           >
             <span className="text-2xl">ℹ️</span>
             <p className="text-sm leading-relaxed" style={{ color: "#3D2010" }}>
-              <strong>Aucun paiement n&apos;est requis à ce stade.</strong> Marc vous contactera sous 24h pour confirmer la disponibilité et vous envoyer un devis sur mesure.
+              <strong>Aucun paiement n&apos;est requis à ce stade.</strong> Nous vous contacterons sous 24h pour confirmer la disponibilité et vous envoyer un devis sur mesure.
             </p>
           </div>
 

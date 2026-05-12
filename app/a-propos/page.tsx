@@ -47,7 +47,7 @@ export default function APropos() {
               En 2019, après quinze ans passés dans la restauration traditionnelle alsacienne, Marc décide de partir à son compte avec un projet simple : apporter la tarte flambée là où les gens se réunissent. Il fait construire son premier four à bois mobile par un artisan ferronnuer de Sainte-Marie-aux-Mines, et lance Maison Ruggieri.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
-              Depuis, il intervient pour des mariages, des fêtes de famille, des soirées d'entreprise — partout en Alsace et dans le Grand Est. Ce qui ne change pas : la pâte préparée le matin, les ingrédients frais, et Marc derrière son four.
+              Depuis, nous intervenons pour des mariages, des fêtes de famille, des soirées d'entreprise — partout en Alsace et dans le Grand Est. Ce qui ne change pas : la pâte préparée le matin, les ingrédients frais, et nous derrière notre four.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function APropos() {
                 Le bois utilisé est du hêtre et du charme sec, provenant des forêts vosgiennes. Pas de bois traité, pas de briquettes. La fumée doit sentir la forêt, pas l'usine.
               </p>
               <p>
-                L'installation nécessite environ 45 minutes. Marc gère seul le montage, la chauffe et la cuisson — vous n'avez rien à prévoir côté cuisine.
+                L'installation nécessite environ 45 minutes. Nous gérons seuls le montage, la chauffe et la cuisson — vous n'avez rien à prévoir côté cuisine.
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function APropos() {
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
               <p className="font-display text-xl font-medium text-bark-900 mb-3">Ingrédients locaux</p>
               <p className="font-sans text-sm leading-relaxed text-bark-700">
-                La crème fraîche vient de la Laiterie de Saint-Dié. Les lardons fumés sont préparés par la charcuterie Braun à Lapoutroie. Les oignons — blancs, doux, croquants — viennent d'un maraîcher à Orbey avec qui Marc travaille depuis le début. Rien n'est acheté en grande surface.
+                La crème fraîche vient de la Laiterie de Saint-Dié. Les lardons fumés sont préparés par la charcuterie Braun à Lapoutroie. Les oignons — blancs, doux, croquants — viennent d'un maraîcher à Orbey avec qui nous travaillons depuis le début. Rien n'est acheté en grande surface.
               </p>
             </div>
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
@@ -116,7 +116,7 @@ export default function APropos() {
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
               <p className="font-display text-xl font-medium text-bark-900 mb-3">Rapport humain</p>
               <p className="font-sans text-sm leading-relaxed text-bark-700">
-                Marc répond lui-même aux messages. Il visite les lieux en amont si nécessaire. Il est là le jour J, derrière son four, du début à la fin. Pas de sous-traitance, pas d'intermédiaire.
+                Nous répondons nous-mêmes aux messages. Nous visitons les lieux en amont si nécessaire. Nous sommes là le jour J, derrière notre four, du début à la fin. Pas de sous-traitance, pas d'intermédiaire.
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Contact from "../../components/sections/Contact";
 
 export const metadata: Metadata = {
-  title: "Marc Ruggieri — Prestation tarte flambée à domicile en Alsace",
+  title: "Maison Ruggieri — Prestation tarte flambée à domicile en Alsace",
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };
@@ -20,7 +20,7 @@ export default function ContactPage() {
             Demandez votre devis gratuit
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-xl">
-            Marc vous répond sous 24h avec un devis personnalisé. Sans engagement.
+            Nous vous répondons sous 24h avec un devis personnalisé. Sans engagement.
           </p>
         </div>
       </section>

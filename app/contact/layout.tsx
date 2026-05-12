@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contactez Marc Ruggieri — Devis tarte flambée gratuit",
+  title: "Contactez-nous — Devis tarte flambée gratuit",
   description:
     "Demandez un devis gratuit pour votre prestation tarte flambée en Alsace. Réponse sous 24h.",
 };
