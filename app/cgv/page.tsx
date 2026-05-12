@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const SIRET = "XXX XXX XXX XXXXX"; // À compléter
+const SIRET = "812 751 469 00014";
 
 export default function CGVPage() {
   return (
