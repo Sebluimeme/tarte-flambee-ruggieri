@@ -326,7 +326,7 @@ export default function CGVPage() {
                 Les présentes CGV sont soumises au droit français. En cas de litige, les parties
                 s&apos;efforceront de trouver une solution amiable. À défaut de résolution amiable dans un
                 délai de 30 jours, le litige sera porté devant le tribunal compétent du ressort de{" "}
-                <strong>Strasbourg (67)</strong>.
+                <strong>Colmar (68)</strong>.
               </p>
               <p>
                 Conformément aux articles L.612-1 et suivants du Code de la consommation, tout
