@@ -1,8 +1,101 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
-// TODO: Intégrer Resend pour l'envoi d'emails une fois la clé API disponible.
-// import { Resend } from "resend";
-// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const TYPE_LABELS: Record<string, string> = {
+  mariage: "Mariage",
+  anniversaire: "Anniversaire / fête de famille",
+  entreprise: "Soirée d'entreprise",
+  inauguration: "Inauguration / lancement",
+  autre: "Autre événement privé",
+};
+
+const FORMULE_LABELS: Record<string, string> = {
+  classique: "Classique (12€/pers.)",
+  prestige: "Prestige (16€/pers.)",
+  illimitee: "Illimitée (20€/pers.)",
+  indecis: "Pas encore décidé",
+};
+
+function emailToMarc(data: {
+  nomComplet: string;
+  email: string;
+  telephone: string;
+  typeEvenement: string;
+  date: string;
+  convives: string;
+  formule?: string;
+  lieu: string;
+  allergies?: string;
+  infosComplementaires?: string;
+}) {
+  return `
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#FFFDF7;font-family:Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;background:#FBF5E6;border-radius:12px;overflow:hidden;">
+    <div style="background:#3D2010;padding:24px 32px;">
+      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Maison Ruggieri</p>
+      <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nouvelle demande de devis</h1>
+    </div>
+    <div style="padding:32px;">
+      <table style="width:100%;border-collapse:collapse;">
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;width:40%;">Nom</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;font-weight:bold;">${data.nomComplet}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Email</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="mailto:${data.email}" style="color:#D4621A;">${data.email}</a></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Téléphone</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="tel:${data.telephone}" style="color:#D4621A;">${data.telephone}</a></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Événement</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${TYPE_LABELS[data.typeEvenement] ?? data.typeEvenement}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Date</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${new Date(data.date).toLocaleDateString("fr-FR", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Convives</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.convives} personnes</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Formule</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.formule ? (FORMULE_LABELS[data.formule] ?? data.formule) : "Non précisée"}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Lieu</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.lieu}</td></tr>
+        ${data.allergies ? `<tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Allergies</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.allergies}</td></tr>` : ""}
+        ${data.infosComplementaires ? `<tr><td style="padding:10px 0;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Infos</td><td style="padding:10px 0;color:#3D2010;font-size:15px;">${data.infosComplementaires}</td></tr>` : ""}
+      </table>
+
+      <div style="margin-top:24px;background:#D4621A15;border:1px solid #D4621A30;border-radius:8px;padding:16px;">
+        <p style="color:#3D2010;font-size:13px;margin:0;">Répondre directement à cet email pour contacter le client.</p>
+      </div>
+    </div>
+    <div style="background:#3D2010;padding:16px 32px;text-align:center;">
+      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Maison Ruggieri — maison-ruggieri.fr</p>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
+
+function emailConfirmation(nomComplet: string) {
+  return `
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#FFFDF7;font-family:Arial,sans-serif;">
+  <div style="max-width:600px;margin:0 auto;background:#FBF5E6;border-radius:12px;overflow:hidden;">
+    <div style="background:#3D2010;padding:24px 32px;">
+      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Maison Ruggieri</p>
+      <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nous avons bien reçu votre demande</h1>
+    </div>
+    <div style="padding:32px;">
+      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Bonjour ${nomComplet},</p>
+      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Merci pour votre demande de devis. Marc Ruggieri vous contactera <strong>sous 24h</strong> avec une proposition personnalisée.</p>
+      <p style="color:#3D2010;font-size:16px;line-height:1.6;">En attendant, vous pouvez le joindre directement :</p>
+      <div style="margin:24px 0;display:flex;gap:12px;">
+        <a href="tel:0785621089" style="display:inline-block;background:#D4621A;color:white;text-decoration:none;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:bold;">📞 07 85 62 10 89</a>
+        <a href="https://wa.me/33785621089" style="display:inline-block;background:#25D366;color:white;text-decoration:none;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:bold;">WhatsApp</a>
+      </div>
+      <p style="color:#8B2500;font-size:13px;">Votre devis est gratuit et sans engagement.</p>
+    </div>
+    <div style="background:#3D2010;padding:16px 32px;text-align:center;">
+      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Maison Ruggieri — maison-ruggieri.fr · Le Bonhomme, Alsace</p>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,31 +117,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: "Champs requis manquants" }, { status: 400 });
     }
 
-    console.log("[contact] Nouvelle demande de devis:", JSON.stringify(data, null, 2));
-
-    // TODO: Envoyer l'email via Resend
-    // await resend.emails.send({
-    //   from: "contact@poivresale.fr",
-    //   to: "contact@poivresale.fr",
-    //   subject: `Demande de devis — ${data.nomComplet}`,
-    //   html: `
-    //     <h2>Nouvelle demande de devis</h2>
-    //     <p><strong>Nom :</strong> ${data.nomComplet}</p>
-    //     <p><strong>Email :</strong> ${data.email}</p>
-    //     <p><strong>Téléphone :</strong> ${data.telephone}</p>
-    //     <p><strong>Type d'événement :</strong> ${data.typeEvenement}</p>
-    //     <p><strong>Date :</strong> ${data.date}</p>
-    //     <p><strong>Convives :</strong> ${data.convives}</p>
-    //     <p><strong>Formule :</strong> ${data.formule || "Non précisée"}</p>
-    //     <p><strong>Lieu :</strong> ${data.lieu}</p>
-    //     <p><strong>Allergies :</strong> ${data.allergies || "Aucune"}</p>
-    //     <p><strong>Infos complémentaires :</strong> ${data.infosComplementaires || "Aucune"}</p>
-    //   `,
-    // });
+    await Promise.all([
+      resend.emails.send({
+        from: "Maison Ruggieri <contact@maison-ruggieri.fr>",
+        to: ["contact@poivresale.fr"],
+        replyTo: data.email,
+        subject: `🔥 Nouveau devis — ${data.nomComplet} (${data.convives} pers.)`,
+        html: emailToMarc(data),
+      }),
+      resend.emails.send({
+        from: "Maison Ruggieri <contact@maison-ruggieri.fr>",
+        to: [data.email],
+        subject: "Votre demande de devis — Maison Ruggieri",
+        html: emailConfirmation(data.nomComplet),
+      }),
+    ]);
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
-    console.error("[contact] Erreur:", err);
+    console.error("[contact] Erreur Resend:", err);
     return NextResponse.json({ success: false, error: "Erreur serveur" }, { status: 500 });
   }
 }
