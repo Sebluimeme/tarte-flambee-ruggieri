@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
@@ -81,9 +82,16 @@ export default function Header() {
           {/* Logotype */}
           <Link
             href="/"
-            className="font-display text-xl text-bark-900 hover:text-copper-600 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm shrink-0 leading-none"
+            className="flex flex-col items-start gap-1 shrink-0 focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm"
           >
-            <span className="block">Poivre & Salé</span>
+            <Image
+              src="/media/logo-poivre-et-sale.png"
+              alt="Poivre & Salé"
+              width={120}
+              height={78}
+              className="h-10 w-auto object-contain"
+              priority
+            />
             <span className="block text-xs font-sans font-normal text-bark-500 tracking-wide">Cuisinier · Traiteur événementiel</span>
           </Link>
 
@@ -139,7 +147,16 @@ export default function Header() {
       >
         {/* Header du menu */}
         <div className="flex items-center justify-between px-6 h-20 border-b border-stone-200/70">
-          <span className="font-display text-xl text-bark-900 block leading-none">Poivre & Salé<span className="block text-xs font-sans font-normal text-bark-500 tracking-wide mt-0.5">Cuisinier · Traiteur événementiel</span></span>
+          <div className="flex flex-col items-start gap-1">
+            <Image
+              src="/media/logo-poivre-et-sale.png"
+              alt="Poivre & Salé"
+              width={120}
+              height={78}
+              className="h-10 w-auto object-contain"
+            />
+            <span className="block text-xs font-sans font-normal text-bark-500 tracking-wide">Cuisinier · Traiteur événementiel</span>
+          </div>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg text-bark-900 hover:bg-cream-200 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500"
