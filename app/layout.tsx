@@ -21,8 +21,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Maison Ruggieri — Tarte flambée à domicile en Alsace',
-    template: '%s · Maison Ruggieri',
+    default: 'Poivre & Salé — Tarte flambée à domicile en Alsace',
+    template: '%s · Poivre & Salé',
   },
   description:
     "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise. Tarte flambée traditionnelle, ingrédients frais, dès 12 €/pers.",
@@ -33,18 +33,17 @@ export const metadata: Metadata = {
     'mariage Alsace',
     'soirée entreprise Colmar',
     'flammekueche à domicile',
-    'Le Bonhomme',
-    'Alsace traiteur événementiel',
+'Alsace traiteur événementiel',
   ],
-  authors: [{ name: 'Maison Ruggieri' }],
+  authors: [{ name: 'Poivre & Salé' }],
   metadataBase: new URL('https://maison-ruggieri.fr'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     url: 'https://maison-ruggieri.fr',
-    siteName: 'Maison Ruggieri',
-    title: 'Maison Ruggieri — Tarte flambée à domicile en Alsace',
+    siteName: 'Poivre & Salé',
+    title: 'Poivre & Salé — Tarte flambée à domicile en Alsace',
     description:
       "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise.",
     images: [
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Maison Ruggieri — Tarte flambée au four à bois en Alsace',
+        alt: 'Poivre & Salé — Tarte flambée au four à bois en Alsace',
       },
     ],
   },
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FoodEstablishment',
-  name: 'Maison Ruggieri',
+  name: 'Poivre & Salé',
   description:
     "Traiteur spécialisé en tarte flambée (flammekueche) au four à bois, service à domicile en Alsace.",
   url: 'https://maison-ruggieri.fr',

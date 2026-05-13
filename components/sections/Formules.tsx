@@ -7,14 +7,32 @@ import { Check } from 'lucide-react'
 
 const formules = [
   {
-    name: 'Classique',
+    name: 'Clé en main',
+    price: 'Sur devis',
+    unit: '',
+    label: 'Matériel complet fourni',
+    badge: null,
+    features: [
+      'Four à bois mobile installé sur place',
+      'Tables, échelle et pelle professionnelles',
+      'Meuble réfrigéré pour les ingrédients',
+      'Pâtes laminées fines et ingrédients inclus',
+      'Installation et rangement complet',
+    ],
+    highlight: false,
+    bg: 'bg-cream-100',
+    border: 'border-stone-200',
+  },
+  {
+    name: 'Standard',
     price: '12€',
     unit: '/pers.',
     label: 'Minimum 20 couverts',
     badge: null,
     features: [
-      'Tartes flambées à volonté au four à bois',
-      'Recettes alsaciennes traditionnelles',
+      'Une tarte flambée par personne',
+      'Pâtes laminées fines',
+      'Recettes traditionnelles alsaciennes',
       'Four à bois et ingrédients inclus',
       'Déplacement inclus en zone principale',
     ],
@@ -23,32 +41,33 @@ const formules = [
     border: 'border-stone-200',
   },
   {
-    name: 'Prestige',
-    price: '16€',
+    name: 'Association',
+    price: '17€',
     unit: '/pers.',
-    label: 'Minimum 30 couverts',
-    badge: 'Le choix préféré',
+    label: 'Minimum 20 couverts',
+    badge: 'Le plus populaire',
     features: [
-      'Tout le Classique inclus',
-      'Carte étendue (chèvre-miel, forestière, savoyarde)',
-      'Boissons soft + bière locale Météor',
+      'Crudités en entrée',
+      'Tartes flambées à volonté',
       'Service à table',
+      'Pâtes laminées fines',
+      'Four à bois et ingrédients inclus',
     ],
     highlight: true,
     bg: 'bg-cream-100',
     border: 'border-copper-500',
   },
   {
-    name: 'Illimitée',
+    name: 'Max',
     price: '20€',
     unit: '/pers.',
-    label: 'Minimum 40 couverts',
+    label: 'Minimum 30 couverts',
     badge: null,
     features: [
-      'Tout le Prestige inclus',
-      "Riesling d'Alsace à volonté",
-      'Animation du four à bois',
+      'Tout le Association inclus',
+      "Boissons à volonté (softs, bière locale, Riesling d'Alsace)",
       'Tartes flambées dessert (pommes-cannelle, myrtilles)',
+      'Animation autour du four',
     ],
     highlight: false,
     bg: 'bg-cream-100',
@@ -70,9 +89,12 @@ export default function Formules() {
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
             Des formules pensées<br />pour vos événements
           </h2>
+          <p className="font-sans text-base leading-relaxed text-bark-700 max-w-2xl mx-auto mt-4">
+            Soirées d&apos;entreprise, mariages, anniversaires, repas d&apos;association — nous nous adaptons à chaque occasion, y compris en mode animation de soirée.
+          </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {formules.map((formule, i) => (
             <motion.div
               key={formule.name}

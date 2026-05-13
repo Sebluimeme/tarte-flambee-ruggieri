@@ -3,64 +3,84 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Maison Ruggieri — Prestation tarte flambée à domicile en Alsace",
+  title: "Poivre & Salé — Prestation tarte flambée à domicile en Alsace",
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };
 
 const FORMULES = [
   {
-    name: "Classique",
+    name: "Clé en main",
+    price: "Sur devis",
+    unit: "",
+    guests: "",
+    duration: "",
+    highlight: false,
+    description:
+      "Nous installons et gérons tout de A à Z : four à bois, tables, matériel de cuisson, meuble réfrigéré. Vos convives n'ont qu'à profiter.",
+    features: [
+      "Four à bois mobile installé sur place",
+      "Tables, échelle et pelle professionnelles",
+      "Meuble réfrigéré pour les ingrédients",
+      "Pâtes laminées fines et ingrédients inclus",
+      "Installation et rangement complet",
+    ],
+    cta: "Demander un devis",
+    ctaHref: "/contact",
+  },
+  {
+    name: "Standard",
     price: "12€",
     unit: "/pers.",
     guests: "20 personnes minimum",
     duration: "",
     highlight: false,
     description:
-      "La formule idéale pour découvrir la tarte flambée à domicile. Four à bois authentique, pâte fraîche artisanale et recettes traditionnelles alsaciennes.",
+      "Une tarte flambée par personne, cuite au four à bois sur place. L'essentiel, sans compromis.",
     features: [
+      "Une tarte flambée par personne",
+      "Pâtes laminées fines",
+      "Recettes traditionnelles alsaciennes",
       "Four à bois et ingrédients inclus",
-      "Pâte fraîche maison préparée sur place",
-      "Recettes traditionnelles (crème, lardons, oignons)",
-      "Installation et rangement complet",
       "Déplacement inclus en zone principale",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
   },
   {
-    name: "Prestige",
-    price: "16€",
+    name: "Association",
+    price: "17€",
     unit: "/pers.",
-    guests: "30 personnes minimum",
+    guests: "20 personnes minimum",
     duration: "",
     highlight: true,
     badge: "Le plus populaire",
     description:
-      "La formule plébiscitée pour les mariages, anniversaires et séminaires. Carte étendue, boissons et service à table inclus.",
+      "La formule idéale pour les groupes : crudités en entrée, tartes flambées à volonté et service à table.",
     features: [
-      "Tout le Classique inclus",
-      "Carte étendue (chèvre-miel, forestière, savoyarde)",
-      "Boissons soft + bière locale Météor",
+      "Crudités en entrée",
+      "Tartes flambées à volonté",
       "Service à table",
+      "Pâtes laminées fines",
+      "Four à bois et ingrédients inclus",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
   },
   {
-    name: "Illimitée",
+    name: "Max",
     price: "20€",
     unit: "/pers.",
-    guests: "40 personnes minimum",
+    guests: "30 personnes minimum",
     duration: "",
     highlight: false,
     description:
-      "L'expérience complète pour vos grandes occasions. Riesling à volonté, animation du four et tartes dessert pour finir en beauté.",
+      "L'expérience complète : tout à volonté, boissons comprises. Pour vos grandes soirées et événements premium.",
     features: [
-      "Tout le Prestige inclus",
-      "Riesling d'Alsace à volonté",
-      "Animation du four à bois",
+      "Tout le Association inclus",
+      "Boissons à volonté (softs, bière locale, Riesling d'Alsace)",
       "Tartes flambées dessert (pommes-cannelle, myrtilles)",
+      "Animation autour du four",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
@@ -69,7 +89,7 @@ const FORMULES = [
 
 const INCLUS = [
   "Livraison et installation du four à bois",
-  "Pâte artisanale maison préparée le jour même",
+  "Pâtes laminées fines",
   "Cuisson devant les invités — le spectacle fait partie de l'expérience",
   "Rangement et nettoyage complet après prestation",
   "Devis gratuit et réponse sous 24h",
@@ -102,7 +122,7 @@ export default function FormulesPage() {
             Nos formules de prestation
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto">
-            De 30 à 500 convives. Avec ou sans service. Toujours avec un four à bois authentique et une pâte maison.
+            De 20 à 500 convives. Avec ou sans service. Toujours avec un four à bois authentique et des pâtes laminées fines.
           </p>
         </div>
       </section>
@@ -110,7 +130,18 @@ export default function FormulesPage() {
       {/* Formules */}
       <section className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+
+          {/* Intro événementiel */}
+          <div className="text-center mb-14">
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+              Pour tous vos événements
+            </p>
+            <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto">
+              Nous nous intégrons à vos soirées événementielles — soirées d&apos;entreprise, mariages, anniversaires, repas d&apos;association et fêtes de village. Chaque formule est disponible en mode animation de soirée, avec prise en charge de l&apos;ambiance autour du four.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {FORMULES.map((f) => (
               <div
                 key={f.name}

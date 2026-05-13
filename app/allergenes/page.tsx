@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Allergènes | Maison Ruggieri",
-  description: "Informations sur les allergènes présents dans nos tartes flambées — Maison Ruggieri.",
+  title: "Allergènes | Poivre & Salé",
+  description: "Informations sur les allergènes présents dans nos tartes flambées — Poivre & Salé.",
 };
 
 const ALLERGENES = [

@@ -7,6 +7,8 @@ const villes = [
   'Strasbourg', 'Colmar', 'Mulhouse', 'Sélestat',
   'Obernai', 'Haguenau', 'Saverne', 'Ribeauvillé',
   'Guebwiller', 'Wissembourg', 'Barr', 'Munster',
+  'Épinal', 'Saint-Dié-des-Vosges', 'Gérardmer', 'Remiremont',
+  'Belfort',
 ]
 
 export default function Zone() {
@@ -28,9 +30,9 @@ export default function Zone() {
             <iframe
               src="https://www.openstreetmap.org/export/embed.html?bbox=6.85%2C47.35%2C8.05%2C49.05&layer=mapnik&marker=48.1743%2C7.1278"
               className="w-full h-full"
-              title="Zone d'intervention Maison Ruggieri en Alsace"
+              title="Zone d'intervention Poivre & Salé en Alsace"
               loading="lazy"
-              aria-label="Carte interactive de la zone d'intervention de Maison Ruggieri en Alsace"
+              aria-label="Carte interactive de la zone d'intervention de Poivre & Salé en Alsace"
             />
           </div>
 
@@ -43,7 +45,7 @@ export default function Zone() {
               Alsace et alentours
             </h2>
             <p className="font-sans text-base leading-relaxed text-cream-200 mb-8">
-              Nous nous déplaçons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans un rayon de 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est sont possibles — contactez-nous.
+              Nous nous déplaçons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans les Vosges (88) et le Territoire de Belfort (90), dans un rayon d&apos;environ 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est et le sillon rhénan sont possibles — contactez-nous.
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               {villes.map((ville) => (

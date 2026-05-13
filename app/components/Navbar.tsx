@@ -37,7 +37,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex flex-col leading-none group"
-            aria-label="Maison Ruggieri — Accueil"
+            aria-label="Poivre & Salé — Accueil"
           >
             <span
               className="text-xs tracking-[0.2em] uppercase transition-colors"

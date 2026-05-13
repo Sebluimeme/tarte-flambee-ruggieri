@@ -4,12 +4,11 @@ import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import { Flame, Leaf, Clock } from 'lucide-react'
+import { Flame, Leaf } from 'lucide-react'
 
 const points = [
   { icon: Flame, label: 'Four à bois mobile' },
   { icon: Leaf, label: 'Ingrédients locaux' },
-  { icon: Clock, label: 'Préparation sur place' },
 ]
 
 export default function SavoirFaire() {
@@ -31,20 +30,17 @@ export default function SavoirFaire() {
               src="/media/tarte-flambee-traditionnelle.webp"
               fill
               className="object-cover"
-              alt="Tarte flambée alsacienne traditionnelle Maison Ruggieri"
+              alt="Tarte flambée alsacienne traditionnelle Poivre & Salé"
             />
           </div>
 
           {/* Texte */}
           <div>
-            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-              Artisanat alsacien
-            </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-6">
               Un savoir-faire<br />transmis avec passion
             </h2>
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
-              La flammekueche, c&apos;est une affaire de patience et de précision. Nous utilisons un four à bois mobile que nous installons directement chez vous ou sur votre lieu de réception. Pâte fine sélectionnée auprès d&apos;un artisan spécialisé, fromage blanc et crème fraîche du pays, lardons fermiers : chaque détail compte.
+              La flammekueche, c&apos;est une affaire de patience et de précision. Nous installons notre four à bois mobile directement chez vous ou sur votre lieu de réception. Pâtes laminées fines, fromage blanc et crème fraîche du pays, lardons fermiers : chaque détail compte.
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {points.map((point) => (

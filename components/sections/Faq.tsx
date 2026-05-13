@@ -7,7 +7,7 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'Dans quelle zone géographique intervenez-vous ?',
-    a: "Nous intervenons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68) et dans le Grand Est. Des déplacements plus lointains sont possibles selon les disponibilités — contactez-nous pour vérifier.",
+    a: "Nous intervenons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans les Vosges (88) et le Territoire de Belfort (90), dans un rayon d'environ 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est sont possibles selon les disponibilités — contactez-nous pour vérifier.",
   },
   {
     q: "Quelle surface faut-il prévoir pour l'installation ?",
@@ -15,11 +15,11 @@ const faqs = [
   },
   {
     q: 'Les tartes flambées sont-elles préparées sur place ?',
-    a: "Oui. La pâte est préparée le matin même, les ingrédients sont frais. Tout est cuit en direct au four à bois pendant la prestation. Vos convives voient le four, sentent la fumée de bois, et reçoivent les tartes sorties du feu — c'est l'essence de la prestation.",
+    a: "Oui. Tout est cuit en direct au four à bois pendant la prestation. Nous utilisons des pâtes laminées fines. Vos convives voient le four, sentent la fumée de bois, et reçoivent les tartes sorties du feu — c'est l'essence de la prestation.",
   },
   {
     q: 'Que comprend exactement la prestation ?',
-    a: "Four à bois mobile, bois de chauffe, pâte fine préparée le matin, tous les ingrédients (crème, lardons, oignons, fromages selon formule), service et installation. Vous n'avez à fournir que l'eau et l'électricité (220V standard).",
+    a: "Four à bois mobile, bois de chauffe, pâte laminée fine, tous les ingrédients (crème, lardons, oignons, fromages selon formule), service et installation. Vous n'avez à fournir que l'eau et l'électricité (220V standard).",
   },
   {
     q: 'Proposez-vous des formules avec boissons ?',
@@ -35,15 +35,15 @@ const faqs = [
   },
   {
     q: 'Quels moyens de paiement acceptez-vous ?',
-    a: "Virement bancaire, chèque ou espèces. Un acompte de 30 % est demandé à la confirmation de commande pour bloquer la date. Le solde est réglé le jour de la prestation, avant ou après le service.",
+    a: "Virement bancaire, chèque ou espèces. Le règlement s'effectue le jour de la prestation ou dans la semaine qui suit — aucun acompte n'est demandé. Nous travaillons sur la confiance.",
   },
   {
     q: 'Que se passe-t-il en cas de mauvais temps ?',
-    a: "En extérieur, une simple structure de type barnum suffit à protéger le four et les convives — nous vous conseillons sur les dimensions à prévoir. En intérieur ou sous abri couvert, aucun problème particulier tant que la hauteur sous plafond dépasse 3 m et que l'espace est bien ventilé.",
+    a: "Il suffit d'un abri couvert — une terrasse, un préau, une grange ou tout espace ventilé — pour que la prestation se déroule sans problème. Nous vous conseillons sur la configuration lors de la préparation du devis.",
   },
   {
     q: 'Puis-je annuler ou modifier ma réservation ?',
-    a: "Oui. Annulation à plus de 15 jours : acompte remboursé intégralement. Entre 7 et 15 jours : 50 % du montant retenu. Moins de 7 jours : 100 % retenu. Pour une modification (date, nombre de convives, lieu), signalez-le par écrit le plus tôt possible — nous ferons tout pour l'accommoder sous réserve de disponibilité. Conditions complètes dans nos CGV.",
+    a: "Oui. L'annulation est gratuite, sans frais. Pour une modification (date, nombre de convives, lieu), signalez-le par écrit le plus tôt possible — nous ferons tout pour l'accommoder sous réserve de disponibilité.",
   },
 ]
 

@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
-  title: "À propos — Marc Ruggieri | Maison Ruggieri",
-  description: "L'histoire de Marc Ruggieri, artisan alsacien passionné de tarte flambée. Son four à bois, ses valeurs, ses producteurs partenaires.",
+  robots: { index: false, follow: false },
 }
 
 export default function APropos() {
+  notFound()
   return (
     <div className="pt-24 bg-cream-50">
 

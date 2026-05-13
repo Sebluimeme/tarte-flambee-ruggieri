@@ -21,9 +21,6 @@ export default function Hero() {
       {/* Contenu */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24 w-full">
         <div className="max-w-3xl">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-cream-200/90 mb-4">
-            Artisan alsacien · Le Bonhomme
-          </p>
           <h1 className="font-display text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6">
             La <em>vraie</em> tarte flambée,<br />
             <span className="block">cuite au feu de bois,</span>
@@ -48,7 +45,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="font-sans text-sm text-cream-200/65">
-            ★★★★★ 4,9/5 · 87 avis · 200+ événements depuis 2019 · Devis sous 24h
+            200+ événements depuis 2019 · Devis sous 24h
           </p>
         </div>
       </div>

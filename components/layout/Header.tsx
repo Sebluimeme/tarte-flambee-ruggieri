@@ -8,7 +8,6 @@ import { Menu, X, Phone } from 'lucide-react'
 const navLinks = [
   { href: '/',          label: 'Accueil',    exact: true  },
   { href: '/formules',  label: 'Formules',   exact: false },
-  { href: '/a-propos',  label: 'À propos',   exact: false },
   { href: '/#galerie',  label: 'Galerie',    exact: false },
   { href: '/#temoignages', label: 'Avis',    exact: false },
   { href: '/contact',   label: 'Contact',    exact: false },
@@ -84,7 +83,7 @@ export default function Header() {
             href="/"
             className="font-display text-xl text-bark-900 hover:text-copper-600 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm shrink-0 leading-none"
           >
-            Maison Ruggieri
+            Poivre & Salé
           </Link>
 
           {/* Nav desktop */}
@@ -139,7 +138,7 @@ export default function Header() {
       >
         {/* Header du menu */}
         <div className="flex items-center justify-between px-6 h-20 border-b border-stone-200/70">
-          <span className="font-display text-xl text-bark-900">Maison Ruggieri</span>
+          <span className="font-display text-xl text-bark-900">Poivre & Salé</span>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg text-bark-900 hover:bg-cream-200 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500"

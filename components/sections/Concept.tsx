@@ -34,8 +34,8 @@ export default function Concept() {
               Un four à bois qui se déplace chez vous
             </h2>
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
-              Nous arrivons avec tout le matériel — four à bois mobile, pâte préparée le matin
-              même, ingrédients frais d&apos;Alsace. Vous accueillez vos invités, nous nous occupons de tout :
+              Nous arrivons avec tout le matériel — four à bois mobile, pâtes laminées fines,
+              ingrédients frais d&apos;Alsace. Vous accueillez vos invités, nous nous occupons de tout :
               préparation, cuisson, service. Les tartes sortent du four toutes les 90 secondes,
               croustillantes, fumantes, à volonté.
             </p>
@@ -56,7 +56,7 @@ export default function Concept() {
               src="/media/four-bois-action.jpg"
               fill
               className="object-cover"
-              alt="Four à bois en action lors d'une prestation Maison Ruggieri"
+              alt="Four à bois en action lors d'une prestation Poivre & Salé"
             />
           </div>
         </motion.div>

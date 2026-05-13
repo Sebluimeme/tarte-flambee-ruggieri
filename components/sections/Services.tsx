@@ -10,7 +10,7 @@ const SERVICES = [
   {
     title: "Pâte fine",
     description:
-      "Une pâte fine sélectionnée auprès d'un artisan spécialisé, préparée le jour même. Croustillante, légère, et cuite en 3 minutes au four à bois.",
+      "Pâte laminée fine, croustillante, légère, et cuite en 3 minutes au four à bois.",
     Icon: Wheat,
   },
   {

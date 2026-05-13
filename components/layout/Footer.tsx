@@ -13,7 +13,6 @@ const SOCIAL = {
 
 const navLinks = [
   { href: '/formules',      label: 'Nos formules' },
-  { href: '/a-propos',      label: 'À propos' },
   { href: '/#temoignages',  label: 'Témoignages' },
   { href: '/contact',       label: 'Contact' },
   { href: '/allergenes',    label: 'Allergènes' },
@@ -53,8 +52,8 @@ export default function Footer() {
 
           {/* Col 1 — Marque + réseaux (si activés) */}
           <div>
-            <p className="font-display text-xl text-cream-50 mb-2">Maison Ruggieri</p>
-            <p className="text-sm text-stone-400">Artisan traiteur alsacien</p>
+            <p className="font-display text-xl text-cream-50 mb-2">Poivre & Salé</p>
+            <p className="text-sm text-stone-400">Cuisinier Traiteur</p>
 
             {SOCIAL.show && (
               <div className="flex items-center gap-3 mt-5">
@@ -63,7 +62,7 @@ export default function Footer() {
                     href={SOCIAL.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram Maison Ruggieri"
+                    aria-label="Instagram Poivre & Salé"
                     className="text-stone-400 hover:text-copper-400 transition-colors"
                   >
                     <IconInstagram />
@@ -74,7 +73,7 @@ export default function Footer() {
                     href={SOCIAL.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Facebook Maison Ruggieri"
+                    aria-label="Facebook Poivre & Salé"
                     className="text-stone-400 hover:text-copper-400 transition-colors"
                   >
                     <IconFacebook />
@@ -157,7 +156,7 @@ export default function Footer() {
 
         <div className="border-t border-stone-200/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-stone-400">
-            © 2026 Maison Ruggieri — SIRET&nbsp;{SIRET}
+            © 2026 Poivre & Salé — SIRET&nbsp;{SIRET}
           </p>
           <div className="flex flex-wrap items-center gap-4 text-sm text-stone-400">
             <Link

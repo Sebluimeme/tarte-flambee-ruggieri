@@ -17,16 +17,10 @@ export default function Footer() {
           <div>
             <div className="flex flex-col leading-none mb-5">
               <span
-                className="text-xs tracking-[0.2em] uppercase"
-                style={{ fontFamily: "var(--font-fraunces), serif", color: "#C4A882" }}
-              >
-                Maison
-              </span>
-              <span
                 className="text-2xl font-bold"
                 style={{ fontFamily: "var(--font-fraunces), serif", color: "#FAF7F2" }}
               >
-                Ruggieri
+                Poivre & Salé
               </span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "rgba(250,247,242,0.65)" }}>
@@ -98,7 +92,7 @@ export default function Footer() {
           style={{ borderColor: "rgba(196,168,130,0.25)" }}
         >
           <p className="text-xs" style={{ color: "rgba(250,247,242,0.4)" }}>
-            &copy; 2026 Maison Ruggieri — Tarte flambée d&apos;Alsace
+            &copy; 2026 Poivre & Salé — Tarte flambée d&apos;Alsace
           </p>
           <div className="flex gap-5">
             <Link

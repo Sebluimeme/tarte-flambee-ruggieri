@@ -156,7 +156,7 @@ export default function ConfidentialitePage() {
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">9. DPO</h2>
             <p className="text-sm leading-relaxed">
-              En tant qu&apos;artisan exerçant à titre individuel, Marc Ruggieri n&apos;est pas soumis à l&apos;obligation de désigner un Délégué à la Protection des Données (DPO).
+              En tant que prestataire exerçant à titre individuel, Marc Ruggieri n&apos;est pas soumis à l&apos;obligation de désigner un Délégué à la Protection des Données (DPO).
             </p>
           </section>
         </div>

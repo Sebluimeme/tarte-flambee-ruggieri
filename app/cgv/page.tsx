@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Vente | Maison Ruggieri",
+  title: "Conditions Générales de Vente | Poivre & Salé",
   description:
-    "Conditions Générales de Vente de Marc Ruggieri — prestation tarte flambée à domicile en Alsace. Tarifs, acompte, annulation, allergènes, assurance.",
+    "Conditions Générales de Vente de Marc Ruggieri — prestation tarte flambée à domicile en Alsace. Tarifs, annulation, allergènes, assurance.",
   robots: { index: true, follow: true },
 };
 
@@ -49,7 +49,7 @@ export default function CGVPage() {
               1. Identité du prestataire
             </h2>
             <div className="text-sm leading-relaxed space-y-1">
-              <p><strong>Marc Ruggieri</strong> — Artisan traiteur</p>
+              <p><strong>Marc Ruggieri</strong> — Cuisinier Traiteur</p>
               <p>Le Bonhomme, 68650 (Haut-Rhin, Alsace)</p>
               <p>
                 Téléphone :{" "}
@@ -78,7 +78,7 @@ export default function CGVPage() {
             </h2>
             <p className="text-sm leading-relaxed">
               Les présentes Conditions Générales de Vente (CGV) s&apos;appliquent à toutes les prestations
-              de service réalisées par Marc Ruggieri dans le cadre de l&apos;activité Maison Ruggieri. Elles
+              de service réalisées par Marc Ruggieri dans le cadre de l&apos;activité Poivre & Salé. Elles
               régissent les relations contractuelles entre Marc Ruggieri et ses clients particuliers ou
               professionnels pour toute prestation de tarte flambée à domicile (mariages, anniversaires,
               soirées d&apos;entreprise et tout événement privé ou public en Alsace). Toute commande implique
@@ -94,13 +94,11 @@ export default function CGVPage() {
             <div className="text-sm leading-relaxed space-y-3">
               <p>
                 Toute prestation fait l&apos;objet d&apos;un devis préalable gratuit, établi après échange sur la
-                nature de l&apos;événement, le nombre de convives, le lieu et les options souhaitées. Le devis
-                est valable <strong>30 jours</strong> à compter de sa date d&apos;émission.
+                nature de l&apos;événement, le nombre de convives, le lieu et les options souhaitées.
               </p>
               <p>
-                La commande est confirmée à réception de l&apos;acompte et d&apos;un accord écrit du client
-                (email, SMS ou signature du devis). Aucune date n&apos;est réservée sans versement de
-                l&apos;acompte.
+                La commande est confirmée à réception d&apos;un accord écrit du client
+                (email, SMS ou signature du devis).
               </p>
             </div>
           </section>
@@ -124,14 +122,7 @@ export default function CGVPage() {
                 <div className="flex gap-3">
                   <span className="text-copper-500 flex-shrink-0">›</span>
                   <span>
-                    <strong>Acompte de 30%</strong> du montant total TTC, à verser à la confirmation de la
-                    commande pour bloquer la date.
-                  </span>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-copper-500 flex-shrink-0">›</span>
-                  <span>
-                    <strong>Solde le jour de la prestation</strong>, avant ou après le service, par
+                    <strong>Paiement le jour de la prestation</strong>, avant ou après le service, par
                     virement bancaire, chèque ou espèces.
                   </span>
                 </div>
@@ -213,20 +204,7 @@ export default function CGVPage() {
                   <div className="flex gap-3">
                     <span className="text-copper-500 flex-shrink-0">›</span>
                     <span>
-                      <strong>Plus de 15 jours avant</strong> l&apos;événement : acompte intégralement
-                      remboursé.
-                    </span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-copper-500 flex-shrink-0">›</span>
-                    <span>
-                      <strong>Entre 7 et 15 jours</strong> avant : 50 % du montant total retenu.
-                    </span>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-copper-500 flex-shrink-0">›</span>
-                    <span>
-                      <strong>Moins de 7 jours</strong> avant : 100 % du montant total retenu.
+                      L&apos;annulation est <strong>gratuite</strong>, sans frais, quelle que soit la date de signalement. Signalez votre annulation par écrit dès que possible.
                     </span>
                   </div>
                 </div>
@@ -244,8 +222,7 @@ export default function CGVPage() {
                 <p className="font-medium text-bark-900 mb-2">Annulation par le prestataire</p>
                 <p>
                   En cas d&apos;annulation par Marc Ruggieri pour motif légitime hors force majeure,
-                  l&apos;acompte est intégralement remboursé sous 5 jours ouvrés. Une solution de report sera
-                  proposée en priorité.
+                  une solution de report sera proposée en priorité.
                 </p>
               </div>
             </div>
@@ -261,8 +238,7 @@ export default function CGVPage() {
               obligations en cas de survenance d&apos;un événement de force majeure au sens de l&apos;article 1218
               du Code civil (catastrophe naturelle, intempéries exceptionnelles rendant le transport
               impossible, épidémie, grève affectant les approvisionnements, incendie, etc.). Les parties
-              se rapprocheront pour convenir d&apos;un report dans les meilleurs délais. À défaut de report
-              possible, l&apos;acompte sera remboursé intégralement.
+              se rapprocheront pour convenir d&apos;un report dans les meilleurs délais.
             </p>
           </section>
 

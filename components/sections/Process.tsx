@@ -79,7 +79,7 @@ export default function Process() {
 
         <div className="mt-12 text-center">
           <p className="font-sans text-sm text-stone-400 mb-8">
-            Acompte de 30% à la signature · Solde le jour de la prestation · Devis valable 30 jours
+            Règlement le jour de la prestation · Annulation gratuite
           </p>
           <Link
             href="/contact"

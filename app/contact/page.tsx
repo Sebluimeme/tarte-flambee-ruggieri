@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Contact from "../../components/sections/Contact";
 
 export const metadata: Metadata = {
-  title: "Maison Ruggieri — Prestation tarte flambée à domicile en Alsace",
+  title: "Poivre & Salé — Prestation tarte flambée à domicile en Alsace",
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };
