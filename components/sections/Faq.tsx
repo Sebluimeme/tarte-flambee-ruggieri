@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Proposez-vous des formules avec boissons ?',
-    a: "Oui, dès la formule Prestige : softs et bière locale à volonté. La formule Illimitée ajoute le Riesling d'Alsace à volonté.",
+    a: "Oui, avec la formule Max : softs et bière locale à volonté.",
   },
   {
     q: 'Quel est le délai pour réserver ?',

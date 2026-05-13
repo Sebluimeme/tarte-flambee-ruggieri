@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | Marc Ruggieri",
-  description: "Politique de confidentialité et protection des données personnelles — Marc Ruggieri, tarte flambée en Alsace.",
+  title: "Politique de confidentialité | Poivre & Salé",
+  description: "Politique de confidentialité et protection des données personnelles — Poivre & Salé, tarte flambée en Alsace.",
   robots: { index: false, follow: false },
 };
 
@@ -40,7 +40,7 @@ export default function ConfidentialitePage() {
               1. Responsable du traitement
             </h2>
             <div className="bg-cream-100 border border-stone-200 rounded-xl p-6 text-sm leading-relaxed space-y-1.5">
-              <p><strong>Marc Ruggieri</strong></p>
+              <p><strong>Poivre &amp; Salé</strong></p>
               <p>Le Bonhomme, 68650 Haut-Rhin</p>
               <p>Email : contact@poivresale.fr</p>
               <p>Téléphone : 06 12 34 56 78</p>
@@ -85,7 +85,7 @@ export default function ConfidentialitePage() {
               4. Base légale
             </h2>
             <p className="text-sm leading-relaxed">
-              Le traitement repose sur l&apos;intérêt légitime (article 6.1.f du RGPD) de Marc Ruggieri pour répondre aux demandes entrantes, et sur l&apos;exécution d&apos;un contrat (article 6.1.b) lorsqu&apos;une prestation est commandée.
+              Le traitement repose sur l&apos;intérêt légitime (article 6.1.f du RGPD) de Poivre & Salé pour répondre aux demandes entrantes, et sur l&apos;exécution d&apos;un contrat (article 6.1.b) lorsqu&apos;une prestation est commandée.
             </p>
           </section>
 
@@ -110,7 +110,7 @@ export default function ConfidentialitePage() {
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">7. Cookies</h2>
             <p className="text-sm leading-relaxed">
-              Ce site n&apos;utilise aucun cookie publicitaire ni de traçage. Un seul élément de stockage local (localStorage) est utilisé pour mémoriser votre consentement à la bannière cookies. Voir notre{" "}
+              Ce site utilise des cookies Google Analytics (mesure d&apos;audience) et Google Ads (publicité). Un cookie de consentement est stocké localement. Voir notre{" "}
               <Link href="/cookies" className="text-copper-500 hover:text-copper-400 underline transition-colors">
                 politique de cookies
               </Link>
@@ -156,7 +156,7 @@ export default function ConfidentialitePage() {
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">9. DPO</h2>
             <p className="text-sm leading-relaxed">
-              En tant que prestataire exerçant à titre individuel, Marc Ruggieri n&apos;est pas soumis à l&apos;obligation de désigner un Délégué à la Protection des Données (DPO).
+              En tant que société de taille réduite, Poivre & Salé n&apos;est pas soumise à l&apos;obligation de désigner un Délégué à la Protection des Données (DPO).
             </p>
           </section>
         </div>

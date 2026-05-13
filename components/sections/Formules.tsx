@@ -44,12 +44,11 @@ const formules = [
     name: 'Association',
     price: '17€',
     unit: '/pers.',
-    label: 'Minimum 20 couverts',
+    label: 'Minimum 30 couverts',
     badge: 'Le plus populaire',
     features: [
       'Crudités en entrée',
       'Tartes flambées à volonté',
-      'Service à table',
       'Pâtes laminées fines',
       'Four à bois et ingrédients inclus',
     ],
@@ -59,13 +58,13 @@ const formules = [
   },
   {
     name: 'Max',
-    price: '20€',
+    price: '24€',
     unit: '/pers.',
     label: 'Minimum 30 couverts',
     badge: null,
     features: [
       'Tout le Association inclus',
-      "Boissons à volonté (softs, bière locale, Riesling d'Alsace)",
+      'Boissons à volonté (softs, bière locale)',
       'Tartes flambées dessert (pommes-cannelle, myrtilles)',
       'Animation autour du four',
     ],
@@ -139,7 +138,7 @@ export default function Formules() {
         </div>
 
         <p className="font-sans text-xs text-center text-stone-400 mt-8">
-          * Tarifs TTC pour les particuliers, HT pour les professionnels · Déplacement au-delà de 30 km : 0,80€/km
+          * Tarifs TTC pour les particuliers, HT pour les professionnels
         </p>
       </div>
     </section>

@@ -17,15 +17,11 @@ const ALLERGENES = [
   },
   {
     nom: "Porc",
-    detail: "Les lardons fumés (charcuterie Braun, Lapoutroie) contiennent du porc. Une version végétarienne sans lardons est disponible sur demande.",
+    detail: "Les lardons fumés contiennent du porc. Une version végétarienne sans lardons est disponible sur demande.",
   },
   {
     nom: "Oeufs",
     detail: "Présents dans certaines variantes de pâte. À préciser lors de la commande si allergie sévère.",
-  },
-  {
-    nom: "Sulfites",
-    detail: "Présents dans les vins servis (Riesling d'Alsace, formule Illimitée).",
   },
 ];
 

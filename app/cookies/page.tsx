@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de cookies | Marc Ruggieri",
-  description: "Politique de cookies du site Marc Ruggieri — tarte flambée en Alsace.",
+  title: "Politique de cookies | Poivre & Salé",
+  description: "Politique de cookies du site Poivre & Salé — tarte flambée en Alsace.",
   robots: { index: false, follow: false },
 };
 
@@ -29,16 +29,70 @@ export default function CookiesPage() {
         <div className="space-y-10 font-sans text-bark-700">
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">
-              Notre engagement : aucun cookie de traçage
+              Cookies utilisés sur ce site
             </h2>
             <p className="text-sm leading-relaxed">
-              Ce site n&apos;utilise <strong>aucun cookie publicitaire</strong> ni de traçage. Pas de Google Analytics, pas de Facebook Pixel, pas de pixel de remarketing d&apos;aucune sorte.
+              Ce site utilise des cookies à des fins d&apos;analyse d&apos;audience et de mesure publicitaire. En naviguant sur ce site, vous acceptez l&apos;utilisation de ces cookies conformément à la présente politique.
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">
-              Le seul stockage local utilisé
+              Cookies analytiques — Google Analytics
+            </h2>
+            <p className="text-sm leading-relaxed mb-4">
+              Nous utilisons Google Analytics pour mesurer l&apos;audience de notre site (pages visitées, durée des sessions, provenance des visiteurs). Ces données sont anonymisées et agrégées.
+            </p>
+            <div className="bg-cream-100 border border-stone-200 rounded-xl p-6 text-sm space-y-3">
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Émetteur :</span>
+                <span>Google LLC</span>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Cookies :</span>
+                <code className="text-copper-600 font-mono">_ga, _ga_*</code>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Finalité :</span>
+                <span>Mesure d&apos;audience, statistiques de navigation</span>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Durée :</span>
+                <span>13 mois maximum</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-medium text-bark-900 mb-4">
+              Cookies publicitaires — Google Ads
+            </h2>
+            <p className="text-sm leading-relaxed mb-4">
+              Nous utilisons Google Ads pour diffuser des annonces et mesurer leurs performances. Ces cookies permettent le suivi des conversions et le ciblage publicitaire.
+            </p>
+            <div className="bg-cream-100 border border-stone-200 rounded-xl p-6 text-sm space-y-3">
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Émetteur :</span>
+                <span>Google LLC</span>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Cookies :</span>
+                <code className="text-copper-600 font-mono">_gcl_au, IDE, DSID</code>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Finalité :</span>
+                <span>Mesure des conversions, personnalisation des annonces</span>
+              </div>
+              <div className="grid grid-cols-[140px_1fr] gap-3">
+                <span className="font-medium text-bark-900">Durée :</span>
+                <span>90 jours à 13 mois selon le cookie</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-medium text-bark-900 mb-4">
+              Cookie de consentement
             </h2>
             <div className="bg-cream-100 border border-stone-200 rounded-xl p-6 text-sm space-y-3">
               <div className="grid grid-cols-[140px_1fr] gap-3">
@@ -47,30 +101,29 @@ export default function CookiesPage() {
               </div>
               <div className="grid grid-cols-[140px_1fr] gap-3">
                 <span className="font-medium text-bark-900">Type :</span>
-                <span>localStorage (stockage local, pas un cookie réseau)</span>
+                <span>localStorage (stockage local)</span>
               </div>
               <div className="grid grid-cols-[140px_1fr] gap-3">
                 <span className="font-medium text-bark-900">Finalité :</span>
-                <span>Mémoriser que vous avez accepté ou refusé la bannière d&apos;information</span>
-              </div>
-              <div className="grid grid-cols-[140px_1fr] gap-3">
-                <span className="font-medium text-bark-900">Durée :</span>
-                <span>Stocké dans votre navigateur, sans expiration. Supprimé si vous videz les données du site.</span>
+                <span>Mémoriser votre choix de consentement à la bannière cookies</span>
               </div>
               <div className="grid grid-cols-[140px_1fr] gap-3">
                 <span className="font-medium text-bark-900">Partagé :</span>
-                <span>Non. Cette donnée ne quitte jamais votre navigateur.</span>
+                <span>Non. Cette donnée reste dans votre navigateur.</span>
               </div>
             </div>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-medium text-bark-900 mb-4">
-              Comment supprimer cette donnée ?
+              Gérer vos préférences
             </h2>
             <p className="text-sm leading-relaxed">
-              Vous pouvez supprimer cette donnée à tout moment dans les paramètres de votre navigateur (Paramètres → Confidentialité → Données du site), ou via la console développeur (F12) en supprimant la clé{" "}
-              <code className="text-copper-600 font-mono">cookies_accepted</code> dans le localStorage.
+              Vous pouvez refuser ou supprimer les cookies à tout moment via les paramètres de votre navigateur (Paramètres → Confidentialité → Données du site). Vous pouvez également vous opposer au ciblage publicitaire Google via{" "}
+              <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-copper-500 hover:text-copper-400 underline transition-colors">
+                adssettings.google.com
+              </a>
+              .
             </p>
           </section>
 

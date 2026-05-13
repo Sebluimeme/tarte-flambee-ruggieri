@@ -51,16 +51,15 @@ const FORMULES = [
     name: "Association",
     price: "17€",
     unit: "/pers.",
-    guests: "20 personnes minimum",
+    guests: "30 personnes minimum",
     duration: "",
     highlight: true,
     badge: "Le plus populaire",
     description:
-      "La formule idéale pour les groupes : crudités en entrée, tartes flambées à volonté et service à table.",
+      "La formule idéale pour les groupes : crudités en entrée et tartes flambées à volonté.",
     features: [
       "Crudités en entrée",
       "Tartes flambées à volonté",
-      "Service à table",
       "Pâtes laminées fines",
       "Four à bois et ingrédients inclus",
     ],
@@ -69,7 +68,7 @@ const FORMULES = [
   },
   {
     name: "Max",
-    price: "20€",
+    price: "24€",
     unit: "/pers.",
     guests: "30 personnes minimum",
     duration: "",
@@ -78,7 +77,7 @@ const FORMULES = [
       "L'expérience complète : tout à volonté, boissons comprises. Pour vos grandes soirées et événements premium.",
     features: [
       "Tout le Association inclus",
-      "Boissons à volonté (softs, bière locale, Riesling d'Alsace)",
+      "Boissons à volonté (softs, bière locale)",
       "Tartes flambées dessert (pommes-cannelle, myrtilles)",
       "Animation autour du four",
     ],

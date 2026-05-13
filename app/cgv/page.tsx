@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Conditions Générales de Vente | Poivre & Salé",
   description:
-    "Conditions Générales de Vente de Marc Ruggieri — prestation tarte flambée à domicile en Alsace. Tarifs, annulation, allergènes, assurance.",
+    "Conditions Générales de Vente de Poivre & Salé — prestation tarte flambée à domicile en Alsace. Tarifs, annulation, allergènes, assurance.",
   robots: { index: true, follow: true },
 };
 
@@ -49,7 +49,7 @@ export default function CGVPage() {
               1. Identité du prestataire
             </h2>
             <div className="text-sm leading-relaxed space-y-1">
-              <p><strong>Marc Ruggieri</strong> — Cuisinier Traiteur</p>
+              <p><strong>Poivre &amp; Salé</strong> — Cuisinier Traiteur</p>
               <p>Le Bonhomme, 68650 (Haut-Rhin, Alsace)</p>
               <p>
                 Téléphone :{" "}
@@ -78,8 +78,8 @@ export default function CGVPage() {
             </h2>
             <p className="text-sm leading-relaxed">
               Les présentes Conditions Générales de Vente (CGV) s&apos;appliquent à toutes les prestations
-              de service réalisées par Marc Ruggieri dans le cadre de l&apos;activité Poivre & Salé. Elles
-              régissent les relations contractuelles entre Marc Ruggieri et ses clients particuliers ou
+              de service réalisées par Poivre & Salé. Elles
+              régissent les relations contractuelles entre Poivre & Salé et ses clients particuliers ou
               professionnels pour toute prestation de tarte flambée à domicile (mariages, anniversaires,
               soirées d&apos;entreprise et tout événement privé ou public en Alsace). Toute commande implique
               l&apos;acceptation pleine et entière des présentes CGV.
@@ -110,9 +110,7 @@ export default function CGVPage() {
             </h2>
             <div className="text-sm leading-relaxed space-y-3">
               <p>
-                Les prix indiqués dans les devis sont exprimés en euros toutes taxes comprises. Nous
-                bénéficions de la franchise de TVA conformément à l&apos;article 293 B du Code
-                Général des Impôts (mention &laquo;&nbsp;TVA non applicable&nbsp;&raquo;).
+                Les prix indiqués dans les devis sont exprimés en euros toutes taxes comprises (TVA applicable).
               </p>
               <p>
                 Les tarifs varient en fonction du nombre de convives, de la distance, de la durée et des
@@ -137,7 +135,7 @@ export default function CGVPage() {
             </h2>
             <div className="text-sm leading-relaxed space-y-3">
               <p>
-                Marc Ruggieri intervient principalement en Alsace, dans un rayon indicatif de 80 km autour
+                Poivre & Salé intervient principalement en Alsace, dans un rayon indicatif de 80 km autour
                 de Le Bonhomme (68650). Toute intervention hors zone peut faire l&apos;objet d&apos;un supplément
                 de déplacement précisé dans le devis.
               </p>
@@ -181,7 +179,7 @@ export default function CGVPage() {
                 "Mettre à disposition un point d'eau à moins de 20 m du poste de travail.",
                 "Fournir une prise électrique standard (230 V, 16 A) à moins de 10 m.",
                 "Prévoir un espace dégagé d'au moins 4 m² avec une hauteur sous plafond ou sous structure de minimum 3 m pour l'installation du four à bois.",
-                "Informer Marc Ruggieri de toute allergie ou intolérance alimentaire d'un convive au minimum 7 jours avant la prestation.",
+                "Informer Poivre & Salé de toute allergie ou intolérance alimentaire d'un convive au minimum 7 jours avant la prestation.",
                 "Prévenir sans délai de tout changement affectant les conditions d'accueil (lieu, horaire, nombre de convives).",
               ].map((item, i) => (
                 <div key={i} className="flex gap-3">
@@ -213,7 +211,7 @@ export default function CGVPage() {
                 <p className="font-medium text-bark-900 mb-2">Modification par le client</p>
                 <p>
                   Toute modification (date, nombre de convives, lieu) doit être signalée par écrit dès
-                  que possible. Marc Ruggieri s&apos;engage à faire son possible pour l&apos;accepter sous réserve
+                  que possible. Poivre & Salé s&apos;engage à faire son possible pour l&apos;accepter sous réserve
                   de disponibilité. Un avenant au devis peut être émis si les modifications entraînent
                   un surcoût.
                 </p>
@@ -221,7 +219,7 @@ export default function CGVPage() {
               <div>
                 <p className="font-medium text-bark-900 mb-2">Annulation par le prestataire</p>
                 <p>
-                  En cas d&apos;annulation par Marc Ruggieri pour motif légitime hors force majeure,
+                  En cas d&apos;annulation par Poivre & Salé pour motif légitime hors force majeure,
                   une solution de report sera proposée en priorité.
                 </p>
               </div>
@@ -234,7 +232,7 @@ export default function CGVPage() {
               9. Force majeure
             </h2>
             <p className="text-sm leading-relaxed">
-              Marc Ruggieri ne pourra être tenu responsable de l&apos;inexécution totale ou partielle de ses
+              Poivre & Salé ne pourra être tenu responsable de l&apos;inexécution totale ou partielle de ses
               obligations en cas de survenance d&apos;un événement de force majeure au sens de l&apos;article 1218
               du Code civil (catastrophe naturelle, intempéries exceptionnelles rendant le transport
               impossible, épidémie, grève affectant les approvisionnements, incendie, etc.). Les parties
@@ -249,11 +247,11 @@ export default function CGVPage() {
             </h2>
             <div className="text-sm leading-relaxed space-y-3">
               <p>
-                Marc Ruggieri est titulaire d&apos;une assurance responsabilité civile professionnelle
+                Poivre & Salé est titulaire d&apos;une assurance responsabilité civile professionnelle
                 couvrant l&apos;ensemble de ses prestations. Une attestation peut être fournie sur demande.
               </p>
               <p>
-                La responsabilité de Marc Ruggieri ne saurait être engagée pour des dommages résultant
+                La responsabilité de Poivre & Salé ne saurait être engagée pour des dommages résultant
                 d&apos;informations incorrectes ou incomplètes fournies par le client (lieu inadapté, accès
                 non prévu, allergies non signalées dans les délais, etc.).
               </p>
@@ -274,7 +272,7 @@ export default function CGVPage() {
               Conformément au règlement européen (UE) n° 1169/2011 relatif à l&apos;information des
               consommateurs sur les denrées alimentaires, la <strong>liste des 14 allergènes majeurs
               présents dans nos recettes est disponible sur demande</strong>. Tout convive présentant une
-              allergie ou une intolérance alimentaire doit en informer Marc Ruggieri{" "}
+              allergie ou une intolérance alimentaire doit en informer Poivre & Salé{" "}
               <strong>au minimum 7 jours avant la prestation</strong>, afin de permettre l&apos;adaptation
               du menu dans la mesure du possible. Malgré toutes les précautions prises, une contamination
               croisée ne peut être totalement exclue dans un environnement de cuisine mobile.
@@ -288,12 +286,12 @@ export default function CGVPage() {
             </h2>
             <div className="text-sm leading-relaxed space-y-3">
               <p>
-                Marc Ruggieri applique les principes de la méthode HACCP (Hazard Analysis Critical Control
+                Poivre & Salé applique les principes de la méthode HACCP (Hazard Analysis Critical Control
                 Points) dans le cadre de son activité de restauration mobile, conformément au règlement
                 (CE) n° 852/2004 relatif à l&apos;hygiène des denrées alimentaires.
               </p>
               <p>
-                Marc Ruggieri est titulaire d&apos;une formation en hygiène alimentaire adaptée à l&apos;activité
+                Poivre & Salé est titulaire d&apos;une formation en hygiène alimentaire adaptée à l&apos;activité
                 de restauration commerciale (décret n° 2011-731 du 24 juin 2011). Les produits utilisés
                 respectent la chaîne du froid jusqu&apos;au moment du service.
               </p>
@@ -310,7 +308,7 @@ export default function CGVPage() {
               exclusivement dans le cadre de la relation commerciale et ne sont transmises à aucun
               tiers. Conformément au Règlement Général sur la Protection des Données (RGPD), vous
               disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données en
-              contactant Marc Ruggieri à l&apos;adresse{" "}
+              contactant Poivre & Salé à l&apos;adresse{" "}
               <a href="mailto:contact@poivresale.fr" className="text-copper-500 hover:underline">
                 contact@poivresale.fr
               </a>
