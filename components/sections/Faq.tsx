@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Proposez-vous des formules avec boissons ?',
-    a: "Oui, avec la formule Max : softs et bière locale à volonté.",
+    a: "Oui, avec la formule Premium : softs et bière locale à volonté.",
   },
   {
     q: 'Quel est le délai pour réserver ?',
