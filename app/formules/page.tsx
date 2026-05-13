@@ -67,7 +67,7 @@ const FORMULES = [
     ctaHref: "/contact",
   },
   {
-    name: "Max",
+    name: "Premium",
     price: "24€",
     unit: "/pers.",
     guests: "30 personnes minimum",
