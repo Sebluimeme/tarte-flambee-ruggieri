@@ -7,29 +7,50 @@ import { Check } from 'lucide-react'
 
 const formules = [
   {
-    name: 'Formule Découverte',
-    label: 'Dès 30 personnes',
-    description: "2h de service, jusqu'à 100 convives. Tartes flambées classiques et fromage blanc. Idéal pour les anniversaires et repas de famille.",
-    features: ['Installation incluse', 'Service 2h', 'Vaisselle fournie'],
+    name: 'Classique',
+    price: '12€',
+    unit: '/pers.',
+    label: 'Minimum 20 couverts',
     badge: null,
+    features: [
+      'Tartes flambées à volonté au four à bois',
+      'Recettes alsaciennes traditionnelles',
+      'Four à bois et ingrédients inclus',
+      'Déplacement inclus en zone principale',
+    ],
+    highlight: false,
     bg: 'bg-cream-100',
     border: 'border-stone-200',
   },
   {
-    name: 'Formule Mariage',
-    label: 'À partir de 80 personnes',
-    description: "Service 3h à 4h, jusqu'à 250 convives. Gamme complète : classique, saumon, chèvre-miel, végétarienne. Formule cocktail ou buffet.",
-    features: ['Service 3-4h', 'Gamme premium', 'Chef dédié'],
-    badge: 'Populaire',
-    bg: 'bg-cream-200',
-    border: 'border-stone-300',
+    name: 'Prestige',
+    price: '16€',
+    unit: '/pers.',
+    label: 'Minimum 30 couverts',
+    badge: 'Le choix préféré',
+    features: [
+      'Tout le Classique inclus',
+      'Carte étendue (chèvre-miel, forestière, savoyarde)',
+      'Boissons soft + bière locale Météor',
+      'Service à table',
+    ],
+    highlight: true,
+    bg: 'bg-cream-100',
+    border: 'border-copper-500',
   },
   {
-    name: 'Formule Entreprise',
-    label: 'Équipe ou clients',
-    description: 'Idéal pour séminaires, team-building ou réceptions clients. Service adapté, possibilité de personnalisation avec vos couleurs.',
-    features: ['Devis sous 24h', 'Facture entreprise', 'Personnalisation'],
+    name: 'Illimitée',
+    price: '20€',
+    unit: '/pers.',
+    label: 'Minimum 40 couverts',
     badge: null,
+    features: [
+      'Tout le Prestige inclus',
+      "Riesling d'Alsace à volonté",
+      'Animation du four à bois',
+      'Tartes flambées dessert (pommes-cannelle, myrtilles)',
+    ],
+    highlight: false,
     bg: 'bg-cream-100',
     border: 'border-stone-200',
   },
@@ -58,7 +79,7 @@ export default function Formules() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
-              className={`relative ${formule.bg} border ${formule.border} rounded-2xl p-6 flex flex-col`}
+              className={`relative ${formule.bg} border ${formule.highlight ? 'border-2 border-copper-500' : formule.border} rounded-2xl p-6 flex flex-col`}
             >
               {formule.badge && (
                 <div className="absolute -top-3 left-6">
@@ -67,10 +88,13 @@ export default function Formules() {
                   </span>
                 </div>
               )}
-              <p className="font-sans text-sm text-stone-400 mb-2">{formule.label}</p>
-              <h3 className="font-display text-2xl md:text-3xl font-medium text-bark-900 mb-3">{formule.name}</h3>
-              <p className="font-sans text-base leading-relaxed text-bark-700 mb-6 flex-1">{formule.description}</p>
-              <ul className="flex flex-col gap-2 mb-6">
+              <h3 className="font-display text-2xl md:text-3xl font-medium text-bark-900 mb-2">{formule.name}</h3>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="font-display text-3xl font-medium text-copper-500">{formule.price}</span>
+                <span className="font-sans text-sm text-stone-400">{formule.unit}</span>
+              </div>
+              <p className="font-sans text-xs text-stone-400 mb-5">{formule.label}</p>
+              <ul className="flex flex-col gap-2 mb-6 flex-1">
                 {formule.features.map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <Check size={16} className="text-copper-500 shrink-0" aria-hidden="true" />
@@ -78,16 +102,23 @@ export default function Formules() {
                   </li>
                 ))}
               </ul>
-              <p className="font-display text-2xl text-bark-900 font-medium mb-4">Sur devis</p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-sm hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
+                className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-sans font-medium text-sm transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                  formule.highlight
+                    ? 'bg-copper-500 text-cream-50 hover:bg-copper-400 focus:ring-copper-500'
+                    : 'bg-transparent text-bark-900 border border-bark-900/20 hover:border-bark-900/40 focus:ring-bark-900'
+                }`}
               >
                 Demander un devis
               </Link>
             </motion.div>
           ))}
         </div>
+
+        <p className="font-sans text-xs text-center text-stone-400 mt-8">
+          * Tarifs TTC pour les particuliers, HT pour les professionnels · Déplacement au-delà de 30 km : 0,80€/km
+        </p>
       </div>
     </section>
   )

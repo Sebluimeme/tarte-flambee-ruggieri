@@ -10,64 +10,59 @@ export const metadata: Metadata = {
 
 const FORMULES = [
   {
-    name: "Découverte",
-    price: "8€",
+    name: "Classique",
+    price: "12€",
     unit: "/pers.",
-    guests: "30 personnes minimum",
-    duration: "2h de prestation",
+    guests: "20 personnes minimum",
+    duration: "",
     highlight: false,
     description:
-      "La formule idéale pour les petites réunions et anniversaires intimes. Nous arrivons, installons notre four, et régalons vos proches avec les recettes classiques.",
+      "La formule idéale pour découvrir la tarte flambée à domicile. Four à bois authentique, pâte fraîche artisanale et recettes traditionnelles alsaciennes.",
     features: [
-      "Four à bois authentique",
-      "Pâte artisanale maison",
-      "Garnitures classiques (lard, crème, oignons)",
+      "Four à bois et ingrédients inclus",
+      "Pâte fraîche maison préparée sur place",
+      "Recettes traditionnelles (crème, lardons, oignons)",
       "Installation et rangement complet",
-      "Cuisson devant les invités",
+      "Déplacement inclus en zone principale",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
   },
   {
-    name: "Événement",
-    price: "12€",
+    name: "Prestige",
+    price: "16€",
     unit: "/pers.",
-    guests: "80 personnes minimum",
-    duration: "3h de prestation",
+    guests: "30 personnes minimum",
+    duration: "",
     highlight: true,
     badge: "Le plus populaire",
     description:
-      "La formule plébiscitée pour les mariages, séminaires et fêtes d'anniversaire. Garnitures variées, service complet, et un dessert sucré pour finir en beauté.",
+      "La formule plébiscitée pour les mariages, anniversaires et séminaires. Carte étendue, boissons et service à table inclus.",
     features: [
-      "Four à bois authentique",
-      "Pâte artisanale maison",
-      "Garnitures premium + végétarienne",
-      "Dessert sucré (tarte alsacienne au fromage blanc)",
-      "Service complet aux tables",
-      "Installation et rangement complet",
-      "Cuisson devant les invités",
+      "Tout le Classique inclus",
+      "Carte étendue (chèvre-miel, forestière, savoyarde)",
+      "Boissons soft + bière locale Météor",
+      "Service à table",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
   },
   {
-    name: "Sur-mesure",
-    price: "Devis",
-    unit: "",
-    guests: "Illimité",
-    duration: "Durée adaptée",
+    name: "Illimitée",
+    price: "20€",
+    unit: "/pers.",
+    guests: "40 personnes minimum",
+    duration: "",
     highlight: false,
     description:
-      "Pour les grands événements ou les demandes particulières. Nous adaptons tout à vos besoins : nombre de fours, garnitures exclusives, coordination, équipe de service.",
+      "L'expérience complète pour vos grandes occasions. Riesling à volonté, animation du four et tartes dessert pour finir en beauté.",
     features: [
-      "Tout ce dont vous avez besoin",
-      "Formule entièrement personnalisée",
-      "Options à la carte",
-      "Plusieurs fours si nécessaire",
-      "Équipe de service supplémentaire",
-      "Coordination le jour J",
+      "Tout le Prestige inclus",
+      "Riesling d'Alsace à volonté",
+      "Animation du four à bois",
+      "Tartes flambées dessert (pommes-cannelle, myrtilles)",
     ],
-    cta: "Nous contacter",
+    cta: "Demander un devis",
     ctaHref: "/contact",
   },
 ];
@@ -154,7 +149,7 @@ export default function FormulesPage() {
                     )}
                   </div>
                   <p className={`font-sans text-sm ${f.highlight ? "text-cream-100/60" : "text-stone-400"}`}>
-                    {f.guests} · {f.duration}
+                    {f.guests}{f.duration ? ` · ${f.duration}` : ""}
                   </p>
                 </div>
 
