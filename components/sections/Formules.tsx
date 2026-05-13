@@ -57,7 +57,7 @@ const formules = [
     border: 'border-copper-500',
   },
   {
-    name: 'Max',
+    name: 'Premium',
     price: '24€',
     unit: '/pers.',
     label: 'Minimum 30 couverts',

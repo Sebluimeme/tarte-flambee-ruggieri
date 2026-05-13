@@ -35,7 +35,7 @@ export default function Hero() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
             >
-              Demander un devis →
+              Demander un devis
             </Link>
             <a
               href="tel:+33785621089"

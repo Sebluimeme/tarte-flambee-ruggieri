@@ -37,9 +37,10 @@ const inputClass =
 const labelClass = "font-sans text-sm font-medium text-bark-900 mb-2 block";
 
 const FORMULES = [
-  { value: "classique", label: "Classique (12€/pers.)" },
-  { value: "prestige", label: "Prestige (16€/pers.)" },
-  { value: "illimitee", label: "Illimitée (20€/pers.)" },
+  { value: "cle-en-main", label: "Clé en main (sur devis)" },
+  { value: "standard", label: "Standard (12€/pers.)" },
+  { value: "association", label: "Association (17€/pers.)" },
+  { value: "premium", label: "Premium (24€/pers.)" },
   { value: "indecis", label: "Je ne sais pas encore" },
 ];
 
