@@ -23,7 +23,7 @@ const GALLERY_ITEMS = [
 
 export default function Galerie() {
   return (
-    <section className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
+    <section id="galerie" className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between mb-12">
           <div>

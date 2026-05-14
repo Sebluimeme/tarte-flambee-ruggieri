@@ -9,7 +9,7 @@ const navLinks = [
   { href: '/',          label: 'Accueil',    exact: true  },
   { href: '/formules',  label: 'Formules',   exact: false },
   { href: '/#galerie',  label: 'Galerie',    exact: false },
-  { href: '/#temoignages', label: 'Avis',    exact: false },
+  { href: '/#avis',        label: 'Avis',    exact: false },
   { href: '/contact',   label: 'Contact',    exact: false },
 ]
 
