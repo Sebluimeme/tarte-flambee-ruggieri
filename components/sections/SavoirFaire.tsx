@@ -25,17 +25,8 @@ export default function SavoirFaire() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
         >
-          <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden aspect-[4/5]">
-            <Image
-              src="/media/tarte-flambee-traditionnelle.webp"
-              fill
-              className="object-cover"
-              alt="Tarte flambée alsacienne traditionnelle Poivre & Salé"
-            />
-          </div>
-
           {/* Texte */}
-          <div className="order-1 md:order-2">
+          <div>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-6">
               Un savoir-faire<br />transmis avec passion
             </h2>
@@ -56,6 +47,15 @@ export default function SavoirFaire() {
             >
               Voir nos formules
             </Link>
+          </div>
+
+          <div className="md:order-first relative rounded-2xl overflow-hidden aspect-[4/5]">
+            <Image
+              src="/media/tarte-flambee-traditionnelle.webp"
+              fill
+              className="object-cover"
+              alt="Tarte flambée alsacienne traditionnelle Poivre & Salé"
+            />
           </div>
         </motion.div>
       </div>
