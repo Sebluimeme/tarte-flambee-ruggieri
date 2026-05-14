@@ -81,9 +81,10 @@ export default function Header() {
           {/* Logotype */}
           <Link
             href="/"
-            className="font-display text-xl text-bark-900 hover:text-copper-600 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm shrink-0 leading-none"
+            className="flex flex-col hover:text-copper-600 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm shrink-0"
           >
-            Poivre & Salé
+            <span className="font-display text-xl text-bark-900 leading-tight">Poivre & Salé</span>
+            <span className="font-sans text-[10px] text-bark-600 tracking-wide uppercase leading-tight">Cuisinier Traiteur & d'Évènementiel</span>
           </Link>
 
           {/* Nav desktop */}
@@ -138,7 +139,10 @@ export default function Header() {
       >
         {/* Header du menu */}
         <div className="flex items-center justify-between px-6 h-20 border-b border-stone-200/70">
-          <span className="font-display text-xl text-bark-900">Poivre & Salé</span>
+          <span className="flex flex-col">
+            <span className="font-display text-xl text-bark-900 leading-tight">Poivre & Salé</span>
+            <span className="font-sans text-[10px] text-bark-600 tracking-wide uppercase leading-tight">Cuisinier Traiteur & d'Évènementiel</span>
+          </span>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg text-bark-900 hover:bg-cream-200 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500"
