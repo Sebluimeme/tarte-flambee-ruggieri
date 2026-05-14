@@ -10,27 +10,27 @@ const GOOGLE_REVIEW_URL: string | null = null
 
 const temoignages = [
   {
-    citation: "Une soirée d'entreprise mémorable. Le four à bois installé dans notre cour a créé une atmosphère qu'on n'avait jamais vue dans nos événements. Les équipes se sont mélangées, ri ensemble, demandé des recettes. Marc a tout géré avec discrétion et générosité.",
+    citation: "Super prestation pour notre soirée d'entreprise. Marc est arrivé à l'heure, tout était nickel, les tartes flambées étaient excellentes. Le four à bois dans la cour ça a mis une super ambiance. On refera appel à lui c'est sûr.",
     nom: "Sophie M.",
-    contexte: "DRH, événement entreprise Colmar",
+    contexte: "Événement entreprise, Colmar",
   },
   {
-    citation: "On voulait quelque chose de vrai et d'alsacien pour notre mariage. Marc a proposé le buffet tarte flambée en fin de soirée et c'est devenu le moment dont tout le monde parle encore. Simple, chaleureux, parfait.",
+    citation: "Marc a fait le buffet tarte flambée pour notre mariage en fin de soirée. Franchement c'était le meilleur moment de la soirée, tout le monde s'est regroupé autour du four. Les tartes étaient vraiment bonnes. Merci Marc !",
     nom: "Aurélie & Thomas K.",
-    contexte: "Mariés, juin 2025 · Colmar",
+    contexte: "Mariage, juin 2025 · Colmar",
   },
   {
-    citation: "Pour les 60 ans de mon père, on cherchait une idée originale. La tarte flambée au four à bois dans le jardin, c'était exactement ça — convivial, généreux, et tellement bon. Les petits-enfants en parlent encore.",
+    citation: "Très bonne prestation pour les 60 ans de mon père. Idée originale, convivial, et les tartes étaient délicieuses. Marc est quelqu'un de sympa et de pro. Toute la famille a adoré, je recommande.",
     nom: "Laurence B.",
     contexte: "Anniversaire en famille, Obernai",
   },
   {
-    citation: "Le four à bois au milieu du jardin, la fumée qui monte, l'odeur de la pâte qui cuit — c'est un spectacle en soi. Nos invités ont autant regardé Marc travailler que mangé. Et ils ont mangé beaucoup.",
+    citation: "On a pris Marc pour un pot de départ et c'était vraiment top. Le four à bois c'est original, ça sent bon, tout le monde a kiffé regarder. Et les tartes étaient super bonnes. À recommander sans hésiter.",
     nom: "Matthieu R.",
     contexte: "Pot de départ, Strasbourg",
   },
   {
-    citation: "Réservé pour un anniversaire surprise en plein hiver. Marc s'est adapté à notre grange avec un naturel qui m'a bluffée. Service impeccable, chaleureux au sens propre. Je recommande sans hésiter.",
+    citation: "Réservé pour un anniversaire en hiver dans notre grange. Marc s'est bien adapté à l'endroit, aucun souci. Service au top, tartes délicieuses, ambiance géniale. Je recommande vraiment.",
     nom: "Claire V.",
     contexte: "Anniversaire, Ribeauvillé",
   },
