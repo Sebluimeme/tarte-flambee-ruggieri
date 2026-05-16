@@ -3,6 +3,35 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// In-memory rate limiter: max 3 requests per 10 min per IP
+const rateMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= RATE_LIMIT) return true;
+  entry.count++;
+  return false;
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+const VALID_TYPES = new Set(["mariage", "anniversaire", "entreprise", "inauguration", "autre"]);
+const VALID_FORMULES = new Set(["cle-en-main", "standard", "association", "premium", "indecis"]);
+
 const TYPE_LABELS: Record<string, string> = {
   mariage: "Mariage",
   anniversaire: "Anniversaire / fête de famille",
@@ -12,13 +41,14 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 const FORMULE_LABELS: Record<string, string> = {
-  classique: "Classique (12€/pers.)",
-  prestige: "Prestige (16€/pers.)",
-  illimitee: "Illimitée (20€/pers.)",
-  indecis: "Pas encore décidé",
+  "cle-en-main": "Clé en main (sur devis)",
+  standard: "Standard (12€/pers.)",
+  association: "Association (17€/pers.)",
+  premium: "Premium (24€/pers.)",
+  indecis: "Je ne sais pas encore",
 };
 
-function emailToMarc(data: {
+type ContactData = {
   nomComplet: string;
   email: string;
   telephone: string;
@@ -29,7 +59,40 @@ function emailToMarc(data: {
   lieu: string;
   allergies?: string;
   infosComplementaires?: string;
-}) {
+  rgpd: boolean;
+};
+
+function validateInput(data: unknown): { valid: boolean; error?: string } {
+  if (!data || typeof data !== "object") return { valid: false, error: "Corps invalide" };
+  const d = data as Record<string, unknown>;
+
+  if (typeof d.nomComplet !== "string" || d.nomComplet.length < 2 || d.nomComplet.length > 100)
+    return { valid: false, error: "Nom invalide" };
+  if (typeof d.email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email) || d.email.length > 200)
+    return { valid: false, error: "Email invalide" };
+  if (typeof d.telephone !== "string" || !/^[0-9+\s\-()]{7,20}$/.test(d.telephone))
+    return { valid: false, error: "Téléphone invalide" };
+  if (typeof d.typeEvenement !== "string" || !VALID_TYPES.has(d.typeEvenement))
+    return { valid: false, error: "Type d'événement invalide" };
+  if (typeof d.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(d.date))
+    return { valid: false, error: "Date invalide" };
+  if (typeof d.convives !== "string" || !/^\d{1,4}$/.test(d.convives))
+    return { valid: false, error: "Nombre de convives invalide" };
+  if (d.formule !== undefined && (typeof d.formule !== "string" || !VALID_FORMULES.has(d.formule)))
+    return { valid: false, error: "Formule invalide" };
+  if (typeof d.lieu !== "string" || d.lieu.length < 2 || d.lieu.length > 300)
+    return { valid: false, error: "Lieu invalide" };
+  if (d.allergies !== undefined && (typeof d.allergies !== "string" || d.allergies.length > 500))
+    return { valid: false, error: "Allergies invalides" };
+  if (d.infosComplementaires !== undefined && (typeof d.infosComplementaires !== "string" || d.infosComplementaires.length > 1000))
+    return { valid: false, error: "Infos invalides" };
+  if (d.rgpd !== true) return { valid: false, error: "Consentement RGPD requis" };
+
+  return { valid: true };
+}
+
+function emailToMarc(data: ContactData) {
+  const e = escapeHtml;
   return `
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,16 +105,16 @@ function emailToMarc(data: {
     </div>
     <div style="padding:32px;">
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;width:40%;">Nom</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;font-weight:bold;">${data.nomComplet}</td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Email</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="mailto:${data.email}" style="color:#D4621A;">${data.email}</a></td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Téléphone</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="tel:${data.telephone}" style="color:#D4621A;">${data.telephone}</a></td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Événement</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${TYPE_LABELS[data.typeEvenement] ?? data.typeEvenement}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;width:40%;">Nom</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;font-weight:bold;">${e(data.nomComplet)}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Email</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="mailto:${e(data.email)}" style="color:#D4621A;">${e(data.email)}</a></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Téléphone</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;"><a href="tel:${e(data.telephone)}" style="color:#D4621A;">${e(data.telephone)}</a></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Événement</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${TYPE_LABELS[data.typeEvenement] ?? e(data.typeEvenement)}</td></tr>
         <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Date</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${new Date(data.date).toLocaleDateString("fr-FR", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Convives</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.convives} personnes</td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Formule</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.formule ? (FORMULE_LABELS[data.formule] ?? data.formule) : "Non précisée"}</td></tr>
-        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Lieu</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.lieu}</td></tr>
-        ${data.allergies ? `<tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Allergies</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.allergies}</td></tr>` : ""}
-        ${data.infosComplementaires ? `<tr><td style="padding:10px 0;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Infos</td><td style="padding:10px 0;color:#3D2010;font-size:15px;">${data.infosComplementaires}</td></tr>` : ""}
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Convives</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${e(data.convives)} personnes</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Formule</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${data.formule ? (FORMULE_LABELS[data.formule] ?? e(data.formule)) : "Non précisée"}</td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Lieu</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${e(data.lieu)}</td></tr>
+        ${data.allergies ? `<tr><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Allergies</td><td style="padding:10px 0;border-bottom:1px solid #D4621A20;color:#3D2010;font-size:15px;">${e(data.allergies)}</td></tr>` : ""}
+        ${data.infosComplementaires ? `<tr><td style="padding:10px 0;color:#8B2500;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Infos</td><td style="padding:10px 0;color:#3D2010;font-size:15px;">${e(data.infosComplementaires)}</td></tr>` : ""}
       </table>
 
       <div style="margin-top:24px;background:#D4621A15;border:1px solid #D4621A30;border-radius:8px;padding:16px;">
@@ -68,6 +131,7 @@ function emailToMarc(data: {
 }
 
 function emailConfirmation(nomComplet: string) {
+  const safeName = escapeHtml(nomComplet);
   return `
 <!DOCTYPE html>
 <html lang="fr">
@@ -79,7 +143,7 @@ function emailConfirmation(nomComplet: string) {
       <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nous avons bien reçu votre demande</h1>
     </div>
     <div style="padding:32px;">
-      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Bonjour ${nomComplet},</p>
+      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Bonjour ${safeName},</p>
       <p style="color:#3D2010;font-size:16px;line-height:1.6;">Merci pour votre demande de devis. Marc Ruggieri vous contactera <strong>sous 24h</strong> avec une proposition personnalisée.</p>
       <p style="color:#3D2010;font-size:16px;line-height:1.6;">En attendant, vous pouvez le joindre directement :</p>
       <div style="margin:24px 0;display:flex;gap:12px;">
@@ -98,24 +162,22 @@ function emailConfirmation(nomComplet: string) {
 }
 
 export async function POST(req: NextRequest) {
-  try {
-    const data = await req.json() as {
-      nomComplet: string;
-      email: string;
-      telephone: string;
-      typeEvenement: string;
-      date: string;
-      convives: string;
-      formule?: string;
-      lieu: string;
-      allergies?: string;
-      infosComplementaires?: string;
-      rgpd: boolean;
-    };
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
-    if (!data.email || !data.nomComplet || !data.telephone || !data.typeEvenement || !data.date || !data.convives || !data.lieu || !data.rgpd) {
-      return NextResponse.json({ success: false, error: "Champs requis manquants" }, { status: 400 });
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { success: false, error: "Trop de tentatives, réessayez plus tard" },
+      { status: 429 }
+    );
+  }
+
+  try {
+    const raw = await req.json();
+    const { valid, error } = validateInput(raw);
+    if (!valid) {
+      return NextResponse.json({ success: false, error }, { status: 400 });
     }
+    const data = raw as ContactData;
 
     await Promise.all([
       resend.emails.send({
