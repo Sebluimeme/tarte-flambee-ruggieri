@@ -1,0 +1,68 @@
+Contexte du projet : Site Next.js (App Router) — flamme-traiteur.fr. Google Tag Manager est configuré avec l'ID GTM-54QTLCPW. Tu dois intégrer GTM dans le site ET ajouter les événements de tracking pour les formulaires.
+
+TÂCHE 1 — Intégrer le snippet GTM dans le layout principal
+Ouvre le fichier app/layout.tsx (ou le layout racine du projet).
+Ajoute ces deux snippets :
+Dans le <head>, avant toute balise, ajoute le composant <Script> de Next.js avec strategy "afterInteractive" :
+tsximport Script from 'next/script'
+
+// Dans le <head> ou juste après <body> :
+<Script
+  id="gtm-script"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-54QTLCPW');`,
+  }}
+/>
+Dans le <body>, immédiatement après la balise ouvrante <body>, ajoute le noscript de fallback :
+tsx<noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-54QTLCPW"
+    height="0"
+    width="0"
+    style={{ display: 'none', visibility: 'hidden' }}
+  />
+</noscript>
+
+TÂCHE 2 — Tracking du formulaire de CONTACT
+Ouvre components/sections/Contact.tsx.
+Dans la fonction handleSubmit, après que l'envoi soit confirmé comme réussi (après l'appel API ou fetch), ajoute ce code :
+ts// Tracking GTM - formulaire contact
+if (typeof window !== 'undefined' && window.dataLayer) {
+  window.dataLayer.push({
+    event: 'form_contact_submit',
+  });
+}
+En haut du fichier, ajoute la déclaration TypeScript pour éviter les erreurs :
+tsdeclare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
+TÂCHE 3 — Tracking du formulaire de RÉSERVATION
+Ouvre app/reservation/page.tsx.
+Dans la fonction handleSubmit, après que l'envoi soit confirmé comme réussi, ajoute ce code :
+ts// Tracking GTM - formulaire réservation
+if (typeof window !== 'undefined' && window.dataLayer) {
+  window.dataLayer.push({
+    event: 'form_reservation_submit',
+  });
+}
+Si la déclaration window.dataLayer n'est pas encore présente dans ce fichier, ajoute-la aussi (voir TÂCHE 2).
+
+TÂCHE 4 — Vérification TypeScript
+Lance npm run build ou npx tsc --noEmit pour vérifier qu'il n'y a aucune erreur TypeScript liée aux modifications. Corrige si nécessaire.
+
+⚠️ IMPORTANT pour l'IA :
+
+Ne touche pas aux formulaires admin (app/admin/page.tsx)
+Le dataLayer.push doit être placé UNIQUEMENT après un succès de soumission, pas au début de handleSubmit
+L'ID GTM est GTM-54QTLCPW — ne pas le modifier
+
+
+Une fois que ton IA a fait les modifs, reviens me le dire et on configurera les balises Google Ads dans GTM (il faudra juste ton ID de conversion Google Ads à ce moment-là).
