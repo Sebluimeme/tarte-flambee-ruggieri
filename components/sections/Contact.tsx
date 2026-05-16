@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 type FormState = {
   nomComplet: string;
   email: string;
@@ -79,6 +85,9 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         setForm(initialState);
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({ event: 'form_contact_submit' });
+        }
       } else {
         setStatus("error");
       }

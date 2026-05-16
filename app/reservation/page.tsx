@@ -4,6 +4,12 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 const BOISSONS_OPTIONS = [
   { id: "sans", label: "Sans boissons", icon: "🍽️" },
   { id: "avec", label: "Avec boissons", icon: "🥂" },
@@ -81,6 +87,9 @@ function ReservationForm() {
         status: "pending",
         createdAt: serverTimestamp(),
       });
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({ event: 'form_reservation_submit' });
+      }
       window.location.href = `/confirmation?id=${docRef.id}`;
       return;
     } catch (err) {
