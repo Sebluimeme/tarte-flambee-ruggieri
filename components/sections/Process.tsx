@@ -18,7 +18,7 @@ const STEPS = [
     Icon: Wheat,
     title: 'La pâte, fraîche du jour',
     description:
-      "La pâte est préparée le matin même avec de la farine de la région. Fine, croustillante, authentique. Pas de surgelé, jamais.",
+      "Fine, croustillante, authentique. Faite avec de la farine de la région. Pas de surgelé, jamais.",
   },
   {
     number: '03',
