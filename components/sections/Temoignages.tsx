@@ -86,10 +86,16 @@ export default function Temoignages() {
               transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
               className="bg-cream-50 rounded-2xl p-7 border border-stone-200 flex flex-col gap-5"
             >
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, j) => (
+              <div className="flex gap-0.5 items-center">
+                {[...Array(4)].map((_, j) => (
                   <Star key={j} size={16} className="text-copper-500 fill-copper-500" aria-hidden="true" />
                 ))}
+                <span className="relative inline-block" style={{ width: 16, height: 16 }} aria-hidden="true">
+                  <Star size={16} className="text-stone-300 fill-stone-300 absolute inset-0" />
+                  <span className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
+                    <Star size={16} className="text-copper-500 fill-copper-500" />
+                  </span>
+                </span>
               </div>
               <p className="font-display text-xl italic leading-relaxed text-bark-900 flex-1">
                 &ldquo;{t.citation}&rdquo;
