@@ -28,6 +28,8 @@ const GALLERY_ITEMS = [
   { src: '/media/IMG_0140.JPG', alt: 'Tarte flambée dorée' },
   { src: '/media/img_0651.jpg', alt: 'Ambiance conviviale' },
   { src: '/media/img_0155.jpg', alt: 'Détail garnitures' },
+  { src: '/media/four-bois-flammes.jpg', alt: 'Four à bois en pleine chauffe' },
+  { src: '/media/buffet-exterieur.jpg', alt: 'Installation buffet en extérieur' },
 ]
 
 const SCROLL_AMOUNT = 336
