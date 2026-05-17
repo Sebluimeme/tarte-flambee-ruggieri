@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Col 1 — Marque */}
           <div>
             <p className="font-display text-2xl font-medium text-cream-50 mb-3">
-              Maison Ruggieri
+              Poivre et Salé
             </p>
             <p className="font-sans text-sm leading-relaxed text-cream-100/60 mb-6">
               Tarte flambée d&apos;Alsace, prestation à domicile depuis 2019.
@@ -86,7 +86,7 @@ export default function Footer() {
               Contact
             </h4>
             <div className="font-sans text-sm text-cream-100/65 space-y-2.5">
-              <p className="text-cream-100/80 font-medium">Maison Ruggieri</p>
+              <p className="text-cream-100/80 font-medium">Poivre et Salé</p>
               <p>Le Bonhomme · 68650 Haut-Rhin</p>
               <a
                 href="tel:+33785621089"
@@ -151,7 +151,7 @@ export default function Footer() {
 
         <div className="border-t border-bark-700 pt-6 mt-12">
           <p className="font-sans text-xs text-cream-100/30 text-center">
-            &copy; 2026 Maison Ruggieri &middot; SIRET XXX XXX XXX XXXXX &middot; Conçu avec soin en Alsace
+            &copy; 2026 Poivre et Salé &middot; SIRET XXX XXX XXX XXXXX &middot; Conçu avec soin en Alsace
           </p>
         </div>
       </div>

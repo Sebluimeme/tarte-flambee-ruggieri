@@ -40,22 +40,13 @@ export default function Navbar() {
             aria-label="Poivre & Salé — Accueil"
           >
             <span
-              className="text-xs tracking-[0.2em] uppercase transition-colors"
-              style={{
-                fontFamily: "var(--font-fraunces), serif",
-                color: scrolled ? "#C4A882" : "rgba(250,247,242,0.7)",
-              }}
-            >
-              Maison
-            </span>
-            <span
               className="text-2xl font-bold transition-colors"
               style={{
                 fontFamily: "var(--font-fraunces), serif",
                 color: scrolled ? "#2B1810" : "#ffffff",
               }}
             >
-              Ruggieri
+              Poivre et Salé
             </span>
           </Link>
 
@@ -113,16 +104,10 @@ export default function Navbar() {
             <div className="flex items-center justify-between mb-10">
               <div className="flex flex-col leading-none">
                 <span
-                  className="text-xs tracking-[0.2em] uppercase"
-                  style={{ fontFamily: "var(--font-fraunces), serif", color: "#C4A882" }}
-                >
-                  Maison
-                </span>
-                <span
                   className="text-xl font-bold"
                   style={{ fontFamily: "var(--font-fraunces), serif", color: "#2B1810" }}
                 >
-                  Ruggieri
+                  Poivre et Salé
                 </span>
               </div>
               <button

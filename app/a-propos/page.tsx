@@ -45,7 +45,7 @@ export default function APropos() {
               C'est son oncle Franz qui lui a transmis la recette familiale : la pâte fine et craquante, la crème fraîche épaisse, les oignons tranchés à la mandoline, les lardons fumés du boucher du village. Rien de compliqué. Mais tout dans la précision du geste et la chaleur du bois.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
-              En 2019, après quinze ans passés dans la restauration traditionnelle alsacienne, Marc décide de partir à son compte avec un projet simple : apporter la tarte flambée là où les gens se réunissent. Il fait construire son premier four à bois mobile par un artisan ferronnuer de Sainte-Marie-aux-Mines, et lance Maison Ruggieri.
+              En 2019, après quinze ans passés dans la restauration traditionnelle alsacienne, Marc décide de partir à son compte avec un projet simple : apporter la tarte flambée là où les gens se réunissent. Il fait construire son premier four à bois mobile par un artisan ferronnuer de Sainte-Marie-aux-Mines, et lance Poivre et Salé.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
               Depuis, nous intervenons pour des mariages, des fêtes de famille, des soirées d'entreprise — partout en Alsace et dans le Grand Est. Ce qui ne change pas : la pâte préparée le matin, les ingrédients frais, et nous derrière notre four.
