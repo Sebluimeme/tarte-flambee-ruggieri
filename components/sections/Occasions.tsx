@@ -32,6 +32,15 @@ const OCCASIONS = [
     img: "/media/anniversaire-famille.jpg",
     alt: "Anniversaire autour du four à bois",
   },
+  {
+    title: "Associations & clubs",
+    href: "/tarte-flambee-association",
+    description:
+      "Repas de club sportif, association culturelle, comité des fêtes. Formule Association dès 30 personnes, 17€/pers. tout compris, règlement le jour J.",
+    tags: ["Dès 30 pers.", "17€/pers.", "Salle des fêtes ou chapiteau"],
+    img: "https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80",
+    alt: "Repas d'association autour d'une tarte flambée",
+  },
 ]
 
 export default function Occasions() {

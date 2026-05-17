@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://tarte-flambee-one.vercel.app";
+const SITE_URL = "https://flamme-traiteur.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

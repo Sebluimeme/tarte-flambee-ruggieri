@@ -100,7 +100,7 @@ function emailToMarc(data: ContactData) {
 <body style="margin:0;padding:0;background:#FFFDF7;font-family:Arial,sans-serif;">
   <div style="max-width:600px;margin:0 auto;background:#FBF5E6;border-radius:12px;overflow:hidden;">
     <div style="background:#3D2010;padding:24px 32px;">
-      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Maison Ruggieri</p>
+      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Flamme Traiteur</p>
       <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nouvelle demande de devis</h1>
     </div>
     <div style="padding:32px;">
@@ -122,7 +122,7 @@ function emailToMarc(data: ContactData) {
       </div>
     </div>
     <div style="background:#3D2010;padding:16px 32px;text-align:center;">
-      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Maison Ruggieri — maison-ruggieri.fr</p>
+      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Flamme Traiteur — flamme-traiteur.fr</p>
     </div>
   </div>
 </body>
@@ -139,7 +139,7 @@ function emailConfirmation(nomComplet: string) {
 <body style="margin:0;padding:0;background:#FFFDF7;font-family:Arial,sans-serif;">
   <div style="max-width:600px;margin:0 auto;background:#FBF5E6;border-radius:12px;overflow:hidden;">
     <div style="background:#3D2010;padding:24px 32px;">
-      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Maison Ruggieri</p>
+      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Flamme Traiteur</p>
       <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nous avons bien reçu votre demande</h1>
     </div>
     <div style="padding:32px;">
@@ -153,7 +153,7 @@ function emailConfirmation(nomComplet: string) {
       <p style="color:#8B2500;font-size:13px;">Votre devis est gratuit et sans engagement.</p>
     </div>
     <div style="background:#3D2010;padding:16px 32px;text-align:center;">
-      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Maison Ruggieri — maison-ruggieri.fr · Le Bonhomme, Alsace</p>
+      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Flamme Traiteur — flamme-traiteur.fr · Le Bonhomme, Alsace</p>
     </div>
   </div>
 </body>
@@ -181,16 +181,16 @@ export async function POST(req: NextRequest) {
 
     await Promise.all([
       resend.emails.send({
-        from: "Maison Ruggieri <contact@maison-ruggieri.fr>",
+        from: "Flamme Traiteur <contact@flamme-traiteur.fr>",
         to: ["contact@poivresale.fr"],
         replyTo: data.email,
         subject: `🔥 Nouveau devis — ${data.nomComplet} (${data.convives} pers.)`,
         html: emailToMarc(data),
       }),
       resend.emails.send({
-        from: "Maison Ruggieri <contact@maison-ruggieri.fr>",
+        from: "Flamme Traiteur <contact@flamme-traiteur.fr>",
         to: [data.email],
-        subject: "Votre demande de devis — Maison Ruggieri",
+        subject: "Votre demande de devis — Flamme Traiteur",
         html: emailConfirmation(data.nomComplet),
       }),
     ]);

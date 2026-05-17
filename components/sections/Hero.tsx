@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-end">
       <Image
-        src="/media/hero-maison-ruggieri.jpg"
+        src="/media/hero-flamme-traiteur.jpg"
         fill
         className="object-cover object-center"
         alt="Tarte flambée artisanale cuite au feu de bois"
