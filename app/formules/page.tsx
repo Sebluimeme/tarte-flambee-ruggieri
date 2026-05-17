@@ -216,6 +216,10 @@ export default function FormulesPage() {
               </div>
             ))}
           </div>
+
+          <p className="font-sans text-sm text-center text-bark-700 italic mt-10 max-w-xl mx-auto">
+            Chaque prestation étant unique, les tarifs ci-dessous sont indicatifs. Contactez-nous pour un devis sur mesure.
+          </p>
         </div>
       </section>
 

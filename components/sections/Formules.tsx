@@ -139,7 +139,10 @@ export default function Formules() {
           ))}
         </div>
 
-        <p className="font-sans text-xs text-center text-stone-400 mt-8">
+        <p className="font-sans text-sm text-center text-bark-700 italic mt-8 max-w-xl mx-auto">
+          Chaque prestation étant unique, les tarifs ci-dessous sont indicatifs. Contactez-nous pour un devis sur mesure.
+        </p>
+        <p className="font-sans text-xs text-center text-stone-400 mt-2">
           * Tarifs TTC pour les particuliers, HT pour les professionnels
         </p>
       </div>
