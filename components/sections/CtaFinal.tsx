@@ -31,7 +31,7 @@ export default function CtaFinal() {
         </Link>
         <a
           href="tel:+33785621089"
-          className="hidden md:inline-flex items-center justify-center gap-2 ml-4 px-8 py-4 rounded-full border border-cream-200 text-cream-50 font-sans font-medium text-base hover:bg-bark-800 transition-all"
+          className="inline-flex items-center justify-center gap-2 mt-4 md:mt-0 md:ml-4 px-8 py-4 rounded-full border border-cream-200 text-cream-50 font-sans font-medium text-base hover:bg-bark-800 transition-all"
         >
           07 85 62 10 89
         </a>
