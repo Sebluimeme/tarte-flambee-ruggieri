@@ -5,6 +5,7 @@ import './globals.css'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import CookieBanner from '../components/ui/CookieBanner'
+import MobileCTABar from '../components/ui/MobileCTABar'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -37,12 +38,12 @@ export const metadata: Metadata = {
 'Alsace traiteur événementiel',
   ],
   authors: [{ name: 'Poivre & Salé' }],
-  metadataBase: new URL('https://maison-ruggieri.fr'),
+  metadataBase: new URL('https://flamme-traiteur.fr'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://maison-ruggieri.fr',
+    url: 'https://flamme-traiteur.fr',
     siteName: 'Poivre & Salé',
     title: 'Poivre & Salé — Tarte flambée à domicile en Alsace',
     description:
@@ -65,26 +66,38 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'FoodEstablishment',
+  '@type': ['LocalBusiness', 'Caterer'],
   name: 'Poivre & Salé',
   description:
     "Traiteur spécialisé en tarte flambée (flammekueche) au four à bois, service à domicile en Alsace.",
-  url: 'https://maison-ruggieri.fr',
+  url: 'https://flamme-traiteur.fr',
   telephone: '+33785621089',
   email: 'contact@poivresale.fr',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Le Bonhomme',
     addressLocality: 'Le Bonhomme',
-    addressRegion: 'Alsace',
+    postalCode: '68650',
     addressCountry: 'FR',
   },
-  servesCuisine: ['Alsacienne', 'Tarte flambée', 'Flammekueche'],
+  servesCuisine: 'Alsatian',
   priceRange: '€€',
-  openingHours: 'Mo-Su 08:00-22:00',
-  areaServed: {
-    '@type': 'State',
-    name: 'Alsace',
-  },
+  areaServed: [
+    { '@type': 'State', name: 'Bas-Rhin' },
+    { '@type': 'State', name: 'Haut-Rhin' },
+    { '@type': 'State', name: 'Vosges' },
+    { '@type': 'State', name: 'Territoire de Belfort' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
+      ],
+      opens: '08:00',
+      closes: '22:00',
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -107,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className="bg-cream-50 text-bark-900 font-sans">
+      <body className="bg-cream-50 text-bark-900 font-sans pb-20 md:pb-0">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-54QTLCPW"
@@ -126,6 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main id="main-content">{children}</main>
         <Footer />
         <CookieBanner />
+        <MobileCTABar />
         <a
           href="https://wa.me/33785621089"
           target="_blank"

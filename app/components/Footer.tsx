@@ -68,7 +68,7 @@ export default function Footer() {
                 contact@poivresale.fr
               </a>
               <a
-                href="tel:0785621089"
+                href="tel:+33785621089"
                 className="flex items-center gap-3 text-sm transition-colors hover:text-[#D4622A]"
                 style={{ color: "rgba(250,247,242,0.65)" }}
               >

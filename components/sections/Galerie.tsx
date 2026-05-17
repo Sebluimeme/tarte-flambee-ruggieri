@@ -35,7 +35,7 @@ export default function Galerie() {
             </h2>
           </div>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/poivre.et.sale"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
@@ -64,7 +64,7 @@ export default function Galerie() {
 
         <div className="mt-8 text-center md:hidden">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/poivre.et.sale"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"

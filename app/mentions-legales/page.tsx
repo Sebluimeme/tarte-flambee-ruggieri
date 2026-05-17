@@ -42,7 +42,7 @@ export default function MentionsLegalesPage() {
                   contact@poivresale.fr
                 </a>
               </p>
-              <p><strong>Téléphone :</strong> 07 85 62 10 89</p>
+              <p><strong>Téléphone :</strong> <a href="tel:+33785621089" className="text-copper-500 hover:text-copper-400 transition-colors">07 85 62 10 89</a></p>
             </div>
           </section>
 
