@@ -36,7 +36,7 @@ export default function Concept() {
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
               Nous arrivons avec tout le matériel — four à bois mobile, pâtes laminées fines,
               ingrédients frais d&apos;Alsace. Vous accueillez vos invités, nous nous occupons de tout :
-              préparation, cuisson, service. Les tartes sortent du four toutes les 90 secondes,
+              préparation, cuisson, découpe. Les tartes sortent du four toutes les 90 secondes,
               croustillantes, fumantes, à volonté.
             </p>
             <div className="flex flex-col gap-4">
