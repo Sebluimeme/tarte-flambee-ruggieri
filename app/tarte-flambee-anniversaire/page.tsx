@@ -62,7 +62,7 @@ export default function AnniversairePage() {
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image
-          src="/media/anniversaire-famille.jpg"
+          src="/media/tarte-anniversaire-famille.jpg"
           fill
           className="object-cover object-center"
           alt="Tarte flambée au four à bois pour un anniversaire en famille"
