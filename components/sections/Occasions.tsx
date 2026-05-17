@@ -29,8 +29,8 @@ const OCCASIONS = [
     description:
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
     tags: ["Dès 20 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
-    img: "/media/tarte-flambee-classique-planche.jpg",
-    alt: "Tarte flambée classique sur planche",
+    img: "/media/tarte-anniversaire-famille.jpg",
+    alt: "Tarte flambée pour anniversaire et fêtes de famille",
   },
   {
     title: "Associations & clubs",
