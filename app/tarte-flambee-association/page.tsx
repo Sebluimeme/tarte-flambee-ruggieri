@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée pour votre repas d'association ou club · Poivre & Salé',
+  title: "Tarte flambée pour votre repas d'association ou club · Poivre & Salé",
   description:
     "Tarte flambée au four à bois pour votre repas d'association, club sportif ou amical en Alsace. Formule Association dès 17€/pers, min. 30. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-association' },

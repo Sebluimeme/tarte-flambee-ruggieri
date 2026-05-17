@@ -26,7 +26,7 @@ const AVANTAGES = [
     desc: "Marc installe, cuit, sert et range. Vous n'avez rien à gérer côté cuisine — juste profiter de votre mariage.",
   },
   {
-    title: 'Recette familiale, ingrédients frais d'Alsace',
+    title: "Recette familiale, ingrédients frais d'Alsace",
     desc: "Pâtes laminées fines, fromage blanc fermier, oignons d'Alsace, lardons fumés maison. Rien de surgelé, jamais.",
   },
   {

@@ -18,7 +18,7 @@ const BADGES = [
 
 const AVANTAGES = [
   {
-    title: 'L'animation originale que vos invités vont adorer',
+    title: "L'animation originale que vos invités vont adorer",
     desc: "Oubliez le traiteur classique. Le four à bois de Marc transforme votre anniversaire en soirée alsacienne mémorable — les invités gravitent naturellement autour de la flamme.",
   },
   {
