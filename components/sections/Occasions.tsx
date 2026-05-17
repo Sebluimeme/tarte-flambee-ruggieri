@@ -20,7 +20,7 @@ const OCCASIONS = [
     description:
       "Team-building, fin d'année, inauguration. Une alternative chaleureuse au traiteur classique, qui crée du lien entre les collaborateurs.",
     tags: ["20 à 200 pers.", "Clé en main", "Prestataire assuré"],
-    img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
+    img: "/media/IMG_8910.jpg",
     alt: "Événement d'entreprise autour d'un buffet",
   },
   {
@@ -38,7 +38,7 @@ const OCCASIONS = [
     description:
       "Repas de club sportif, association culturelle, comité des fêtes. Formule Association dès 30 personnes, 17€/pers. tout compris, règlement le jour J.",
     tags: ["Dès 30 pers.", "17€/pers.", "Salle des fêtes ou chapiteau"],
-    img: "https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80",
+    img: "/media/IMG_8191.jpg",
     alt: "Repas d'association autour d'une tarte flambée",
   },
 ]
