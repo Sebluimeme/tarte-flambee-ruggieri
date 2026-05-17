@@ -19,7 +19,7 @@ const OCCASIONS = [
     href: "/tarte-flambee-soiree-entreprise",
     description:
       "Team-building, fin d'année, inauguration. Une alternative chaleureuse au traiteur classique, qui crée du lien entre les collaborateurs.",
-    tags: ["20 à 200 pers.", "Clé en main", "Facture sur SIRET"],
+    tags: ["20 à 200 pers.", "Clé en main", "Facture TVA incluse"],
     img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
     alt: "Événement d'entreprise autour d'un buffet",
   },

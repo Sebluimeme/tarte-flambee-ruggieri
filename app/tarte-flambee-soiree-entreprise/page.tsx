@@ -5,20 +5,20 @@ import { Check } from 'lucide-react'
 export const metadata: Metadata = {
   title: "Traiteur Tarte Flambée Entreprise Alsace | Team Building | Poivre & Salé",
   description:
-    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. Facturation SIRET. Alsace et environs.",
+    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. Facturation TVA incluse. Alsace et environs.",
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },
 }
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Facture SIRET disponible',
+  'Factures TVA pour vos notes de frais',
   'Devis sous 24h',
   'Annulation gratuite',
 ]
 
 const AVANTAGES = [
   {
-    title: 'Facturation sur SIRET',
+    title: 'Facturation TVA incluse',
     desc: "Nous émettons une facture entreprise complète, TVA incluse (SIRET 812 751 469 00014). Prestation 100 % déductible.",
   },
   {
@@ -184,7 +184,7 @@ export default function SoireeEntreprisePage() {
                   'Une tarte flambée par personne',
                   'Four à bois et ingrédients inclus',
                   'Déplacement inclus',
-                  'Facture SIRET',
+                  'Facture TVA',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-100/70">
                     <Check size={15} className="text-copper-400 mt-0.5 shrink-0" strokeWidth={1.75} />
@@ -205,7 +205,7 @@ export default function SoireeEntreprisePage() {
                   'Meuble réfrigéré sur place',
                   'Service personnalisé',
                   'Installation et rangement complet',
-                  'Facture SIRET incluse',
+                  'Facture TVA incluse',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-50/90">
                     <Check size={15} className="text-cream-50 mt-0.5 shrink-0" strokeWidth={1.75} />
@@ -265,7 +265,7 @@ export default function SoireeEntreprisePage() {
             Prêt à organiser votre soirée ?
           </h2>
           <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit, réponse sous 24h, facture SIRET disponible.
+            Devis gratuit, réponse sous 24h, facture TVA pour vos notes de frais.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -281,7 +281,7 @@ export default function SoireeEntreprisePage() {
               Nous appeler
             </a>
           </div>
-          <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Facture SIRET · Annulation gratuite</p>
+          <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Facture TVA · Annulation gratuite</p>
         </div>
       </section>
     </>
