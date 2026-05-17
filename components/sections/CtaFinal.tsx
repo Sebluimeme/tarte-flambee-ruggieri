@@ -25,10 +25,16 @@ export default function CtaFinal() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-medium text-base hover:bg-cream-100 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2 focus:ring-offset-bark-900"
+          className="hidden md:inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-medium text-base hover:bg-cream-100 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2 focus:ring-offset-bark-900"
         >
           Vérifier ma disponibilité
         </Link>
+        <a
+          href="tel:+33785621089"
+          className="hidden md:inline-flex items-center justify-center gap-2 ml-4 px-8 py-4 rounded-full border border-cream-200 text-cream-50 font-sans font-medium text-base hover:bg-bark-800 transition-all"
+        >
+          07 85 62 10 89
+        </a>
       </motion.div>
     </section>
   )
