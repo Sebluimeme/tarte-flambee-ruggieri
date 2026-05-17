@@ -11,8 +11,8 @@ const OCCASIONS = [
     description:
       "Une animation gourmande qui marque les esprits. Cuisson en direct devant vos invités, ambiance conviviale, formule adaptée jusqu'à 250 personnes.",
     tags: ["Animation", "Jusqu'à 250 pers.", "Service à table"],
-    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
-    alt: "Table de mariage avec tartes flambées",
+    img: "/media/tarte-flambee-classique-planche.jpg",
+    alt: "Tarte flambée classique sur planche",
   },
   {
     title: "Soirées d'entreprise",
@@ -29,8 +29,8 @@ const OCCASIONS = [
     description:
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
     tags: ["Dès 20 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
-    img: "/media/anniversaire-famille.jpg",
-    alt: "Anniversaire autour du four à bois",
+    img: "/media/tarte-flambee-classique-planche.jpg",
+    alt: "Tarte flambée classique sur planche",
   },
   {
     title: "Associations & clubs",

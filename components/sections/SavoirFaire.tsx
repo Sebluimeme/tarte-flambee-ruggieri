@@ -51,7 +51,7 @@ export default function SavoirFaire() {
 
           <div className="md:order-first relative rounded-2xl overflow-hidden aspect-[4/5]">
             <Image
-              src="/media/tarte-flambee-traditionnelle.webp"
+              src="/media/tarte-flambee-classique-planche.jpg"
               fill
               className="object-cover"
               alt="Tarte flambée alsacienne traditionnelle Poivre & Salé"
