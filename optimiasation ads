@@ -1,0 +1,109 @@
+# PROMPT — Optimisation conversion & contenu du site « Poivre & Salé » (traiteur tarte flambée)
+
+> À coller dans Claude Code (sur le repo Next.js) ou dans une nouvelle conversation de planification.
+> Adapte les valeurs entre [crochets] avant de l'utiliser.
+
+---
+
+## RÔLE
+
+Tu es un expert en **optimisation du taux de conversion (CRO)**, en **copywriting de pages d'atterrissage** et en **landing pages pour Google Ads**. Tu connais les critères de Quality Score de Google (pertinence de l'annonce, expérience de la page de destination, CTR attendu) et les bonnes pratiques de génération de leads pour un prestataire de service local.
+
+Tu travailles sur un site existant en **Next.js** (déployé sur Vercel). Tu ne casses jamais le SEO existant ni le rendu, tu améliores l'existant.
+
+## OBJECTIF UNIQUE
+
+Maximiser le nombre de **leads qualifiés** (demandes de devis, appels, messages WhatsApp) générés par le trafic Google Ads, pour des prestations de tarte flambée au four à bois en **Alsace (67, 68), Vosges (88) et Territoire de Belfort (90)**.
+
+Une « conversion » = une demande de devis envoyée, OU un clic téléphone, OU un clic WhatsApp.
+
+## LE CONTEXTE BUSINESS
+
+- Prestataire : Marc, cuisinier-traiteur. Il se déplace avec un **four à bois mobile** chez le client.
+- Produit : tarte flambée (flammekueche) cuite au feu de bois, recette familiale, ingrédients frais d'Alsace, service à volonté pendant ~2h.
+- Occasions visées : **mariages, soirées d'entreprise, anniversaires / fêtes de famille, repas d'association, inaugurations, pots de départ**.
+- 4 formules existantes : Clé en main (sur devis), Standard (12 €/pers, min. 20), Association (17 €/pers, min. 30), Premium (24 €/pers, min. 30).
+- Zone : rayon ~80 km autour du Bonhomme (68650).
+- Promesses fortes déjà présentes : devis sous 24h, sans engagement, annulation gratuite, règlement le jour J, 200+ événements depuis 2019.
+
+## PROBLÈMES CONNUS À CORRIGER EN PRIORITÉ
+
+1. **Métadonnées pointant vers un mauvais domaine — À CORRIGER EN PREMIER.** Le domaine officiel est **`flamme-traiteur.fr`** et la marque officielle est **« Poivre & Salé »**. Or le `canonical` et les balises Open Graph / Twitter pointent vers `maison-ruggieri.fr` (reste obsolète d'une ancienne version). Action : chercher la chaîne `maison-ruggieri` dans tout le projet (probablement une variable de config type `siteUrl` ou `metadataBase`) et la remplacer partout par `flamme-traiteur.fr`. Cela corrige d'un coup `canonical`, `og:url`, `og:image`, `twitter:image`. Vérifier que `og-image.jpg` est bien servi depuis `flamme-traiteur.fr`. La marque « Poivre & Salé » est déjà correcte partout, ne pas y toucher. Tant que ce n'est pas réglé, Google Ads sera pénalisé (annonce et page de destination sur des domaines en désaccord).
+2. **Aucun avis Google réel** (« Avis Google à venir »). C'est le levier de conversion n°1 manquant. Voir section CRO.
+3. **Liens Instagram génériques** dans la galerie (`instagram.com` au lieu du compte réel `instagram.com/poivre.et.sale`).
+4. **Formulaire long** (8+ champs obligatoires) = friction forte sur trafic payant, surtout mobile.
+5. **Suivi des conversions à vérifier** : GTM est installé (`GTM-54QTLCPW`) mais il faut confirmer que chaque type de conversion est bien tracké (voir section Tracking).
+
+---
+
+## TÂCHE 1 — OPTIMISATION DU CONTENU (copywriting orienté conversion)
+
+Réécris et améliore les contenus en gardant le ton chaleureux et artisanal actuel. Principes :
+
+- **Message match.** Le titre H1 de chaque page de destination doit reprendre les mots de la recherche de l'internaute (ex. annonce « tarte flambée mariage » → H1 « Tarte flambée pour votre mariage en Alsace »).
+- **Bénéfice avant la fonctionnalité.** Ne pas dire « four à bois mobile » mais « le spectacle du four à bois qui rassemble tous vos invités ». Le client achète une ambiance et la tranquillité, pas un four.
+- **Lever les objections** directement dans le contenu : prix (« à partir de 12 €/pers, devis gratuit »), météo (« solution prévue en cas de pluie »), logistique (« on installe et on range tout »), espace nécessaire, délais de réservation, paiement, facture sur SIRET pour les pros.
+- **Preuve sociale partout** : nombre d'événements, note moyenne, témoignages nominatifs avec ville et type d'événement, photos de vraies prestations (privilégier les vraies photos aux images de banque comme les visuels Unsplash actuels).
+- **Réduction du risque** : mettre en avant « Devis gratuit · Sans engagement · Annulation gratuite · Règlement le jour J » près de chaque appel à l'action.
+- **Vocabulaire local** pour la pertinence : flammekueche, tarte flambée à domicile, four à bois, plus les villes (Colmar, Sélestat, Obernai, Mulhouse, Strasbourg, Sélestat, Épinal, Gérardmer, Saint-Dié, Belfort…).
+- **FAQ** : enrichir et garder en bas de page (utile pour le SEO et pour rassurer). Couvrir : zone, espace requis, météo, électricité/eau nécessaires, durée du service, options végétariennes/allergènes, délai de réservation, acompte, facture entreprise.
+
+Livrables : nouveaux titres H1/H2, accroche hero, descriptions des formules, blocs « pour qui », FAQ étoffée — tout en français, prêt à intégrer.
+
+## TÂCHE 2 — OPTIMISATION DE LA CONVERSION (CRO)
+
+Applique et implémente :
+
+1. **CTA clairs et répétés.** Un appel à l'action visible toutes les ~1,5 hauteur d'écran. Texte orienté action et bénéfice : « Vérifier ma date » / « Recevoir mon devis gratuit ». Éviter « Envoyer ».
+2. **Barre CTA collante sur mobile** : 2 boutons fixes en bas d'écran — « Appeler » et « WhatsApp » — toujours accessibles. La majorité du trafic Ads est mobile.
+3. **Click-to-call** : le numéro de téléphone est cliquable partout (`tel:`), bien visible en haut de page.
+4. **Formulaire en plusieurs étapes (multi-step).** Étape 1 = seulement 2-3 champs faciles (type d'événement + date + nombre de convives). Les coordonnées (nom, téléphone, email) seulement à l'étape finale. Réduire les champs obligatoires au strict minimum ; rendre « lieu », « allergies », « formule », « infos complémentaires » facultatifs.
+5. **Estimateur de prix instantané.** Petit outil : l'internaute choisit une formule + nombre de convives → affichage immédiat d'une fourchette estimée + bouton « Affiner avec un devis gratuit ». La gratification immédiate réduit l'abandon.
+6. **Avis Google.** Intégrer les vrais avis Google dès qu'ils existent (widget ou capture validée), avec la note globale et un lien vers la fiche Google Business Profile. Créer/optimiser cette fiche en parallèle, c'est essentiel pour un service local.
+7. **Réassurance visuelle** : badges « 200+ événements », « Réponse sous 24h », « Devis gratuit », assurance responsabilité civile pro, SIRET, formation hygiène/HACCP si applicable.
+8. **Urgence honnête** : indiquer que les dates de mai à septembre se réservent vite, inviter à vérifier la disponibilité maintenant.
+9. **Vitesse de page** : viser un bon LCP. L'image hero ne doit pas être servie en 3840 px ; définir des tailles d'image adaptées et le `priority` Next.js uniquement sur le hero. Vérifier le score PageSpeed mobile.
+10. **Page de confirmation dédiée** après envoi du formulaire (`/merci`) : c'est elle qui déclenche la conversion et rassure le client (« On vous répond sous 24h, en attendant appelez-nous »).
+11. **Données structurées Schema.org** : `LocalBusiness`/`Caterer`, `Service`, `FAQPage`, `Review` + `AggregateRating`. Bon pour le SEO et les résultats enrichis.
+
+## TÂCHE 3 — PAGES D'ATTERRISSAGE DÉDIÉES GOOGLE ADS
+
+Ne pas envoyer tout le trafic payant sur la page d'accueil. Créer une page de destination par intention, avec message match strict :
+
+- `/tarte-flambee-mariage` — pour le groupe d'annonces « mariage »
+- `/tarte-flambee-soiree-entreprise` — pour « entreprise / team-building / fin d'année »
+- `/tarte-flambee-anniversaire` — pour « anniversaire / fête de famille »
+- `/tarte-flambee-association` — pour « repas association / club »
+
+Chaque page : H1 qui reprend la recherche, photos et témoignages adaptés à cette occasion, formule mise en avant pertinente, FAQ ciblée, et CTA partout. Pas de menu de navigation distrayant en haut sur ces pages (ou réduit) pour garder le focus sur la conversion.
+
+Optionnel mais recommandé : des variantes par ville pour les recherches géolocalisées (ex. `/tarte-flambee-domicile-colmar`).
+
+## TÂCHE 4 — TRACKING & MESURE (pré-requis Google Ads)
+
+Vérifier et mettre en place via GTM (`GTM-54QTLCPW`) + GA4 + Google Ads :
+
+- **3 événements de conversion** : `lead_form_submit` (envoi du formulaire / arrivée sur `/merci`), `phone_click`, `whatsapp_click`.
+- Marquer l'envoi de formulaire comme conversion **principale** ; appels et WhatsApp comme conversions secondaires (ou principales si beaucoup de leads passent par là).
+- Activer les **conversions améliorées (enhanced conversions for leads)** : hachage de l'email/téléphone pour mieux mesurer.
+- Mettre en place l'**import des conversions hors ligne** : quand un devis se transforme en réservation confirmée, remonter l'info à Google Ads. L'algorithme optimisera alors vers les vraies réservations, pas seulement les formulaires remplis.
+- Vérifier la bannière cookies / consentement (`Consent Mode v2`) pour rester conforme RGPD tout en mesurant.
+
+## CONTRAINTES
+
+- Tout le contenu en **français**, ton chaleureux et artisanal, fidèle à la marque.
+- Ne pas casser le SEO existant : conserver/améliorer titres, métas, structure d'URL, canonical (une fois le domaine définitif choisi).
+- Stack : Next.js / Vercel. Respecter l'architecture du projet.
+- Mobile-first : tout doit être pensé d'abord pour smartphone.
+- Honnêteté : pas de fausse urgence, pas de faux avis. Les preuves sociales doivent être réelles.
+
+## CE QUE TU DOIS LIVRER
+
+1. Un **audit court** des points bloquant la conversion sur le site actuel.
+2. Les **textes optimisés** (hero, formules, blocs, FAQ) prêts à intégrer.
+3. Le **plan des pages d'atterrissage** dédiées Ads avec leur structure.
+4. Les **modifications techniques** : formulaire multi-étapes, barre CTA mobile collante, estimateur de prix, page `/merci`, données structurées.
+5. Le **plan de tracking** : liste des événements GTM/GA4/Ads à configurer.
+6. Une **liste priorisée** (impact / effort) des actions, du plus rentable au moins urgent.
+
+Commence par l'audit et la liste priorisée, puis attends ma validation avant d'écrire le code.
