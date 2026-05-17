@@ -23,19 +23,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Poivre & Salé — Tarte flambée à domicile en Alsace',
+    default: 'Traiteur Tarte Flambée Alsace | Feu de Bois à Domicile | Poivre & Salé',
     template: '%s · Poivre & Salé',
   },
   description:
-    "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise. Tarte flambée traditionnelle, ingrédients frais, dès 12 €/pers.",
+    "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit sous 24h. 200+ événements réalisés.",
   keywords: [
     'tarte flambée Alsace',
     'traiteur tarte flambée',
     'four à bois mobile',
-    'mariage Alsace',
+    'flammekueche feu de bois',
+    'mariage Alsace traiteur',
     'soirée entreprise Colmar',
     'flammekueche à domicile',
-'Alsace traiteur événementiel',
+    'Alsace traiteur événementiel',
+    'tarte flambée feu de bois',
   ],
   authors: [{ name: 'Poivre & Salé' }],
   metadataBase: new URL('https://flamme-traiteur.fr'),
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://flamme-traiteur.fr',
     siteName: 'Poivre & Salé',
-    title: 'Poivre & Salé — Tarte flambée à domicile en Alsace',
+    title: 'Traiteur Tarte Flambée Alsace | Feu de Bois à Domicile | Poivre & Salé',
     description:
-      "Nous nous déplaçons en Alsace avec notre four à bois pour vos mariages, anniversaires et soirées d'entreprise.",
+      "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit sous 24h.",
     images: [
       {
         url: '/og-image.jpg',

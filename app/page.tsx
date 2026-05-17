@@ -10,17 +10,19 @@ import Temoignages from '@/components/sections/Temoignages'
 import Zone from '@/components/sections/Zone'
 import Faq from '@/components/sections/Faq'
 import CtaFinal from '@/components/sections/CtaFinal'
+import UrgencyBanner from '@/components/sections/UrgencyBanner'
 
 export default function Home() {
   return (
     <>
       <Hero />
       <TrustBar />
-      <Formules />
+      <Process />
       <Concept />
       <SavoirFaire />
+      <Formules />
+      <UrgencyBanner />
       <Occasions />
-      <Process />
       <Galerie />
       <Temoignages />
       <Zone />

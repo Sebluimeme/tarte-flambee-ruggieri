@@ -28,16 +28,16 @@ export default function Concept() {
           {/* Texte */}
           <div>
             <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-              La prestation
+              Le concept
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-6">
-              Un four à bois qui se déplace chez vous
+              Un four à bois qui s&apos;invite chez vous
             </h2>
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
-              Nous arrivons avec tout le matériel — four à bois mobile, pâtes laminées fines,
-              ingrédients frais d&apos;Alsace. Vous accueillez vos invités, nous nous occupons de tout :
-              préparation, cuisson, découpe. Les tartes sortent du four toutes les 90 secondes,
-              croustillantes, fumantes, à volonté.
+              Notre four mobile s&apos;installe sur votre lieu de réception — jardin, salle des fêtes,
+              parking d&apos;entreprise. Pâte fraîche du jour, farine de la région, ingrédients d&apos;Alsace.
+              Vous accueillez vos invités, on s&apos;occupe de la préparation, de la cuisson et du service.
+              Les tartes sortent du four toutes les 90 secondes, croustillantes, à volonté.
             </p>
             <div className="flex flex-col gap-4">
               {features.map((feat) => (

@@ -3,29 +3,36 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import { MessageSquare, FileCheck, Flame } from 'lucide-react'
+import { Truck, Wheat, Flame, Utensils } from 'lucide-react'
 
 const STEPS = [
   {
     number: '01',
-    Icon: MessageSquare,
-    title: 'Vous nous contactez',
+    Icon: Truck,
+    title: 'Le four arrive',
     description:
-      "Formulaire en ligne ou appel direct. Précisez la date, le nombre de convives, le type d'événement et vos contraintes.",
+      "Notre four à bois mobile s'installe en 30 minutes sur votre lieu de réception. Jardin, salle des fêtes, parking d'entreprise : on s'adapte à votre espace.",
   },
   {
     number: '02',
-    Icon: FileCheck,
-    title: 'Devis personnalisé sous 24h',
+    Icon: Wheat,
+    title: 'La pâte, fraîche du jour',
     description:
-      "Nous analysons votre demande, vérifions notre disponibilité et vous envoyons un devis détaillé. Aucun engagement à ce stade.",
+      "La pâte est préparée le matin même avec de la farine de la région. Fine, croustillante, authentique. Pas de surgelé, jamais.",
   },
   {
     number: '03',
     Icon: Flame,
-    title: 'Intervention sur votre site',
+    title: 'La cuisson en direct',
     description:
-      "Le jour J, nous arrivons 2h avant le service avec four et ingrédients. Vous accueillez vos invités, nous nous occupons du reste.",
+      "Vos invités voient, sentent et entendent la cuisson. C'est le spectacle en plus du repas. La convivialité commence avant même la première bouchée.",
+  },
+  {
+    number: '04',
+    Icon: Utensils,
+    title: 'Le service à volonté',
+    description:
+      "Tartes salées et sucrées se succèdent tant qu'il y a de l'appétit. Vous ne gérez rien — on est là du début à la fin.",
   },
 ]
 
@@ -38,24 +45,21 @@ export default function Process() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-            En 3 étapes
+            Comment ça marche ?
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
-            De votre demande à votre soirée
+            Vous recevez, on s&apos;occupe du reste
           </h2>
         </div>
 
         <div ref={ref} className="relative">
-          {/* Ligne pointillée horizontale entre étapes (desktop) */}
-          <div className="hidden md:block absolute top-8 left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] border-t border-dashed border-stone-300" aria-hidden="true" />
-
-          <div className="grid md:grid-cols-3 gap-12 md:gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 relative">
             {STEPS.map((step, i) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 24 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.12 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
                 className="flex flex-col items-center text-center"
               >
                 <div className="relative mb-6">

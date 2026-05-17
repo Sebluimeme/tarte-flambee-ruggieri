@@ -22,30 +22,30 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24 w-full">
         <div className="max-w-3xl">
           <h1 className="font-display text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6">
-            La <em>vraie</em> tarte flambée,<br />
+            La <em>vraie</em> Flammekueche,<br />
             <span className="block">cuite au feu de bois,</span>
             <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 mb-8 max-w-xl">
-            Nous nous déplaçons en Alsace avec notre four à bois traditionnel pour vos mariages,
-            anniversaires et soirées d&apos;entreprise. Recette familiale, ingrédients frais, ambiance garantie.
+            Traiteur événementiel en Alsace — de 20 à 250 convives. Pâte fraîche, four mobile,
+            service à volonté. Le tout sans vous soucier de rien.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
             >
-              Demander un devis
+              Demander un devis gratuit
             </Link>
-            <a
-              href="tel:+33785621089"
+            <Link
+              href="/contact?focus=date"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-cream-50/10 backdrop-blur-sm text-cream-50 font-sans font-medium text-base border border-cream-50/30 hover:bg-cream-50/20 transition-all focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2"
             >
-              07 85 62 10 89
-            </a>
+              Vérifier ma date
+            </Link>
           </div>
           <p className="font-sans text-sm text-cream-200/65">
-            200+ événements depuis 2019 · Devis sous 24h
+            200+ événements réalisés · Devis sous 24h · 07 85 62 10 89
           </p>
         </div>
       </div>
