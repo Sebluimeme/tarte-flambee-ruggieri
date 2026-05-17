@@ -16,9 +16,9 @@ const STEPS = [
   {
     number: '02',
     Icon: Wheat,
-    title: 'La pâte, fraîche du jour',
+    title: 'Une pâte laminée de qualité',
     description:
-      "Fine, croustillante, authentique. Une pâte de qualité, laminée avec soin. Pas de surgelé, jamais.",
+      'Fine, croustillante, sélectionnée avec soin pour un résultat authentique à chaque fois.',
   },
   {
     number: '03',
