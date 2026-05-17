@@ -4,9 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Star } from 'lucide-react'
 
-// URL Google Business à renseigner par Marc Ruggieri une fois la fiche créée
-// ex: 'https://g.page/r/CaXXXXXXXXXXXXX/review'
-const GOOGLE_REVIEW_URL: string | null = null
+const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=/g/11w2178bdy'
 
 const temoignages = [
   {
