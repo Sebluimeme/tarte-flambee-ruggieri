@@ -19,7 +19,7 @@ const OCCASIONS = [
     href: "/tarte-flambee-soiree-entreprise",
     description:
       "Team-building, fin d'année, inauguration. Une alternative chaleureuse au traiteur classique, qui crée du lien entre les collaborateurs.",
-    tags: ["20 à 200 pers.", "Clé en main", "Facture TVA incluse"],
+    tags: ["20 à 200 pers.", "Clé en main", "Prestataire assuré"],
     img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80",
     alt: "Événement d'entreprise autour d'un buffet",
   },
@@ -89,7 +89,7 @@ export default function Occasions() {
                   <p className="font-sans text-base leading-relaxed text-bark-700 mb-5">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-5">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
@@ -99,6 +99,10 @@ export default function Occasions() {
                       </span>
                     ))}
                   </div>
+                  <span className="inline-flex items-center gap-1 font-sans text-sm font-medium text-copper-500 group-hover:gap-2 transition-all duration-200">
+                    Découvrir
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
                 </div>
               </motion.div>
             </Link>

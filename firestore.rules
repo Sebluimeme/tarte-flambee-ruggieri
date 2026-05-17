@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /reservations/{reservationId} {
+      // Allow reading a single reservation by ID (suivi page)
+      allow get: if true;
+      // Only authenticated admin can list or write
+      allow list: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

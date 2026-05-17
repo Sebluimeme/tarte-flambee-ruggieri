@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
+import Galerie from '@/components/sections/Galerie'
 
 export const metadata: Metadata = {
   title: "Tarte flambée pour votre repas d'association ou club · Poivre & Salé",
@@ -195,6 +196,8 @@ export default function AssociationPage() {
           </div>
         </div>
       </section>
+
+      <Galerie />
 
       {/* CTA bas */}
       <section className="bg-cream-100 py-16 px-6 md:px-8 border-t border-stone-200">

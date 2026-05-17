@@ -1,25 +1,26 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
+import Galerie from '@/components/sections/Galerie'
 
 export const metadata: Metadata = {
   title: "Traiteur Tarte Flambée Entreprise Alsace | Team Building | Poivre & Salé",
   description:
-    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. Facturation TVA incluse. Alsace et environs.",
+    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. 200+ événements depuis 2019. Alsace et environs.",
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },
 }
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Factures TVA pour vos notes de frais',
+  'Prestataire déclaré et assuré',
   'Devis sous 24h',
   'Annulation gratuite',
 ]
 
 const AVANTAGES = [
   {
-    title: 'Facturation TVA incluse',
-    desc: "Nous émettons une facture entreprise complète, TVA incluse (SIRET 812 751 469 00014). Prestation 100 % déductible.",
+    title: 'Prestataire fiable depuis 2019',
+    desc: "200+ événements d'entreprise réalisés. Ponctualité garantie, prestataire déclaré et assuré. Références disponibles sur demande.",
   },
   {
     title: 'Autonomie totale',
@@ -258,6 +259,8 @@ export default function SoireeEntreprisePage() {
         </div>
       </section>
 
+      <Galerie />
+
       {/* CTA bas */}
       <section className="bg-cream-100 py-16 px-6 md:px-8 border-t border-stone-200">
         <div className="max-w-xl mx-auto text-center">
@@ -265,7 +268,7 @@ export default function SoireeEntreprisePage() {
             Prêt à organiser votre soirée ?
           </h2>
           <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit, réponse sous 24h, facture TVA pour vos notes de frais.
+            Devis gratuit, réponse sous 24h. Prestataire déclaré et assuré.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -281,7 +284,7 @@ export default function SoireeEntreprisePage() {
               Nous appeler
             </a>
           </div>
-          <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Facture TVA · Annulation gratuite</p>
+          <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Prestataire déclaré · Annulation gratuite</p>
         </div>
       </section>
     </>
