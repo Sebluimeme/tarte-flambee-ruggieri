@@ -20,7 +20,7 @@ export default function CtaFinal() {
         <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-cream-50 mb-4">
           Prêt à régaler vos convives ?
         </h2>
-        <p className="font-sans text-lg leading-relaxed text-cream-200 mb-8">
+        <p className="hidden md:block font-sans text-lg leading-relaxed text-cream-200 mb-8">
           Vérifiez votre date dès maintenant. Réponse sous 24h.
         </p>
         <Link
