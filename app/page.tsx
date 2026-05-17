@@ -17,11 +17,11 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <Process />
-      <Concept />
-      <SavoirFaire />
       <Formules />
       <UrgencyBanner />
+      <Concept />
+      <SavoirFaire />
+      <Process />
       <Occasions />
       <Galerie />
       <Temoignages />

@@ -1,4 +1,8 @@
+'use client'
+
 import Image from 'next/image'
+import { useRef, useEffect, useCallback } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 function InstagramIcon() {
   return (
@@ -24,9 +28,43 @@ const GALLERY_ITEMS = [
   { src: '/media/IMG_0140.JPG', alt: 'Tarte flambée dorée' },
   { src: '/media/img_0651.jpg', alt: 'Ambiance conviviale' },
   { src: '/media/img_0155.jpg', alt: 'Détail garnitures' },
-];
+]
+
+const SCROLL_AMOUNT = 336
+const AUTO_INTERVAL = 4000
 
 export default function Galerie() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  const stopAuto = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current)
+  }, [])
+
+  const scrollNext = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
+      el.scrollTo({ left: 0, behavior: 'smooth' })
+    } else {
+      el.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' })
+    }
+  }, [])
+
+  const scrollPrev = useCallback(() => {
+    scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' })
+  }, [])
+
+  const startAuto = useCallback(() => {
+    stopAuto()
+    timerRef.current = setInterval(scrollNext, AUTO_INTERVAL)
+  }, [scrollNext, stopAuto])
+
+  useEffect(() => {
+    startAuto()
+    return stopAuto
+  }, [startAuto, stopAuto])
+
   return (
     <section id="galerie" className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
@@ -39,18 +77,30 @@ export default function Galerie() {
               Chaque prestation est unique
             </h2>
           </div>
-          <a
-            href="https://www.instagram.com/poivre.et.sale"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
-          >
-            <InstagramIcon />
-            Voir sur Instagram
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => { stopAuto(); scrollPrev(); startAuto() }}
+              aria-label="Photo précédente"
+              className="w-10 h-10 rounded-full border border-bark-900/15 flex items-center justify-center hover:bg-cream-100 hover:border-bark-900/30 transition-all"
+            >
+              <ChevronLeft size={18} className="text-bark-900" />
+            </button>
+            <button
+              onClick={() => { stopAuto(); scrollNext(); startAuto() }}
+              aria-label="Photo suivante"
+              className="w-10 h-10 rounded-full border border-bark-900/15 flex items-center justify-center hover:bg-cream-100 hover:border-bark-900/30 transition-all"
+            >
+              <ChevronRight size={18} className="text-bark-900" />
+            </button>
+          </div>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 md:-mx-8 px-6 md:px-8 snap-x snap-mandatory scrollbar-hide">
+        <div
+          ref={scrollRef}
+          onMouseEnter={stopAuto}
+          onMouseLeave={startAuto}
+          className="flex gap-4 overflow-x-auto pb-4 -mx-6 md:-mx-8 px-6 md:px-8 snap-x snap-mandatory scrollbar-hide"
+        >
           {GALLERY_ITEMS.map((item, i) => (
             <div
               key={i}
@@ -67,7 +117,7 @@ export default function Galerie() {
           ))}
         </div>
 
-        <div className="mt-8 text-center md:hidden">
+        <div className="mt-8 flex items-center justify-center">
           <a
             href="https://www.instagram.com/poivre.et.sale"
             target="_blank"
@@ -75,10 +125,10 @@ export default function Galerie() {
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
           >
             <InstagramIcon />
-            Voir sur Instagram
+            Voir toutes les photos
           </a>
         </div>
       </div>
     </section>
-  );
+  )
 }

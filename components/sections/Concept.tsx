@@ -35,7 +35,7 @@ export default function Concept() {
             </h2>
             <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
               Notre four mobile s&apos;installe sur votre lieu de réception — jardin, salle des fêtes,
-              parking d&apos;entreprise. Pâte fraîche du jour, farine de la région, ingrédients d&apos;Alsace.
+              parking d&apos;entreprise. Ingrédients d&apos;Alsace : fromage blanc fermier, oignons et lardons du pays.
               Vous accueillez vos invités, on s&apos;occupe de la préparation, de la cuisson et du service.
               Les tartes sortent du four toutes les 90 secondes, croustillantes, à volonté.
             </p>
