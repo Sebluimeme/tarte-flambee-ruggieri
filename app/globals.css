@@ -68,6 +68,15 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Masque la scrollbar horizontale sur la galerie */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 p {
   text-wrap: pretty;
 }
