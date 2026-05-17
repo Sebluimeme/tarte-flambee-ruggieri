@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
 import Galerie from '@/components/sections/Galerie'
@@ -59,22 +60,30 @@ export default function AnniversairePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream-100 pt-28 pb-20 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+      <section className="relative min-h-[72vh] flex items-end">
+        <Image
+          src="/media/anniversaire-famille.jpg"
+          fill
+          className="object-cover object-center"
+          alt="Tarte flambée au four à bois pour un anniversaire en famille"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-bark-900/20 via-bark-900/35 to-bark-900/80" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 pt-40 pb-20 w-full text-center">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4">
             Anniversaire &amp; fête de famille
           </p>
-          <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-6">
+          <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-cream-50 mb-6">
             Tarte flambée à domicile pour votre anniversaire
           </h1>
-          <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto mb-8">
+          <p className="font-sans text-lg leading-relaxed text-cream-200/85 max-w-2xl mx-auto mb-8">
             Marc se déplace chez vous avec son four à bois. Une soirée flammekueche à la maison — chaleureux, original, et tout préparé devant vos invités.
           </p>
 
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {BADGES.map((b) => (
-              <span key={b} className="px-4 py-1.5 rounded-full bg-copper-500/10 border border-copper-500/20 font-sans text-sm text-bark-700">
+              <span key={b} className="px-4 py-1.5 rounded-full bg-cream-50/10 border border-cream-50/25 font-sans text-sm text-cream-100 backdrop-blur-sm">
                 {b}
               </span>
             ))}
@@ -90,7 +99,7 @@ export default function AnniversairePage() {
             </Link>
             <a
               href="tel:+33785621089"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/20 hover:border-bark-900/40 hover:bg-cream-200 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50/10 backdrop-blur-sm text-cream-50 font-sans font-medium text-base border border-cream-50/30 hover:bg-cream-50/20 transition-all"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z" />
