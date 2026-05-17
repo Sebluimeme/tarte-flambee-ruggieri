@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: 'Intervenez-vous pour les mariages en Alsace ?',
-    a: "Oui, c'est même l'une de nos prestations les plus demandées. Nous adaptons le format (buffet cocktail, fin de soirée, déjeuner champêtre) selon vos souhaits et la configuration de votre lieu de réception.",
+    a: "Oui. Nous adaptons le format (buffet cocktail, fin de soirée, déjeuner champêtre) selon vos souhaits et la configuration de votre lieu de réception.",
   },
   {
     q: 'Quels moyens de paiement acceptez-vous ?',
