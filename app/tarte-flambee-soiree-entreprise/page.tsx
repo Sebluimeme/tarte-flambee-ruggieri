@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: "Tarte flambée soirée d'entreprise en Alsace · Poivre & Salé",
+  title: "Traiteur Tarte Flambée Entreprise Alsace | Team Building | Poivre & Salé",
   description:
-    "Animation four à bois pour votre soirée d'entreprise en Alsace. Facture avec SIRET, devis sous 24h. Marc se déplace avec son four à bois de 20 à 500 convives.",
+    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. Facturation SIRET. Alsace et environs.",
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },
 }
 
@@ -18,39 +18,51 @@ const BADGES = [
 
 const AVANTAGES = [
   {
-    title: 'Une animation conviviale qui brise la glace',
-    desc: "Le spectacle du four à bois crée un point de rassemblement naturel. Vos équipes se mélangent autour de la flamme — bien mieux qu'un buffet classique.",
+    title: 'Facturation sur SIRET',
+    desc: "Nous émettons une facture entreprise complète, TVA incluse (SIRET 812 751 469 00014). Prestation 100 % déductible.",
   },
   {
-    title: 'Facture avec numéro de SIRET',
-    desc: "Poivre & Salé est une entreprise déclarée (SIRET 812 751 469 00014). Toutes les prestations donnent lieu à une facture déductible.",
+    title: 'Autonomie totale',
+    desc: "Installation, service, débarrassage : vous ne touchez à rien. Vos équipes profitent, nous gérons tout de A à Z.",
   },
   {
-    title: 'Zéro logistique pour vous',
-    desc: "Marc arrive avec son four, installe, sert et range. Votre seule mission : profiter et fédérer vos équipes.",
+    title: 'Convivialité garantie',
+    desc: "La cuisson en direct au four à bois crée naturellement les échanges entre collègues. Bien plus efficace qu’un séminaire en salle.",
   },
   {
-    title: 'Du sur-mesure pour chaque groupe',
-    desc: "De 20 à 500 convives, en soirée de fin d'année, team building ou pot de départ. Chaque prestation est adaptée à votre contexte.",
+    title: 'Flexibilité',
+    desc: "De 20 à 250+ personnes, en intérieur ou extérieur. Nous nous adaptons à votre lieu, votre format et votre budget.",
   },
+]
+
+const OCCASIONS = [
+  'Repas de fin d’année',
+  'Team building et séminaires',
+  'Inauguration d’entreprise',
+  'Journée portes ouvertes',
+  'Pot de départ ou anniversaire d’entreprise',
 ]
 
 const FAQ = [
   {
     q: "Peut-on obtenir une facture pour la comptabilité de l'entreprise ?",
-    a: "Absolument. Poivre & Salé est une structure déclarée avec SIRET (812 751 469 00014). Vous recevez une facture en bonne et due forme, avec TVA si applicable.",
+    a: "Oui. Nous sommes une structure déclarée avec SIRET (812 751 469 00014). Vous recevez une facture en bonne et due forme, avec TVA si applicable, pour intégration directe à votre comptabilité.",
   },
   {
-    q: "Quelle formule choisir pour une soirée de fin d'année en entreprise ?",
-    a: "La formule Standard (12€/pers, min. 20) est idéale pour les petites équipes avec budget maîtrisé. La formule Clé en main (sur devis) est recommandée pour les grandes soirées avec service complet.",
+    q: "Quelle formule choisir pour une soirée de fin d'année ?",
+    a: "La formule Standard (12€/pers, min. 20) est idéale pour les petites équipes avec budget maîtrisé. La formule Premium ou Clé en main est recommandée pour les grandes soirées avec service complet.",
   },
   {
     q: "Le four à bois nécessite-t-il un espace extérieur ?",
-    a: "Un espace extérieur de ~20m² est idéal, mais Marc s'adapte : parking d'entreprise, cour intérieure, terrasse couverte. Il évaluera la faisabilité lors du devis.",
+    a: "Un espace extérieur de ~20m² est idéal, mais nous nous adaptons : parking d'entreprise, cour intérieure, terrasse couverte. Nous évaluons la faisabilité lors du devis.",
   },
   {
     q: "Combien de temps dure la prestation ?",
-    a: "En général 2h de service actif. Marc arrive 1h avant pour installer le four et repart après le nettoyage. Comptez 4h au total sur site.",
+    a: "En général 2h de service actif. Nous arrivons 1h avant pour installer le four et repartons après le nettoyage. Comptez 4h au total sur site.",
+  },
+  {
+    q: "Jusqu'à combien de convives pouvez-vous servir ?",
+    a: "De 20 à 250+ convives. Pour les très grands événements (250+), nous adaptons le matériel et l'équipe en conséquence.",
   },
 ]
 
@@ -61,13 +73,14 @@ export default function SoireeEntreprisePage() {
       <section className="bg-cream-100 pt-28 pb-20 px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-            Soirée d&apos;entreprise en Alsace
+            Entreprise · Team building · Séminaire
           </p>
           <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-6">
-            Tarte flambée pour votre soirée d&apos;entreprise en Alsace
+            Un repas d&apos;équipe qui crée vraiment du lien.
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto mb-8">
-            Marc anime votre soirée avec son four à bois mobile. Une expérience authentique qui fédère vos équipes — facture SIRET, devis gratuit sous 24h.
+            Parce qu&apos;un bon repas autour d&apos;un four à bois vaut 10 team buildings sur PowerPoint.
+            Tarte flambée au feu de bois, en Alsace, pour 20 à 250+ collaborateurs.
           </p>
 
           {/* Badges */}
@@ -85,7 +98,7 @@ export default function SoireeEntreprisePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md hover:shadow-lg"
             >
-              Recevoir mon devis gratuit
+              Demander un devis entreprise
             </Link>
             <a
               href="tel:+33785621089"
@@ -97,14 +110,17 @@ export default function SoireeEntreprisePage() {
               07 85 62 10 89
             </a>
           </div>
+          <p className="font-sans text-xs text-bark-500 mt-4">
+            Réponse sous 24h — Devis gratuit et sans engagement
+          </p>
         </div>
       </section>
 
-      {/* Avantages */}
+      {/* Arguments B2B */}
       <section className="bg-cream-50 py-20 px-6 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900 text-center mb-12">
-            L&apos;animation qui marque les esprits
+            Pourquoi les entreprises nous choisissent
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {AVANTAGES.map((av) => (
@@ -118,6 +134,28 @@ export default function SoireeEntreprisePage() {
                     <p className="font-sans text-sm leading-relaxed text-bark-600">{av.desc}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Idéal pour */}
+      <section className="bg-cream-100 py-20 px-6 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+              Idéal pour
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900">
+              Tous les moments forts de votre entreprise
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {OCCASIONS.map((occ) => (
+              <div key={occ} className="flex items-center gap-3 rounded-xl bg-cream-50 border border-stone-200 p-4">
+                <span className="w-2 h-2 rounded-full bg-copper-500 shrink-0" aria-hidden="true" />
+                <span className="font-sans text-base text-bark-800">{occ}</span>
               </div>
             ))}
           </div>
@@ -182,7 +220,7 @@ export default function SoireeEntreprisePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-semibold text-base hover:bg-cream-100 transition-all shadow-md"
             >
-              Recevoir mon devis gratuit
+              Demander un devis entreprise
             </Link>
           </div>
         </div>
@@ -195,7 +233,7 @@ export default function SoireeEntreprisePage() {
             <path d="M0 32V20C0 8.954 7.163 2.477 21.49 0L23 3.6C16.19 5.2 12.493 8.8 11.91 14.4H18v17.6H0zm22 0V20C22 8.954 29.163 2.477 43.49 0L45 3.6C38.19 5.2 34.493 8.8 33.91 14.4H40v17.6H22z" fill="currentColor"/>
           </svg>
           <blockquote className="font-display text-2xl md:text-3xl font-medium italic text-bark-900 leading-relaxed mb-6">
-            "Notre soirée de fin d&apos;année à Mulhouse était un vrai succès. Le four à bois a créé une ambiance formidable — les équipes en parlent encore. Merci Marc !"
+            &laquo;&nbsp;Notre soirée de fin d&apos;année à Mulhouse était un vrai succès. Le four à bois a créé une ambiance formidable — les équipes en parlent encore. Merci&nbsp;!&nbsp;&raquo;
           </blockquote>
           <p className="font-sans text-sm text-bark-600">
             Jean-Luc B., DRH — <span className="text-copper-500">Soirée de fin d&apos;année à Mulhouse, décembre 2024</span>
@@ -234,13 +272,13 @@ export default function SoireeEntreprisePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md"
             >
-              Recevoir mon devis gratuit
+              Demander un devis entreprise
             </Link>
             <a
               href="tel:+33785621089"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/20 hover:border-bark-900/40 transition-all"
             >
-              Appeler Marc
+              Nous appeler
             </a>
           </div>
           <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Facture SIRET · Annulation gratuite</p>
