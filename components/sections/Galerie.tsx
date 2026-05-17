@@ -18,7 +18,6 @@ const GALLERY_ITEMS = [
   { src: '/media/IMG_0140.JPG', alt: 'Tarte flambée artisanale' },
   { src: '/media/img_0651.jpg', alt: 'Ambiance soirée' },
   { src: '/media/img_0155.jpg', alt: 'Garnitures fraîches' },
-  { src: '/media/img_0153.jpg', alt: 'Four à bois en action' },
 ];
 
 export default function Galerie() {
