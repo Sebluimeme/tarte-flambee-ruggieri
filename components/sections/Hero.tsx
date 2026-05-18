@@ -37,12 +37,12 @@ export default function Hero() {
             >
               Demander un devis gratuit
             </Link>
-            <Link
-              href="/contact?focus=date"
+            <a
+              href="tel:+33785621089"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-cream-50/10 backdrop-blur-sm text-cream-50 font-sans font-medium text-base border border-cream-50/30 hover:bg-cream-50/20 transition-all focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2"
             >
-              Vérifier ma date
-            </Link>
+              07 85 62 10 89
+            </a>
           </div>
           <p className="font-sans text-sm text-cream-200/65">
             200+ événements réalisés · Devis sous 24h · 07 85 62 10 89
