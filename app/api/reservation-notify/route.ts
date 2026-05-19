@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: "Flamme Traiteur <contact@flamme-traiteur.fr>",
-      to: ["contact@poivresale.fr", "sonodesgo@gmail.com"],
+      to: ["contact@poivresale.fr", "bmsyoder@gmail.com"],
       replyTo: data.email,
       subject: `🔥 Nouvelle réservation — ${nomAffiche} (${data.couverts} pers.)`,
       html,
