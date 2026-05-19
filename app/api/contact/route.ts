@@ -182,7 +182,7 @@ export async function POST(req: NextRequest) {
     await Promise.all([
       resend.emails.send({
         from: "Flamme Traiteur <contact@flamme-traiteur.fr>",
-        to: ["contact@poivresale.fr"],
+        to: ["contact@poivresale.fr", "sonodesgo@gmail.com"],
         replyTo: data.email,
         subject: `🔥 Nouveau devis — ${data.nomComplet} (${data.convives} pers.)`,
         html: emailToMarc(data),

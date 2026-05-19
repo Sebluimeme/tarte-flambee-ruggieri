@@ -90,6 +90,11 @@ function ReservationForm() {
       if (typeof window !== 'undefined' && window.dataLayer) {
         window.dataLayer.push({ event: 'form_reservation_submit' });
       }
+      fetch('/api/reservation-notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: docRef.id, ...formData }),
+      });
       window.location.href = `/confirmation?id=${docRef.id}`;
       return;
     } catch (err) {
