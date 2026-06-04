@@ -32,7 +32,7 @@ const FORMULES = [
     name: "Standard",
     price: "12€",
     unit: "/pers.",
-    guests: "20 personnes minimum",
+    guests: "35 personnes minimum",
     duration: "",
     highlight: false,
     description:
@@ -51,7 +51,7 @@ const FORMULES = [
     name: "Association",
     price: "17€",
     unit: "/pers.",
-    guests: "30 personnes minimum",
+     guests: "35 personnes minimum",
     duration: "",
     highlight: true,
     badge: "Le plus populaire",
@@ -70,7 +70,7 @@ const FORMULES = [
     name: "Premium",
     price: "24€",
     unit: "/pers.",
-    guests: "30 personnes minimum",
+     guests: "35 personnes minimum",
     duration: "",
     highlight: false,
     description:

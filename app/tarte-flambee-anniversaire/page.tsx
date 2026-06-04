@@ -7,7 +7,7 @@ import Galerie from '@/components/sections/Galerie'
 export const metadata: Metadata = {
   title: 'Tarte flambée à domicile pour votre anniversaire · Poivre & Salé',
   description:
-    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, min. 20 convives. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, min. 35 convives. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },
 }
 
@@ -44,7 +44,7 @@ const FAQ = [
   },
   {
     q: "Quelle formule choisir pour un anniversaire de 25 personnes ?",
-    a: "La formule Standard (12€/pers, min. 20) est parfaite. Pour 30 personnes et plus, la formule Association (17€/pers) avec crudités en entrée et tartes à volonté est idéale.",
+    a: "La formule Standard (12€/pers, min. 35) est parfaite. Pour les grands groupes, la formule Association (17€/pers) avec crudités en entrée et tartes à volonté est idéale.",
   },
   {
     q: "Peut-on commander une tarte flambée sucrée pour le dessert ?",
@@ -150,7 +150,7 @@ export default function AnniversairePage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">20 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">35 personnes minimum</p>
               <ul className="space-y-2.5">
                 {[
                   'Une tarte flambée par personne',
@@ -174,7 +174,7 @@ export default function AnniversairePage() {
                 <span className="font-display text-4xl font-medium text-cream-50">17€</span>
                 <span className="font-sans text-sm text-cream-50/70">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-50/70 mb-5">30 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-50/70 mb-5">35 personnes minimum</p>
               <ul className="space-y-2.5">
                 {[
                   'Crudités en entrée',

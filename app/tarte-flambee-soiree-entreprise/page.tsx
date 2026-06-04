@@ -52,7 +52,7 @@ const FAQ = [
   },
   {
     q: "Quelle formule choisir pour une soirée de fin d'année ?",
-    a: "La formule Standard (12€/pers, min. 20) est idéale pour les petites équipes avec budget maîtrisé. La formule Premium ou Clé en main est recommandée pour les grandes soirées avec service complet.",
+    a: "La formule Standard (12€/pers, min. 35) est idéale pour les équipes avec budget maîtrisé. La formule Premium ou Clé en main est recommandée pour les grandes soirées avec service complet.",
   },
   {
     q: "Le four à bois nécessite-t-il un espace extérieur ?",
@@ -188,7 +188,7 @@ export default function SoireeEntreprisePage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">20 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">35 personnes minimum</p>
               <ul className="space-y-2.5 mb-6">
                 {[
                   'Une tarte flambée par personne',

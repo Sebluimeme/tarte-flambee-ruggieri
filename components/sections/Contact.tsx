@@ -220,10 +220,10 @@ export default function Contact() {
                     type="number"
                     name="convives"
                     required
-                    min={20}
+                    min={35}
                     value={form.convives}
                     onChange={handleChange}
-                    placeholder="Minimum 20 personnes"
+                    placeholder="Minimum 35 personnes"
                     className={inputClass}
                   />
                 </div>

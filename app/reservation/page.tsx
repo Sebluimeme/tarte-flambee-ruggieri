@@ -57,8 +57,8 @@ function ReservationForm() {
       newErrors.telephone = "Un numéro valide est requis";
     if (!formData.typeEvenement) newErrors.typeEvenement = "Sélectionnez un type d'événement";
     if (!formData.date) newErrors.date = "La date est requise";
-    if (!formData.couverts || Number(formData.couverts) < 20)
-      newErrors.couverts = "Minimum 20 couverts";
+    if (!formData.couverts || Number(formData.couverts) < 35)
+      newErrors.couverts = "Minimum 35 couverts";
     return newErrors;
   };
 
@@ -193,8 +193,8 @@ function ReservationForm() {
                 {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1" style={{ color: "#3D2010" }}>Nombre de couverts * (min. 20)</label>
-                <input type="number" name="couverts" placeholder="ex. 50" min={20} required value={formData.couverts} onChange={handleChange} className={fieldClass("couverts")} />
+                <label className="block text-sm font-medium mb-1" style={{ color: "#3D2010" }}>Nombre de couverts * (min. 35)</label>
+                <input type="number" name="couverts" placeholder="ex. 50" min={35} required value={formData.couverts} onChange={handleChange} className={fieldClass("couverts")} />
                 {errors.couverts && <p className="text-red-500 text-xs mt-1">{errors.couverts}</p>}
               </div>
               <div>

@@ -7,7 +7,7 @@ import Galerie from '@/components/sections/Galerie'
 export const metadata: Metadata = {
   title: "Tarte flambée pour votre repas d'association ou club · Poivre & Salé",
   description:
-    "Tarte flambée au four à bois pour votre repas d'association, club sportif ou amical en Alsace. Formule Association dès 17€/pers, min. 30. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre repas d'association, club sportif ou amical en Alsace. Formule Association dès 17€/pers, min. 35. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-association' },
 }
 
@@ -145,7 +145,7 @@ export default function AssociationPage() {
           </h2>
           <div className="flex items-baseline justify-center gap-1 mb-4">
             <span className="font-display text-5xl font-medium text-copper-400">17€</span>
-            <span className="font-sans text-base text-cream-100/50">/pers. · min. 30 personnes</span>
+            <span className="font-sans text-base text-cream-100/50">/pers. · min. 35 personnes</span>
           </div>
           <ul className="space-y-3 text-left max-w-sm mx-auto mb-8">
             {[
