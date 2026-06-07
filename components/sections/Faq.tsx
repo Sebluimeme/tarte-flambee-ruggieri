@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Proposez-vous des formules avec boissons ?',
-    a: "Oui, avec la formule Premium : softs et bière locale à volonté.",
+    a: "Oui, avec la formule Premium : 1 verre de bière offert par personne, plus des boissons en option avec la formule Clé en main.",
   },
   {
     q: 'Quel est le délai pour réserver ?',

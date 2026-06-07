@@ -52,7 +52,7 @@ const FAQ = [
   },
   {
     q: "Quelle formule choisir pour une soirée de fin d'année ?",
-    a: "La formule Standard (12€/pers, min. 35) est idéale pour les équipes avec budget maîtrisé. La formule Premium ou Clé en main est recommandée pour les grandes soirées avec service complet.",
+    a: "La formule Standard (12€/pers, dès 30 personnes) est idéale pour les équipes avec budget maîtrisé. La formule Gourmande (17€/pers) ou Clé en main est recommandée pour les grandes soirées avec service complet.",
   },
   {
     q: "Le four à bois nécessite-t-il un espace extérieur ?",
@@ -188,10 +188,10 @@ export default function SoireeEntreprisePage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">35 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">dès 30 personnes</p>
               <ul className="space-y-2.5 mb-6">
                 {[
-                  'Une tarte flambée par personne',
+                  '1 tarte flambée salée par personne',
                   'Four à bois et ingrédients inclus',
                   'Déplacement inclus',
                   'Facture TVA',
@@ -211,10 +211,10 @@ export default function SoireeEntreprisePage() {
               <p className="font-sans text-sm text-cream-50/70 mb-5">Adapté à votre événement</p>
               <ul className="space-y-2.5 mb-6">
                 {[
-                  'Four à bois + tables + matériel complet',
-                  'Meuble réfrigéré sur place',
-                  'Service personnalisé',
-                  'Installation et rangement complet',
+                  'Formule tartes flambées au choix',
+                  'Four à bois + tables, chaises, mange-debout',
+                  'Vaisselle, verrerie et matériel de service',
+                  'Installation, service et débarrassage',
                   'Facture TVA incluse',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-50/90">

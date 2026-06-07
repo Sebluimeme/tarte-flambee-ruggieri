@@ -7,7 +7,7 @@ import Galerie from '@/components/sections/Galerie'
 export const metadata: Metadata = {
   title: 'Tarte flambée à domicile pour votre anniversaire · Poivre & Salé',
   description:
-    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, min. 35 convives. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },
 }
 
@@ -44,7 +44,7 @@ const FAQ = [
   },
   {
     q: "Quelle formule choisir pour un anniversaire de 25 personnes ?",
-    a: "La formule Standard (12€/pers, min. 35) est parfaite. Pour les grands groupes, la formule Association (17€/pers) avec crudités en entrée et tartes à volonté est idéale.",
+    a: "La formule Standard (12€/pers, dès 30 personnes) est parfaite pour les petits groupes. Pour les groupes plus grands, la formule Gourmande (17€/pers) avec tartes à volonté est idéale.",
   },
   {
     q: "Peut-on commander une tarte flambée sucrée pour le dessert ?",
@@ -150,11 +150,11 @@ export default function AnniversairePage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">35 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">dès 30 personnes</p>
               <ul className="space-y-2.5">
                 {[
-                  'Une tarte flambée par personne',
-                  'Recettes traditionnelles alsaciennes',
+                  '1 tarte flambée salée par personne',
+                  'Garnitures classiques : nature, gratinée, forestière',
                   'Four à bois et ingrédients inclus',
                   'Déplacement inclus en zone principale',
                 ].map((f) => (
@@ -169,18 +169,18 @@ export default function AnniversairePage() {
               <div className="inline-block px-3 py-0.5 rounded-full bg-cream-50/20 font-sans text-xs text-cream-50 mb-3">
                 Le plus choisi
               </div>
-              <h3 className="font-display text-2xl text-cream-50 mb-2">Association</h3>
+              <h3 className="font-display text-2xl text-cream-50 mb-2">Gourmande</h3>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="font-display text-4xl font-medium text-cream-50">17€</span>
                 <span className="font-sans text-sm text-cream-50/70">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-50/70 mb-5">35 personnes minimum</p>
+              <p className="font-sans text-sm text-cream-50/70 mb-5">dès 30 personnes</p>
               <ul className="space-y-2.5">
                 {[
-                  'Crudités en entrée',
-                  'Tartes flambées à volonté',
-                  'Pâtes laminées fines',
+                  'Tartes flambées salées à volonté',
+                  'Pâtes laminées fines, garnitures variées',
                   'Four à bois et ingrédients inclus',
+                  'Animation autour du four',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-50/90">
                     <Check size={15} className="text-cream-50 mt-0.5 shrink-0" strokeWidth={1.75} />

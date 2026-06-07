@@ -145,14 +145,14 @@ export default function MariagePage() {
           </h2>
           <div className="flex items-baseline justify-center gap-1 mb-4">
             <span className="font-display text-5xl font-medium text-copper-400">24€</span>
-            <span className="font-sans text-base text-cream-100/50">/pers. · min. 35 personnes</span>
+            <span className="font-sans text-base text-cream-100/50">/pers. · dès 30 personnes</span>
           </div>
           <ul className="space-y-3 text-left max-w-sm mx-auto mb-8">
             {[
-              'Crudités en entrée',
               'Tartes flambées salées à volonté',
+              'Garnitures classiques et variées',
               'Tartes flambées dessert (pommes-cannelle, myrtilles)',
-              'Boissons à volonté (softs, bière locale)',
+              '1 verre de bière offert par personne',
               'Animation autour du four à bois',
               'Installation et rangement complet',
             ].map((feat) => (

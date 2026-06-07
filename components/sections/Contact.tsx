@@ -45,7 +45,7 @@ const labelClass = "font-sans text-sm font-medium text-bark-900 mb-2 block";
 const FORMULES = [
   { value: "cle-en-main", label: "Clé en main (sur devis)" },
   { value: "standard", label: "Standard (12€/pers.)" },
-  { value: "association", label: "Association (17€/pers.)" },
+  { value: "gourmande", label: "Gourmande (17€/pers.)" },
   { value: "premium", label: "Premium (24€/pers.)" },
   { value: "indecis", label: "Je ne sais pas encore" },
 ];
@@ -223,7 +223,7 @@ export default function Contact() {
                     min={35}
                     value={form.convives}
                     onChange={handleChange}
-                    placeholder="Minimum 35 personnes"
+                    placeholder="Minimum 30 personnes"
                     className={inputClass}
                   />
                 </div>

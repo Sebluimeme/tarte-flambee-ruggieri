@@ -36,7 +36,7 @@ const OCCASIONS = [
     title: "Associations & clubs",
     href: "/tarte-flambee-association",
     description:
-      "Repas de club sportif, association culturelle, comité des fêtes. Formule Association dès 30 personnes, 17€/pers. tout compris, règlement le jour J.",
+      "Repas de club sportif, association culturelle, comité des fêtes. Formule Gourmande dès 30 personnes, 17€/pers. tout compris, règlement le jour J.",
     tags: ["Dès 30 pers.", "17€/pers.", "Salle des fêtes ou chapiteau"],
     img: "/media/IMG_8191.jpg",
     alt: "Repas d'association autour d'une tarte flambée",

@@ -7,7 +7,7 @@ import Galerie from '@/components/sections/Galerie'
 export const metadata: Metadata = {
   title: "Tarte flambée pour votre repas d'association ou club · Poivre & Salé",
   description:
-    "Tarte flambée au four à bois pour votre repas d'association, club sportif ou amical en Alsace. Formule Association dès 17€/pers, min. 35. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre repas d'association ou club sportif ou amical en Alsace. Formule Gourmande dès 17€/pers, dès 30 personnes. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-association' },
 }
 
@@ -21,7 +21,7 @@ const BADGES = [
 const AVANTAGES = [
   {
     title: 'Idéal pour les grands groupes',
-    desc: "La formule Association est conçue pour les repas collectifs : dès 30 personnes, crudités en entrée et tartes flambées à volonté. Simple, généreux, efficace.",
+    desc: "La formule Gourmande est conçue pour les repas collectifs : dès 30 personnes, tartes flambées à volonté. Simple, généreux, efficace.",
   },
   {
     title: 'Partout en Alsace et dans les Vosges',
@@ -39,7 +39,7 @@ const AVANTAGES = [
 
 const FAQ = [
   {
-    q: "La formule Association inclut-elle le déplacement ?",
+    q: "La formule Gourmande inclut-elle le déplacement ?",
     a: "Oui, le déplacement est inclus en zone principale (Alsace et Vosges, rayon ~80 km autour du Bonhomme). Pour les zones plus éloignées, un supplément modique peut s'appliquer — précisé dans le devis.",
   },
   {
@@ -77,7 +77,7 @@ export default function AssociationPage() {
             Tarte flambée pour votre repas d&apos;association ou club
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 max-w-2xl mx-auto mb-8">
-            Marc anime votre repas associatif avec son four à bois. Crudités en entrée, flammekueche à volonté — la formule parfaite pour fédérer vos membres autour d&apos;un vrai moment alsacien.
+            Marc anime votre repas associatif avec son four à bois. Flammekueche à volonté — la formule parfaite pour fédérer vos membres autour d&apos;un vrai moment alsacien.
           </p>
 
           {/* Badges */}
@@ -114,7 +114,7 @@ export default function AssociationPage() {
       <section className="bg-cream-50 py-20 px-6 md:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900 text-center mb-12">
-            La formule taillée pour les associations
+            La formule taillée pour votre association
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {AVANTAGES.map((av) => (
@@ -141,18 +141,18 @@ export default function AssociationPage() {
             Formule phare
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-cream-50 mb-2">
-            Association
+            Gourmande
           </h2>
           <div className="flex items-baseline justify-center gap-1 mb-4">
             <span className="font-display text-5xl font-medium text-copper-400">17€</span>
-            <span className="font-sans text-base text-cream-100/50">/pers. · min. 35 personnes</span>
+            <span className="font-sans text-base text-cream-100/50">/pers. · dès 30 personnes</span>
           </div>
           <ul className="space-y-3 text-left max-w-sm mx-auto mb-8">
             {[
-              'Crudités en entrée',
-              'Tartes flambées à volonté',
-              'Pâtes laminées fines maison',
-              'Four à bois et ingrédients inclus',
+              'Tartes flambées salées à volonté',
+              'Pâtes laminées fines, ingrédients frais',
+              'Garnitures classiques et variées',
+              'Four à bois et animation inclus',
               'Installation et rangement complet',
               'Paiement le jour J — zéro acompte',
             ].map((feat) => (
