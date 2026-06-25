@@ -220,7 +220,7 @@ export default function Contact() {
                     type="number"
                     name="convives"
                     required
-                    min={35}
+                    min={1}
                     value={form.convives}
                     onChange={handleChange}
                     placeholder="Minimum 30 personnes"
