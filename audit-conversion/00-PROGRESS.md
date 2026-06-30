@@ -46,7 +46,8 @@ merci, admin, admin/dashboard, cgv, mentions-legales, confidentialite, cookies.
 - GTM ✅ GTM-54QTLCPW lu
 
 ## RESTE bloquant en attente validation Seb
-- ANALYTICS-001 : Firebase Analytics s'init avec ID fantôme G-3ENEQ729D7 (analyticsPromise exporté mais jamais consommé) → double page_view ou data vers propriété morte. NE PAS toucher sans accord (analytics live). Proposer : retirer l'init Firebase Analytics OU mettre le bon MID.
+- ✅ ANALYTICS-001 RÉSOLU (commit 497c7a3) : Firebase Analytics retiré de lib/firebase.ts. Tout via GTM (choix Seb option A). ID fantôme G-3ENEQ729D7 éliminé.
+- ✅ /reservation SUPPRIMÉE (commit 497c7a3) : page + API reservation-notify supprimées, redirect 308 → /contact (vérifié en prod). Formulaire unique = /contact (qui persiste les leads).
 
 ## Données fiche Google vérifiées (2026-06-30)
 - Nom : Poivre Et Sale · kgmid /g/11w2178bdy · CID 0xc9c27150451563f2
