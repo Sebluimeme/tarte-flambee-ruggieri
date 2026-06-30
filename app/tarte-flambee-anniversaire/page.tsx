@@ -6,7 +6,7 @@ import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée à domicile pour votre anniversaire · Poivre & Salé',
+  title: 'Tarte flambée anniversaire à domicile',
   description:
     "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },

@@ -6,7 +6,7 @@ import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
 
 export const metadata: Metadata = {
-  title: "Traiteur Tarte Flambée Entreprise Alsace | Team Building | Poivre & Salé",
+  title: 'Tarte flambée entreprise & team building',
   description:
     "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. 200+ événements depuis 2019. Alsace et environs.",
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },

@@ -23,7 +23,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Traiteur Tarte Flambée Alsace | Feu de Bois à Domicile | Poivre & Salé',
+    default: 'Traiteur Tarte Flambée au Feu de Bois en Alsace | Poivre & Salé',
     template: '%s · Poivre & Salé',
   },
   description:

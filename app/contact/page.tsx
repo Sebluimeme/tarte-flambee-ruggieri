@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Contact from "../../components/sections/Contact";
 
 export const metadata: Metadata = {
-  title: "Poivre & Salé — Prestation tarte flambée à domicile en Alsace",
+  title: 'Devis gratuit tarte flambée à domicile',
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };

@@ -6,7 +6,7 @@ import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée pour votre mariage en Alsace · Poivre & Salé',
+  title: 'Tarte flambée pour mariage en Alsace',
   description:
     "Four à bois pour votre mariage en Alsace. Marc se déplace avec son four à bois, recette familiale, service à volonté. Devis gratuit sous 24h. Formule Premium dès 24€/pers.",
   alternates: { canonical: '/tarte-flambee-mariage' },

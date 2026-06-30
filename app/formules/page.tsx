@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Poivre & Salé — Prestation tarte flambée à domicile en Alsace",
+  title: 'Formules & tarifs tarte flambée',
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
 };

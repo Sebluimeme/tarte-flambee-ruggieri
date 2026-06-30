@@ -1,3 +1,4 @@
+import { faqs } from '@/lib/faq-data'
 import Hero from '@/components/sections/Hero'
 import TrustBar from '@/components/sections/TrustBar'
 import Concept from '@/components/sections/Concept'
@@ -14,8 +15,22 @@ import CtaFinal from '@/components/sections/CtaFinal'
 import UrgencyBanner from '@/components/sections/UrgencyBanner'
 
 export default function Home() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Hero />
       <TrustBar />
       <Formules />

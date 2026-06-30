@@ -6,7 +6,7 @@ import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
 
 export const metadata: Metadata = {
-  title: "Tarte flambée pour votre repas d'association ou club · Poivre & Salé",
+  title: 'Tarte flambée pour associations & clubs',
   description:
     "Tarte flambée au four à bois pour votre repas d'association ou club sportif ou amical en Alsace. Formule Gourmande dès 17€/pers, dès 30 personnes. Devis gratuit sous 24h.",
   alternates: { canonical: '/tarte-flambee-association' },
