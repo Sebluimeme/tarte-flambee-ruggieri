@@ -26,7 +26,7 @@ export default function OffreComplete() {
             On peut s&apos;occuper de tout votre événement
           </h2>
           <p className="font-sans text-base leading-relaxed text-cream-200/75 max-w-2xl mx-auto">
-            La tarte flambée au feu de bois est notre signature. Mais selon vos envies,
+            La tarte flambée au feu de bois est l&apos;une de nos prestations. Mais selon vos envies,
             nous composons un repas complet et apportons tout le matériel nécessaire à votre réception.
           </p>
         </div>
