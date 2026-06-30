@@ -3,6 +3,38 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
+function updateConsent(granted: boolean) {
+  if (typeof window === 'undefined') return
+  const value = granted ? 'granted' : 'denied'
+  window.dataLayer = window.dataLayer || []
+  // Signale le choix à Google Consent Mode v2 (écouté par GTM/GA4/Ads)
+  window.dataLayer.push({
+    event: 'consent_update',
+    consent: {
+      ad_storage: value,
+      ad_user_data: value,
+      ad_personalization: value,
+      analytics_storage: value,
+    },
+  })
+  // gtag direct au cas où le tag GTM n'intercepte pas l'event custom
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      ad_storage: value,
+      ad_user_data: value,
+      ad_personalization: value,
+      analytics_storage: value,
+    })
+  }
+}
+
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
@@ -13,11 +45,13 @@ export default function CookieBanner() {
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
+    updateConsent(true)
     setVisible(false)
   }
 
   const refuse = () => {
     localStorage.setItem('cookie-consent', 'refused')
+    updateConsent(false)
     setVisible(false)
   }
 

@@ -52,7 +52,10 @@ merci, admin, admin/dashboard, cgv, mentions-legales, confidentialite, cookies.
 - ✅ ANALYTICS-001 RÉSOLU (commit 497c7a3) : Firebase Analytics retiré de lib/firebase.ts. Tout via GTM (choix Seb option A). ID fantôme G-3ENEQ729D7 éliminé.
 - ✅ /reservation SUPPRIMÉE (commit 497c7a3) : page + API reservation-notify supprimées, redirect 308 → /contact (vérifié en prod). Formulaire unique = /contact (qui persiste les leads).
 
-## Données fiche Google vérifiées (2026-06-30)
+## Points ouverts NON prioritaires (Seb a dit : pas important pour l'instant)
+- Zone d'intervention : 3 rayons chiffrés incohérents (80km Bonhomme / 20km Colmar / 4 départements). NE PAS toucher aux VILLES listées (bon pour SEO local). Juste harmoniser le rayon de déplacement inclus quand Seb donnera le vrai chiffre. → reporté.
+- LCP mobile 5,4s : cause = H1 police Fraunces (pas les images, déjà optimisées). Investigation perf fine si besoin un jour.
+- Refonte visuelle /contact (formulaire unique désormais).
 - Nom : Poivre Et Sale · kgmid /g/11w2178bdy · CID 0xc9c27150451563f2
 - Note : **4,7/5** · Adresse : 129 La Chapelle, 68650 Le Bonhomme · Catégorie : Traiteur
 - 11 avis lus : 10 positifs (mariage, festival/asso Kaysersberg, baptême, confirmation, entreprise) + 1 négatif (Seb 916, RDV oublié, réponse pro du proprio).

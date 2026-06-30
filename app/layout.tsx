@@ -114,6 +114,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Script
+          id="consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+var c=null;try{c=localStorage.getItem('cookie-consent');}catch(e){}
+var granted=c==='accepted'?'granted':'denied';
+gtag('consent','default',{'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted,'wait_for_update':500});`,
+          }}
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
