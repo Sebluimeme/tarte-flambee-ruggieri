@@ -31,17 +31,19 @@ Score Impact/Effort. Bloquants en tête. Équilibré technique / conversion / co
 | TECH-001 | Occasions.tsx : <img> natif → next/image (4 images) | S |
 | SEO-004 | Double H1 sur /suivi/[id] → un seul | S |
 
-## 🟡 P3 (nettoyage / faible impact)
-| ID | Tâche | Effort |
-|----|-------|--------|
-| TECH-002 | Supprimer code mort : components/Footer.tsx, app/components/Footer.tsx, components/Header.tsx, sections Services/Territoire/Stats orphelines | S |
-| ANALYTICS-003 | Vérifier Consent Mode v2 réel (consent_update écouté par GTM) | M |
-| CONTENU-003 | Clarifier "pâte fraîche" vs "pâte sélectionnée" | S |
+## 🟡 P3 (nettoyage / faible impact) — ✅ TOUS FAITS
+| ID | Tâche | État |
+|----|-------|------|
+| TECH-002 | Code mort supprimé (7 fichiers orphelins) | ✅ commit 26bf40e |
+| ANALYTICS-003 | Consent Mode v2 RÉEL : default denied + consent_update au clic | ✅ commit 07359c1 |
+| CONTENU-003 | "pâte préparée le matin" → "pâte laminée fine" + coquille ferronnier | ✅ commit 07359c1 |
+| TECH-001 | Occasions <img> → next/image | ✅ commit 07359c1 |
+| MEDIA | Nettoyage 232Mo → 7Mo (vidéos/HEIC/doublons non servis) | ✅ commit 07359c1 |
+| SEO-004 | "double H1" /suivi/[id] → FAUX POSITIF : 2 H1 dans branches séparées (early-return), jamais ensemble. Rien à corriger. | ✅ vérifié |
 
-## Ordre d'exécution recommandé
-1. SEO-001 + ANALYTICS-001 (2 min, .env) → corrige domaine robots + ID GA4
-2. FORM-001 (persistance leads) → le plus rentable : arrête la fuite de leads
-3. Quick wins SEO-002/003 + FORM-002 + DESIGN-002
-4. Décision DESIGN-001 (refondre ou supprimer /reservation) — à valider avec Seb
-5. PERF-001 (images) — gros confort mobile
-6. Nettoyage P3
+## RESTE (dépend de Seb ou externe)
+- Zone d'intervention : harmoniser le rayon chiffré (Seb : pas prioritaire). Garder les VILLES (bon SEO).
+- LCP mobile ~5,4s : cause = H1 police Fraunces (images déjà optimisées + servies WebP par Next). Investigation perf fine optionnelle.
+- Vérifier EN COMPTE Google Ads que les 2 conversions remontent + sont "Principales" (pas d'accès API au compte Ads).
+- Search Console : re-tirer les mots-clés réels vers début juillet (propriété créée le 30/06).
+- Refonte visuelle /contact (optionnel — formulaire unique désormais).
