@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Page /reservation supprimée — fusionnée dans /contact (formulaire de devis unique)
+      { source: "/reservation", destination: "/contact", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

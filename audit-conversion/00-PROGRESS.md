@@ -28,10 +28,25 @@ merci, admin, admin/dashboard, cgv, mentions-legales, confidentialite, cookies.
 
 ## QUESTIONS À FOURNIR (bloquantes — règle 4.3, ne rien inventer)
 1. ✅ RÉSOLU — Avis/témoignages : les 5 faux ont été remplacés par 6 VRAIS avis Google (Joanna Schneider, David Streissel, Thomas Marais, Renaud Peroz, Linda Hasnaoui, Alizée Escach). Note réelle 4,7/5 confirmée fiche Google. TrustBar 4,9→4,7 corrigé. Commit à pousser.
-2. ⏳ **"200+ événements réalisés"** (Hero + TrustBar) : chiffre réel et défendable ? TOUJOURS À CONFIRMER.
-3. ⏳ **"100% fait maison"** (TrustBar) : défendable ? (pâte laminée "sélectionnée" selon Process.tsx, pas forcément faite maison — possible contradiction).
-4. ⏳ **Minimum de convives** : incohérence 20 vs 30. Hero "de 20 à 250", Occasions anniversaire "dès 20 couverts", mais toutes les formules disent "dès 30 personnes". Quel est le vrai minimum ?
-5. ⏳ **Nom formule** : home = "Gourmande" (17€), mais formulaire devis API = "Association" (17€). Lequel garder ?
+2. ✅ RÉSOLU — "200+ événements réalisés" : confirmé défendable par Seb. Conservé.
+3. ✅ RÉSOLU — "100% fait maison" : RETIRÉ (jugement Hermes : non défendable, décret 2014-797 fait-maison, pâte "sélectionnée" donc achetée). Remplacé par "Feu de bois / Cuisson sur place".
+4. ✅ RÉSOLU — Minimum convives : unifié à 30 partout (Hero, Occasions, particuliers, formules, soiree-entreprise).
+5. ✅ RÉSOLU — Nom formule : "Gourmande" retenu (utilisé 8× partout vs "association" oublié dans 1 fichier API). BUG CONVERSION corrigé au passage (API rejetait formule=gourmande → 400 → devis 17€ perdus).
+
+## Commits poussés
+- f1cd1f5 : purge identité marque
+- dbd4648 : vrais avis Google + note 4,7 + fix bug formule + minimum 30
+- 73d3c69 : balise vérif Search Console
+- 14e5996 : FORM-001 persistance leads /contact Firestore + SEO-001 robots domaine
+
+## Accès Google (tous OK, persistants ~/.hermes/credentials/tarte-flambee-sa.json)
+- GA4 ✅ property 536984060 (vrai MID G-M1D5TRM3MT ; code a un ID fantôme G-3ENEQ729D7)
+- Search Console ✅ https://flamme-traiteur.fr/ (créée 30/06, 0 donnée encore, re-tirer début juillet)
+- Google Ads ✅ AW-18117082922, 2 conversions, conversion_linker (Seb a confirmé : tracking déjà branché)
+- GTM ✅ GTM-54QTLCPW lu
+
+## RESTE bloquant en attente validation Seb
+- ANALYTICS-001 : Firebase Analytics s'init avec ID fantôme G-3ENEQ729D7 (analyticsPromise exporté mais jamais consommé) → double page_view ou data vers propriété morte. NE PAS toucher sans accord (analytics live). Proposer : retirer l'init Firebase Analytics OU mettre le bon MID.
 
 ## Données fiche Google vérifiées (2026-06-30)
 - Nom : Poivre Et Sale · kgmid /g/11w2178bdy · CID 0xc9c27150451563f2
