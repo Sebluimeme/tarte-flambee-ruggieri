@@ -1,7 +1,7 @@
 const stats = [
   { value: '200+', label: 'Événements réalisés' },
-  { value: '4,9/5', label: 'Clients satisfaits' },
-  { value: '100%', label: 'Fait maison' },
+  { value: '4,7/5', label: 'Avis Google' },
+  { value: 'Feu de bois', label: 'Cuisson sur place' },
   { value: 'Alsace', label: 'Circuit court' },
 ]
 

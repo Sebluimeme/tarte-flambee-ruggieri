@@ -19,7 +19,7 @@ const OCCASIONS = [
     href: "/tarte-flambee-soiree-entreprise",
     description:
       "Team-building, fin d'année, inauguration. Une alternative chaleureuse au traiteur classique, qui crée du lien entre les collaborateurs.",
-    tags: ["20 à 200 pers.", "Clé en main", "Prestataire assuré"],
+    tags: ["30 à 200 pers.", "Clé en main", "Prestataire assuré"],
     img: "/media/IMG_8910.jpg",
     alt: "Événement d'entreprise autour d'un buffet",
   },
@@ -28,7 +28,7 @@ const OCCASIONS = [
     href: "/tarte-flambee-anniversaire",
     description:
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
-    tags: ["Dès 20 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
+    tags: ["Dès 30 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
     img: "/media/tarte-anniversaire-famille.jpg",
     alt: "Tarte flambée pour anniversaire et fêtes de famille",
   },

@@ -30,7 +30,7 @@ function escapeHtml(str: string): string {
 }
 
 const VALID_TYPES = new Set(["mariage", "anniversaire", "entreprise", "inauguration", "autre"]);
-const VALID_FORMULES = new Set(["cle-en-main", "standard", "association", "premium", "indecis"]);
+const VALID_FORMULES = new Set(["cle-en-main", "standard", "gourmande", "premium", "indecis"]);
 
 const TYPE_LABELS: Record<string, string> = {
   mariage: "Mariage",
@@ -43,7 +43,7 @@ const TYPE_LABELS: Record<string, string> = {
 const FORMULE_LABELS: Record<string, string> = {
   "cle-en-main": "Clé en main (sur devis)",
   standard: "Standard (12€/pers.)",
-  association: "Association (17€/pers.)",
+  gourmande: "Gourmande (17€/pers.)",
   premium: "Premium (24€/pers.)",
   indecis: "Je ne sais pas encore",
 };

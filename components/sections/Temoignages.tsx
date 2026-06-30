@@ -6,35 +6,43 @@ import { Star, StarHalf } from 'lucide-react'
 
 const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=/g/11w2178bdy'
 
+// Avis Google réels de l'établissement « Poivre Et Sale » (note 4,7/5).
+// Source : fiche Google Business. Noms, textes et contextes authentiques — ne pas inventer.
 const temoignages = [
   {
-    citation: "Super prestation pour notre soirée d'entreprise. Marc est arrivé à l'heure, tout était nickel, les tartes flambées étaient excellentes. Le four à bois dans la cour ça a mis une super ambiance. On refera appel à lui c'est sûr.",
-    nom: "Sophie M.",
-    contexte: "Événement entreprise, Colmar",
+    citation: "Nous avons fait appel à Marc et son équipe pour notre mariage le week-end du 9 mai 2026 et nous en sommes plus que ravis !",
+    nom: "Joanna Schneider",
+    contexte: "Mariage · mai 2026",
     rating: 5,
   },
   {
-    citation: "Marc a fait le buffet tarte flambée pour notre mariage en fin de soirée. Franchement c'était le meilleur moment de la soirée, tout le monde s'est regroupé autour du four. Les tartes étaient vraiment bonnes. Merci Marc !",
-    nom: "Aurélie & Thomas K.",
-    contexte: "Mariage, juin 2025 · Colmar",
-    rating: 4.5,
-  },
-  {
-    citation: "Très bonne prestation pour les 60 ans de mon père. Idée originale, convivial, et les tartes étaient délicieuses. Marc est quelqu'un de sympa et de pro. Toute la famille a adoré, je recommande.",
-    nom: "Laurence B.",
-    contexte: "Anniversaire en famille, Obernai",
+    citation: "Marc est très réactif aux demandes, il est force de proposition, son matériel est de qualité, il est arrangeant. Un vrai plaisir de travailler avec lui.",
+    nom: "David Streissel",
+    contexte: "Festival du jeu de rôle · Kaysersberg",
     rating: 5,
   },
   {
-    citation: "On a pris Marc pour un pot de départ et c'était vraiment top. Le four à bois c'est original, ça sent bon, tout le monde a kiffé regarder. Et les tartes étaient super bonnes. À recommander sans hésiter.",
-    nom: "Matthieu R.",
-    contexte: "Pot de départ, Strasbourg",
-    rating: 4.5,
+    citation: "Marc et son équipe sont venus pour le baptême de nos enfants. Nous avons été ravis — une personne superbe et attachante, tout comme son équipe. Le repas et le service ont été bien au-delà de nos attentes. Au top !",
+    nom: "Thomas Marais",
+    contexte: "Baptême",
+    rating: 5,
   },
   {
-    citation: "Réservé pour un anniversaire en hiver dans notre grange. Marc s'est bien adapté à l'endroit, aucun souci. Service au top, tartes délicieuses, ambiance géniale. Je recommande vraiment.",
-    nom: "Claire V.",
-    contexte: "Anniversaire, Ribeauvillé",
+    citation: "Voici un traiteur à l'écoute des convives, belle prestation et un super moment culinaire. Je recommande vivement.",
+    nom: "Renaud Peroz",
+    contexte: "Local Guide Google",
+    rating: 5,
+  },
+  {
+    citation: "Nous avons confié le repas de la confirmation de notre fils à Marc et nous sommes absolument ravis de sa prestation, qui a grandement contribué à la réussite de cette magnifique journée.",
+    nom: "Linda Hasnaoui",
+    contexte: "Repas de confirmation",
+    rating: 5,
+  },
+  {
+    citation: "Parfait, rien à redire. Super ambiance, super service, cuisine délicieuse. Impeccable.",
+    nom: "Alizée Escach",
+    contexte: "Avis Google",
     rating: 5,
   },
 ]

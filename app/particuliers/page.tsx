@@ -19,7 +19,7 @@ const BADGES = [
 const OCCASIONS = [
   { label: 'Mariages', detail: '150 à 250 personnes', href: '/tarte-flambee-mariage' },
   { label: 'Lendemain de mariage / Brunch de récupération', detail: 'Format détendu, gourmand', href: '/tarte-flambee-mariage' },
-  { label: 'Anniversaires', detail: '20 à 120 personnes', href: '/tarte-flambee-anniversaire' },
+  { label: 'Anniversaires', detail: '30 à 120 personnes', href: '/tarte-flambee-anniversaire' },
   { label: 'Baptêmes et communions', detail: 'Repas familial chaleureux', href: '/tarte-flambee-anniversaire' },
   { label: 'Soirées entre amis', detail: 'Dès 35 convives', href: '/contact' },
 ]
@@ -197,7 +197,7 @@ export default function ParticuliersPage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">Dès 20 personnes</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">Dès 30 personnes</p>
               <ul className="space-y-2.5 mb-6">
                 {[
                   'Tartes flambées salées à volonté',

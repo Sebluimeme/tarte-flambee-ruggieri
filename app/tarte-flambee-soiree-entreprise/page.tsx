@@ -33,7 +33,7 @@ const AVANTAGES = [
   },
   {
     title: 'Flexibilité',
-    desc: "De 20 à 250+ personnes, en intérieur ou extérieur. Nous nous adaptons à votre lieu, votre format et votre budget.",
+    desc: "De 30 à 250+ personnes, en intérieur ou extérieur. Nous nous adaptons à votre lieu, votre format et votre budget.",
   },
 ]
 
@@ -64,7 +64,7 @@ const FAQ = [
   },
   {
     q: "Jusqu'à combien de convives pouvez-vous servir ?",
-    a: "De 20 à 250+ convives. Pour les très grands événements (250+), nous adaptons le matériel et l'équipe en conséquence.",
+    a: "De 30 à 250+ convives. Pour les très grands événements (250+), nous adaptons le matériel et l'équipe en conséquence.",
   },
 ]
 
@@ -90,7 +90,7 @@ export default function SoireeEntreprisePage() {
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 max-w-2xl mx-auto mb-8">
             Parce qu&apos;un bon repas autour d&apos;un four à bois vaut 10 team buildings sur PowerPoint.
-            Tarte flambée au feu de bois, en Alsace, pour 20 à 250+ collaborateurs.
+            Tarte flambée au feu de bois, en Alsace, pour 30 à 250+ collaborateurs.
           </p>
 
           {/* Badges */}

@@ -27,7 +27,7 @@ export default function Hero() {
             <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 mb-8 max-w-xl">
-            Traiteur événementiel en Alsace — de 20 à 250 convives. Pâte fraîche, four mobile,
+            Traiteur événementiel en Alsace — de 30 à 250 convives. Pâte fraîche, four mobile,
             service à volonté. Le tout sans vous soucier de rien.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">

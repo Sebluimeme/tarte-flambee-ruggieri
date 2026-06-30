@@ -132,7 +132,7 @@ export default function FormulesPage() {
             Nos formules de prestation
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto">
-            De 20 à 500 convives. Avec ou sans service. Toujours avec un four à bois authentique et des pâtes laminées fines.
+            De 30 à 500 convives. Avec ou sans service. Toujours avec un four à bois authentique et des pâtes laminées fines.
           </p>
         </div>
       </section>
