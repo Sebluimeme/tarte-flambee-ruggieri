@@ -62,7 +62,7 @@ export default function MariagePage() {
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image
-          src="/media/hero-maison-ruggieri.jpg"
+          src="/media/hero-mariage.jpg"
           fill
           className="object-cover object-center"
           alt="Four à bois pour mariage en Alsace"

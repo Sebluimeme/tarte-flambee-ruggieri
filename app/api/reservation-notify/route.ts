@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
 <body style="margin:0;padding:0;background:#FFFDF7;font-family:Arial,sans-serif;">
   <div style="max-width:600px;margin:0 auto;background:#FBF5E6;border-radius:12px;overflow:hidden;">
     <div style="background:#3D2010;padding:24px 32px;">
-      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Flamme Traiteur</p>
+      <p style="color:#D4621A;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin:0 0 8px;">Poivre &amp; Salé</p>
       <h1 style="color:#FFFDF7;font-size:22px;margin:0;">Nouvelle demande de devis (réservation)</h1>
     </div>
     <div style="padding:32px;">
@@ -60,14 +60,14 @@ export async function POST(req: NextRequest) {
       </div>
     </div>
     <div style="background:#3D2010;padding:16px 32px;text-align:center;">
-      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Flamme Traiteur — flamme-traiteur.fr</p>
+      <p style="color:#FFFDF7;opacity:0.4;font-size:11px;margin:0;">Poivre &amp; Salé — poivresale.fr</p>
     </div>
   </div>
 </body>
 </html>`.trim();
 
     await resend.emails.send({
-      from: "Flamme Traiteur <contact@flamme-traiteur.fr>",
+      from: "Poivre & Salé <contact@flamme-traiteur.fr>",
       to: ["contact@poivresale.fr", "bmsyoder@gmail.com"],
       replyTo: data.email,
       subject: `🔥 Nouvelle réservation — ${nomAffiche} (${data.couverts} pers.)`,

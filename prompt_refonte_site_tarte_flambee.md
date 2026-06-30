@@ -1,5 +1,9 @@
 # PROMPT — REFONTE COMPLÈTE DU SITE TARTE FLAMBÉE
 
+> ⚠️ **DOCUMENT OBSOLÈTE / ARCHIVE** — Ce brief mentionne l'ancienne marque « Maison Ruggieri » et le domaine « maison-ruggieri.fr » qui sont ABANDONNÉS.
+> Source de vérité actuelle : marque = **Poivre & Salé**, domaine = **flamme-traiteur.fr**, email = **contact@poivresale.fr**, gérant = **Marc Ruggieri**.
+> Ne pas réutiliser les noms/domaines de ce fichier. Conservé uniquement pour historique de la refonte.
+
 Tu es designer + développeur front-end senior spécialisé dans les sites artisans premium. Tu vas refaire entièrement le site `tarte-flambee-one.vercel.app` (Marc Ruggieri, prestation tarte flambée à domicile en Alsace). Le site est en **Next.js + Tailwind CSS**, déployé sur Vercel. Tu travailles sur le repo existant.
 
 L'objectif : transformer un site qui ressemble actuellement à un template générique avec des emojis partout en un site **artisan premium, chaleureux, crédible**, qui donne envie de réserver pour un mariage, un anniversaire ou un événement d'entreprise.

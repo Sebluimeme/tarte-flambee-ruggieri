@@ -7,7 +7,7 @@ const SIRET = '812 751 469 00014'
 const SOCIAL = {
   show: true,
   instagram: 'https://www.instagram.com/poivre.et.sale' as string | null,
-  facebook: null as string | null,        // ex: 'https://www.facebook.com/maisonruggieri'
+  facebook: null as string | null,        // ex: 'https://www.facebook.com/poivre.et.sale'
   googleBusiness: null as string | null,  // ex: 'https://g.page/r/...'
 }
 

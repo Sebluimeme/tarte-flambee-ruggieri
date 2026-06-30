@@ -1,13 +1,14 @@
 @AGENTS.md
 
-# CLAUDE.md — Maison Ruggieri / Tarte Flambée
+# CLAUDE.md — Poivre & Salé / Tarte Flambée
 
 ## Projet
 
-Site vitrine + réservation pour **Maison Ruggieri** — prestation tarte flambée (flammekueche) au four à bois à domicile en Alsace.
+Site vitrine + réservation pour **Poivre & Salé** — prestation tarte flambée (flammekueche) au four à bois à domicile en Alsace.
 
-- **Domaine** : maison-ruggieri.fr
-- **Client** : Marc Ruggieri, Le Bonhomme (Alsace)
+- **Domaine** : flamme-traiteur.fr
+- **Marque publique** : Poivre & Salé (afficher partout — ne JAMAIS utiliser "Maison Ruggieri" ni "Flamme Traiteur" comme nom de marque)
+- **Client** : Marc Ruggieri, Le Bonhomme (Alsace) — nom de la personne, conservé
 - **Contact** : +33 7 85 62 10 89 / contact@poivresale.fr
 - **SIRET** : 812 751 469 00014
 - **Repo GitHub** : `git@github.com:Sebluimeme/tarte-flambee-ruggieri.git`
@@ -34,7 +35,7 @@ app/
   reservation/        — Formulaire de réservation
   formules/           — Offres et tarifs
   contact/            — Formulaire contact/devis
-  a-propos/           — Histoire Maison Ruggieri
+  a-propos/           — Histoire de Marc Ruggieri (le traiteur)
   allergenes/         — Mentions allergènes
   admin/              — Back-office (page protégée)
   cgv/ mentions-legales/ confidentialite/ cookies/
@@ -73,7 +74,7 @@ Initialisation dans `app/lib/firebase.ts` — exports : `db` (Firestore), `auth`
 
 ## Règles importantes
 
-- **Ne jamais changer le SIRET** (812 751 469 00014) ni le domaine (`maison-ruggieri.fr`)
+- **Ne jamais changer le SIRET** (812 751 469 00014) ni le domaine (`flamme-traiteur.fr`)
 - **Email de contact** : `contact@poivresale.fr` (lié au domaine poivresale.fr du client)
 - **Numéro de téléphone** : +33 7 85 62 10 89
 - Les métadonnées SEO sont dans `app/layout.tsx` — ne pas dupliquer dans les pages filles
