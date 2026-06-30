@@ -54,6 +54,14 @@ export default function Footer() {
           <div>
             <p className="font-display text-xl text-cream-50 mb-2">Poivre & Salé</p>
             <p className="text-sm text-stone-400">Cuisinier Traiteur</p>
+            <a
+              href="https://poivresale.fr"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1 mt-3 text-sm text-copper-400 hover:text-copper-300 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm"
+            >
+              Traiteur événementiel — poivresale.fr
+            </a>
 
             {SOCIAL.show && (
               <div className="flex items-center gap-3 mt-5">
