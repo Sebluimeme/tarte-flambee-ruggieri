@@ -38,6 +38,9 @@ merci, admin, admin/dashboard, cgv, mentions-legales, confidentialite, cookies.
 - dbd4648 : vrais avis Google + note 4,7 + fix bug formule + minimum 30
 - 73d3c69 : balise vérif Search Console
 - 14e5996 : FORM-001 persistance leads /contact Firestore + SEO-001 robots domaine
+- 497c7a3 : suppression /reservation (redirect 308→/contact) + retrait Firebase Analytics (tout via GTM)
+- 26bf40e : suppression 7 fichiers code mort + /allergenes au sitemap
+- 516bfd3 : compression 13 images servies (22Mo→5Mo, hero 1,8Mo→335Ko)
 
 ## Accès Google (tous OK, persistants ~/.hermes/credentials/tarte-flambee-sa.json)
 - GA4 ✅ property 536984060 (vrai MID G-M1D5TRM3MT ; code a un ID fantôme G-3ENEQ729D7)

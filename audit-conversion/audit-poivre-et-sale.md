@@ -54,9 +54,10 @@ Site globalement bien construit (Lighthouse mobile : Perf 79, A11y 96, Best-prac
 
 ## M10 — TECHNIQUE / PERF 🟠
 
-- 🟠 [VÉRIFIÉ Lighthouse mobile] **LCP 5,2 s** (seuil bon < 2,5 s). Cause : image Hero `/media/hero-flamme-traiteur.jpg` 1,8 Mo en JPEG, poids total page 1 678 KiB. CLS 0 ✅, TBT 150 ms ✅, FCP 1,1 s ✅.
-  - **Reco** : convertir les images hero/galerie en WebP/AVIF + tailles responsive. Gain estimé Lighthouse : 213 KiB JS inutilisé + images. Cible LCP < 2,5 s.
-- 🟡 [VÉRIFIÉ] `unused-javascript` ~213 KiB (Framer Motion chargé partout). Acceptable, optimisable plus tard.
+- 🟠 [VÉRIFIÉ Lighthouse mobile 2 passes] **LCP 5,2-5,4 s** (seuil bon < 2,5 s). CLS 0 ✅, TBT ~150-180 ms ✅, FCP ~1,1-1,3 s ✅.
+  - ⚠️ CONSTAT CORRIGÉ : la cause n'est PAS le poids des images. [VÉRIFIÉ] Next/Image sert déjà le hero en **WebP 35 Ko** sur mobile (w=750, q75). La compression des sources (22→5 Mo, commit 516bfd3) a allégé le repo/build mais n'a PAS bougé le LCP (5,2→5,4s, poids page identique ~1640 KiB).
+  - Cause réelle probable [HYPOTHÈSE à confirmer] : le LCP est le **H1 en police Fraunces** (font display chargée via next/font, swap) ou un retard de rendu mobile. Piste : précharger la font du H1, ou réduire la taille du H1 above-the-fold. À investiguer avec une trace WebPageTest/film LCP.
+  - 🟡 unused-javascript ~214 KiB (Framer Motion partout). Optimisable (lazy-load animations hors viewport).
 - ✅ Best-practices 100, HTTPS OK, headers via Vercel.
 
 ## M3 — SEO TECHNIQUE 🟠
