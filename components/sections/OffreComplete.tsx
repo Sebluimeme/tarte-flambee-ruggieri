@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Tent, Beer, Armchair, UtensilsCrossed, ArrowUpRight, Phone } from 'lucide-react'
+import { Tent, Beer, Armchair, UtensilsCrossed, Phone } from 'lucide-react'
 
 const MATERIEL = [
   { icon: Tent, label: 'Chapiteau' },
@@ -39,18 +39,25 @@ export default function OffreComplete() {
             </h3>
             <p className="font-sans text-sm leading-relaxed text-cream-200/75 mb-6 flex-1">
               Apéritif, entrée, accompagnements, dessert… Pour un repas traiteur complet
-              au-delà de la tarte flambée, notre équipe Poivre &amp; Salé imagine des
-              prestations sur mesure. Découvrez tous nos savoir-faire sur notre site dédié.
+              au-delà de la tarte flambée, notre équipe imagine des prestations sur mesure.
+              Parlons de votre projet — et retrouvez l&apos;ensemble de nos autres activités
+              sur{' '}
+              <a
+                href="https://poivresale.fr"
+                target="_blank"
+                rel="noopener"
+                className="text-copper-400 hover:text-copper-300 underline underline-offset-2 transition-colors"
+              >
+                poivresale.fr
+              </a>.
             </p>
-            <a
-              href="https://poivresale.fr"
-              target="_blank"
-              rel="noopener"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2 focus:ring-offset-bark-900 self-start"
             >
-              Découvrir nos prestations sur poivresale.fr
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
+              <Phone size={17} aria-hidden="true" />
+              Nous contacter pour votre repas
+            </Link>
           </div>
 
           {/* Bloc B — Matériel & options -> contact */}
