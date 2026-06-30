@@ -45,7 +45,7 @@ export default function Hero() {
             </a>
           </div>
           <p className="font-sans text-sm text-cream-200/65">
-            200+ événements réalisés · Devis sous 24h · 07 85 62 10 89
+            200+ événements réalisés · Devis gratuit · 07 85 62 10 89
           </p>
         </div>
       </div>

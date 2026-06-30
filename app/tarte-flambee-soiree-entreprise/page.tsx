@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const BADGES = [
   '200+ événements depuis 2019',
   'Prestataire déclaré et assuré',
-  'Devis sous 24h',
+  'Devis gratuit',
   'Annulation gratuite',
 ]
 
@@ -122,7 +122,7 @@ export default function SoireeEntreprisePage() {
             </a>
           </div>
           <p className="font-sans text-xs text-cream-200/60 mt-4">
-            Réponse sous 24h — Devis gratuit et sans engagement
+            Réponse rapide — Devis gratuit et sans engagement
           </p>
         </div>
       </section>
@@ -280,7 +280,7 @@ export default function SoireeEntreprisePage() {
             Prêt à organiser votre soirée ?
           </h2>
           <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit, réponse sous 24h. Prestataire déclaré et assuré.
+            Devis gratuit, réponse rapide. Prestataire déclaré et assuré.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

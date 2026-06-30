@@ -8,13 +8,13 @@ import OffreComplete from '@/components/sections/OffreComplete'
 export const metadata: Metadata = {
   title: 'Tarte flambée anniversaire à domicile',
   description:
-    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit, réponse rapide.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },
 }
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Devis sous 24h',
+  'Devis gratuit',
   'Annulation gratuite',
   'Règlement le jour J',
 ]
@@ -245,7 +245,7 @@ export default function AnniversairePage() {
             Rendez cet anniversaire inoubliable
           </h2>
           <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit, réponse sous 24h. Marc s&apos;occupe de tout.
+            Devis gratuit, réponse rapide. Marc s&apos;occupe de tout.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

@@ -8,13 +8,13 @@ import OffreComplete from '@/components/sections/OffreComplete'
 export const metadata: Metadata = {
   title: 'Tarte flambée pour mariage en Alsace',
   description:
-    "Four à bois pour votre mariage en Alsace. Marc se déplace avec son four à bois, recette familiale, service à volonté. Devis gratuit sous 24h. Formule Premium dès 24€/pers.",
+    "Four à bois pour votre mariage en Alsace. Marc se déplace avec son four à bois, recette familiale, service à volonté. Devis gratuit, réponse rapide. Formule Premium dès 24€/pers.",
   alternates: { canonical: '/tarte-flambee-mariage' },
 }
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Devis sous 24h',
+  'Devis gratuit',
   'Annulation gratuite',
   'Règlement le jour J',
 ]

@@ -21,7 +21,7 @@ export default function CtaFinal() {
           Prêt à régaler vos convives ?
         </h2>
         <p className="hidden md:block font-sans text-lg leading-relaxed text-cream-200 mb-3">
-          Vérifiez votre date dès maintenant. Réponse sous 24h.
+          Vérifiez votre date dès maintenant. Réponse rapide.
         </p>
         <p className="font-sans text-sm text-cream-200/70 mb-8">
           Devis gratuit et sans engagement · Aucun acompte demandé · Annulation gratuite

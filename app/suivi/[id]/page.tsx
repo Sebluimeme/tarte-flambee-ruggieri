@@ -37,7 +37,7 @@ const STATUS_CONFIG: Record<string, StatusConfig> = {
     icon: "⏳",
     title: "En cours d'examen",
     description:
-      "Nous avons bien reçu votre demande et l'examinons actuellement. Vous recevrez notre réponse sous 24h.",
+      "Nous avons bien reçu votre demande et l'examinons actuellement. Vous recevrez notre réponse rapidement.",
     bgFrom: "#D97706",
     bgTo: "#92400E",
     badgeBg: "#FEF3C7",

@@ -8,13 +8,13 @@ import OffreComplete from '@/components/sections/OffreComplete'
 export const metadata: Metadata = {
   title: 'Tarte flambée pour associations & clubs',
   description:
-    "Tarte flambée au four à bois pour votre repas d'association ou club sportif ou amical en Alsace. Formule Gourmande dès 17€/pers, dès 30 personnes. Devis gratuit sous 24h.",
+    "Tarte flambée au four à bois pour votre repas d'association ou club sportif ou amical en Alsace. Formule Gourmande dès 17€/pers, dès 30 personnes. Devis gratuit, réponse rapide.",
   alternates: { canonical: '/tarte-flambee-association' },
 }
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Devis sous 24h',
+  'Devis gratuit',
   'Annulation gratuite',
   'Règlement le jour J',
 ]
@@ -218,7 +218,7 @@ export default function AssociationPage() {
             Organisez un repas mémorable
           </h2>
           <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit en 24h. Marc vous répond personnellement.
+            Devis gratuit. Marc vous répond personnellement et rapidement.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

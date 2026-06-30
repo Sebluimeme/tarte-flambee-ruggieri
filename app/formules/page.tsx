@@ -102,7 +102,7 @@ const INCLUS = [
   "Pâtes laminées fines",
   "Cuisson devant les invités — le spectacle fait partie de l'expérience",
   "Rangement et nettoyage complet après prestation",
-  "Devis gratuit et réponse sous 24h",
+  "Devis gratuit et réponse rapide",
 ];
 
 const OPTIONS = [
@@ -289,7 +289,7 @@ export default function FormulesPage() {
             Prêt à faire votre choix ?
           </h2>
           <p className="font-sans text-lg leading-relaxed text-cream-100/70 mb-10 max-w-lg mx-auto">
-            Contactez-nous pour un devis personnalisé. Réponse garantie sous 24h.
+            Contactez-nous pour un devis personnalisé. Réponse rapide.
           </p>
           <Link
             href="/contact"

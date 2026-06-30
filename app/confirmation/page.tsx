@@ -30,8 +30,8 @@ function ConfirmationContent() {
         </h1>
 
         <p className="text-lg mb-6 leading-relaxed" style={{ color: "#3D2010" }}>
-          Nous vous contacterons sous{" "}
-          <strong className="text-[#D4621A]">24h</strong> pour confirmer votre soirée et vous envoyer un devis personnalisé.
+          Nous vous contacterons{" "}
+          <strong className="text-[#D4621A]">rapidement</strong> pour confirmer votre soirée et vous envoyer un devis personnalisé.
         </p>
 
         {/* Lien de suivi */}
@@ -97,7 +97,7 @@ function ConfirmationContent() {
                 2
               </div>
               <p style={{ color: "#3D2010" }}>
-                <strong>Vous recevez votre devis par email ou téléphone</strong> dans les 24h — gratuit et sans engagement.
+                <strong>Vous recevez votre devis par email ou téléphone</strong> rapidement — gratuit et sans engagement.
               </p>
             </div>
             <div className="flex items-start gap-4">

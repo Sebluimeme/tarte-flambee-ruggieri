@@ -37,7 +37,7 @@ export default function MerciContent() {
         {/* Sous-titre */}
         <p className="font-sans text-lg leading-relaxed text-bark-700 mb-3">
           Marc a bien reçu votre message. Il vous répond personnellement sous&nbsp;
-          <strong className="text-copper-500">24h</strong> avec un devis adapté à votre événement.
+          <strong className="text-copper-500">rapidement</strong> avec un devis adapté à votre événement.
         </p>
         <p className="font-sans text-base text-bark-600 mb-10">
           En attendant, vous pouvez l&apos;appeler directement ou lui envoyer un message WhatsApp.
@@ -100,7 +100,7 @@ export default function MerciContent() {
               },
               {
                 num: '2',
-                title: 'Vous recevez votre devis sous 24h',
+                title: 'Vous recevez votre devis rapidement',
                 desc: 'Par email ou par téléphone — gratuit, sans engagement, clair et détaillé.',
               },
               {

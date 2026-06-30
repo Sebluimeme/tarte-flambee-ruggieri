@@ -20,7 +20,7 @@ export default function ContactPage() {
             Demandez votre devis gratuit
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-xl">
-            Nous vous répondons sous 24h avec un devis personnalisé. Sans engagement.
+            Nous vous répondons rapidement avec un devis personnalisé. Sans engagement.
           </p>
         </div>
       </section>

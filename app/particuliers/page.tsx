@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const BADGES = [
   '200+ événements depuis 2019',
-  'Devis sous 24h',
+  'Devis gratuit',
   'Annulation gratuite',
   'Règlement le jour J',
 ]

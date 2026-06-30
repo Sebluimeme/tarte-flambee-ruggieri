@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s · Poivre & Salé',
   },
   description:
-    "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit sous 24h. 200+ événements réalisés.",
+    "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit, réponse rapide. 200+ événements réalisés.",
   keywords: [
     'tarte flambée Alsace',
     'traiteur tarte flambée',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: 'Poivre & Salé',
     title: 'Traiteur Tarte Flambée Alsace | Feu de Bois à Domicile | Poivre & Salé',
     description:
-      "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit sous 24h.",
+      "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit, réponse rapide.",
     images: [
       {
         url: '/og-image.jpg',

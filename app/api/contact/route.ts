@@ -144,7 +144,7 @@ function emailConfirmation(nomComplet: string) {
     </div>
     <div style="padding:32px;">
       <p style="color:#3D2010;font-size:16px;line-height:1.6;">Bonjour ${safeName},</p>
-      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Merci pour votre demande de devis. Marc Ruggieri vous contactera <strong>sous 24h</strong> avec une proposition personnalisée.</p>
+      <p style="color:#3D2010;font-size:16px;line-height:1.6;">Merci pour votre demande de devis. Marc Ruggieri vous contactera <strong>rapidement</strong> avec une proposition personnalisée.</p>
       <p style="color:#3D2010;font-size:16px;line-height:1.6;">En attendant, vous pouvez le joindre directement :</p>
       <div style="margin:24px 0;display:flex;gap:12px;">
         <a href="tel:0785621089" style="display:inline-block;background:#D4621A;color:white;text-decoration:none;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:bold;">📞 07 85 62 10 89</a>

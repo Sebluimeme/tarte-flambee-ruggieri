@@ -3,7 +3,7 @@ import MerciContent from './MerciContent'
 
 export const metadata: Metadata = {
   title: 'Merci pour votre demande · Poivre & Salé',
-  description: 'Votre demande de devis a bien été reçue. Marc vous répond sous 24h.',
+  description: 'Votre demande de devis a bien été reçue. Marc vous répond rapidement.',
   robots: { index: false, follow: false },
 }
 
