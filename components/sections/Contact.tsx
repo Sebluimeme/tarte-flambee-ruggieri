@@ -76,6 +76,24 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+
+    // 1. Persister le lead en base AVANT l'email (ne pas perdre le lead si Resend échoue)
+    try {
+      const { db } = await import("@/app/lib/firebase");
+      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
+      await addDoc(collection(db, "reservations"), {
+        ...form,
+        convives: Number(form.convives) || 0,
+        source: "contact",
+        status: "pending",
+        createdAt: serverTimestamp(),
+      });
+    } catch (err) {
+      // On loggue mais on n'interrompt pas : l'email reste la voie principale
+      console.error("[contact] Firestore error:", err);
+    }
+
+    // 2. Envoyer l'email via l'API
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
