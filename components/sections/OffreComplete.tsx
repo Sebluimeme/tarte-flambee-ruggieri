@@ -58,7 +58,7 @@ export default function OffreComplete() {
               Tarte flambée au feu de bois
             </h3>
             <p className="font-sans text-sm leading-relaxed text-cream-200/70 flex-1">
-              Pâte fine maison, fromage blanc fermier, oignons et lardons du pays.
+              Pâte fine laminée, fromage blanc fermier, oignons et lardons du pays.
               Cuisson en direct au four à bois — une tarte toutes les 90 secondes, à volonté.
             </p>
           </div>

@@ -77,7 +77,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus("loading");
 
-    // 1. Persister le lead en base AVANT l'email (ne pas perdre le lead si Resend échoue)
+    // 1. Persister le lead en base AVANT l'email
     try {
       const { db } = await import("@/app/lib/firebase");
       const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
@@ -89,7 +89,6 @@ export default function Contact() {
         createdAt: serverTimestamp(),
       });
     } catch (err) {
-      // On loggue mais on n'interrompt pas : l'email reste la voie principale
       console.error("[contact] Firestore error:", err);
     }
 
@@ -103,8 +102,8 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         setForm(initialState);
-        if (typeof window !== 'undefined' && window.dataLayer) {
-          window.dataLayer.push({ event: 'form_contact_submit' });
+        if (typeof window !== "undefined" && window.dataLayer) {
+          window.dataLayer.push({ event: "form_contact_submit" });
         }
       } else {
         setStatus("error");
@@ -116,306 +115,293 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-14">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-            Contact
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
-            Demandez votre devis gratuit
-          </h2>
-        </div>
+      <div className="max-w-4xl mx-auto">
 
-        <div className="grid md:grid-cols-5 gap-12">
-          {/* Form */}
-          <div className="md:col-span-3">
-            {status === "success" ? (
-              <div className="bg-cream-100 border border-stone-200 rounded-2xl p-10 text-center">
-                <div className="w-14 h-14 bg-cream-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C75A2A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <h3 className="font-display text-2xl font-medium text-bark-900 mb-3">
-                  Message envoyé !
-                </h3>
-                <p className="font-sans text-base text-bark-700">
-                  Merci pour votre demande. Nous vous répondrons rapidement avec votre devis personnalisé.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Nom complet */}
-                <div>
-                  <label className={labelClass}>
-                    Nom complet <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="nomComplet"
-                    required
-                    value={form.nomComplet}
-                    onChange={handleChange}
-                    placeholder="Marie Dupont"
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className={labelClass}>
-                    Email <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="marie@exemple.fr"
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Téléphone */}
-                <div>
-                  <label className={labelClass}>
-                    Téléphone <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="telephone"
-                    required
-                    value={form.telephone}
-                    onChange={handleChange}
-                    placeholder="07 85 62 10 89"
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Type événement */}
-                <div>
-                  <label className={labelClass}>
-                    Type d&apos;événement <span className="text-copper-500">*</span>
-                  </label>
-                  <select
-                    name="typeEvenement"
-                    required
-                    value={form.typeEvenement}
-                    onChange={handleChange}
-                    className={inputClass}
-                  >
-                    <option value="" disabled>Choisir...</option>
-                    <option value="mariage">Mariage</option>
-                    <option value="anniversaire">Anniversaire / fête de famille</option>
-                    <option value="entreprise">Soirée d&apos;entreprise</option>
-                    <option value="inauguration">Inauguration / lancement</option>
-                    <option value="autre">Autre événement privé</option>
-                  </select>
-                </div>
-
-                {/* Date */}
-                <div>
-                  <label className={labelClass}>
-                    Date de l&apos;événement <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="date"
-                    name="date"
-                    required
-                    value={form.date}
-                    onChange={handleChange}
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Nombre de convives */}
-                <div>
-                  <label className={labelClass}>
-                    Nombre de convives <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    name="convives"
-                    required
-                    min={1}
-                    value={form.convives}
-                    onChange={handleChange}
-                    placeholder="Minimum 30 personnes"
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Formule souhaitée */}
-                <div>
-                  <label className={labelClass}>Formule souhaitée</label>
-                  <div className="grid grid-cols-2 gap-3">
-                    {FORMULES.map((f) => (
-                      <label
-                        key={f.value}
-                        className={`flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-all ${
-                          form.formule === f.value
-                            ? "border-copper-500 bg-copper-500/5"
-                            : "border-stone-200 bg-cream-50 hover:border-stone-300"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="formule"
-                          value={f.value}
-                          checked={form.formule === f.value}
-                          onChange={handleChange}
-                          className="accent-copper-500"
-                        />
-                        <span className="font-sans text-sm text-bark-900">{f.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Lieu */}
-                <div>
-                  <label className={labelClass}>
-                    Lieu de l&apos;événement <span className="text-copper-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="lieu"
-                    required
-                    value={form.lieu}
-                    onChange={handleChange}
-                    placeholder="Ville ou code postal"
-                    className={inputClass}
-                  />
-                </div>
-
-                {/* Allergies */}
-                <div>
-                  <label className={labelClass}>Allergies / régimes spécifiques</label>
-                  <textarea
-                    name="allergies"
-                    value={form.allergies}
-                    onChange={handleChange}
-                    placeholder="Intolérance au lactose, végétarien, sans gluten..."
-                    rows={2}
-                    className={`${inputClass} resize-none`}
-                  />
-                </div>
-
-                {/* Infos complémentaires */}
-                <div>
-                  <label className={labelClass}>Informations complémentaires</label>
-                  <textarea
-                    name="infosComplementaires"
-                    value={form.infosComplementaires}
-                    onChange={handleChange}
-                    placeholder="Accès, contraintes particulières, options souhaitées..."
-                    rows={4}
-                    className={`${inputClass} resize-y`}
-                  />
-                </div>
-
-                {/* RGPD */}
-                <div>
-                  <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="rgpd"
-                      required
-                      checked={form.rgpd}
-                      onChange={handleChange}
-                      className="mt-0.5 accent-copper-500 w-4 h-4 flex-shrink-0"
-                    />
-                    <span className="font-sans text-sm text-bark-700 leading-relaxed">
-                      J&apos;accepte que mes données soient utilisées uniquement pour traiter ma demande, conformément à la{" "}
-                      <a href="/confidentialite" className="text-copper-500 underline underline-offset-2 hover:text-copper-400 transition-colors">
-                        politique de confidentialité
-                      </a>. <span className="text-copper-500">*</span>
-                    </span>
-                  </label>
-                </div>
-
-                {status === "error" && (
-                  <p className="font-sans text-sm text-red-600">
-                    Une erreur est survenue. Veuillez réessayer ou nous contacter par email.
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="w-full py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {status === "loading" ? "Envoi en cours..." : "Envoyer ma demande"}
-                </button>
-
-                <p className="font-sans text-xs text-center text-stone-400">
-                  Nous vous recontactons rapidement · Devis gratuit · Sans engagement
-                </p>
-              </form>
-            )}
+        {status === "success" ? (
+          <div className="bg-cream-100 border border-stone-200 rounded-2xl p-12 text-center">
+            <div className="w-14 h-14 bg-cream-200 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C75A2A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3 className="font-display text-2xl font-medium text-bark-900 mb-3">Message envoyé !</h3>
+            <p className="font-sans text-base text-bark-700">
+              Merci pour votre demande. Marc vous répondra rapidement avec votre devis personnalisé.
+            </p>
           </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-5">
 
-          {/* Info sidebar */}
-          <div className="md:col-span-2">
-            <div className="bg-bark-900 rounded-2xl p-8 text-cream-100 sticky top-24">
-              <p className="font-display text-2xl font-medium text-cream-50 mb-8">
-                Informations de contact
-              </p>
-
-              <div className="space-y-6">
-                <a
-                  href="tel:+33785621089"
-                  className="flex items-center gap-3 text-cream-100/70 hover:text-copper-400 transition-colors"
-                >
-                  <span className="text-copper-400"><Phone size={20} strokeWidth={1.5} aria-hidden="true" /></span>
-                  <div>
-                    <p className="font-sans text-xs text-cream-100/40 mb-0.5">Téléphone</p>
-                    <p className="font-sans text-sm">07 85 62 10 89</p>
-                  </div>
-                </a>
-
-                <a
-                  href="mailto:contact@poivresale.fr"
-                  className="flex items-center gap-3 text-cream-100/70 hover:text-copper-400 transition-colors"
-                >
-                  <span className="text-copper-400"><Mail size={20} strokeWidth={1.5} aria-hidden="true" /></span>
-                  <div>
-                    <p className="font-sans text-xs text-cream-100/40 mb-0.5">Email</p>
-                    <p className="font-sans text-sm">contact@poivresale.fr</p>
-                  </div>
-                </a>
-
-                <a
-                  href="https://wa.me/33785621089"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-cream-100/70 hover:text-copper-400 transition-colors"
-                >
-                  <span className="text-copper-400"><WhatsAppIcon /></span>
-                  <div>
-                    <p className="font-sans text-xs text-cream-100/40 mb-0.5">WhatsApp</p>
-                    <p className="font-sans text-sm">Répondre sous 2h</p>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-3 text-cream-100/70">
-                  <span className="text-copper-400"><MapPin size={20} strokeWidth={1.5} aria-hidden="true" /></span>
-                  <div>
-                    <p className="font-sans text-xs text-cream-100/40 mb-0.5">Zone d&apos;intervention</p>
-                    <p className="font-sans text-sm">Alsace &amp; Grand Est</p>
-                  </div>
-                </div>
+            {/* Ligne 1 — Nom / Email */}
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className={labelClass}>
+                  Nom complet <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="nomComplet"
+                  required
+                  value={form.nomComplet}
+                  onChange={handleChange}
+                  placeholder="Marie Dupont"
+                  className={inputClass}
+                />
               </div>
+              <div>
+                <label className={labelClass}>
+                  Email <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="marie@exemple.fr"
+                  className={inputClass}
+                />
+              </div>
+            </div>
 
-              <div className="mt-8 pt-6 border-t border-cream-100/10">
-                <p className="font-sans text-xs text-cream-100/40 leading-relaxed">
-                  Devis gratuit et personnalisé selon votre événement. Aucun engagement avant la confirmation.
-                </p>
+            {/* Ligne 2 — Téléphone / Type événement */}
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className={labelClass}>
+                  Téléphone <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="telephone"
+                  required
+                  value={form.telephone}
+                  onChange={handleChange}
+                  placeholder="06 00 00 00 00"
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label className={labelClass}>
+                  Type d&apos;événement <span className="text-copper-500">*</span>
+                </label>
+                <select
+                  name="typeEvenement"
+                  required
+                  value={form.typeEvenement}
+                  onChange={handleChange}
+                  className={inputClass}
+                >
+                  <option value="" disabled>Choisir...</option>
+                  <option value="mariage">Mariage</option>
+                  <option value="anniversaire">Anniversaire / fête de famille</option>
+                  <option value="entreprise">Soirée d&apos;entreprise</option>
+                  <option value="inauguration">Inauguration / lancement</option>
+                  <option value="autre">Autre événement privé</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Ligne 3 — Date / Convives / Lieu */}
+            <div className="grid md:grid-cols-3 gap-5">
+              <div>
+                <label className={labelClass}>
+                  Date <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  required
+                  value={form.date}
+                  onChange={handleChange}
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label className={labelClass}>
+                  Nombre de convives <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="number"
+                  name="convives"
+                  required
+                  min={1}
+                  value={form.convives}
+                  onChange={handleChange}
+                  placeholder="Min. 30"
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label className={labelClass}>
+                  Lieu <span className="text-copper-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="lieu"
+                  required
+                  value={form.lieu}
+                  onChange={handleChange}
+                  placeholder="Ville ou code postal"
+                  className={inputClass}
+                />
+              </div>
+            </div>
+
+            {/* Formule */}
+            <div>
+              <label className={labelClass}>Formule souhaitée</label>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {FORMULES.map((f) => (
+                  <label
+                    key={f.value}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-all ${
+                      form.formule === f.value
+                        ? "border-copper-500 bg-copper-500/5"
+                        : "border-stone-200 bg-cream-50 hover:border-stone-300"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="formule"
+                      value={f.value}
+                      checked={form.formule === f.value}
+                      onChange={handleChange}
+                      className="accent-copper-500"
+                    />
+                    <span className="font-sans text-sm text-bark-900">{f.label}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Ligne 4 — Allergies / Infos (optionnels, collapsés visuellement) */}
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className={labelClass}>
+                  Allergies / régimes{" "}
+                  <span className="font-normal text-stone-400">(optionnel)</span>
+                </label>
+                <textarea
+                  name="allergies"
+                  value={form.allergies}
+                  onChange={handleChange}
+                  placeholder="Sans lactose, végétarien..."
+                  rows={2}
+                  className={`${inputClass} resize-none`}
+                />
+              </div>
+              <div>
+                <label className={labelClass}>
+                  Informations complémentaires{" "}
+                  <span className="font-normal text-stone-400">(optionnel)</span>
+                </label>
+                <textarea
+                  name="infosComplementaires"
+                  value={form.infosComplementaires}
+                  onChange={handleChange}
+                  placeholder="Accès, contraintes, options..."
+                  rows={2}
+                  className={`${inputClass} resize-none`}
+                />
+              </div>
+            </div>
+
+            {/* RGPD + Submit */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+              <label className="flex items-start gap-3 cursor-pointer flex-1">
+                <input
+                  type="checkbox"
+                  name="rgpd"
+                  required
+                  checked={form.rgpd}
+                  onChange={handleChange}
+                  className="mt-0.5 accent-copper-500 w-4 h-4 flex-shrink-0"
+                />
+                <span className="font-sans text-sm text-bark-700 leading-relaxed">
+                  J&apos;accepte que mes données soient utilisées pour traiter ma demande —{" "}
+                  <a href="/confidentialite" className="text-copper-500 underline underline-offset-2 hover:text-copper-400 transition-colors">
+                    politique de confidentialité
+                  </a>. <span className="text-copper-500">*</span>
+                </span>
+              </label>
+            </div>
+
+            {status === "error" && (
+              <p className="font-sans text-sm text-red-600">
+                Une erreur est survenue. Réessayez ou contactez-nous par email.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="w-full py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {status === "loading" ? "Envoi en cours..." : "Envoyer ma demande"}
+            </button>
+
+            <p className="font-sans text-xs text-center text-stone-400">
+              Devis gratuit · Sans engagement · Réponse rapide
+            </p>
+          </form>
+        )}
+
+        {/* Informations de contact — en dessous du formulaire */}
+        <div className="mt-12 pt-10 border-t border-stone-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <a
+              href="tel:+33785621089"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-10 h-10 rounded-full bg-cream-100 flex items-center justify-center shrink-0 group-hover:bg-copper-500/10 transition-colors">
+                <Phone size={18} className="text-copper-500" strokeWidth={1.5} aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-sans text-xs text-stone-400 mb-0.5">Téléphone</p>
+                <p className="font-sans text-sm font-medium text-bark-900 group-hover:text-copper-500 transition-colors">07 85 62 10 89</p>
+              </div>
+            </a>
+
+            <a
+              href="mailto:contact@poivresale.fr"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-10 h-10 rounded-full bg-cream-100 flex items-center justify-center shrink-0 group-hover:bg-copper-500/10 transition-colors">
+                <Mail size={18} className="text-copper-500" strokeWidth={1.5} aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-sans text-xs text-stone-400 mb-0.5">Email</p>
+                <p className="font-sans text-sm font-medium text-bark-900 group-hover:text-copper-500 transition-colors">contact@poivresale.fr</p>
+              </div>
+            </a>
+
+            <a
+              href="https://wa.me/33785621089"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <div className="w-10 h-10 rounded-full bg-cream-100 flex items-center justify-center shrink-0 group-hover:bg-copper-500/10 transition-colors">
+                <span className="text-copper-500"><WhatsAppIcon /></span>
+              </div>
+              <div>
+                <p className="font-sans text-xs text-stone-400 mb-0.5">WhatsApp</p>
+                <p className="font-sans text-sm font-medium text-bark-900 group-hover:text-copper-500 transition-colors">Réponse rapide</p>
+              </div>
+            </a>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-cream-100 flex items-center justify-center shrink-0">
+                <MapPin size={18} className="text-copper-500" strokeWidth={1.5} aria-hidden="true" />
+              </div>
+              <div>
+                <p className="font-sans text-xs text-stone-400 mb-0.5">Zone</p>
+                <p className="font-sans text-sm font-medium text-bark-900">Alsace &amp; Grand Est</p>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
