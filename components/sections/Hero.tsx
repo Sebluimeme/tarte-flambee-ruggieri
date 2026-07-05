@@ -22,14 +22,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24 w-full">
         <div className="max-w-3xl">
           <h1 className="font-display text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6">
-            Votre <em>traiteur</em><br />
-            <span className="block">en Alsace —</span>
-            <span className="block">de l&apos;apéritif</span>
-            <span className="block">au dessert.</span>
+            La vraie <em>Flammekueche,</em><br />
+            <span className="block">cuite au feu de bois,</span>
+            <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 mb-8 max-w-xl">
-            Tarte flambée artisanale au four à bois, apéritifs et desserts alsaciens.
-            Marc installe son four chez vous et gère tout — de 30 à 250 convives, vous n&apos;avez qu&apos;à profiter.
+            La tarte flambée au feu de bois, c&apos;est notre spécialité. Et parce que chaque événement est différent,
+            nous composons avec vous l&apos;apéritif et le dessert, pour un repas complet entièrement adapté à vos souhaits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
