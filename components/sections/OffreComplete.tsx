@@ -58,8 +58,8 @@ export default function OffreComplete() {
               Tarte flambée au feu de bois
             </h3>
             <p className="font-sans text-sm leading-relaxed text-cream-200/70 flex-1">
-              Pâte fine laminée, fromage blanc fermier, oignons et lardons du pays.
-              Cuisson en direct au four à bois — une tarte toutes les 90 secondes, à volonté.
+              Pâte fine laminée, fromage blanc, oignons et lardons du pays.
+              Cuisson en direct au four à bois, une tarte toutes les 90 secondes.
             </p>
           </div>
 
@@ -72,8 +72,8 @@ export default function OffreComplete() {
               Finir en douceur
             </h3>
             <p className="font-sans text-sm leading-relaxed text-cream-200/70 flex-1">
-              Les tartes flambées sucrées — pomme-cannelle, myrtilles, crème fraîche —
-              pour clore le repas avec la même chaleur du four à bois.
+              Tarte flambée sucrée, glace, vacherin... Le dessert s&apos;adapte à votre événement.
+              Consultez-nous pour composer la fin de repas qui vous ressemble.
             </p>
           </div>
         </div>
