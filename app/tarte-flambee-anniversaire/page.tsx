@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
+import DernieresPrestations from '@/components/sections/DernieresPrestations'
 
 export const metadata: Metadata = {
   title: 'Tarte flambée anniversaire à domicile',
@@ -235,6 +236,8 @@ export default function AnniversairePage() {
       </section>
 
       <Galerie />
+
+      <DernieresPrestations filter="anniversaire" limit={6} />
 
       <OffreComplete />
 
