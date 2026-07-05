@@ -16,7 +16,7 @@ export default function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bark-900/20 to-bark-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bark-900/40 to-bark-900/80" />
 
       {/* Contenu */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24 w-full">
@@ -26,7 +26,7 @@ export default function Hero() {
             <span className="block">cuite au feu de bois,</span>
             <span className="block">chez vous.</span>
           </h1>
-          <p className="font-sans text-lg leading-relaxed text-cream-200/85 mb-8 max-w-xl">
+          <p className="font-sans text-lg leading-relaxed text-cream-50 mb-8 max-w-xl">
             La tarte flambée au feu de bois, c&apos;est notre spécialité. Et parce que chaque événement est différent,
             nous composons avec vous l&apos;apéritif et le dessert, pour un repas complet entièrement adapté à vos souhaits.
           </p>
@@ -44,7 +44,7 @@ export default function Hero() {
               07 85 62 10 89
             </a>
           </div>
-          <p className="font-sans text-sm text-cream-200/65">
+          <p className="font-sans text-sm text-cream-50/80">
             200+ événements réalisés · Devis gratuit · 07 85 62 10 89
           </p>
         </div>
