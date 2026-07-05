@@ -9,6 +9,7 @@ import Formules from '@/components/sections/Formules'
 import OffreComplete from '@/components/sections/OffreComplete'
 import Galerie from '@/components/sections/Galerie'
 import Temoignages from '@/components/sections/Temoignages'
+import DernieresPrestations from '@/components/sections/DernieresPrestations'
 import Zone from '@/components/sections/Zone'
 import Faq from '@/components/sections/Faq'
 import CtaFinal from '@/components/sections/CtaFinal'
@@ -42,6 +43,7 @@ export default function Home() {
       <Occasions />
       <Galerie />
       <Temoignages />
+      <DernieresPrestations />
       <Zone />
       <Faq />
       <CtaFinal />

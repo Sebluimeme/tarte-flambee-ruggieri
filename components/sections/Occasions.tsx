@@ -56,10 +56,11 @@ export default function Occasions() {
             Pour qui
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-3">
-            Chaque événement mérite sa tarte flambée
+            Un traiteur complet pour chaque occasion
           </h2>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl">
-            De la soirée d&apos;entreprise au mariage de 200 personnes, nous adaptons notre prestation.
+            De la soirée d&apos;entreprise au mariage de 200 personnes, Marc compose le repas
+            complet — apéritif, tarte flambée au feu de bois, dessert — et s&apos;occupe de tout.
           </p>
         </div>
 

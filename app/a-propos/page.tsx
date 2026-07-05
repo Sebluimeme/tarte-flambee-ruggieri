@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: false },
+  title: 'Marc Ruggieri — Traiteur artisan alsacien | Poivre & Salé',
+  description:
+    "Marc Ruggieri, traiteur artisan alsacien depuis 2019. Four à bois mobile, recette familiale, ingrédients locaux. Poivre & Salé, tarte flambée au feu de bois en Alsace.",
+  alternates: { canonical: '/a-propos' },
+  robots: { index: true, follow: true },
 }
 
 export default function APropos() {
-  notFound()
   return (
     <div className="pt-24 bg-cream-50">
 
