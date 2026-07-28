@@ -2,304 +2,306 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
-import Galerie from '@/components/sections/Galerie'
-import OffreComplete from '@/components/sections/OffreComplete'
-import DernieresPrestations from '@/components/sections/DernieresPrestations'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée entreprise & team building',
+  title: 'Traiteur tarte flambée entreprise | Devis rapide',
   description:
-    "Organisez votre prochain repas d'équipe, séminaire ou soirée de fin d'année autour d'une tarte flambée au feu de bois. 200+ événements depuis 2019. Alsace et environs.",
+    'Traiteur tarte flambée entreprise clé en main : four, service, boissons, mobilier, installation et nettoyage. Devis rapide pour votre événement.',
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },
 }
 
-const BADGES = [
-  '200+ événements depuis 2019',
-  'Prestataire déclaré et assuré',
-  'Devis gratuit',
-  'Annulation gratuite',
+const PHONE_DISPLAY = '07 85 62 10 89'
+const PHONE_HREF = 'tel:0785621089'
+
+const INCLUDED = [
+  'four et service sur place',
+  'préparation et cuisson pendant l’événement',
+  'tireuse à bière selon la formule retenue',
+  'barnum selon la configuration du lieu',
+  'tables, couverts et vaisselle selon besoin',
+  'installation avant l’arrivée des invités',
+  'service pendant le repas',
+  'débarrassage et nettoyage de l’espace utilisé',
 ]
 
-const AVANTAGES = [
+const EVENTS = [
   {
-    title: 'Prestataire fiable depuis 2019',
-    desc: "200+ événements d'entreprise réalisés. Ponctualité garantie, prestataire déclaré et assuré. Références disponibles sur demande.",
+    label: 'Équipe',
+    title: 'Repas de fin d’année',
+    desc: 'Un format chaleureux pour réunir vos équipes avant les fêtes, sans transformer l’organisation en charge supplémentaire.',
   },
   {
-    title: 'Autonomie totale',
-    desc: "Installation, service, débarrassage : vous ne touchez à rien. Vos équipes profitent, nous gérons tout de A à Z.",
+    label: 'Clients',
+    title: 'Portes ouvertes et invitation clients',
+    desc: 'Un point d’accueil vivant pour faire circuler vos visiteurs, prolonger les échanges et rendre vos locaux plus accueillants.',
   },
   {
-    title: 'Convivialité garantie',
-    desc: "La cuisson en direct au four à bois crée naturellement les échanges entre collègues. Bien plus efficace qu’un séminaire en salle.",
-  },
-  {
-    title: 'Flexibilité',
-    desc: "De 30 à 250+ personnes, en intérieur ou extérieur. Nous nous adaptons à votre lieu, votre format et votre budget.",
+    label: 'Temps fort',
+    title: 'Inauguration ou séminaire',
+    desc: 'Une solution simple pour marquer une étape, remercier vos collaborateurs ou clôturer une journée de travail.',
   },
 ]
 
-const OCCASIONS = [
-  'Repas de fin d’année',
-  'Team building et séminaires',
-  'Inauguration d’entreprise',
-  'Journée portes ouvertes',
-  'Pot de départ ou anniversaire d’entreprise',
+const STEPS = [
+  {
+    title: 'Vous décrivez votre événement',
+    desc: 'Date, lieu, nombre de convives, type de moment et contraintes d’accès. Vous donnez le contexte, on vérifie ce qui est possible.',
+  },
+  {
+    title: 'Vous recevez une proposition adaptée',
+    desc: 'La formule est préparée selon votre lieu, vos invités et les options souhaitées. Vous savez ce qui est prévu avant de valider.',
+  },
+  {
+    title: 'Le jour J, tout est installé',
+    desc: 'Le stand, le service et le matériel prévu sont mis en place avant l’arrivée de vos invités.',
+  },
+  {
+    title: 'Vous profitez, puis on nettoie',
+    desc: 'Vos invités sont servis pendant l’événement. À la fin, le matériel est rangé et l’espace utilisé est nettoyé.',
+  },
 ]
 
 const FAQ = [
   {
-    q: "Peut-on obtenir une facture pour la comptabilité de l'entreprise ?",
-    a: "Oui. Nous sommes une structure déclarée avec SIRET (812 751 469 00014). Vous recevez une facture en bonne et due forme, avec TVA si applicable, pour intégration directe à votre comptabilité.",
+    q: 'De combien de place avez-vous besoin ?',
+    a: 'Cela dépend du nombre de convives, du matériel prévu et de la configuration du lieu. Cour, terrasse, parking ou espace extérieur : on vérifie la faisabilité au moment du devis.',
   },
   {
-    q: "Quelle formule choisir pour une soirée de fin d'année ?",
-    a: "La formule Standard (12€/pers, dès 30 personnes) est idéale pour les équipes avec budget maîtrisé. La formule Gourmande (17€/pers) ou Clé en main est recommandée pour les grandes soirées avec service complet.",
+    q: 'Faut-il de l’électricité ?',
+    a: 'Certains éléments peuvent nécessiter une arrivée électrique, notamment la tireuse ou l’éclairage selon les options choisies. Les besoins exacts sont précisés avant l’événement.',
   },
   {
-    q: "Le four à bois nécessite-t-il un espace extérieur ?",
-    a: "Un espace extérieur de ~20m² est idéal, mais nous nous adaptons : parking d'entreprise, cour intérieure, terrasse couverte. Nous évaluons la faisabilité lors du devis.",
+    q: 'Peut-on organiser l’événement en intérieur ?',
+    a: 'Le service peut s’adapter selon votre lieu. Le four et l’installation doivent respecter les contraintes de sécurité, d’accès et d’aération.',
   },
   {
-    q: "Combien de temps dure la prestation ?",
-    a: "En général 2h de service actif. Nous arrivons 1h avant pour installer le four et repartons après le nettoyage. Comptez 4h au total sur site.",
+    q: 'Que se passe-t-il s’il pleut ?',
+    a: 'Le barnum permet de prévoir une solution d’abri pour le stand selon la configuration. En cas de météo compliquée, l’organisation est validée avec vous avant le jour J.',
   },
   {
-    q: "Jusqu'à combien de convives pouvez-vous servir ?",
-    a: "De 30 à 250+ convives. Pour les très grands événements (250+), nous adaptons le matériel et l'équipe en conséquence.",
+    q: 'Proposez-vous des options végétariennes ?',
+    a: 'Oui, des options végétariennes peuvent être prévues si vous les indiquez au moment de la demande.',
+  },
+  {
+    q: 'Les boissons sont-elles incluses ?',
+    a: 'La tireuse à bière et les boissons dépendent de la formule choisie. Le devis précise clairement ce qui est inclus pour votre événement.',
+  },
+  {
+    q: 'Qui s’occupe du nettoyage ?',
+    a: 'Le débarrassage et le nettoyage de l’espace utilisé sont prévus dans l’accompagnement clé en main. Vous ne terminez pas la soirée avec le stand à ranger.',
+  },
+  {
+    q: 'Y a-t-il un nombre minimum de personnes ?',
+    a: 'Le minimum dépend de la formule et du lieu. Indiquez votre nombre de convives dans la demande de devis pour recevoir une proposition adaptée.',
   },
 ]
+
+function PrimaryCta({ children = 'Demander un devis entreprise' }: { children?: string }) {
+  return (
+    <Link
+      href="/contact"
+      className="inline-flex min-h-12 items-center justify-center rounded-full bg-copper-500 px-7 py-3 font-sans text-base font-semibold text-cream-50 shadow-md transition-all hover:bg-copper-400 hover:shadow-lg active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+    >
+      {children}
+    </Link>
+  )
+}
 
 export default function SoireeEntreprisePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[72vh] flex items-end">
-        <Image
-          src="/media/four-bois-action.jpg"
-          fill
-          className="object-cover object-center"
-          alt="Four à bois en action pour un événement entreprise"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-bark-900/20 via-bark-900/35 to-bark-900/80" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 pt-40 pb-20 w-full text-center">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4">
-            Entreprise · Team building · Séminaire
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-cream-50 mb-6">
-            Un repas d&apos;équipe qui crée vraiment du lien.
-          </h1>
-          <p className="font-sans text-lg leading-relaxed text-cream-200/85 max-w-2xl mx-auto mb-8">
-            Parce qu&apos;un bon repas autour d&apos;un four à bois vaut 10 team buildings sur PowerPoint.
-            Tarte flambée au feu de bois, en Alsace, pour 30 à 250+ collaborateurs.
-          </p>
-
-          {/* Badges */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {BADGES.map((b) => (
-              <span key={b} className="px-4 py-1.5 rounded-full bg-cream-50/10 border border-cream-50/25 font-sans text-sm text-cream-100 backdrop-blur-sm">
-                {b}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA haut */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md hover:shadow-lg"
-            >
-              Demander un devis entreprise
-            </Link>
-            <a
-              href="tel:+33785621089"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50/10 backdrop-blur-sm text-cream-50 font-sans font-medium text-base border border-cream-50/30 hover:bg-cream-50/20 transition-all"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z" />
-              </svg>
-              07 85 62 10 89
-            </a>
-          </div>
-          <p className="font-sans text-xs text-cream-200/60 mt-4">
-            Réponse rapide — Devis gratuit et sans engagement
-          </p>
-        </div>
-      </section>
-
-      {/* Arguments B2B */}
-      <section className="bg-cream-50 py-20 px-6 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900 text-center mb-12">
-            Pourquoi les entreprises nous choisissent
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {AVANTAGES.map((av) => (
-              <div key={av.title} className="rounded-2xl bg-cream-100 border border-stone-200 p-6">
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 shrink-0">
-                    <Check size={18} className="text-copper-500" strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <h3 className="font-sans font-semibold text-bark-900 mb-1">{av.title}</h3>
-                    <p className="font-sans text-sm leading-relaxed text-bark-600">{av.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Idéal pour */}
-      <section className="bg-cream-100 py-20 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
-              Idéal pour
+      <section className="overflow-hidden bg-cream-50 px-6 pb-20 pt-32 md:px-8 md:pt-40">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div>
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+              Traiteur tarte flambée entreprise
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900">
-              Tous les moments forts de votre entreprise
+            <h1 className="mb-6 max-w-4xl font-display text-4xl font-medium leading-[1.02] tracking-tight text-bark-900 md:text-6xl">
+              Organisez votre événement d’entreprise sans courir après la logistique
+            </h1>
+            <p className="mb-8 max-w-2xl font-sans text-lg leading-relaxed text-bark-600">
+              Pour votre soirée d’entreprise, repas de fin d’année, inauguration, séminaire ou journée portes ouvertes, Poivre &amp; Salé installe une prestation clé en main directement sur votre lieu.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <PrimaryCta>Demander un devis entreprise</PrimaryCta>
+              <a
+                href={PHONE_HREF}
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-bark-900/20 bg-transparent px-7 py-3 font-sans text-base font-medium text-bark-900 transition-all hover:border-bark-900/40 active:scale-[0.98]"
+              >
+                {PHONE_DISPLAY}
+              </a>
+            </div>
+            <p className="mt-4 font-sans text-xs text-bark-500">
+              Devis gratuit et sans engagement · Réponse rapide
+            </p>
+          </div>
+          <div className="relative min-h-[420px] overflow-hidden rounded-3xl shadow-xl md:min-h-[560px]">
+            <Image
+              src="/media/stand-cafe-entreprise.jpg"
+              fill
+              className="object-cover object-center"
+              alt="Stand accueillant installé pour un événement d’entreprise"
+              sizes="(min-width: 768px) 45vw, 100vw"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-50 px-6 py-20 md:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+          <div>
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+              Nous nous occupons de tout
+            </p>
+            <h2 className="mb-5 font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+              Vous avez l’événement à organiser. Vous n’avez pas à tout gérer.
+            </h2>
+            <p className="font-sans text-base leading-relaxed text-bark-600 md:text-lg">
+              Quand on vous confie un repas d’entreprise, le vrai sujet n’est pas seulement le menu. Il faut que l’accueil soit fluide, que les invités soient bien servis, que le lieu reste propre, et que tout paraisse maîtrisé.
+            </p>
+            <p className="mt-4 font-sans text-base leading-relaxed text-bark-600 md:text-lg">
+              Vous évitez de coordonner plusieurs prestataires. Vous restez disponible pour vos équipes, vos clients ou vos partenaires.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-stone-200 bg-cream-100 p-6 shadow-sm md:p-8">
+            <h3 className="mb-5 font-display text-2xl font-medium text-bark-900">
+              Ce qui peut être prévu sur place
+            </h3>
+            <ul className="grid gap-3">
+              {INCLUDED.map((item) => (
+                <li key={item} className="flex items-start gap-3 font-sans text-sm leading-relaxed text-bark-700 md:text-base">
+                  <Check size={18} className="mt-0.5 shrink-0 text-copper-500" strokeWidth={1.75} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-100 px-6 py-20 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+              Comment ça se passe
+            </p>
+            <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+              Une organisation simple, du devis au nettoyage
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {OCCASIONS.map((occ) => (
-              <div key={occ} className="flex items-center gap-3 rounded-xl bg-cream-50 border border-stone-200 p-4">
-                <span className="w-2 h-2 rounded-full bg-copper-500 shrink-0" aria-hidden="true" />
-                <span className="font-sans text-base text-bark-800">{occ}</span>
+          <div className="grid gap-4 md:grid-cols-4">
+            {STEPS.map((step, index) => (
+              <div key={step.title} className="rounded-2xl border border-stone-200 bg-cream-50 p-6 shadow-sm">
+                <span className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-bark-900 font-sans text-sm font-semibold text-cream-50">
+                  {index + 1}
+                </span>
+                <h3 className="mb-2 font-sans text-lg font-semibold text-bark-900">{step.title}</h3>
+                <p className="font-sans text-sm leading-relaxed text-bark-600">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Formules */}
-      <section className="bg-bark-900 py-20 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4 text-center">
-            Formules recommandées entreprise
-          </p>
-          <h2 className="font-display text-3xl font-medium tracking-tight text-cream-50 text-center mb-12">
-            Choisissez selon la taille de votre équipe
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl bg-bark-800 border border-bark-700 p-8">
-              <h3 className="font-display text-2xl text-cream-50 mb-2">Standard</h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="font-display text-4xl font-medium text-copper-400">12€</span>
-                <span className="font-sans text-sm text-cream-100/50">/pers.</span>
-              </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">dès 30 personnes</p>
-              <ul className="space-y-2.5 mb-6">
-                {[
-                  '1 tarte flambée salée par personne',
-                  'Four à bois et ingrédients inclus',
-                  'Déplacement inclus',
-                  'Facture TVA',
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-100/70">
-                    <Check size={15} className="text-copper-400 mt-0.5 shrink-0" strokeWidth={1.75} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl bg-copper-500 p-8">
-              <h3 className="font-display text-2xl text-cream-50 mb-2">Clé en main</h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="font-display text-4xl font-medium text-cream-50">Sur devis</span>
-              </div>
-              <p className="font-sans text-sm text-cream-50/70 mb-5">Adapté à votre événement</p>
-              <ul className="space-y-2.5 mb-6">
-                {[
-                  'Formule tartes flambées au choix',
-                  'Four à bois + tables, chaises, mange-debout',
-                  'Vaisselle, verrerie et matériel de service',
-                  'Installation, service et débarrassage',
-                  'Facture TVA incluse',
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-50/90">
-                    <Check size={15} className="text-cream-50 mt-0.5 shrink-0" strokeWidth={1.75} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <section className="bg-cream-50 px-6 py-20 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+              Pour quels événements ?
+            </p>
+            <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+              Pour les moments où vous devez recevoir sans vous compliquer la vie
+            </h2>
           </div>
-          <div className="text-center mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-semibold text-base hover:bg-cream-100 transition-all shadow-md"
-            >
-              Demander un devis entreprise
-            </Link>
+          <div className="grid gap-5 md:grid-cols-3">
+            {EVENTS.map((event) => (
+              <article key={event.title} className="flex min-h-56 flex-col justify-between rounded-3xl border border-stone-200 bg-cream-100 p-7 shadow-sm">
+                <span className="mb-6 w-fit rounded-full bg-cream-300 px-3 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-copper-700">
+                  {event.label}
+                </span>
+                <div>
+                  <h3 className="mb-3 font-display text-2xl font-medium text-bark-900">{event.title}</h3>
+                  <p className="font-sans text-sm leading-relaxed text-bark-600 md:text-base">{event.desc}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Témoignage */}
-      <section className="bg-cream-100 py-20 px-6 md:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          <svg width="40" height="32" viewBox="0 0 40 32" fill="none" aria-hidden="true" className="mx-auto mb-6 text-copper-500 opacity-40">
-            <path d="M0 32V20C0 8.954 7.163 2.477 21.49 0L23 3.6C16.19 5.2 12.493 8.8 11.91 14.4H18v17.6H0zm22 0V20C22 8.954 29.163 2.477 43.49 0L45 3.6C38.19 5.2 34.493 8.8 33.91 14.4H40v17.6H22z" fill="currentColor"/>
-          </svg>
-          <blockquote className="font-display text-2xl md:text-3xl font-medium italic text-bark-900 leading-relaxed mb-6">
-            &laquo;&nbsp;Notre soirée de fin d&apos;année à Mulhouse était un vrai succès. Le four à bois a créé une ambiance formidable — les équipes en parlent encore. Merci&nbsp;!&nbsp;&raquo;
-          </blockquote>
-          <p className="font-sans text-sm text-bark-600">
-            Jean-Luc B., DRH — <span className="text-copper-500">Soirée de fin d&apos;année à Mulhouse, décembre 2024</span>
-          </p>
+      <section className="bg-bark-900 px-6 py-20 md:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
+          <div className="relative min-h-[420px] overflow-hidden rounded-3xl shadow-xl md:min-h-[560px]">
+            <Image
+              src="/media/accueil-cafe-entreprise.jpg"
+              fill
+              className="object-cover object-center"
+              alt="Détail d’un stand propre pour une réception entreprise"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+          <div>
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-300">
+              Accueil soigné
+            </p>
+            <h2 className="mb-5 font-display text-3xl font-medium leading-tight tracking-tight text-cream-50 md:text-5xl">
+              Vos locaux deviennent un vrai lieu de réception
+            </h2>
+            <p className="font-sans text-base leading-relaxed text-cream-100/75 md:text-lg">
+              Cour, parking, terrasse ou espace extérieur : l’idée est de créer un point de rassemblement simple, propre et accueillant. Les photos du stand café montrent ce soin apporté à l’accueil, sans faire du café le sujet principal de l’offre.
+            </p>
+            <p className="mt-4 font-sans text-base leading-relaxed text-cream-100/75 md:text-lg">
+              Pour une invitation client ou une porte ouverte, ce détail compte. Vos invités comprennent tout de suite où se retrouver, discuter et profiter du moment.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-cream-50 py-20 px-6 md:px-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-medium tracking-tight text-bark-900 text-center mb-12">
-            Questions fréquentes — Entreprise
-          </h2>
-          <div className="space-y-4">
+      <section className="bg-cream-50 px-6 py-20 md:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+              Réassurance
+            </p>
+            <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+              Ce qu’une entreprise veut savoir avant d’appeler
+            </h2>
+          </div>
+          <div className="grid gap-4">
             {FAQ.map((item) => (
-              <div key={item.q} className="rounded-2xl bg-cream-100 border border-stone-200 p-6">
-                <h3 className="font-sans font-semibold text-bark-900 mb-2">{item.q}</h3>
-                <p className="font-sans text-sm leading-relaxed text-bark-600">{item.a}</p>
+              <div key={item.q} className="rounded-2xl border border-stone-200 bg-cream-100 p-6">
+                <h3 className="mb-2 font-sans text-base font-semibold text-bark-900 md:text-lg">{item.q}</h3>
+                <p className="font-sans text-sm leading-relaxed text-bark-600 md:text-base">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <Galerie />
-
-      <DernieresPrestations filter="entreprise" limit={6} />
-
-      <OffreComplete />
-
-      {/* CTA bas */}
-      <section className="bg-cream-100 py-16 px-6 md:px-8 border-t border-stone-200">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-medium text-bark-900 mb-3">
-            Prêt à organiser votre soirée ?
-          </h2>
-          <p className="font-sans text-base text-bark-600 mb-6">
-            Devis gratuit, réponse rapide. Prestataire déclaré et assuré.
+      <section className="border-t border-stone-200 bg-cream-100 px-6 py-16 md:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+            Demande de devis entreprise
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md"
-            >
-              Demander un devis entreprise
-            </Link>
+          <h2 className="mb-4 font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+            Vous voulez organiser un événement simple, propre et convivial ?
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl font-sans text-base leading-relaxed text-bark-600 md:text-lg">
+            Envoyez la date, le lieu, le nombre de convives et le type d’événement. Vous recevez une proposition claire pour votre soirée d’entreprise, repas de fin d’année, inauguration, séminaire ou portes ouvertes.
+          </p>
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <PrimaryCta>Recevoir mon devis entreprise</PrimaryCta>
             <a
-              href="tel:+33785621089"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/20 hover:border-bark-900/40 transition-all"
+              href={PHONE_HREF}
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-bark-900/20 bg-transparent px-7 py-3 font-sans text-base font-medium text-bark-900 transition-all hover:border-bark-900/40 active:scale-[0.98]"
             >
               Nous appeler
             </a>
           </div>
-          <p className="font-sans text-xs text-bark-500 mt-4">Devis gratuit · Sans engagement · Prestataire déclaré · Annulation gratuite</p>
+          <p className="mt-4 font-sans text-xs text-bark-500">
+            Devis gratuit · Sans engagement · Réponse rapide
+          </p>
         </div>
       </section>
     </>
