@@ -137,10 +137,10 @@ export default function SoireeEntreprisePage() {
           </div>
           <div className="relative min-h-[420px] overflow-hidden rounded-3xl shadow-xl md:min-h-[560px]">
             <Image
-              src="/media/stand-cafe-entreprise.jpg"
+              src="/media/four-bois-action.jpg"
               fill
               className="object-cover object-center"
-              alt="Stand accueillant installé pour un événement d’entreprise"
+              alt="Four à bois en action pour une prestation tarte flambée en entreprise"
               sizes="(min-width: 768px) 45vw, 100vw"
               priority
             />
@@ -262,10 +262,10 @@ export default function SoireeEntreprisePage() {
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
-              Réassurance
+              Questions fréquentes
             </p>
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
-              Ce qu’une entreprise veut savoir avant d’appeler
+              Les points pratiques à valider avant votre devis
             </h2>
           </div>
           <div className="grid gap-4">
