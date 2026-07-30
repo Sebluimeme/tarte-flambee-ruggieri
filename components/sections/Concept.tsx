@@ -55,6 +55,7 @@ export default function Concept() {
             <Image
               src="/media/four-bois-action.jpg"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
               alt="Four à bois en action lors d'une prestation Poivre & Salé"
             />

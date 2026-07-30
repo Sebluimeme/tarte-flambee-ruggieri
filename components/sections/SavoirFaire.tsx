@@ -53,6 +53,7 @@ export default function SavoirFaire() {
             <Image
               src="/media/tarte-flambee-classique-planche.jpg"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
               alt="Tarte flambée alsacienne traditionnelle Poivre & Salé"
             />
