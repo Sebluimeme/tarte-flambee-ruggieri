@@ -13,6 +13,7 @@ export default function Hero() {
         className="object-cover object-center"
         alt="Tarte flambée artisanale cuite au feu de bois"
         priority
+        quality={65}
       />
 
       {/* Overlay */}

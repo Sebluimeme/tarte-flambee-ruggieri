@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Poivre & Salé",
+  title: { absolute: "Mentions légales | Poivre & Salé" },
   description: "Mentions légales du site Poivre & Salé — prestation tarte flambée en Alsace.",
+  alternates: { canonical: '/mentions-legales' },
   robots: { index: false, follow: false },
 };
 

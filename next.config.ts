@@ -9,6 +9,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   images: {
+    qualities: [65, 75],
     remotePatterns: [
       new URL("https://images.unsplash.com/**"),
       new URL("https://images.pexels.com/**"),

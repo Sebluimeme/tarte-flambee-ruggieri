@@ -23,11 +23,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Traiteur Tarte Flambée au Feu de Bois en Alsace | Poivre & Salé',
+    default: 'Tarte flambée au feu de bois en Alsace | Poivre & Salé',
     template: '%s · Poivre & Salé',
   },
   description:
-    "Traiteur spécialisé tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit, réponse rapide. 200+ événements réalisés.",
+    "Tarte flambée cuite au feu de bois pour vos événements en Alsace. Mariages, entreprises, anniversaires. Devis gratuit, réponse rapide. 200+ événements réalisés.",
   keywords: [
     'tarte flambée Alsace',
     'traiteur tarte flambée',

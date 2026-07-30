@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Devis gratuit tarte flambée à domicile',
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
+  alternates: { canonical: '/contact' },
 };
 
 export default function ContactPage() {

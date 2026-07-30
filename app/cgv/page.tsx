@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Vente | Poivre & Salé",
+  title: { absolute: "Conditions Générales de Vente | Poivre & Salé" },
   description:
     "Conditions Générales de Vente de Poivre & Salé — prestation tarte flambée à domicile en Alsace. Tarifs, annulation, allergènes, assurance.",
+  alternates: { canonical: '/cgv' },
   robots: { index: true, follow: true },
 };
 

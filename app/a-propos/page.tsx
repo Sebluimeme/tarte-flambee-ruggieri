@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Marc Ruggieri — Traiteur artisan alsacien | Poivre & Salé',
+  title: { absolute: 'Marc Ruggieri — Traiteur artisan alsacien | Poivre & Salé' },
   description:
     "Marc Ruggieri, traiteur artisan alsacien depuis 2019. Four à bois mobile, recette familiale, ingrédients locaux. Poivre & Salé, tarte flambée au feu de bois en Alsace.",
   alternates: { canonical: '/a-propos' },

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de cookies | Poivre & Salé",
+  title: { absolute: "Politique de cookies | Poivre & Salé" },
   description: "Politique de cookies du site Poivre & Salé — tarte flambée en Alsace.",
+  alternates: { canonical: '/cookies' },
   robots: { index: false, follow: false },
 };
 

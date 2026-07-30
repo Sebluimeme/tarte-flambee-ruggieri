@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Formules & tarifs tarte flambée',
   description:
     "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
+  alternates: { canonical: '/formules' },
 };
 
 const FORMULES = [

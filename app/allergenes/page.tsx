@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Allergènes | Poivre & Salé",
+  title: { absolute: "Allergènes | Poivre & Salé" },
   description: "Informations sur les allergènes présents dans nos tartes flambées — Poivre & Salé.",
+  alternates: { canonical: '/allergenes' },
 };
 
 const ALLERGENES = [

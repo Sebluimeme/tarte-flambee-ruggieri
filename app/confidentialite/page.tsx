@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité | Poivre & Salé",
+  title: { absolute: "Politique de confidentialité | Poivre & Salé" },
   description: "Politique de confidentialité et protection des données personnelles — Poivre & Salé, tarte flambée en Alsace.",
+  alternates: { canonical: '/confidentialite' },
   robots: { index: false, follow: false },
 };
 
