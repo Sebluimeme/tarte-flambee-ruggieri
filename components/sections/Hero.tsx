@@ -10,6 +10,7 @@ export default function Hero() {
       <Image
         src="/media/hero-flamme-traiteur.jpg"
         fill
+        sizes="100vw"
         className="object-cover object-center"
         alt="Tarte flambée artisanale cuite au feu de bois"
         priority
