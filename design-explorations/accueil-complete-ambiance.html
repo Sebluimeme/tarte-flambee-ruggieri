@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accueil complet — Poivre & Salé</title>
+  <style>
+    :root{
+      --cream:#FDFBF5; --cream2:#FAF6EE; --cream3:#F5EDD8; --stone:#E8DFD0;
+      --bark:#2B1810; --bark2:#3D2715; --muted:#6f543f; --copper:#C75A2A; --copper2:#D87642;
+      --display: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --shadow: 0 24px 70px rgba(43,24,16,.16);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--bark);font-family:var(--sans);-webkit-font-smoothing:antialiased} a{text-decoration:none;color:inherit} img{display:block;width:100%;height:100%;object-fit:cover}
+    .header{position:fixed;z-index:50;top:0;left:0;right:0;height:76px;background:rgba(253,251,245,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,223,208,.85)}
+    .nav{max-width:1180px;margin:auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}.brand{display:flex;flex-direction:column}.brand b{font-family:var(--display);font-size:22px;letter-spacing:-.02em}.brand span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.links{display:flex;gap:28px;align-items:center;font-size:14px;color:#5c3a1f}.navcta{background:var(--copper);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;box-shadow:0 10px 22px rgba(199,90,42,.22)}
+    .section{padding:88px 24px}.wrap{max-width:1180px;margin:0 auto}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:900}.h1{font-family:var(--display);font-size:clamp(48px,7vw,86px);line-height:.92;letter-spacing:-.055em;margin:16px 0 22px}.h2{font-family:var(--display);font-size:clamp(34px,4.4vw,58px);line-height:.98;letter-spacing:-.04em;margin:12px 0 18px}.lead{font-size:19px;line-height:1.62;color:#5c3a1f;max-width:690px}.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:0 24px;font-weight:900}.primary{background:var(--copper);color:white;box-shadow:0 14px 30px rgba(199,90,42,.25)}.secondary{background:rgba(255,255,255,.76);border:1px solid var(--stone);color:var(--bark)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--stone);border-radius:28px;padding:26px;box-shadow:0 12px 38px rgba(43,24,16,.06)}.card h3{font-size:21px;margin:0 0 10px;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);line-height:1.58}.photo{position:relative;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);background:#19120d}.photo.hero{height:650px}.photo.tall{height:560px}.photo.mid{height:390px}.caption{position:absolute;left:18px;right:18px;bottom:18px;border-radius:22px;background:rgba(18,16,14,.72);color:white;padding:18px;backdrop-filter:blur(12px)}.caption b{font-family:var(--display);font-size:24px;display:block}.caption span{color:rgba(255,255,255,.75);font-size:14px;line-height:1.45}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}.chip{background:#fff;border:1px solid var(--stone);border-radius:999px;padding:9px 13px;color:#5c3a1f;font-weight:800;font-size:13px}.hero-section{padding:132px 24px 82px;background:radial-gradient(circle at 78% 10%,#f2dfbf 0,rgba(242,223,191,0) 32%),linear-gradient(180deg,#fffaf0 0%,var(--cream) 78%)}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center}.proofbar{max-width:1180px;margin:28px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.proof{background:rgba(255,255,255,.72);border:1px solid var(--stone);border-radius:20px;padding:16px}.proof b{display:block;font-size:15px}.proof span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.dark{background:#20130c;color:#fff}.dark .lead,.dark .card p{color:rgba(253,251,245,.72)}.dark .card{background:rgba(253,251,245,.07);border-color:rgba(253,251,245,.13);box-shadow:none}.dark .eyebrow{color:#e89a6a}.split-bg{background:linear-gradient(90deg,var(--cream2) 0 50%,#f2e5d0 50%)}.steps{counter-reset:step;display:grid;gap:14px}.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--stone);border-radius:22px;padding:20px}.step:before{counter-increment:step;content:counter(step);width:44px;height:44px;border-radius:50%;background:var(--bark);color:white;display:flex;align-items:center;justify-content:center;font-weight:900}.step h3{margin:2px 0 5px}.step p{margin:0;color:var(--muted);line-height:1.55}.occasion{min-height:210px;display:flex;flex-direction:column;justify-content:space-between}.occasion .tag{align-self:flex-start;background:var(--cream3);color:#8a3614;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}.gallery{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}.gallery-right{display:grid;gap:18px}.quote{font-family:var(--display);font-size:34px;line-height:1.08;letter-spacing:-.03em;margin:0;color:#fff}.faq{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px}.qa{border-top:1px solid var(--stone);padding:22px 0}.qa h3{margin:0 0 8px}.qa p{margin:0;color:var(--muted);line-height:1.58}.cta-final{background:linear-gradient(135deg,#2B1810,#5C3A1F);color:white;border-radius:38px;padding:58px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}.cta-final .lead{color:rgba(255,255,255,.72)}.footer{padding:42px 24px;background:#160f0b;color:rgba(255,255,255,.7)}.footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.mobile-only{display:none}
+    @media(max-width:880px){.links{display:none}.mobile-only{display:inline-flex}.section{padding:64px 20px}.hero-section{padding:112px 20px 58px}.hero-grid,.grid2,.grid3,.gallery,.faq{grid-template-columns:1fr;gap:28px}.proofbar{grid-template-columns:1fr 1fr;padding:0 20px}.photo.hero{height:430px}.photo.tall{height:460px}.photo.mid{height:310px}.h1{font-size:48px}.h2{font-size:36px}.lead{font-size:17px}.split-bg{background:var(--cream2)}.cta-final{grid-template-columns:1fr;padding:34px;border-radius:28px}.footer .wrap{display:block}.nav{padding:0 20px}.brand b{font-size:20px}}
+    @media(max-width:520px){.proofbar{grid-template-columns:1fr}.btn{width:100%}.photo.hero{height:380px}.photo.tall{height:410px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#"><b>Poivre & Salé</b><span>Cuisinier · Traiteur événementiel</span></a>
+      <div class="links"><a href="#formules">Formules</a><a href="#ambiance">Ambiance</a><a href="#occasions">Occasions</a><a href="#faq">Questions</a><a class="navcta" href="#contact">Demander un devis</a></div>
+      <a class="navcta mobile-only" href="#contact">Devis</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Tartes flambées au feu de bois · Traiteur événementiel</div>
+          <h1 class="h1">Un moment simple, généreux, qui rassemble vos invités.</h1>
+          <p class="lead">On installe le four, on prépare les tartes flambées sur place et on crée une ambiance conviviale pour vos soirées privées, repas d’entreprise, anniversaires, associations ou réceptions clients.</p>
+          <div class="btns"><a class="btn primary" href="#contact">Je prépare mon événement</a><a class="btn secondary" href="#formules">Voir les formules</a></div>
+          <div class="chips"><span class="chip">Four à bois sur place</span><span class="chip">Service pendant l’événement</span><span class="chip">Ambiance chaleureuse</span></div>
+        </div>
+        <div class="photo hero"><img src="../public/media/four-bois-action.jpg" alt="Four à bois en action pendant une prestation tarte flambée"><div class="caption"><b>La tarte flambée devient le cœur de la soirée.</b><span>Les invités voient, sentent, discutent et se servent au rythme de la cuisson.</span></div></div>
+      </div>
+      <div class="proofbar"><div class="proof"><b>Sur place</b><span>Installation du matériel</span></div><div class="proof"><b>Convivial</b><span>Cuisson visible et échange</span></div><div class="proof"><b>Souple</b><span>Privé, entreprise, association</span></div><div class="proof"><b>Sans stress</b><span>Vous profitez de vos invités</span></div></div>
+    </section>
+
+    <section id="ambiance" class="section split-bg">
+      <div class="wrap grid2">
+        <div class="photo tall"><img src="assets/stand-cafe-large.jpg" alt="Stand soigné installé pour recevoir les invités"><div class="caption"><b>Une installation qui donne envie d’approcher.</b><span>La photo café sert ici à montrer le soin, l’accueil et la présentation.</span></div></div>
+        <div>
+          <div class="eyebrow">Ambiance & accueil</div>
+          <h2 class="h2">Pas juste un repas : un vrai point de rencontre.</h2>
+          <p class="lead">Ces détails comptent : un stand propre, un service fluide, un espace qui reste agréable pendant toute la soirée. Que ce soit pour accueillir des proches, remercier une équipe ou inviter des clients, la prestation doit donner une impression simple et soignée.</p>
+          <div class="grid3" style="grid-template-columns:1fr;gap:12px;margin-top:28px">
+            <div class="card"><h3>Accueil plus chaleureux</h3><p>Les invités ne tombent pas sur un simple buffet froid : ils arrivent devant une vraie installation vivante.</p></div>
+            <div class="card"><h3>Service visible</h3><p>La cuisson et le dressage créent naturellement de la discussion autour du stand.</p></div>
+            <div class="card"><h3>Fin de soirée agréable</h3><p>On garde une atmosphère conviviale jusqu’au dernier moment, sans rendre le café central dans l’offre.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formules" class="section">
+      <div class="wrap">
+        <div style="max-width:720px;margin-bottom:34px"><div class="eyebrow">Formules</div><h2 class="h2">Une base simple, adaptable à votre événement.</h2><p class="lead">L’objectif n’est pas de multiplier les options : on part de votre nombre d’invités, de votre lieu et de l’ambiance souhaitée, puis on propose le format le plus logique.</p></div>
+        <div class="grid3">
+          <div class="card"><h3>Soirée privée</h3><p>Anniversaire, cousinade, repas de famille ou fête à la maison. Une formule conviviale, facile à comprendre pour les invités.</p><div class="btns"><a class="btn secondary" href="#contact">Demander pour une fête</a></div></div>
+          <div class="card" style="border-color:#d87642;box-shadow:0 20px 54px rgba(199,90,42,.16)"><h3>Entreprise & clients</h3><p>Repas d’équipe, portes ouvertes, inauguration, soirée de fin d’année ou invitation client dans une ambiance détendue.</p><div class="btns"><a class="btn primary" href="#contact">Préparer une soirée</a></div></div>
+          <div class="card"><h3>Association & grand groupe</h3><p>Un format efficace pour servir beaucoup de monde, garder du rythme et créer un moment simple autour du four.</p><div class="btns"><a class="btn secondary" href="#contact">Voir la faisabilité</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap gallery">
+        <div><div class="eyebrow">Savoir-faire</div><h2 class="h2">La chaleur du four, le rythme du service, l’odeur de la pâte qui cuit.</h2><p class="lead">La force de la tarte flambée, c’est que le repas devient vivant. Les invités ne font pas seulement la queue : ils regardent, échangent, reviennent, goûtent. C’est exactement ce qu’on veut pour une soirée réussie.</p><div class="btns"><a class="btn primary" href="#contact">Je veux cette ambiance</a><a class="btn secondary" href="#occasions">Pour quel événement ?</a></div></div>
+        <div class="gallery-right"><div class="photo mid"><img src="../public/media/tarte-flambee-classique-planche.jpg" alt="Tarte flambée traditionnelle servie sur planche"></div><div class="card"><p class="quote">“On vient manger, mais surtout on partage un moment.”</p></div></div>
+      </div>
+    </section>
+
+    <section id="occasions" class="section">
+      <div class="wrap">
+        <div style="text-align:center;max-width:760px;margin:0 auto 38px"><div class="eyebrow">Occasions</div><h2 class="h2">Pour tous les moments où il faut réunir sans compliquer.</h2><p class="lead" style="margin-left:auto;margin-right:auto">Le même esprit peut servir plusieurs contextes : familial, professionnel, associatif ou festif.</p></div>
+        <div class="grid3">
+          <div class="card occasion"><span class="tag">Privé</span><div><h3>Anniversaires & fêtes de famille</h3><p>Un repas qui plaît à beaucoup de monde et qui garde les invités ensemble.</p></div></div>
+          <div class="card occasion"><span class="tag">Entreprise</span><div><h3>Équipe, clients, portes ouvertes</h3><p>Un format détendu pour recevoir sans tomber dans un repas trop formel.</p></div></div>
+          <div class="card occasion"><span class="tag">Collectif</span><div><h3>Associations & grands groupes</h3><p>Un service lisible, efficace, avec une ambiance immédiate autour du four.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split-bg">
+      <div class="wrap grid2">
+        <div><div class="eyebrow">Déroulé</div><h2 class="h2">Vous nous indiquez le lieu, on s’occupe du moment.</h2><p class="lead">Le visiteur doit comprendre rapidement ce qui va se passer. Pas besoin de discours administratif : juste un déroulé rassurant.</p></div>
+        <div class="steps"><div class="step"><div><h3>On valide le format</h3><p>Nombre d’invités, type d’événement, lieu, horaire et contraintes pratiques.</p></div></div><div class="step"><div><h3>On installe le stand</h3><p>Four, matériel, espace de service et présentation propre avant l’arrivée des invités.</p></div></div><div class="step"><div><h3>On sert sur place</h3><p>Tartes flambées préparées et servies au rythme de l’événement.</p></div></div><div class="step"><div><h3>Vous profitez</h3><p>Une ambiance simple, chaleureuse, sans charge mentale pendant la soirée.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid2">
+        <div><div class="eyebrow">Détail visuel</div><h2 class="h2">Le café reste un signe d’accueil, pas le sujet de la page.</h2><p class="lead">Cette photo doit être utilisée comme une preuve d’ambiance : une installation propre, une attention portée aux invités, un espace qui reste accueillant après le service. Elle peut très bien vivre sur la page d’accueil, dans une section “ambiance”.</p><div class="chips"><span class="chip">Prestation soignée</span><span class="chip">Réception clients</span><span class="chip">Moment qui dure</span></div></div>
+        <div class="photo tall"><img src="assets/stand-cafe-vertical.jpg" alt="Détail du stand café pour montrer une installation soignée"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap faq">
+        <div><div class="eyebrow">Questions fréquentes</div><h2 class="h2">Les réponses utiles avant de demander un devis.</h2></div>
+        <div><div class="qa"><h3>Est-ce adapté à une entreprise ?</h3><p>Oui, surtout pour un repas d’équipe, une soirée de fin d’année, une porte ouverte ou une réception client avec une ambiance moins formelle.</p></div><div class="qa"><h3>Est-ce uniquement pour les grandes soirées ?</h3><p>Non. Le format se réfléchit selon le nombre d’invités et le lieu. L’important est d’avoir assez d’espace pour installer et servir correctement.</p></div><div class="qa"><h3>Le café fait-il partie de l’offre ?</h3><p>Pas besoin d’en faire une promesse centrale ici. On l’utilise surtout pour montrer le soin apporté à l’accueil et à la présentation.</p></div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" style="padding-top:32px">
+      <div class="wrap cta-final"><div><div class="eyebrow">Demande de devis</div><h2 class="h2" style="margin-bottom:12px">On prépare votre prochain événement ?</h2><p class="lead">Envoyez le nombre d’invités, la date souhaitée, le lieu et le type d’ambiance recherchée. On vous répond avec une proposition adaptée.</p></div><a class="btn primary" href="#">Je demande mon devis</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><div><b>Poivre & Salé</b><br><span>Cuisinier · Traiteur événementiel</span></div><div>Accueil · Formules · Galerie · Contact</div></div></footer>
+</body>
+</html>

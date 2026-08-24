@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { getAttribution } from "@/lib/attribution";
 
 declare global {
   interface Window {
@@ -58,9 +59,17 @@ function WhatsAppIcon() {
   );
 }
 
+function newSubmissionId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return `sub-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
 export default function Contact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [submissionId, setSubmissionId] = useState<string>(newSubmissionId);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -76,35 +85,34 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    const attribution = getAttribution();
 
-    // 1. Persister le lead en base AVANT l'email (ne pas perdre le lead si Resend échoue)
-    try {
-      const { db } = await import("@/app/lib/firebase");
-      const { collection, addDoc, serverTimestamp } = await import("firebase/firestore");
-      await addDoc(collection(db, "reservations"), {
-        ...form,
-        convives: Number(form.convives) || 0,
-        source: "contact",
-        status: "pending",
-        createdAt: serverTimestamp(),
-      });
-    } catch (err) {
-      // On loggue mais on n'interrompt pas : l'email reste la voie principale
-      console.error("[contact] Firestore error:", err);
-    }
-
-    // 2. Envoyer l'email via l'API
+    // Persistance Firestore + envoi email gérés côté serveur (route /api/contact) :
+    // le SDK client n'a pas les droits d'écriture sur "reservations" (firestore.rules
+    // exige une authentification), donc l'ancien addDoc côté navigateur échouait en
+    // silence (403). submissionId sert de clé d'idempotence en cas de retry réseau.
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, submissionId, attribution }),
       });
       if (res.ok) {
         setStatus("success");
         setForm(initialState);
-        if (typeof window !== 'undefined' && window.dataLayer) {
-          window.dataLayer.push({ event: 'form_contact_submit' });
+        setSubmissionId(newSubmissionId());
+        if (typeof window !== "undefined" && window.dataLayer) {
+          // Conversion Google Ads existante — ne pas renommer/dupliquer, une balise
+          // GTM publiée y est déjà associée (AW-18117082922).
+          window.dataLayer.push({ event: "form_contact_submit" });
+          // Événement GA4 distinct pour le reporting lead (funnel, sources, LTV).
+          // Aucun déclencheur GTM ne réagit à "generate_lead" aujourd'hui (déclencheurs
+          // en exact-match sur "form_contact_submit"/"form_reservation_submit") : ce
+          // push est donc inerte tant qu'un tag GA4 dédié n'est pas ajouté dans GTM.
+          window.dataLayer.push({
+            event: "generate_lead",
+            lead_source: attribution.source,
+          });
         }
       } else {
         setStatus("error");

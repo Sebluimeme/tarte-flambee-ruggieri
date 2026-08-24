@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page entreprise complète — Poivre & Salé</title>
+  <style>
+    :root{
+      --cream:#FDFBF5; --cream2:#FAF6EE; --cream3:#F5EDD8; --stone:#E8DFD0;
+      --bark:#2B1810; --bark2:#3D2715; --muted:#6f543f; --copper:#C75A2A; --copper2:#D87642;
+      --display: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --shadow:0 24px 78px rgba(43,24,16,.17);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--bark);font-family:var(--sans);-webkit-font-smoothing:antialiased} a{text-decoration:none;color:inherit} img{display:block;width:100%;height:100%;object-fit:cover}
+    .header{position:fixed;z-index:50;top:0;left:0;right:0;height:76px;background:rgba(253,251,245,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,223,208,.88)}
+    .nav{max-width:1180px;margin:auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 24px}.brand{display:flex;flex-direction:column}.brand b{font-family:var(--display);font-size:22px;letter-spacing:-.02em}.brand span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.links{display:flex;gap:28px;align-items:center;font-size:14px;color:#5c3a1f}.navcta{background:var(--copper);color:white;padding:12px 18px;border-radius:999px;font-weight:850;box-shadow:0 10px 22px rgba(199,90,42,.22)}
+    .section{padding:88px 24px}.wrap{max-width:1180px;margin:0 auto}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:900}.h1{font-family:var(--display);font-size:clamp(48px,7vw,86px);line-height:.92;letter-spacing:-.055em;margin:16px 0 22px}.h2{font-family:var(--display);font-size:clamp(34px,4.4vw,58px);line-height:.98;letter-spacing:-.04em;margin:12px 0 18px}.lead{font-size:19px;line-height:1.62;color:#5c3a1f;max-width:720px}.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:0 24px;font-weight:900}.primary{background:var(--copper);color:white;box-shadow:0 14px 30px rgba(199,90,42,.25)}.secondary{background:rgba(255,255,255,.76);border:1px solid var(--stone);color:var(--bark)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--stone);border-radius:28px;padding:26px;box-shadow:0 12px 38px rgba(43,24,16,.06)}.card h3{font-size:21px;margin:0 0 10px;letter-spacing:-.02em}.card p{margin:0;color:var(--muted);line-height:1.58}.photo{position:relative;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);background:#19120d}.photo.hero{height:650px}.photo.tall{height:560px}.photo.mid{height:390px}.caption{position:absolute;left:18px;right:18px;bottom:18px;border-radius:22px;background:rgba(18,16,14,.72);color:white;padding:18px;backdrop-filter:blur(12px)}.caption b{font-family:var(--display);font-size:24px;display:block}.caption span{color:rgba(255,255,255,.75);font-size:14px;line-height:1.45}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}.chip{background:#fff;border:1px solid var(--stone);border-radius:999px;padding:9px 13px;color:#5c3a1f;font-weight:800;font-size:13px}.hero-section{padding:132px 24px 82px;background:radial-gradient(circle at 80% 12%,#f2dfbf 0,rgba(242,223,191,0) 32%),linear-gradient(180deg,#fffaf0 0%,var(--cream) 80%)}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:54px;align-items:center}.proofbar{max-width:1180px;margin:28px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.proof{background:rgba(255,255,255,.76);border:1px solid var(--stone);border-radius:20px;padding:16px}.proof b{display:block;font-size:15px}.proof span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.split-bg{background:linear-gradient(90deg,var(--cream2) 0 50%,#f2e5d0 50%)}.dark{background:#20130c;color:white}.dark .lead,.dark .card p{color:rgba(253,251,245,.72)}.dark .card{background:rgba(253,251,245,.07);border-color:rgba(253,251,245,.13);box-shadow:none}.dark .eyebrow{color:#e89a6a}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.step{background:#fff;border:1px solid var(--stone);border-radius:24px;padding:22px}.step .num{width:42px;height:42px;border-radius:50%;background:var(--bark);color:white;display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:16px}.step h3{margin:0 0 8px}.step p{margin:0;color:var(--muted);line-height:1.52}.occasion{min-height:230px;display:flex;flex-direction:column;justify-content:space-between}.tag{align-self:flex-start;background:var(--cream3);color:#8a3614;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}.quote{font-family:var(--display);font-size:34px;line-height:1.08;letter-spacing:-.03em;margin:0;color:white}.faq{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px}.qa{border-top:1px solid var(--stone);padding:22px 0}.qa h3{margin:0 0 8px}.qa p{margin:0;color:var(--muted);line-height:1.58}.cta-final{background:linear-gradient(135deg,#2B1810,#5C3A1F);color:white;border-radius:38px;padding:58px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}.cta-final .lead{color:rgba(255,255,255,.72)}.footer{padding:42px 24px;background:#160f0b;color:rgba(255,255,255,.7)}.footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.mobile-only{display:none}.aside-note{border-left:3px solid var(--copper);padding-left:18px;color:#5c3a1f;line-height:1.62;margin-top:26px}
+    @media(max-width:900px){.links{display:none}.mobile-only{display:inline-flex}.section{padding:64px 20px}.hero-section{padding:112px 20px 58px}.hero-grid,.grid2,.grid3,.faq{grid-template-columns:1fr;gap:28px}.timeline,.proofbar{grid-template-columns:1fr 1fr;padding-left:20px;padding-right:20px}.photo.hero{height:430px}.photo.tall{height:460px}.photo.mid{height:310px}.h1{font-size:48px}.h2{font-size:36px}.lead{font-size:17px}.split-bg{background:var(--cream2)}.cta-final{grid-template-columns:1fr;padding:34px;border-radius:28px}.footer .wrap{display:block}.nav{padding:0 20px}.brand b{font-size:20px}}
+    @media(max-width:540px){.timeline,.proofbar{grid-template-columns:1fr}.btn{width:100%}.photo.hero{height:380px}.photo.tall{height:410px}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#"><b>Poivre & Salé</b><span>Traiteur événementiel · Entreprises</span></a>
+      <div class="links"><a href="#usages">Événements</a><a href="#ambiance">Ambiance</a><a href="#deroule">Déroulé</a><a href="#faq">Questions</a><a class="navcta" href="#contact">Demander un devis</a></div>
+      <a class="navcta mobile-only" href="#contact">Devis</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Soirée entreprise · réception clients · portes ouvertes</div>
+          <h1 class="h1">Réunissez vos équipes autour d’un moment vraiment convivial.</h1>
+          <p class="lead">Tartes flambées au feu de bois préparées sur place, service fluide et ambiance chaleureuse pour vos repas d’équipe, soirées de fin d’année, inaugurations ou invitations clients.</p>
+          <div class="btns"><a class="btn primary" href="#contact">Je prépare une soirée entreprise</a><a class="btn secondary" href="#usages">Voir les formats</a></div>
+          <div class="chips"><span class="chip">Four à bois sur site</span><span class="chip">Service pendant l’événement</span><span class="chip">Accueil soigné</span></div>
+        </div>
+        <div class="photo hero"><img src="../public/media/four-bois-action.jpg" alt="Four à bois en action pour une soirée entreprise"><div class="caption"><b>Une animation simple qui rassemble.</b><span>Le four devient le point de rencontre naturel de votre événement.</span></div></div>
+      </div>
+      <div class="proofbar"><div class="proof"><b>Pour vos équipes</b><span>Repas, séminaire, fin d’année</span></div><div class="proof"><b>Pour vos clients</b><span>Portes ouvertes, inauguration</span></div><div class="proof"><b>Sur votre lieu</b><span>Cour, parking, terrasse, extérieur</span></div><div class="proof"><b>Sans stress</b><span>Vous recevez, nous servons</span></div></div>
+    </section>
+
+    <section id="usages" class="section">
+      <div class="wrap">
+        <div style="max-width:760px;margin-bottom:36px"><div class="eyebrow">Quand l’utiliser</div><h2 class="h2">Une page entreprise doit parler de situations concrètes.</h2><p class="lead">L’objectif : que le visiteur se reconnaisse immédiatement. Pas de discours administratif. On parle de recevoir, remercier, réunir, créer une ambiance.</p></div>
+        <div class="grid3">
+          <div class="card occasion"><span class="tag">Équipe</span><div><h3>Repas d’équipe ou séminaire</h3><p>Un format détendu pour sortir du repas classique et créer un vrai moment entre collègues.</p></div></div>
+          <div class="card occasion" style="border-color:#d87642;box-shadow:0 20px 54px rgba(199,90,42,.16)"><span class="tag">Clients</span><div><h3>Portes ouvertes & invitation clients</h3><p>Une ambiance accueillante, accessible, qui donne une image chaleureuse de votre entreprise.</p></div></div>
+          <div class="card occasion"><span class="tag">Temps fort</span><div><h3>Inauguration ou fin d’année</h3><p>Un repas vivant pour marquer un moment important sans tomber dans un format trop figé.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ambiance" class="section split-bg">
+      <div class="wrap grid2">
+        <div class="photo tall"><img src="assets/stand-cafe-large.jpg" alt="Installation soignée pour accueillir les invités d'une entreprise"><div class="caption"><b>Le café sert à montrer le soin de l’accueil.</b><span>Ce n’est pas le sujet de l’offre, c’est une preuve visuelle que l’installation est propre et présentable.</span></div></div>
+        <div>
+          <div class="eyebrow">Ambiance & présentation</div>
+          <h2 class="h2">Recevoir simplement, mais avec une vraie présence.</h2>
+          <p class="lead">Pour une entreprise, l’enjeu n’est pas seulement de nourrir les invités. Il faut que l’arrivée, le service et la fin du moment donnent une impression propre, chaleureuse et maîtrisée.</p>
+          <p class="aside-note">Les photos du stand café sont parfaites ici : elles montrent une attention portée à l’accueil, sans promettre une prestation café comme argument principal.</p>
+          <div class="grid3" style="grid-template-columns:1fr;gap:12px;margin-top:28px">
+            <div class="card"><h3>Une installation présentable</h3><p>Le stand donne une impression sérieuse et conviviale devant des collaborateurs, clients ou partenaires.</p></div>
+            <div class="card"><h3>Un point de rencontre naturel</h3><p>Les invités restent autour du service, discutent, reviennent, échangent.</p></div>
+            <div class="card"><h3>Une ambiance qui dure</h3><p>La soirée ne se coupe pas après le repas : le moment peut continuer simplement.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap grid2">
+        <div>
+          <div class="eyebrow">Pourquoi ça marche en entreprise</div>
+          <h2 class="h2">La tarte flambée casse le côté froid des événements pro.</h2>
+          <p class="lead">Le feu, l’odeur, la cuisson en direct et le service minute donnent tout de suite un sujet de conversation. C’est moins formel qu’un buffet, plus vivant qu’un repas assis, et plus facile à partager entre collègues ou invités.</p>
+          <div class="btns"><a class="btn primary" href="#contact">Demander une proposition</a><a class="btn secondary" href="#deroule">Voir le déroulé</a></div>
+        </div>
+        <div class="grid3" style="grid-template-columns:1fr;gap:16px">
+          <div class="card"><h3>Convivial sans animation forcée</h3><p>Le four fait naturellement venir les gens, sans avoir besoin d’ajouter une animation artificielle.</p></div>
+          <div class="card"><h3>Adapté aux formats debout</h3><p>Idéal pour une cour, un parking d’entreprise, un extérieur ou un espace de réception.</p></div>
+          <div class="card"><h3>Mémorable mais simple</h3><p>Les invités retiennent l’ambiance sans que l’organisation devienne compliquée.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deroule" class="section">
+      <div class="wrap">
+        <div style="text-align:center;max-width:780px;margin:0 auto"><div class="eyebrow">Déroulé</div><h2 class="h2">Une organisation claire du premier contact au service.</h2><p class="lead" style="margin-left:auto;margin-right:auto">Cette section rassure sans parler comptabilité. Elle explique simplement ce que l’entreprise doit anticiper.</p></div>
+        <div class="timeline"><div class="step"><div class="num">1</div><h3>Vous décrivez l’événement</h3><p>Date, lieu, nombre d’invités, format souhaité : équipe, clients, portes ouvertes.</p></div><div class="step"><div class="num">2</div><h3>On valide la faisabilité</h3><p>Espace disponible, accès, horaire et organisation du service sur place.</p></div><div class="step"><div class="num">3</div><h3>On installe le stand</h3><p>Four à bois, zone de préparation, présentation propre avant l’arrivée des invités.</p></div><div class="step"><div class="num">4</div><h3>Vous profitez du moment</h3><p>Les tartes sont servies au rythme de la soirée, dans une ambiance conviviale.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section split-bg">
+      <div class="wrap grid2">
+        <div><div class="eyebrow">Image de réception</div><h2 class="h2">Pour inviter des clients, il faut que ce soit propre et accueillant.</h2><p class="lead">La photo verticale fonctionne bien pour un bloc plus premium : elle montre que la prestation peut s’intégrer à une réception client ou à une porte ouverte, sans perdre le côté simple et chaleureux.</p><div class="chips"><span class="chip">Réception clients</span><span class="chip">Portes ouvertes</span><span class="chip">Accueil soigné</span></div></div>
+        <div class="photo tall"><img src="assets/stand-cafe-vertical.jpg" alt="Détail d'un stand propre pour réception entreprise"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap faq">
+        <div><div class="eyebrow">Questions utiles</div><h2 class="h2">Ce qu’une entreprise veut savoir avant d’appeler.</h2></div>
+        <div>
+          <div class="qa"><h3>Pour quels événements d’entreprise est-ce adapté ?</h3><p>Repas d’équipe, soirée de fin d’année, séminaire, portes ouvertes, inauguration, invitation clients ou moment de remerciement.</p></div>
+          <div class="qa"><h3>Faut-il un espace extérieur ?</h3><p>Un espace extérieur est préférable pour le four à bois. Cour, parking, terrasse ou zone dégagée peuvent convenir selon l’accès et la configuration.</p></div>
+          <div class="qa"><h3>Est-ce plutôt repas ou animation ?</h3><p>Les deux. Les invités mangent, mais la cuisson sur place crée aussi une animation naturelle autour du four.</p></div>
+          <div class="qa"><h3>Pourquoi montrer le café ?</h3><p>Pour illustrer l’accueil et la qualité de présentation. La page ne doit pas vendre le café, mais montrer que l’installation est soignée.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" style="padding-top:32px">
+      <div class="wrap cta-final"><div><div class="eyebrow">Demande de devis entreprise</div><h2 class="h2" style="margin-bottom:12px">Vous organisez une soirée, une porte ouverte ou une réception client ?</h2><p class="lead">Envoyez la date, le lieu, le nombre d’invités et le type d’événement. On vous propose un format adapté à votre entreprise.</p></div><a class="btn primary" href="#">Je demande un devis entreprise</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><div><b>Poivre & Salé</b><br><span>Traiteur événementiel pour entreprises</span></div><div>Soirée entreprise · Réception clients · Portes ouvertes</div></div></footer>
+</body>
+</html>

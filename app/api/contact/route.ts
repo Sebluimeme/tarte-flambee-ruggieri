@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { FieldValue } from "firebase-admin/firestore";
+import { getAdminDb } from "@/app/lib/firebase-admin";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -31,6 +33,8 @@ function escapeHtml(str: string): string {
 
 const VALID_TYPES = new Set(["mariage", "anniversaire", "entreprise", "inauguration", "autre"]);
 const VALID_FORMULES = new Set(["cle-en-main", "standard", "gourmande", "premium", "indecis"]);
+const VALID_SOURCES = new Set(["google_ads", "organic", "direct", "referral", "unknown"]);
+const SUBMISSION_ID_RE = /^[a-zA-Z0-9-]{8,64}$/;
 
 const TYPE_LABELS: Record<string, string> = {
   mariage: "Mariage",
@@ -48,6 +52,18 @@ const FORMULE_LABELS: Record<string, string> = {
   indecis: "Je ne sais pas encore",
 };
 
+type Attribution = {
+  landingPage: string;
+  referrer: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmContent: string;
+  utmTerm: string;
+  gclid: string;
+  source: string;
+};
+
 type ContactData = {
   nomComplet: string;
   email: string;
@@ -60,6 +76,8 @@ type ContactData = {
   allergies?: string;
   infosComplementaires?: string;
   rgpd: boolean;
+  submissionId?: string;
+  attribution?: Attribution;
 };
 
 function validateInput(data: unknown): { valid: boolean; error?: string } {
@@ -87,8 +105,37 @@ function validateInput(data: unknown): { valid: boolean; error?: string } {
   if (d.infosComplementaires !== undefined && (typeof d.infosComplementaires !== "string" || d.infosComplementaires.length > 1000))
     return { valid: false, error: "Infos invalides" };
   if (d.rgpd !== true) return { valid: false, error: "Consentement RGPD requis" };
+  if (d.submissionId !== undefined && (typeof d.submissionId !== "string" || !SUBMISSION_ID_RE.test(d.submissionId)))
+    return { valid: false, error: "Identifiant de soumission invalide" };
+  if (d.attribution !== undefined) {
+    if (typeof d.attribution !== "object" || d.attribution === null)
+      return { valid: false, error: "Attribution invalide" };
+    const a = d.attribution as Record<string, unknown>;
+    const textFields = ["landingPage", "referrer", "utmSource", "utmMedium", "utmCampaign", "utmContent", "utmTerm", "gclid"];
+    for (const field of textFields) {
+      if (a[field] !== undefined && (typeof a[field] !== "string" || (a[field] as string).length > 500))
+        return { valid: false, error: "Attribution invalide" };
+    }
+    if (a.source !== undefined && (typeof a.source !== "string" || !VALID_SOURCES.has(a.source)))
+      return { valid: false, error: "Source d'attribution invalide" };
+  }
 
   return { valid: true };
+}
+
+function sanitizeAttribution(attribution: Attribution | undefined): Attribution {
+  const clean = (v: string | undefined) => (typeof v === "string" ? v.slice(0, 500) : "");
+  return {
+    landingPage: clean(attribution?.landingPage),
+    referrer: clean(attribution?.referrer),
+    utmSource: clean(attribution?.utmSource),
+    utmMedium: clean(attribution?.utmMedium),
+    utmCampaign: clean(attribution?.utmCampaign),
+    utmContent: clean(attribution?.utmContent),
+    utmTerm: clean(attribution?.utmTerm),
+    gclid: clean(attribution?.gclid),
+    source: attribution?.source && VALID_SOURCES.has(attribution.source) ? attribution.source : "unknown",
+  };
 }
 
 function emailToMarc(data: ContactData) {
@@ -179,21 +226,55 @@ export async function POST(req: NextRequest) {
     }
     const data = raw as ContactData;
 
+    // Persister le lead en base côté serveur (contourne les règles Firestore
+    // qui exigent une authentification — évite le 403 silencieux côté client).
+    // La clé du document = submissionId envoyé par le client : un retry réseau
+    // écrase le même document au lieu d'en créer un doublon.
+    const docId = data.submissionId && SUBMISSION_ID_RE.test(data.submissionId) ? data.submissionId : crypto.randomUUID();
+    await getAdminDb()
+      .collection("reservations")
+      .doc(docId)
+      .set(
+        {
+            nomComplet: data.nomComplet,
+            email: data.email,
+            telephone: data.telephone,
+            typeEvenement: data.typeEvenement,
+            date: data.date,
+            convives: Number(data.convives) || 0,
+            formule: data.formule ?? null,
+            lieu: data.lieu,
+            allergies: data.allergies ?? null,
+            infosComplementaires: data.infosComplementaires ?? null,
+            attribution: sanitizeAttribution(data.attribution),
+            source: "contact",
+            status: "pending",
+            createdAt: FieldValue.serverTimestamp(),
+        },
+        { merge: true }
+      );
+
     await Promise.all([
-      resend.emails.send({
-        from: "Poivre & Salé <contact@flamme-traiteur.fr>",
-        to: ["contact@poivresale.fr", "bmsyoder@gmail.com"],
-        replyTo: data.email,
-        subject: `🔥 Nouveau devis — ${data.nomComplet} (${data.convives} pers.)`,
-        html: emailToMarc(data),
-      }),
-      resend.emails.send({
-        from: "Poivre & Salé <contact@flamme-traiteur.fr>",
-        to: [data.email],
-        replyTo: "contact@poivresale.fr",
-        subject: "Votre demande de devis — Poivre & Salé",
-        html: emailConfirmation(data.nomComplet),
-      }),
+      resend.emails.send(
+        {
+          from: "Poivre & Salé <contact@flamme-traiteur.fr>",
+          to: ["contact@poivresale.fr", "bmsyoder@gmail.com"],
+          replyTo: data.email,
+          subject: `🔥 Nouveau devis — ${data.nomComplet} (${data.convives} pers.)`,
+          html: emailToMarc(data),
+        },
+        { idempotencyKey: `contact-${docId}-owner` }
+      ),
+      resend.emails.send(
+        {
+          from: "Poivre & Salé <contact@flamme-traiteur.fr>",
+          to: [data.email],
+          replyTo: "contact@poivresale.fr",
+          subject: "Votre demande de devis — Poivre & Salé",
+          html: emailConfirmation(data.nomComplet),
+        },
+        { idempotencyKey: `contact-${docId}-customer` }
+      ),
     ]);
 
     return NextResponse.json({ success: true }, { status: 200 });

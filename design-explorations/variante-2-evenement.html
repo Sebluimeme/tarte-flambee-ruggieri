@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>variante-2-evenement</title>
+<style>
+
+    :root{
+      --cream:#FDFBF5; --cream2:#FAF6EE; --stone:#E8DFD0; --bark:#2B1810; --muted:#7A4D2A;
+      --copper:#C75A2A; --copper2:#D87642; --black:#12100e; --green:#546B45;
+      --shadow:0 24px 80px rgba(43,24,16,.18);
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--bark);font-family:var(--font-sans);}
+    .toolbar{position:sticky;top:0;z-index:30;display:flex;gap:10px;align-items:center;justify-content:center;padding:10px;background:rgba(253,251,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--stone)}
+    .toolbar a{min-height:40px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:white;border:1px solid var(--stone);color:var(--bark);text-decoration:none;font-weight:700;font-size:13px}.toolbar a:hover{border-color:var(--copper);color:var(--copper)}
+    .variant{min-height:100vh;padding:104px 48px 56px;border-bottom:1px solid var(--stone);position:relative;overflow:hidden}.wrap{max-width:1180px;margin:0 auto}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--copper);font-weight:800}.h1{font-family:var(--font-display);font-size:clamp(46px,6vw,78px);line-height:.95;letter-spacing:-.04em;margin:16px 0 20px}.h2{font-family:var(--font-display);font-size:clamp(34px,4vw,54px);line-height:1;letter-spacing:-.035em;margin:12px 0 18px}.lead{font-size:19px;line-height:1.6;color:#5c3a1f;max-width:670px}.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;text-decoration:none;font-weight:800}.primary{background:var(--copper);color:var(--cream);box-shadow:0 14px 28px rgba(199,90,42,.22)}.secondary{border:1px solid var(--stone);background:rgba(255,255,255,.7);color:var(--bark)}.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}.chip{border:1px solid var(--stone);background:rgba(255,255,255,.72);border-radius:999px;padding:8px 12px;color:#5c3a1f;font-size:13px;font-weight:700}.photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:#111}.photo img{width:100%;height:100%;object-fit:cover;display:block}.caption{position:absolute;left:18px;right:18px;bottom:18px;padding:14px 16px;border-radius:18px;background:rgba(18,16,14,.72);color:white;backdrop-filter:blur(12px)}.caption strong{display:block;font-family:var(--font-display);font-size:21px}.caption span{font-size:13px;color:rgba(255,255,255,.78)}
+    .cards{display:grid;gap:14px}.card{background:white;border:1px solid var(--stone);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(43,24,16,.05)}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:#6f543f;line-height:1.55}.num{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--copper);color:#fff;font-weight:900;margin-bottom:14px}.small{font-size:13px;color:#7a604d;line-height:1.5}.grid2{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.phone{max-width:385px;aspect-ratio:9/14;margin:0 auto}.wide{height:520px}.miniwide{height:280px}.dark{background:#1a120d;color:var(--cream)}.dark .lead{color:rgba(253,251,245,.74)}.dark .card{background:rgba(253,251,245,.06);border-color:rgba(253,251,245,.14);box-shadow:none}.dark .card p{color:rgba(253,251,245,.68)}.dark .secondary{background:rgba(253,251,245,.08);border-color:rgba(253,251,245,.22);color:var(--cream)}
+    /* V1 */
+    #v1{background:radial-gradient(circle at 82% 18%, #f5edd8 0, transparent 34%), var(--cream)}#v1 .note{position:absolute;right:-80px;bottom:-120px;width:330px;height:330px;border-radius:50%;background:#f5edd8;opacity:.8}
+    /* V2 */
+    #v2:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,18,13,.92) 0%,rgba(26,18,13,.75) 45%,rgba(26,18,13,.18) 100%),url('assets/stand-cafe-large.jpg') center/cover;z-index:0}#v2 .wrap{position:relative;z-index:1}.service-strip{margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(253,251,245,.18);border:1px solid rgba(253,251,245,.18);border-radius:24px;overflow:hidden}.service-strip div{padding:20px;background:rgba(253,251,245,.08);backdrop-filter:blur(8px)}.service-strip b{display:block;color:white;margin-bottom:6px}.service-strip span{font-size:13px;color:rgba(253,251,245,.68);line-height:1.45}
+    /* V3 */
+    #v3{background:linear-gradient(180deg,#fbf4e7 0%,#fdfbf5 58%)}.magazine{display:grid;grid-template-columns:.76fr 1.24fr;gap:34px;align-items:stretch}.story{background:#fff;border:1px solid var(--stone);border-radius:32px;padding:42px;box-shadow:var(--shadow)}.storyline{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}.quote{font-family:var(--font-display);font-size:29px;line-height:1.08;color:var(--bark);margin:24px 0}.aside{display:grid;gap:18px}.badgebig{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 14px;background:#2b1810;color:#fdfbf5;font-weight:800;font-size:13px}
+    @media (max-width:850px){.toolbar{overflow:auto;justify-content:flex-start}.variant{padding:96px 20px 40px}.grid2,.magazine{grid-template-columns:1fr;gap:28px}.service-strip,.grid3,.storyline{grid-template-columns:1fr}.wide{height:360px}.h1{font-size:44px}.lead{font-size:17px}}
+  
+.toolbar{display:none}
+.variant{min-height:100vh;padding-top:56px}
+</style>
+</head>
+<body>
+<section id="v2" class="variant dark">
+    <div class="wrap">
+      <div style="max-width:720px">
+        <div class="eyebrow">Soirée d’entreprise · format clé en main</div>
+        <h1 class="h1">Invitez vos équipes ou vos clients sans gérer la logistique.</h1>
+        <p class="lead">On installe le stand, on sert les tartes flambées au feu de bois, puis on garde un espace café propre et professionnel pour finir la soirée sans rupture.</p>
+        <div class="btns"><a class="btn primary" href="#">Organiser ma soirée entreprise</a><a class="btn secondary" href="#">Appeler directement</a></div>
+      </div>
+      <div class="service-strip" aria-label="Déroulé prestation">
+        <div><b>1. Installation</b><span>Four, buffet, zone café, matériel de service.</span></div>
+        <div><b>2. Service tartes</b><span>Cuisson minute, rythme adapté au nombre d’invités.</span></div>
+        <div><b>3. Pause café</b><span>Un point convivial pour discuter après le repas.</span></div>
+        <div><b>4. Débarrassage</b><span>Retour au calme, espace propre, facture fournie.</span></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
