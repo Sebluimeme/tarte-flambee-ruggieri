@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Contenu */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24 w-full">
         <div className="max-w-3xl">
-          <h1 className="font-display text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6 break-words">
             La vraie <em>Flammekueche,</em><br />
             <span className="block">traiteur complet au feu de bois,</span>
             <span className="block">chez vous.</span>
