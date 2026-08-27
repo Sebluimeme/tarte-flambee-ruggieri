@@ -91,8 +91,12 @@ const FAQ = [
     a: 'Le débarrassage et le nettoyage de l’espace utilisé sont prévus dans l’accompagnement clé en main. Vous ne terminez pas la soirée avec le stand à ranger.',
   },
   {
-    q: 'Y a-t-il un nombre minimum de personnes ?',
-    a: 'Le minimum dépend de la formule et du lieu. Indiquez votre nombre de convives dans la demande de devis pour recevoir une proposition adaptée.',
+    q: 'Combien de temps à l’avance faut-il réserver ?',
+    a: 'La réservation est recommandée au minimum 3 semaines avant l’événement. Pour les périodes chargées (mai à septembre) ou les grands groupes, mieux vaut compter 1 à 2 mois.',
+  },
+  {
+    q: 'Y a-t-il un nombre minimum et maximum de convives ?',
+    a: 'Les prestations entreprise sont possibles à partir de 30 convives, et jusqu’à 500 pour les grands événements. Indiquez votre nombre de convives dans la demande de devis pour recevoir une proposition adaptée.',
   },
 ]
 
