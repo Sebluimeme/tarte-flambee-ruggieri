@@ -15,11 +15,11 @@ function pushGTM(event: string) {
 
 export default function MobileCTABar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden flex border-t border-stone-200 bg-cream-50 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden grid grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] border-t border-stone-200 bg-cream-50 shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
       <a
         href="tel:+33785621089"
         onClick={() => pushGTM('phone_click')}
-        className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3 text-bark-900 hover:bg-cream-100 transition-colors active:bg-cream-200"
+        className="min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 text-bark-900 hover:bg-cream-100 transition-colors active:bg-cream-200"
         aria-label="Appeler Marc"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -28,14 +28,14 @@ export default function MobileCTABar() {
         <span className="font-sans text-[11px] font-medium">Appeler</span>
       </a>
 
-      <div className="w-px bg-stone-200 my-2" />
+      <div className="bg-stone-200 my-2" />
 
       <a
         href="https://wa.me/33785621089?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20prestation%20tarte%20flamb%C3%A9e"
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => pushGTM('whatsapp_click')}
-        className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3 text-[#25D366] hover:bg-cream-100 transition-colors active:bg-cream-200"
+        className="min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 text-[#25D366] hover:bg-cream-100 transition-colors active:bg-cream-200"
         aria-label="Contacter sur WhatsApp"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

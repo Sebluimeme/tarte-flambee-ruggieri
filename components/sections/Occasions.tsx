@@ -13,7 +13,7 @@ const OCCASIONS = [
       "Une animation gourmande qui marque les esprits. Cuisson en direct devant vos invités, ambiance conviviale, formule adaptée jusqu'à 250 personnes.",
     tags: ["Animation", "Jusqu'à 250 pers.", "Service à table"],
     img: "/media/tarte-flambee-classique-planche.jpg",
-    alt: "Tarte flambée classique sur planche",
+    alt: "Tarte flambée classique crème et lardons servie sur une planche en bois",
   },
   {
     title: "Soirées d'entreprise",
@@ -21,8 +21,8 @@ const OCCASIONS = [
     description:
       "Team-building, fin d'année, inauguration. Une alternative chaleureuse au traiteur classique, qui crée du lien entre les collaborateurs.",
     tags: ["30 à 200 pers.", "Clé en main", "Prestataire assuré"],
-    img: "/media/IMG_8910.jpg",
-    alt: "Événement d'entreprise autour d'un buffet",
+    img: "/media/ambiance-soiree.jpg",
+    alt: "Buffet de soirée d'entreprise animé par Poivre & Salé sous éclairage violet",
   },
   {
     title: "Anniversaires & fêtes de famille",
@@ -31,7 +31,7 @@ const OCCASIONS = [
       "Pour vos 30, 40, 50, 60 ans ou un grand rassemblement familial. Une prestation qui rassemble petits et grands autour du four à bois.",
     tags: ["Dès 30 couverts", "Ambiance conviviale", "Recettes traditionnelles"],
     img: "/media/tarte-anniversaire-famille.jpg",
-    alt: "Tarte flambée pour anniversaire et fêtes de famille",
+    alt: "Tarte flambée garnie posée sur une table en bois pour une fête familiale",
   },
   {
     title: "Associations & clubs",
@@ -39,8 +39,8 @@ const OCCASIONS = [
     description:
       "Repas de club sportif, association culturelle, comité des fêtes. Formule Gourmande dès 30 personnes, 17€/pers. tout compris, règlement le jour J.",
     tags: ["Dès 30 pers.", "17€/pers.", "Salle des fêtes ou chapiteau"],
-    img: "/media/IMG_8191.jpg",
-    alt: "Repas d'association autour d'une tarte flambée",
+    img: "/media/garnitures-fraiches.jpg",
+    alt: "Poste de préparation en extérieur avec fonds de tartes flambées empilés pour un repas associatif",
   },
 ]
 

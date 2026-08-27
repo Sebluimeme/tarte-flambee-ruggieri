@@ -6,7 +6,7 @@ import Galerie from '@/components/sections/Galerie'
 import OffreComplete from '@/components/sections/OffreComplete'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée pour associations & clubs',
+  title: 'Tarte flambée feu de bois pour associations en Alsace',
   description:
     "Tarte flambée au four à bois pour votre repas d'association ou club sportif ou amical en Alsace. Formule Gourmande dès 17€/pers, dès 30 personnes. Devis gratuit, réponse rapide.",
   alternates: { canonical: '/tarte-flambee-association' },
@@ -58,8 +58,22 @@ const FAQ = [
 ]
 
 export default function AssociationPage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image

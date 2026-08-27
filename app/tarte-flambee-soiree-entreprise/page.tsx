@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Traiteur tarte flambée entreprise | Devis rapide',
+  title: 'Traiteur événementiel entreprise en Alsace | Feu de bois',
   description:
     'Traiteur tarte flambée entreprise clé en main : four, service, boissons, mobilier, installation et nettoyage. Devis rapide pour votre événement.',
   alternates: { canonical: '/tarte-flambee-soiree-entreprise' },
@@ -112,8 +112,22 @@ function PrimaryCta({ children = 'Demander un devis entreprise' }: { children?: 
 }
 
 export default function SoireeEntreprisePage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="overflow-hidden bg-cream-50 px-6 pb-20 pt-32 md:px-8 md:pt-40">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
           <div>
@@ -138,6 +152,12 @@ export default function SoireeEntreprisePage() {
             <p className="mt-4 font-sans text-xs text-bark-500">
               Devis gratuit et sans engagement · Réponse rapide
             </p>
+            <Link
+              href="/formules"
+              className="mt-5 inline-flex font-sans text-sm font-semibold text-copper-600 underline-offset-4 transition-colors hover:text-copper-500 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+            >
+              Voir les formules disponibles
+            </Link>
           </div>
           <div className="relative min-h-[420px] overflow-hidden rounded-3xl shadow-xl md:min-h-[560px]">
             <Image

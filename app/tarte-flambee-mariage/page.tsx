@@ -7,7 +7,7 @@ import OffreComplete from '@/components/sections/OffreComplete'
 import DernieresPrestations from '@/components/sections/DernieresPrestations'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée pour mariage en Alsace',
+  title: 'Tarte flambée feu de bois pour mariage en Alsace',
   description:
     "Four à bois pour votre mariage en Alsace. Marc se déplace avec son four à bois, recette familiale, service à volonté. Devis gratuit, réponse rapide. Formule Premium dès 24€/pers.",
   alternates: { canonical: '/tarte-flambee-mariage' },
@@ -63,8 +63,22 @@ const FAQ = [
 ]
 
 export default function MariagePage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image

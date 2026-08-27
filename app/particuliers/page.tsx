@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Traiteur tarte flambée mariage & fêtes',
+  title: 'Traiteur événementiel tarte flambée en Alsace',
   description:
     "Un traiteur original pour votre mariage, lendemain de mariage, anniversaire ou baptême en Alsace. Tarte flambée au feu de bois à domicile. Devis gratuit.",
   alternates: { canonical: '/particuliers' },

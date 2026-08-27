@@ -37,6 +37,7 @@ export default function Home() {
       <Formules />
       <OffreComplete />
       <UrgencyBanner />
+      <Faq />
       <Concept />
       <SavoirFaire />
       <Process />
@@ -45,7 +46,6 @@ export default function Home() {
       <Temoignages />
       <DernieresPrestations />
       <Zone />
-      <Faq />
       <CtaFinal />
     </>
   )

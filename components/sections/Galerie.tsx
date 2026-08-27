@@ -15,21 +15,21 @@ function InstagramIcon() {
 }
 
 const GALLERY_ITEMS = [
-  { src: '/media/IMG_4227-2.jpg', alt: 'Prestation tarte flambée' },
-  { src: '/media/IMG_5146.jpg', alt: 'Service tarte flambée' },
-  { src: '/media/IMG_6678.jpg', alt: 'Tarte flambée artisanale' },
-  { src: '/media/IMG_8186.jpg', alt: 'Four à bois en action' },
-  { src: '/media/IMG_8191.jpg', alt: 'Garnitures fraîches' },
-  { src: '/media/IMG_8910.jpg', alt: 'Ambiance soirée' },
-  { src: '/media/img_1841.jpg', alt: 'Prestation en extérieur' },
-  { src: '/media/img_1839.jpg', alt: 'Service flammekueche' },
-  { src: '/media/DJI_20250622_161702_334.jpeg', alt: 'Vue aérienne prestation' },
-  { src: '/media/DJI_20250622_161640_166.jpeg', alt: 'Vue aérienne four à bois' },
-  { src: '/media/IMG_0140.JPG', alt: 'Tarte flambée dorée' },
-  { src: '/media/img_0651.jpg', alt: 'Ambiance conviviale' },
-  { src: '/media/img_0155.jpg', alt: 'Détail garnitures' },
-  { src: '/media/four-bois-flammes.jpg', alt: 'Four à bois en pleine chauffe' },
-  { src: '/media/buffet-exterieur.jpg', alt: 'Installation buffet en extérieur' },
+  { src: '/media/prestation-tarte-flambee.jpg', alt: 'Stand Poivre & Salé installé en extérieur avec four à bois et tables de service' },
+  { src: '/media/service-tarte-flambee.jpg', alt: 'Four à bois mobile ouvert avec bûches empilées sous la chambre de cuisson' },
+  { src: '/media/tarte-flambee-artisanale.jpg', alt: 'Tables dressées sous tente pour une réception servie par Poivre & Salé' },
+  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile' },
+  { src: '/media/garnitures-fraiches.jpg', alt: 'Préparation du poste de cuisson avec piles de fonds de tartes flambées' },
+  { src: '/media/ambiance-soiree.jpg', alt: 'Service de tarte flambée en soirée dans une salle éclairée aux lumières violettes' },
+  { src: '/media/img_1841.jpg', alt: 'Tarte flambée en cuisson devant les flammes du four à bois' },
+  { src: '/media/img_1839.jpg', alt: 'Plusieurs tartes flambées cuisent côte à côte dans le four à bois mobile' },
+  { src: '/media/DJI_20250622_161702_334.jpeg', alt: 'Table de préparation extérieure avec fonds de tartes flambées empilés devant un bâtiment vitré' },
+  { src: '/media/DJI_20250622_161640_166.jpeg', alt: 'Buffet extérieur dressé avec boissons et four à bois en arrière-plan' },
+  { src: '/media/IMG_0140.JPG', alt: 'Marc de Poivre & Salé souriant devant son four à bois mobile' },
+  { src: '/media/img_0651.jpg', alt: 'Four à bois mobile allumé avec flammes visibles dans la chambre de cuisson' },
+  { src: '/media/img_0155.jpg', alt: 'Tarte flambée crème et lardons prête à entrer dans le four à bois' },
+  { src: '/media/four-bois-flammes.jpg', alt: 'Double foyer du four à bois alimenté par des bûches empilées' },
+  { src: '/media/buffet-exterieur.jpg', alt: 'Buffet vert installé en extérieur avec four à bois et matériel de traiteur' },
 ]
 
 const SCROLL_AMOUNT = 336
