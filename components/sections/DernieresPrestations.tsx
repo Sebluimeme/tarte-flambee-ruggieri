@@ -10,23 +10,26 @@ import Link from 'next/link'
  *   - Preuve sociale concrète (vrai lieu + vrai nombre de personnes)
  *   - SEO local : injection naturelle de villes et types d'événements
  *
- * ⚠️  DONNÉES À REMPLACER par Marc avec ses vraies prestations récentes.
- *     Format : { type, convives, ville, categorie }
+ * ⚠️  DONNÉES TOUJOURS EN PLACEHOLDER — bloqué en attente des vraies prestations de Marc.
+ *     Voir tâche Kanban t_c5451531 (triage, pas encore lancée) : demander à Marc
+ *     ses 10 derniers événements réels (date, ville, type, convives, formule) avant publication.
+ *     Format : { type, convives, ville, categorie, formule }
  *     Catégories possibles : 'entreprise' | 'mariage' | 'anniversaire' | 'association' | 'famille'
+ *     Formules possibles (cf. app/formules/page.tsx) : 'Standard' | 'Gourmande' | 'Premium' | 'Clé en main'
  */
 const TOUTES_PRESTATIONS: Prestation[] = [
-  { type: 'Soirée d’entreprise', convives: 85,  ville: 'Mulhouse',     categorie: 'entreprise'  },
-  { type: 'Mariage',              convives: 120, ville: 'Colmar',        categorie: 'mariage'     },
-  { type: 'Anniversaire',         convives: 45,  ville: 'Strasbourg',    categorie: 'anniversaire'},
-  { type: 'Séminaire',            convives: 60,  ville: 'Sélestat',      categorie: 'entreprise'  },
-  { type: 'Repas de fin d’année', convives: 70,  ville: 'Saint-Louis',  categorie: 'entreprise'  },
-  { type: 'Mariage',              convives: 180, ville: 'Ribeauvillé',   categorie: 'mariage'     },
-  { type: 'Team building',        convives: 50,  ville: 'Munster',       categorie: 'entreprise'  },
-  { type: 'Anniversaire',         convives: 55,  ville: 'Épinal',        categorie: 'anniversaire'},
-  { type: 'Fête de famille',      convives: 90,  ville: 'Guebwiller',    categorie: 'famille'     },
-  { type: 'Soirée d’entreprise', convives: 110, ville: 'Colmar',       categorie: 'entreprise'  },
-  { type: 'Mariage',              convives: 200, ville: 'Cernay',        categorie: 'mariage'     },
-  { type: 'Repas associatif',     convives: 80,  ville: 'Kaysersberg',   categorie: 'association' },
+  { type: 'Soirée d’entreprise', convives: 85,  ville: 'Mulhouse',     categorie: 'entreprise',   formule: 'Gourmande'  },
+  { type: 'Mariage',              convives: 120, ville: 'Colmar',        categorie: 'mariage',      formule: 'Premium'    },
+  { type: 'Anniversaire',         convives: 45,  ville: 'Strasbourg',    categorie: 'anniversaire', formule: 'Standard'   },
+  { type: 'Séminaire',            convives: 60,  ville: 'Sélestat',      categorie: 'entreprise',   formule: 'Standard'   },
+  { type: 'Repas de fin d’année', convives: 70,  ville: 'Saint-Louis',  categorie: 'entreprise',   formule: 'Gourmande'  },
+  { type: 'Mariage',              convives: 180, ville: 'Ribeauvillé',   categorie: 'mariage',      formule: 'Clé en main'},
+  { type: 'Team building',        convives: 50,  ville: 'Munster',       categorie: 'entreprise',   formule: 'Standard'   },
+  { type: 'Anniversaire',         convives: 55,  ville: 'Épinal',        categorie: 'anniversaire', formule: 'Gourmande'  },
+  { type: 'Fête de famille',      convives: 90,  ville: 'Guebwiller',    categorie: 'famille',      formule: 'Gourmande'  },
+  { type: 'Soirée d’entreprise', convives: 110, ville: 'Colmar',       categorie: 'entreprise',   formule: 'Premium'    },
+  { type: 'Mariage',              convives: 200, ville: 'Cernay',        categorie: 'mariage',      formule: 'Clé en main'},
+  { type: 'Repas associatif',     convives: 80,  ville: 'Kaysersberg',   categorie: 'association',  formule: 'Standard'   },
 ]
 
 type Prestation = {
@@ -34,6 +37,7 @@ type Prestation = {
   convives: number
   ville: string
   categorie: 'entreprise' | 'mariage' | 'anniversaire' | 'association' | 'famille'
+  formule: 'Standard' | 'Gourmande' | 'Premium' | 'Clé en main'
 }
 
 interface Props {
@@ -85,6 +89,8 @@ export default function DernieresPrestations({ filter, limit = 8 }: Props) {
                 <span>{p.convives}&nbsp;pers.</span>
                 <span className="text-bark-400">&middot;</span>
                 <span className="text-copper-600">{p.ville}</span>
+                <span className="text-bark-400">&middot;</span>
+                <span className="text-bark-500">{p.formule}</span>
               </span>
             </motion.div>
           ))}
@@ -94,7 +100,7 @@ export default function DernieresPrestations({ filter, limit = 8 }: Props) {
           href="/contact"
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
         >
-          Demander mon devis gratuit
+          Je demande mon devis gratuit
         </Link>
       </div>
     </section>
