@@ -45,7 +45,7 @@ const FAQ = [
     a: "Non. Un espace de ~15-20m² suffit. Marc s'installe dans un jardin, une cour, un parking ou une terrasse couverte. Il vous conseille lors du devis.",
   },
   {
-    q: "Quelle formule choisir pour un anniversaire de 25 personnes ?",
+    q: "Quelle formule choisir pour un petit anniversaire (30 personnes) ?",
     a: "La formule Standard (12€/pers, dès 30 personnes) est parfaite pour les petits groupes. Pour les groupes plus grands, la formule Gourmande (17€/pers) avec tartes à volonté est idéale.",
   },
   {
