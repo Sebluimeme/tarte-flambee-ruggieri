@@ -7,7 +7,7 @@ import OffreComplete from '@/components/sections/OffreComplete'
 import DernieresPrestations from '@/components/sections/DernieresPrestations'
 
 export const metadata: Metadata = {
-  title: 'Tarte flambée anniversaire à domicile',
+  title: 'Tarte flambée feu de bois pour anniversaire en Alsace',
   description:
     "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit, réponse rapide.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },
@@ -59,8 +59,22 @@ const FAQ = [
 ]
 
 export default function AnniversairePage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image
@@ -97,7 +111,7 @@ export default function AnniversairePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md hover:shadow-lg"
             >
-              Recevoir mon devis gratuit
+              Je demande mon devis gratuit
             </Link>
             <a
               href="tel:+33785621089"
@@ -197,7 +211,7 @@ export default function AnniversairePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-semibold text-base hover:bg-cream-100 transition-all shadow-md"
             >
-              Recevoir mon devis gratuit
+              Je demande mon devis gratuit
             </Link>
           </div>
         </div>
@@ -210,7 +224,7 @@ export default function AnniversairePage() {
             <path d="M0 32V20C0 8.954 7.163 2.477 21.49 0L23 3.6C16.19 5.2 12.493 8.8 11.91 14.4H18v17.6H0zm22 0V20C22 8.954 29.163 2.477 43.49 0L45 3.6C38.19 5.2 34.493 8.8 33.91 14.4H40v17.6H22z" fill="currentColor"/>
           </svg>
           <blockquote className="font-display text-2xl md:text-3xl font-medium italic text-bark-900 leading-relaxed mb-6">
-            "Pour les 60 ans de mon père à Sélestat, on avait opté pour la tarte flambée. Marc était ponctuel, professionnel et sa flammekueche était délicieuse. Toute la famille a été bluffée !"
+            &laquo;&nbsp;Pour les 60 ans de mon père à Sélestat, on avait opté pour la tarte flambée. Marc était ponctuel, professionnel et sa flammekueche était délicieuse. Toute la famille a été bluffée !&nbsp;&raquo;
           </blockquote>
           <p className="font-sans text-sm text-bark-600">
             Famille Zimmermann — <span className="text-copper-500">Anniversaire à Sélestat, août 2024</span>
@@ -255,7 +269,7 @@ export default function AnniversairePage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-copper-500 text-cream-50 font-sans font-semibold text-base hover:bg-copper-400 transition-all shadow-md"
             >
-              Recevoir mon devis gratuit
+              Je demande mon devis gratuit
             </Link>
             <a
               href="tel:+33785621089"

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Fraunces, Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -67,6 +67,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'UvryaXmTBbsSyCkdM_3XgA65ygwM1cfQlc6kuOHfhmk',
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 const jsonLd = {
