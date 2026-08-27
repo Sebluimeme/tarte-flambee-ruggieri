@@ -56,6 +56,10 @@ const FAQ = [
     q: "Peut-on avoir des options végétariennes pour les invités allergiques ?",
     a: "Oui. Des garnitures végétariennes et sans gluten sont proposées sur demande. Précisez-le dans le formulaire de devis.",
   },
+  {
+    q: "Marc peut-il servir dès le vin d'honneur ?",
+    a: "Oui. Le four à bois peut être installé dès le vin d'honneur pour lancer l'ambiance avec les premières tartes flambées, puis enchaîner sur le repas — un seul déplacement pour toute la réception.",
+  },
 ]
 
 export default function MariagePage() {
