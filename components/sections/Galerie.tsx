@@ -28,13 +28,14 @@ type GalleryItem = {
   src: string
   alt: string
   categories: Exclude<FilterId, 'all'>[]
+  imageClassName?: string
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
   { src: '/media/prestation-tarte-flambee.jpg', alt: 'Stand Poivre & Salé installé en extérieur avec four à bois et tables de service', categories: [] },
   { src: '/media/service-tarte-flambee.jpg', alt: 'Four à bois mobile ouvert avec bûches empilées sous la chambre de cuisson', categories: [] },
   { src: '/media/tarte-flambee-artisanale.jpg', alt: 'Tables dressées sous tente pour une réception servie par Poivre & Salé', categories: [] },
-  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile', categories: [] },
+  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile', categories: [], imageClassName: 'object-right' },
   { src: '/media/garnitures-fraiches.jpg', alt: 'Préparation du poste de cuisson avec piles de fonds de tartes flambées pour un repas associatif', categories: ['association'] },
   { src: '/media/ambiance-soiree.jpg', alt: 'Buffet de soirée d’entreprise animé par Poivre & Salé sous éclairage violet', categories: ['entreprise'] },
   { src: '/media/img_1841.jpg', alt: 'Tarte flambée en cuisson devant les flammes du four à bois', categories: [] },
@@ -98,7 +99,7 @@ export default function Galerie() {
   }, [activeFilter])
 
   return (
-    <section id="galerie" className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
+    <section id="galerie" className="scroll-mt-24 md:scroll-mt-28 bg-cream-50 py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-8 mb-12 md:flex-row md:items-end md:justify-between">
           <div>
@@ -164,7 +165,7 @@ export default function Galerie() {
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className={`object-cover ${item.imageClassName ?? 'object-center'} group-hover:scale-105 transition-transform duration-300`}
                 sizes="(max-width: 768px) 256px, 320px"
               />
             </div>
