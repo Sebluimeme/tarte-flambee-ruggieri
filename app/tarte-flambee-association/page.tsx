@@ -77,7 +77,7 @@ export default function AssociationPage() {
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-end">
         <Image
-          src="/media/DJI_20250622_161640_166.jpeg"
+          src="/media/repas-association-four-bois-alsace.jpeg"
           fill
           className="object-cover object-center"
           alt="Repas d'association autour du four à bois en Alsace"
