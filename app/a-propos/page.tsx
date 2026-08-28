@@ -41,16 +41,16 @@ export default function APropos() {
 
           <div className="space-y-6">
             <p className="font-sans text-lg leading-relaxed text-bark-700">
-              Marc Ruggieri a grandi dans une ferme du Haut-Rhin, où la tarte flambée n'était pas une spécialité de restaurant — c'était le repas du vendredi soir, celui qu'on préparait ensemble devant le four à pain encore chaud après la cuisson du pain.
+              Marc Ruggieri a grandi dans une ferme du Haut-Rhin, où la tarte flambée n&apos;était pas une spécialité de restaurant — c&apos;était le repas du vendredi soir, celui qu&apos;on préparait ensemble devant le four à pain encore chaud après la cuisson du pain.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
-              C'est son oncle Franz qui lui a transmis la recette familiale : la pâte fine et craquante, la crème fraîche épaisse, les oignons tranchés à la mandoline, les lardons fumés du boucher du village. Rien de compliqué. Mais tout dans la précision du geste et la chaleur du bois.
+              C&apos;est son oncle Franz qui lui a transmis la recette familiale : la pâte fine et craquante, la crème fraîche épaisse, les oignons tranchés à la mandoline, les lardons fumés du boucher du village. Rien de compliqué. Mais tout dans la précision du geste et la chaleur du bois.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
               En 2019, après quinze ans passés dans la restauration traditionnelle alsacienne, Marc décide de partir à son compte avec un projet simple : apporter la tarte flambée là où les gens se réunissent. Il fait construire son premier four à bois mobile par un artisan ferronnier de Sainte-Marie-aux-Mines, et lance Poivre et Salé.
             </p>
             <p className="font-sans text-base leading-relaxed text-bark-700">
-              Depuis, nous intervenons pour des mariages, des fêtes de famille, des soirées d'entreprise — partout en Alsace et dans le Grand Est. Ce qui ne change pas : la pâte laminée fine, les ingrédients frais, et nous derrière notre four.
+              Depuis, nous intervenons pour des mariages, des fêtes de famille, des soirées d&apos;entreprise — partout en Alsace et dans le Grand Est. Ce qui ne change pas : la pâte laminée fine, les ingrédients frais, et nous derrière notre four.
             </p>
           </div>
         </div>
@@ -68,13 +68,13 @@ export default function APropos() {
             </h2>
             <div className="space-y-4 font-sans text-base leading-relaxed text-bark-700">
               <p>
-                Le four est construit en briques réfractaires, monté sur remorque pour pouvoir l'amener partout. Il monte à 350°C en 45 minutes et maintient cette chaleur pendant toute la durée de la prestation — c'est ce qui permet de cuire une tarte en 3 à 4 minutes, avec cette texture impossible à reproduire autrement : craquante, légèrement fumée, jamais sèche.
+                Le four est construit en briques réfractaires, monté sur remorque pour pouvoir l&apos;amener partout. Il monte à 350°C en 45 minutes et maintient cette chaleur pendant toute la durée de la prestation — c&apos;est ce qui permet de cuire une tarte en 3 à 4 minutes, avec cette texture impossible à reproduire autrement : craquante, légèrement fumée, jamais sèche.
               </p>
               <p>
-                Le bois utilisé est du hêtre et du charme sec, provenant des forêts vosgiennes. Pas de bois traité, pas de briquettes. La fumée doit sentir la forêt, pas l'usine.
+                Le bois utilisé est du hêtre et du charme sec, provenant des forêts vosgiennes. Pas de bois traité, pas de briquettes. La fumée doit sentir la forêt, pas l&apos;usine.
               </p>
               <p>
-                L'installation nécessite environ 45 minutes. Nous gérons seuls le montage, la chauffe et la cuisson — vous n'avez rien à prévoir côté cuisine.
+                L&apos;installation nécessite environ 45 minutes. Nous gérons seuls le montage, la chauffe et la cuisson — vous n&apos;avez rien à prévoir côté cuisine.
               </p>
               <p>
                 <Link href="/four-a-bois-mobile-evenement" className="text-copper-500 hover:text-copper-400 font-medium">
@@ -112,7 +112,7 @@ export default function APropos() {
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
               <p className="font-display text-xl font-medium text-bark-900 mb-3">Ingrédients locaux</p>
               <p className="font-sans text-sm leading-relaxed text-bark-700">
-                La crème fraîche vient de la Laiterie de Saint-Dié. Les lardons fumés sont préparés par la charcuterie Braun à Lapoutroie. Les oignons — blancs, doux, croquants — viennent d'un maraîcher à Orbey avec qui nous travaillons depuis le début. Rien n'est acheté en grande surface.
+                La crème fraîche vient de la Laiterie de Saint-Dié. Les lardons fumés sont préparés par la charcuterie Braun à Lapoutroie. Les oignons — blancs, doux, croquants — viennent d&apos;un maraîcher à Orbey avec qui nous travaillons depuis le début. Rien n&apos;est acheté en grande surface.
               </p>
             </div>
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
@@ -124,7 +124,7 @@ export default function APropos() {
             <div className="bg-cream-100 rounded-2xl p-7 border border-stone-200">
               <p className="font-display text-xl font-medium text-bark-900 mb-3">Rapport humain</p>
               <p className="font-sans text-sm leading-relaxed text-bark-700">
-                Nous répondons nous-mêmes aux messages. Nous visitons les lieux en amont si nécessaire. Nous sommes là le jour J, derrière notre four, du début à la fin. Pas de sous-traitance, pas d'intermédiaire.
+                Nous répondons nous-mêmes aux messages. Nous visitons les lieux en amont si nécessaire. Nous sommes là le jour J, derrière notre four, du début à la fin. Pas de sous-traitance, pas d&apos;intermédiaire.
               </p>
             </div>
           </div>

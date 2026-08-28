@@ -199,7 +199,7 @@ export default function MariagePage() {
             <path d="M0 32V20C0 8.954 7.163 2.477 21.49 0L23 3.6C16.19 5.2 12.493 8.8 11.91 14.4H18v17.6H0zm22 0V20C22 8.954 29.163 2.477 43.49 0L45 3.6C38.19 5.2 34.493 8.8 33.91 14.4H40v17.6H22z" fill="currentColor"/>
           </svg>
           <blockquote className="font-display text-2xl md:text-3xl font-medium italic text-bark-900 leading-relaxed mb-6">
-            "Marc a fait le spectacle avec son four à bois — tous nos invités ont adoré. La flammekueche était incroyable et Marc est d'une gentillesse rare. On recommande les yeux fermés !"
+            &quot;Marc a fait le spectacle avec son four à bois — tous nos invités ont adoré. La flammekueche était incroyable et Marc est d&apos;une gentillesse rare. On recommande les yeux fermés !&quot;
           </blockquote>
           <p className="font-sans text-sm text-bark-600">
             Sophie & Thomas M. — <span className="text-copper-500">Mariage à Colmar, juin 2025</span>

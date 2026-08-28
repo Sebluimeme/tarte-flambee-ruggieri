@@ -53,8 +53,8 @@ const FAQ = [
     a: "Les formules standards démarrent à 30 personnes. Pour un groupe plus restreint, contactez-nous directement : un tarif adapté peut être étudié selon la date et la configuration.",
   },
   {
-    q: "Les options sans gluten ou végétariennes ont-elles un coût supplémentaire ?",
-    a: "Ces adaptations sont proposées sur demande lors du devis. Précisez vos besoins dans le formulaire de contact pour obtenir un chiffrage exact.",
+    q: "Les options végétariennes ont-elles un coût supplémentaire ?",
+    a: "Cette adaptation est proposée sur demande lors du devis. Précisez vos besoins dans le formulaire de contact pour obtenir un chiffrage exact. Notre pâte est préparée sur place à partir de farine de blé T55 : nous ne proposons pas de version sans gluten (détails sur notre page allergènes).",
   },
 ]
 

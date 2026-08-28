@@ -196,7 +196,7 @@ export default function AssociationPage() {
             <path d="M0 32V20C0 8.954 7.163 2.477 21.49 0L23 3.6C16.19 5.2 12.493 8.8 11.91 14.4H18v17.6H0zm22 0V20C22 8.954 29.163 2.477 43.49 0L45 3.6C38.19 5.2 34.493 8.8 33.91 14.4H40v17.6H22z" fill="currentColor"/>
           </svg>
           <blockquote className="font-display text-2xl md:text-3xl font-medium italic text-bark-900 leading-relaxed mb-6">
-            "On organise notre repas de fin de saison chaque année. Depuis qu&apos;on a découvert Marc, on ne change plus ! La tarte flambée à volonté, c&apos;est ce qu&apos;il y a de mieux pour fédérer le groupe."
+            &quot;On organise notre repas de fin de saison chaque année. Depuis qu&apos;on a découvert Marc, on ne change plus ! La tarte flambée à volonté, c&apos;est ce qu&apos;il y a de mieux pour fédérer le groupe.&quot;
           </blockquote>
           <p className="font-sans text-sm text-bark-600">
             Club sportif — <span className="text-copper-500">Repas de fin de saison à Saint-Dié-des-Vosges, octobre 2024</span>
