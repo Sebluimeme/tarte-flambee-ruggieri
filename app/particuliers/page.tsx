@@ -57,8 +57,8 @@ const FAQ = [
     a: "Nous prévoyons toujours une solution de repli. Une tente ou un abri suffit à protéger le four. Précisez votre lieu lors du devis et nous vous donnons nos recommandations.",
   },
   {
-    q: "Peut-on avoir des options végétariennes ou sans gluten ?",
-    a: "Oui. Des garnitures végétariennes et sans gluten sont proposées sur demande. Précisez-le dans le formulaire de devis pour que nous adaptions les ingrédients.",
+    q: "Peut-on avoir des options végétariennes ou signaler des allergies ?",
+    a: "Oui pour les garnitures végétariennes sur demande. Signalez les allergies ou intolérances dès le devis : notre pâte contient du gluten et nous ne proposons pas de version sans gluten.",
   },
   {
     q: "Le règlement se fait quand ?",

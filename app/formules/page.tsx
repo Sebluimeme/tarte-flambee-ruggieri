@@ -107,8 +107,8 @@ const INCLUS = [
 ];
 
 const OPTIONS = [
-  "Option sans gluten (sur demande)",
   "Garnitures végétariennes supplémentaires",
+  "Signalement des allergies ou intolérances au devis",
   "Dessert sucré (tarte alsacienne)",
   "Décoration alsacienne",
   "Équipe de service",

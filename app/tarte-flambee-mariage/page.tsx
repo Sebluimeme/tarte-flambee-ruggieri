@@ -53,8 +53,8 @@ const FAQ = [
     a: "Marc prévoit toujours une solution de repli. Une tente ou un abri suffit à protéger le four. Précisez votre lieu lors du devis et il vous donnera ses recommandations.",
   },
   {
-    q: "Peut-on avoir des options végétariennes pour les invités allergiques ?",
-    a: "Oui. Des garnitures végétariennes et sans gluten sont proposées sur demande. Précisez-le dans le formulaire de devis.",
+    q: "Peut-on prévoir des options végétariennes ou signaler des allergies ?",
+    a: "Oui pour les garnitures végétariennes sur demande. Pour les allergies ou intolérances, précisez-les dans le formulaire de devis : notre pâte contient du gluten et nous ne proposons pas de version sans gluten.",
   },
   {
     q: "Marc peut-il servir dès le vin d'honneur ?",
