@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/formules',      label: 'Nos formules' },
   { href: '/#temoignages',  label: 'Témoignages' },
   { href: '/contact',       label: 'Contact' },
+  { href: '/conseils',      label: 'Conseils' },
   { href: '/allergenes',    label: 'Allergènes' },
 ]
 

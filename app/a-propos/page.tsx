@@ -76,6 +76,11 @@ export default function APropos() {
               <p>
                 L'installation nécessite environ 45 minutes. Nous gérons seuls le montage, la chauffe et la cuisson — vous n'avez rien à prévoir côté cuisine.
               </p>
+              <p>
+                <Link href="/four-a-bois-mobile-evenement" className="text-copper-500 hover:text-copper-400 font-medium">
+                  Voir le détail du fonctionnement du four à bois mobile →
+                </Link>
+              </p>
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-cream-200 flex items-center justify-center">

@@ -232,6 +232,11 @@ export default function FormulesPage() {
           <p className="font-sans text-sm text-center text-bark-700 italic mt-10 max-w-xl mx-auto">
             Chaque prestation étant unique, les tarifs ci-dessous sont indicatifs. Contactez-nous pour un devis sur mesure.
           </p>
+          <p className="font-sans text-sm text-center mt-3">
+            <Link href="/prix-traiteur-tarte-flambee" className="text-copper-500 hover:text-copper-400 font-medium">
+              Comprendre ce qui fait varier le prix d&apos;un événement →
+            </Link>
+          </p>
         </div>
       </section>
 

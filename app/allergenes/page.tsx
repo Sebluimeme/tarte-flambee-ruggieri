@@ -72,6 +72,14 @@ export default function AllergenesPage() {
           >
             07 85 62 10 89
           </a>
+          <p className="mt-6">
+            <Link
+              href="/tarte-flambee-allergies-sans-gluten"
+              className="font-sans text-sm font-medium text-copper-500 hover:text-copper-400 transition-colors"
+            >
+              Lire notre guide complet allergies et sans gluten →
+            </Link>
+          </p>
         </div>
       </div>
     </main>
