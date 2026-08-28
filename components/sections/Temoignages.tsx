@@ -6,8 +6,8 @@ import { Star, StarHalf } from 'lucide-react'
 
 const GOOGLE_REVIEW_URL = 'https://search.google.com/local/writereview?placeid=/g/11w2178bdy'
 
-// Avis Google réels de l'établissement « Poivre Et Sale » (note 4,7/5).
-// Source : fiche Google Business. Noms, textes et contextes authentiques — ne pas inventer.
+// Sélection d'avis Google affichés sur le site, vérifiée le 2026-08-28.
+// Source : fiche Google Business reprise ici. Ne pas en déduire la note globale GBP.
 const temoignages = [
   {
     citation: "Nous avons fait appel à Marc et son équipe pour notre mariage le week-end du 9 mai 2026 et nous en sommes plus que ravis !",
