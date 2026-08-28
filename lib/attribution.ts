@@ -16,6 +16,19 @@ export type Attribution = {
   source: AttributionSource;
 };
 
+export type LeadAnalyticsEvent = {
+  event: "generate_lead";
+  lead_source: AttributionSource;
+  lead_medium: string;
+  lead_campaign: string;
+  lead_content: string;
+  lead_term: string;
+  lead_source_medium: string;
+  lead_landing_page: string;
+  lead_referrer_host: string;
+  lead_is_google_ads: boolean;
+};
+
 const STORAGE_KEY = "ps_attribution";
 
 const SEARCH_ENGINE_HOSTS = ["google.", "bing.com", "yahoo.", "duckduckgo.com", "ecosia.org", "qwant.com"];
@@ -39,6 +52,35 @@ export function categorizeSource(input: {
   if (SEARCH_ENGINE_HOSTS.some((h) => referrerHost.includes(h))) return "organic";
   if (referrerHost !== input.currentHost) return "referral";
   return "unknown";
+}
+
+export function getReferrerHost(referrer: string): string {
+  if (!referrer) return "";
+  try {
+    return new URL(referrer).hostname;
+  } catch {
+    return "unknown";
+  }
+}
+
+export function buildLeadAnalyticsEvent(attribution: Attribution): LeadAnalyticsEvent {
+  const medium = attribution.utmMedium || (attribution.source === "google_ads" ? "cpc" : attribution.source);
+  const sourceMedium = (attribution.utmSource || attribution.utmMedium)
+    ? `${attribution.utmSource || attribution.source} / ${medium || "unknown"}`
+    : attribution.source;
+
+  return {
+    event: "generate_lead",
+    lead_source: attribution.source,
+    lead_medium: medium,
+    lead_campaign: attribution.utmCampaign,
+    lead_content: attribution.utmContent,
+    lead_term: attribution.utmTerm,
+    lead_source_medium: sourceMedium,
+    lead_landing_page: attribution.landingPage,
+    lead_referrer_host: getReferrerHost(attribution.referrer),
+    lead_is_google_ads: attribution.source === "google_ads",
+  };
 }
 
 function captureCurrentAttribution(): Attribution {

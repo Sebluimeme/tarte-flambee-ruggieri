@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { getAttribution } from "@/lib/attribution";
+import { buildLeadAnalyticsEvent, getAttribution } from "@/lib/attribution";
 
 declare global {
   interface Window {
@@ -105,14 +105,8 @@ export default function Contact() {
           // Conversion Google Ads existante — ne pas renommer/dupliquer, une balise
           // GTM publiée y est déjà associée (AW-18117082922).
           window.dataLayer.push({ event: "form_contact_submit" });
-          // Événement GA4 distinct pour le reporting lead (funnel, sources, LTV).
-          // Aucun déclencheur GTM ne réagit à "generate_lead" aujourd'hui (déclencheurs
-          // en exact-match sur "form_contact_submit"/"form_reservation_submit") : ce
-          // push est donc inerte tant qu'un tag GA4 dédié n'est pas ajouté dans GTM.
-          window.dataLayer.push({
-            event: "generate_lead",
-            lead_source: attribution.source,
-          });
+          // Événement GA4 distinct pour compter les leads hors Ads avec source/support/campagne.
+          window.dataLayer.push(buildLeadAnalyticsEvent(attribution));
         }
       } else {
         setStatus("error");
