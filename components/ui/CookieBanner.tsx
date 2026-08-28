@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 
 declare global {
@@ -36,12 +36,9 @@ function updateConsent(granted: boolean) {
 }
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent')
-    if (!consent) setVisible(true)
-  }, [])
+  const [visible, setVisible] = useState(
+    () => typeof window !== 'undefined' && !localStorage.getItem('cookie-consent')
+  )
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted')

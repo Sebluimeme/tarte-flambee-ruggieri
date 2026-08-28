@@ -7,7 +7,7 @@
 //   allow list, update, delete: if request.auth != null;
 // }
 
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import {
   collection,
@@ -56,19 +56,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        window.location.href = "/admin";
-      } else {
-        setAuthChecked(true);
-        loadReservations();
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  const loadReservations = async () => {
+  const loadReservations = useCallback(async () => {
     setLoading(true);
     try {
       const q = query(collection(db, "reservations"), orderBy("createdAt", "desc"));
@@ -83,7 +71,19 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "/admin";
+      } else {
+        setAuthChecked(true);
+        loadReservations();
+      }
+    });
+    return () => unsubscribe();
+  }, [loadReservations]);
 
   const updateStatus = async (id: string, status: "pending" | "confirmed" | "refused") => {
     try {

@@ -89,7 +89,7 @@ export default function AnniversairePage() {
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4">
             Anniversaire &amp; fête de famille
           </p>
-          <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-cream-50 mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-cream-50 mb-6">
             Tarte flambée à domicile pour votre anniversaire
           </h1>
           <p className="font-sans text-lg leading-relaxed text-cream-200/85 max-w-2xl mx-auto mb-8">

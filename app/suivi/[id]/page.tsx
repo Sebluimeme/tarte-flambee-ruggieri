@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import Link from "next/link";
@@ -71,14 +71,7 @@ export default function SuiviPage({ params }: { params: Promise<{ id: string }> 
   const [loading, setLoading] = useState(true);
   const [id, setId] = useState<string>("");
 
-  useEffect(() => {
-    params.then((p) => {
-      setId(p.id);
-      loadReservation(p.id);
-    });
-  }, [params]);
-
-  const loadReservation = async (docId: string) => {
+  const loadReservation = useCallback(async (docId: string) => {
     try {
       const snap = await getDoc(doc(db, "reservations", docId));
       if (snap.exists()) {
@@ -92,7 +85,14 @@ export default function SuiviPage({ params }: { params: Promise<{ id: string }> 
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    params.then((p) => {
+      setId(p.id);
+      loadReservation(p.id);
+    });
+  }, [params, loadReservation]);
 
   if (loading) {
     return (

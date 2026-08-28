@@ -75,7 +75,7 @@ export default function ParticuliersPage() {
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
             Mariage · Anniversaire · Baptême · Entre amis
           </p>
-          <h1 className="font-display text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-6">
             Votre événement, une ambiance unique.
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto mb-8">
