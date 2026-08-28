@@ -35,7 +35,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   { src: '/media/prestation-tarte-flambee.jpg', alt: 'Stand Poivre & Salé installé en extérieur avec four à bois et tables de service', categories: [] },
   { src: '/media/service-tarte-flambee.jpg', alt: 'Four à bois mobile ouvert avec bûches empilées sous la chambre de cuisson', categories: [] },
   { src: '/media/tarte-flambee-artisanale.jpg', alt: 'Tables dressées sous tente pour une réception servie par Poivre & Salé', categories: [] },
-  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile', categories: [], imageClassName: 'object-right' },
+  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile', categories: [], imageClassName: 'object-right scale-125 origin-right' },
   { src: '/media/garnitures-fraiches.jpg', alt: 'Préparation du poste de cuisson avec piles de fonds de tartes flambées pour un repas associatif', categories: ['association'] },
   { src: '/media/ambiance-soiree.jpg', alt: 'Buffet de soirée d’entreprise animé par Poivre & Salé sous éclairage violet', categories: ['entreprise'] },
   { src: '/media/img_1841.jpg', alt: 'Tarte flambée en cuisson devant les flammes du four à bois', categories: [] },
