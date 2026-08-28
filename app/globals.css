@@ -70,6 +70,15 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Filet de sécurité mobile : si text-wrap: balance/pretty calcule mal la
+   largeur disponible (bug connu sur certains rendus mobiles), le mot
+   déborde et coupe le texte au lieu de casser la ligne — overflow-x: clip
+   sur html/body masque alors ce débordement silencieusement. On force la
+   coupure de mot pour empêcher toute largeur > conteneur. */
+h1, h2, h3, h4, p {
+  overflow-wrap: break-word;
+}
+
 /* Masque la scrollbar horizontale sur la galerie */
 .scrollbar-hide {
   -ms-overflow-style: none;
