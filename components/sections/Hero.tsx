@@ -24,8 +24,8 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-44 md:pb-24 w-full min-w-0 -translate-y-10 md:translate-y-0">
         <div className="max-w-3xl min-w-0">
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6 break-words">
-            La vraie <em>Flammekueche,</em><br />
-            <span className="block">traiteur complet au feu de bois,</span>
+            La vraie <em>Flammekueche</em><br />
+            <span className="block">au feu de bois,</span>
             <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-base sm:text-lg leading-relaxed text-cream-50 mb-8 w-full max-w-[19rem] sm:max-w-xl min-w-0 break-words">
