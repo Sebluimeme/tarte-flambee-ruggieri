@@ -92,6 +92,15 @@ const jsonLd = {
   },
   servesCuisine: 'Alsatian',
   priceRange: '€€',
+  // Note Google Business Profile relevée par Sébastien le 2026-09-03 : 4,9/5 sur 18 avis.
+  // Les avis affichés sur le site restent une sélection et ne représentent pas le total Google.
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    bestRating: '5',
+    worstRating: '1',
+    reviewCount: '18',
+  },
   areaServed: [
     { '@type': 'State', name: 'Bas-Rhin' },
     { '@type': 'State', name: 'Haut-Rhin' },
@@ -118,7 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
         <Script
           id="consent-default"
