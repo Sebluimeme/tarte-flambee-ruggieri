@@ -147,6 +147,7 @@ p {
 /* Mobile : présentation statique (pas de hover fiable, lisibilité prioritaire) */
 @media (max-width: 767px) {
   .logo-marquee__track {
+    width: 100%;
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
@@ -160,6 +161,7 @@ p {
 /* Respect du système : on fige le défilement et on masque le rail dupliqué */
 @media (prefers-reduced-motion: reduce) {
   .logo-marquee__track {
+    width: 100%;
     animation: none;
     flex-wrap: wrap;
     justify-content: center;

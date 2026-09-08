@@ -5,6 +5,10 @@ type Logo = {
   src: string
   width: number
   height: number
+  // Classe de hauteur affichée : par défaut h-8/md:h-9. À surcharger pour un
+  // logo au format très large (bannière) afin qu'il ne domine pas visuellement
+  // la bande — la largeur affichée découle de cette hauteur via object-contain.
+  displayClassName?: string
 }
 
 // Uniquement des marques dont le logo a été fourni et confirmé par le client.
@@ -12,6 +16,16 @@ type Logo = {
 const LOGOS: Logo[] = [
   { name: 'Veolia', src: '/media/logos/veolia.png', width: 132, height: 34 },
   { name: 'Decathlon', src: '/media/logos/decathlon.svg', width: 160, height: 32 },
+  { name: 'Lac Blanc', src: '/media/logos/lac-blanc.svg', width: 149, height: 60 },
+  // Logo Pöttinger au format bannière très large (ratio ~10:1) : hauteur réduite
+  // pour que sa largeur affichée reste comparable aux autres logos de la bande.
+  {
+    name: 'Pöttinger',
+    src: '/media/logos/poettinger.svg',
+    width: 164,
+    height: 16,
+    displayClassName: 'h-4 w-auto object-contain md:h-5',
+  },
 ]
 
 export default function ClientLogos() {
@@ -46,7 +60,7 @@ export default function ClientLogos() {
                     alt={logo.name}
                     width={logo.width}
                     height={logo.height}
-                    className="h-8 w-auto object-contain md:h-9"
+                    className={logo.displayClassName ?? 'h-8 w-auto object-contain md:h-9'}
                   />
                 </div>
               )
