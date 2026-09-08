@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
+import ClientLogos from '@/components/sections/ClientLogos'
 
 export const metadata: Metadata = {
   title: 'Traiteur événementiel entreprise en Alsace | Feu de bois',
@@ -171,6 +172,8 @@ export default function SoireeEntreprisePage() {
           </div>
         </div>
       </section>
+
+      <ClientLogos />
 
       <section className="bg-cream-50 px-6 py-20 md:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
