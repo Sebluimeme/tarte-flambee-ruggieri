@@ -37,7 +37,7 @@ export default function ClientLogos() {
     <section className="border-t border-stone-200 bg-cream-100 py-14 md:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <p className="mb-8 text-center font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
-          Ils nous ont fait confiance
+          Ils nous ont déjà fait confiance
         </p>
         <div className="logo-marquee">
           <div

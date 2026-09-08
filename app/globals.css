@@ -101,9 +101,11 @@ p {
   border-radius: 9999px;
 }
 
-/* Bande de logos clients ("Ils nous ont fait confiance") : défilement
-   horizontal lent et continu sur desktop, pause au survol/focus, rendu
-   statique et lisible sur mobile et pour prefers-reduced-motion. */
+/* Bande de logos clients ("Ils nous ont déjà fait confiance") : défilement
+   horizontal continu et doux mais bien perceptible sur desktop, pause au
+   survol/focus, rendu statique et lisible sur mobile et pour
+   prefers-reduced-motion. Couleurs d'origine des logos conservées (aucune
+   désaturation ni assombrissement). */
 .logo-marquee {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -115,7 +117,7 @@ p {
   width: max-content;
   align-items: center;
   gap: 3.5rem;
-  animation: logo-marquee-scroll 32s linear infinite;
+  animation: logo-marquee-scroll 20s linear infinite;
 }
 
 .logo-marquee:hover .logo-marquee__track,
@@ -128,15 +130,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(100%);
-  opacity: 0.75;
-  transition: filter 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .logo-marquee__item:hover,
 .logo-marquee__item:focus-visible {
-  filter: grayscale(0%);
-  opacity: 1;
+  transform: scale(1.06);
 }
 
 @keyframes logo-marquee-scroll {
