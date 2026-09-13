@@ -14,11 +14,11 @@ const FORMULES = [
     name: "Standard",
     price: "12€",
     unit: "/pers.",
-    guests: "dès 30 personnes",
+    guests: "dès 40 personnes",
     duration: "",
     highlight: false,
     description:
-      "La formule simple et conviviale. En dessous de 30 personnes, demandez-nous nos tarifs.",
+      "La formule simple et conviviale. En dessous de 40 personnes, un devis adapté reste possible.",
     features: [
       "Four à bois mobile et cuisson sur place",
       "Service par notre équipe",
@@ -152,11 +152,11 @@ export default function FormulesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-6 -mx-6 px-6 pb-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 scrollbar-hide">
             {FORMULES.map((f) => (
               <div
                 key={f.name}
-                className={`relative rounded-2xl p-8 flex flex-col border transition-all duration-200 ${
+                className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none ${f.highlight ? 'order-first md:order-none' : ''} rounded-2xl p-8 flex flex-col border transition-all duration-200 ${
                   f.highlight
                     ? "bg-bark-900 border-bark-900 shadow-md"
                     : "bg-cream-100 border-stone-200 hover:shadow-md"
@@ -228,6 +228,12 @@ export default function FormulesPage() {
               </div>
             ))}
           </div>
+          <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-400" aria-hidden="true">
+            Faites glisser vers la gauche ou la droite pour comparer les formules.
+          </p>
+          <p className="font-sans text-sm text-center text-bark-700 mt-8 max-w-2xl mx-auto">
+            En dessous du seuil indiqué, la prestation reste possible selon nos disponibilités. Un forfait minimum de prestation et des frais de déplacement peuvent s&apos;appliquer selon le lieu ; ils sont toujours précisés dans le devis.
+          </p>
 
           <p className="font-sans text-sm text-center text-bark-700 italic mt-10 max-w-xl mx-auto">
             Chaque prestation étant unique, les tarifs ci-dessous sont indicatifs. Contactez-nous pour un devis sur mesure.

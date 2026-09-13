@@ -197,13 +197,13 @@ export default function ParticuliersPage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">Dès 30 personnes</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">Dès 40 personnes</p>
               <ul className="space-y-2.5 mb-6">
                 {[
-                  'Tartes flambées salées à volonté',
+                  '1 tarte flambée salée par personne',
                   'Four à bois et ingrédients inclus',
-                  'Service complet',
-                  'Déplacement inclus',
+                  'Service par notre équipe',
+                  'Déplacement inclus en zone principale',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2 font-sans text-sm text-cream-100/70">
                     <Check size={15} className="text-copper-400 mt-0.5 shrink-0" strokeWidth={1.75} />

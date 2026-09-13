@@ -10,7 +10,7 @@ const formules = [
     name: 'Standard',
     price: '12€',
     unit: '/pers.',
-    label: 'La formule simple et conviviale — dès 30 personnes',
+    label: 'La formule simple et conviviale — dès 40 personnes',
     badge: null,
     features: [
       'Service par notre équipe',
@@ -27,23 +27,23 @@ const formules = [
     price: '17€',
     unit: '/pers.',
     label: 'La formule à volonté — dès 30 personnes',
-    badge: null,
+    badge: 'Le plus populaire',
     features: [
       'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
       'Garnitures classiques et variées',
       'Animation autour du four',
     ],
-    highlight: false,
+    highlight: true,
     bg: 'bg-cream-100',
-    border: 'border-stone-200',
+    border: 'border-copper-500',
   },
   {
     name: 'Premium',
     price: '24€',
     unit: '/pers.',
     label: 'Salées à volonté + dessert — dès 30 personnes',
-    badge: 'Le plus populaire',
+    badge: null,
     features: [
       'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
@@ -52,9 +52,9 @@ const formules = [
       '1 verre de bière offert par personne',
       'Animation complète autour du four',
     ],
-    highlight: true,
+    highlight: false,
     bg: 'bg-cream-100',
-    border: 'border-copper-500',
+    border: 'border-stone-200',
   },
   {
     name: 'Clé en main',
@@ -98,14 +98,17 @@ export default function Formules() {
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div
+          ref={ref}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-6 -mx-6 px-6 pb-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 scrollbar-hide"
+        >
           {formules.map((formule, i) => (
             <motion.div
               key={formule.name}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
-              className={`relative ${formule.bg} border ${formule.highlight ? 'border-2 border-copper-500' : formule.border} rounded-2xl p-6 flex flex-col`}
+              className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none ${formule.highlight ? 'order-first md:order-none' : ''} ${formule.bg} border ${formule.highlight ? 'border-2 border-copper-500' : formule.border} rounded-2xl p-6 flex flex-col`}
             >
               {formule.badge && (
                 <div className="absolute -top-3 left-6">
@@ -142,8 +145,15 @@ export default function Formules() {
           ))}
         </div>
 
+        <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-400" aria-hidden="true">
+          Faites glisser vers la gauche ou la droite pour comparer les formules.
+        </p>
+
         <p className="font-sans text-sm text-center text-bark-700 italic mt-8 max-w-xl mx-auto">
           Chaque prestation étant unique, les tarifs ci-dessous sont indicatifs. Contactez-nous pour un devis sur mesure.
+        </p>
+        <p className="font-sans text-sm text-center text-bark-700 mt-3 max-w-2xl mx-auto">
+          En dessous du seuil indiqué, la prestation reste possible selon nos disponibilités. Un forfait minimum de prestation et des frais de déplacement peuvent s&apos;appliquer selon le lieu ; ils sont toujours précisés dans le devis.
         </p>
         <p className="font-sans text-xs text-center text-stone-400 mt-2">
           * Tarifs TTC pour les particuliers, HT pour les professionnels

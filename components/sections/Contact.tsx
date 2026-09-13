@@ -45,9 +45,9 @@ const labelClass = "font-sans text-sm font-medium text-bark-900 mb-2 block";
 
 const FORMULES = [
   { value: "cle-en-main", label: "Clé en main (sur devis)" },
-  { value: "standard", label: "Standard (12€/pers.)" },
-  { value: "gourmande", label: "Gourmande (17€/pers.)" },
-  { value: "premium", label: "Premium (24€/pers.)" },
+  { value: "standard", label: "Standard (12€/pers. · dès 40 pers.)" },
+  { value: "gourmande", label: "Gourmande (17€/pers. · dès 30 pers.)" },
+  { value: "premium", label: "Premium (24€/pers. · dès 30 pers.)" },
   { value: "indecis", label: "Je ne sais pas encore" },
 ];
 
@@ -243,15 +243,18 @@ export default function Contact() {
                     min={1}
                     value={form.convives}
                     onChange={handleChange}
-                    placeholder="Minimum 30 personnes"
+                    placeholder="Nombre prévu"
                     className={inputClass}
                   />
+                  <p className="mt-2 font-sans text-xs leading-relaxed text-stone-400">
+                    Les petits groupes peuvent aussi demander un devis : indiquez simplement le nombre réel de convives.
+                  </p>
                 </div>
 
                 {/* Formule souhaitée */}
                 <div>
                   <label className={labelClass}>Formule souhaitée</label>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {FORMULES.map((f) => (
                       <label
                         key={f.value}
@@ -273,6 +276,9 @@ export default function Contact() {
                       </label>
                     ))}
                   </div>
+                  <p className="mt-3 font-sans text-xs leading-relaxed text-bark-700">
+                    Sous le seuil de la formule choisie, un forfait minimum de prestation et des frais de déplacement peuvent s&apos;appliquer selon le lieu. Le montant sera clairement indiqué dans votre devis.
+                  </p>
                 </div>
 
                 {/* Lieu */}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const TARIFS = [
-  { name: 'Standard', price: '12€', unit: '/pers.', desc: 'Tartes salées à volonté, dès 30 personnes.' },
+  { name: 'Standard', price: '12€', unit: '/pers.', desc: '1 tarte flambée salée par personne, dès 40 personnes.' },
   { name: 'Gourmande', price: '17€', unit: '/pers.', desc: 'La formule la plus choisie : salées à volonté + animation autour du four.' },
   { name: 'Premium', price: '24€', unit: '/pers.', desc: 'Salées + sucrées à volonté, un verre de bière offert par personne.' },
   { name: 'Clé en main', price: 'Sur devis', unit: '', desc: 'Mobilier, vaisselle, boissons et service personnalisé selon l’événement.' },
@@ -20,7 +20,7 @@ const FACTEURS = [
   {
     title: 'Le nombre de convives',
     desc:
-      "Les formules sont calculées au prorata du nombre d'invités, avec un minimum de 30 personnes. En dessous de ce seuil, un tarif sur mesure peut être proposé — contactez-nous pour en discuter.",
+      "Les seuils sont de 40 personnes pour la Standard et de 30 personnes pour les formules Gourmande et Premium. En dessous, un forfait minimum de prestation peut s'appliquer — il est précisé dans le devis.",
   },
   {
     title: 'La distance de déplacement',
@@ -49,8 +49,8 @@ const FAQ = [
     a: "Oui, dans la zone principale autour de Colmar (environ 20 km). Au-delà, une participation aux frais de déplacement est ajoutée au devis, communiquée avant toute réservation.",
   },
   {
-    q: "Peut-on avoir un tarif pour moins de 30 personnes ?",
-    a: "Les formules standards démarrent à 30 personnes. Pour un groupe plus restreint, contactez-nous directement : un tarif adapté peut être étudié selon la date et la configuration.",
+    q: "Peut-on réserver en dessous du seuil indiqué ?",
+    a: "Oui, selon nos disponibilités. Un forfait minimum de prestation et des frais de déplacement peuvent alors s'appliquer selon le lieu et le nombre de convives. Tout est précisé dans le devis avant la réservation.",
   },
   {
     q: "Les options végétariennes ont-elles un coût supplémentaire ?",
@@ -70,7 +70,7 @@ export default function PrixTraiteurPage() {
             Combien coûte un traiteur tarte flambée ?
           </h1>
           <p className="font-sans text-lg leading-relaxed text-bark-700 max-w-2xl mx-auto">
-            Nos tarifs vont de 12€ à 24€ par personne selon la formule, à volonté et dès 30 convives.
+            Nos tarifs vont de 12€ à 24€ par personne selon la formule, avec des seuils à partir de 30 ou 40 convives.
             Voici le détail, et ce qui peut faire varier le prix.
           </p>
         </div>

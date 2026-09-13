@@ -46,9 +46,9 @@ const TYPE_LABELS: Record<string, string> = {
 
 const FORMULE_LABELS: Record<string, string> = {
   "cle-en-main": "Clé en main (sur devis)",
-  standard: "Standard (12€/pers.)",
-  gourmande: "Gourmande (17€/pers.)",
-  premium: "Premium (24€/pers.)",
+  standard: "Standard (12€/pers., dès 40 pers.)",
+  gourmande: "Gourmande (17€/pers., dès 30 pers.)",
+  premium: "Premium (24€/pers., dès 30 pers.)",
   indecis: "Je ne sais pas encore",
 };
 

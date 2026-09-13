@@ -8,7 +8,7 @@ import OffreComplete from '@/components/sections/OffreComplete'
 export const metadata: Metadata = {
   title: 'Tarte flambée feu de bois pour anniversaire en Alsace',
   description:
-    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Marc se déplace chez vous ou dans votre salle. Dès 12€/pers, dès 30 convives. Devis gratuit, réponse rapide.",
+    "Tarte flambée au four à bois pour votre anniversaire en Alsace. Formule Gourmande dès 30 convives ou Standard dès 40. Devis gratuit, réponse rapide.",
   alternates: { canonical: '/tarte-flambee-anniversaire' },
 }
 
@@ -44,8 +44,8 @@ const FAQ = [
     a: "Non. Un espace de ~15-20m² suffit. Marc s'installe dans un jardin, une cour, un parking ou une terrasse couverte. Il vous conseille lors du devis.",
   },
   {
-    q: "Quelle formule choisir pour un petit anniversaire (30 personnes) ?",
-    a: "La formule Standard (12€/pers, dès 30 personnes) est parfaite pour les petits groupes. Pour les groupes plus grands, la formule Gourmande (17€/pers) avec tartes à volonté est idéale.",
+    q: "Quelle formule choisir pour un anniversaire de 30 personnes ?",
+    a: "À partir de 30 personnes, la formule Gourmande (17€/pers.) propose les tartes salées à volonté. La formule Standard (12€/pers.) est disponible à partir de 40 personnes.",
   },
   {
     q: "Peut-on commander une tarte flambée sucrée pour le dessert ?",
@@ -165,7 +165,7 @@ export default function AnniversairePage() {
                 <span className="font-display text-4xl font-medium text-copper-400">12€</span>
                 <span className="font-sans text-sm text-cream-100/50">/pers.</span>
               </div>
-              <p className="font-sans text-sm text-cream-100/50 mb-5">dès 30 personnes</p>
+              <p className="font-sans text-sm text-cream-100/50 mb-5">dès 40 personnes</p>
               <ul className="space-y-2.5">
                 {[
                   '1 tarte flambée salée par personne',
