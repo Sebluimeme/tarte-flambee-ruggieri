@@ -49,7 +49,7 @@ export default function Occasions() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="occasions" className="bg-cream-50 py-20 md:py-28 px-6 md:px-8">
+    <section id="occasions" className="bg-cream-50 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">

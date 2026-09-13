@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
+import { Check, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const formules = [
   {
@@ -13,10 +13,8 @@ const formules = [
     label: 'La formule simple et conviviale — dès 40 personnes',
     badge: null,
     features: [
-      'Service par notre équipe',
       '1 tarte flambée salée par personne',
       'Garnitures classiques : nature, gratinée, forestière',
-      'Déplacement inclus en zone principale (20 km autour de Colmar, au-delà participation aux frais de déplacements sur devis)',
     ],
     highlight: false,
     bg: 'bg-cream-100',
@@ -29,10 +27,8 @@ const formules = [
     label: 'La formule à volonté — dès 30 personnes',
     badge: 'Le plus populaire',
     features: [
-      'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
       'Garnitures classiques et variées',
-      'Animation autour du four',
     ],
     highlight: true,
     bg: 'bg-cream-100',
@@ -45,12 +41,10 @@ const formules = [
     label: 'Salées à volonté + dessert — dès 30 personnes',
     badge: null,
     features: [
-      'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
       'Garnitures classiques et variées',
-      'Tartes flambées sucrées en dessert : pommes-cannelle, myrtilles',
+      'Tartes flambées sucrées en dessert : pommes-cannelle, myrtilles…',
       '1 verre de bière offert par personne',
-      'Animation complète autour du four',
     ],
     highlight: false,
     bg: 'bg-cream-100',
@@ -60,15 +54,13 @@ const formules = [
     name: 'Clé en main',
     price: 'Sur devis',
     unit: '',
-    label: 'Vous profitez, nous nous occupons du reste',
+    label: 'Composez librement votre prestation à la carte',
     badge: null,
     features: [
       'Formule tartes flambées au choix',
-      'Tables, chaises, mange-debout et tonnelles selon disponibilité',
-      'Vaisselle, verrerie et matériel de service',
-      'Boissons complémentaires en option',
-      'Installation, service et débarrassage',
-      'Prestation personnalisée selon votre événement',
+      'Options selon vos besoins',
+      'Mobilier, vaisselle, boissons, tonnelles…',
+      'Devis personnalisé',
     ],
     highlight: false,
     bg: 'bg-cream-100',
@@ -77,11 +69,17 @@ const formules = [
 ]
 
 export default function Formules() {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
+  const scrollCarousel = (direction: -1 | 1) => {
+    const carousel = ref.current
+    if (!carousel) return
+    carousel.scrollBy({ left: direction * carousel.clientWidth * 0.86, behavior: 'smooth' })
+  }
+
   return (
-    <section id="formules" className="bg-cream-50 py-20 md:py-28">
+    <section id="formules" className="bg-cream-50 py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
@@ -95,6 +93,30 @@ export default function Formules() {
           </p>
         </div>
 
+        <div className="md:hidden flex items-center justify-between gap-4 mb-4">
+          <p className="font-sans text-sm font-medium text-bark-700">
+            4 formules à faire défiler
+          </p>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => scrollCarousel(-1)}
+              aria-label="Voir la formule précédente"
+              className="size-10 rounded-full border border-copper-500 bg-cream-100 text-copper-500 inline-flex items-center justify-center shadow-sm"
+            >
+              <ChevronLeft size={20} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollCarousel(1)}
+              aria-label="Voir la formule suivante"
+              className="size-10 rounded-full bg-copper-500 text-cream-50 inline-flex items-center justify-center shadow-sm"
+            >
+              <ChevronRight size={20} aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+
         <div
           ref={ref}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-6 -mx-6 px-6 pb-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 scrollbar-hide"
@@ -105,7 +127,7 @@ export default function Formules() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
-              className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none ${formule.highlight ? 'order-first md:order-none' : ''} ${formule.bg} border ${formule.highlight ? 'border-2 border-copper-500' : formule.border} rounded-2xl p-6 flex flex-col`}
+              className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none ${formule.bg} border ${formule.highlight ? 'border-2 border-copper-500' : formule.border} rounded-2xl p-6 flex flex-col`}
             >
               {formule.badge && (
                 <div className="absolute -top-3 left-6">
@@ -143,7 +165,7 @@ export default function Formules() {
         </div>
 
         <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-400" aria-hidden="true">
-          Faites glisser vers la gauche ou la droite pour comparer les formules.
+          ← Faites glisser les cartes ou utilisez les flèches →
         </p>
 
         <p className="font-sans text-sm text-center text-bark-700 italic mt-8 max-w-xl mx-auto">

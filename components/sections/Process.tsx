@@ -41,7 +41,7 @@ export default function Process() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="comment-ca-marche" className="bg-cream-100 py-20 md:py-28 px-6 md:px-8">
+    <section id="comment-ca-marche" className="bg-cream-100 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">

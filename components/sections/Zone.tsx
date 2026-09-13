@@ -68,7 +68,7 @@ export default function Zone() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="bg-bark-900 py-20 md:py-28">
+    <section className="bg-bark-900 py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <motion.div
           ref={ref}

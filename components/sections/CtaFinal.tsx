@@ -9,7 +9,7 @@ export default function CtaFinal() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="bg-bark-900 py-20 md:py-28">
+    <section className="bg-bark-900 py-16 md:py-20">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}

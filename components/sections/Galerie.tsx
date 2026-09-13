@@ -99,7 +99,7 @@ export default function Galerie() {
   }, [activeFilter])
 
   return (
-    <section id="galerie" className="scroll-mt-24 md:scroll-mt-28 bg-cream-50 py-20 md:py-28 px-6 md:px-8">
+    <section id="galerie" className="scroll-mt-24 md:scroll-mt-28 bg-cream-50 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-8 mb-12 md:flex-row md:items-end md:justify-between">
           <div>

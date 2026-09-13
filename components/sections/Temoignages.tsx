@@ -133,7 +133,7 @@ export default function Temoignages() {
   }, [active])
 
   return (
-    <section id="avis" className="bg-cream-100 py-20 md:py-28">
+    <section id="avis" className="bg-cream-100 py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <div className="text-center mb-10">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">

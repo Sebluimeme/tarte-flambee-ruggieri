@@ -21,12 +21,10 @@ const FORMULES = [
       "La formule simple et conviviale. En dessous de 40 personnes, un devis adapté reste possible.",
     features: [
       "Four à bois mobile et cuisson sur place",
-      "Service par notre équipe",
       "1 tarte flambée salée par personne",
       "Pâtes laminées fines",
       "Garnitures classiques : nature, gratinée, forestière",
       "Ingrédients frais",
-      "Déplacement inclus en zone principale (20 km autour de Colmar, au-delà participation aux frais de déplacements sur devis)",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
@@ -43,12 +41,10 @@ const FORMULES = [
       "La formule à volonté — parfaite pour les fêtes de famille, associations et repas d'entreprise.",
     features: [
       "Four à bois mobile et cuisson sur place",
-      "Service complet par notre équipe",
       "Tartes flambées salées à volonté",
       "Pâtes laminées fines",
       "Garnitures classiques et variées",
       "Ingrédients frais",
-      "Animation autour du four",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
@@ -64,13 +60,11 @@ const FORMULES = [
       "Une formule généreuse et festive : salées à volonté, dessert sucré et un verre de bière offert.",
     features: [
       "Four à bois mobile et cuisson sur place",
-      "Service complet par notre équipe",
       "Tartes flambées salées à volonté",
       "Garnitures classiques et variées",
-      "Tartes flambées sucrées : pommes-cannelle, myrtilles",
+      "Tartes flambées sucrées : pommes-cannelle, myrtilles…",
       "1 verre de bière offert par personne",
       "Pâtes laminées fines",
-      "Animation complète autour du four",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
@@ -83,15 +77,12 @@ const FORMULES = [
     duration: "",
     highlight: false,
     description:
-      "Vous profitez, nous nous occupons du reste. Prestation personnalisée selon votre lieu, vos invités et vos besoins.",
+      "Composez librement votre prestation à la carte selon vos envies et votre événement.",
     features: [
       "Formule tartes flambées au choix",
-      "Four à bois mobile installé sur place",
-      "Tables, chaises, mange-debout et tonnelles selon disponibilité",
-      "Vaisselle, verrerie et matériel de service",
-      "Boissons complémentaires en option",
-      "Installation, service et débarrassage",
-      "Prestation personnalisée selon votre événement",
+      "Options selon vos besoins",
+      "Mobilier, vaisselle, boissons, tonnelles…",
+      "Devis personnalisé",
     ],
     cta: "Demander un devis",
     ctaHref: "/contact",
@@ -156,7 +147,7 @@ export default function FormulesPage() {
             {FORMULES.map((f) => (
               <div
                 key={f.name}
-                className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none ${f.highlight ? 'order-first md:order-none' : ''} rounded-2xl p-8 flex flex-col border transition-all duration-200 ${
+                className={`relative w-[82vw] max-w-[21rem] shrink-0 snap-center md:w-auto md:max-w-none rounded-2xl p-8 flex flex-col border transition-all duration-200 ${
                   f.highlight
                     ? "bg-bark-900 border-bark-900 shadow-md"
                     : "bg-cream-100 border-stone-200 hover:shadow-md"
@@ -229,7 +220,7 @@ export default function FormulesPage() {
             ))}
           </div>
           <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-400" aria-hidden="true">
-            Faites glisser vers la gauche ou la droite pour comparer les formules.
+            ← Faites glisser vers la gauche ou la droite pour comparer →
           </p>
           <p className="font-sans text-sm text-center text-bark-700 mt-8 max-w-2xl mx-auto">
             En dessous du seuil indiqué, la prestation reste possible selon nos disponibilités. Un forfait minimum de prestation et des frais de déplacement peuvent s&apos;appliquer selon le lieu ; ils sont toujours précisés dans le devis.

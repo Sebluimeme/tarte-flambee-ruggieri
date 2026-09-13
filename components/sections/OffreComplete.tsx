@@ -12,7 +12,7 @@ import { Phone } from 'lucide-react'
  */
 export default function OffreComplete() {
   return (
-    <section className="bg-bark-900 py-20 md:py-28 px-6 md:px-8">
+    <section className="bg-bark-900 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-400 mb-4">
