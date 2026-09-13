@@ -1,7 +1,26 @@
 'use client'
 
-import { useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import Link from 'next/link'
+
+const CONSENT_CHANGE_EVENT = 'cookie-consent-change'
+
+function subscribeToConsent(onStoreChange: () => void) {
+  window.addEventListener(CONSENT_CHANGE_EVENT, onStoreChange)
+  return () => window.removeEventListener(CONSENT_CHANGE_EVENT, onStoreChange)
+}
+
+function getConsentSnapshot() {
+  try {
+    return !localStorage.getItem('cookie-consent')
+  } catch {
+    return true
+  }
+}
+
+function getServerConsentSnapshot() {
+  return false
+}
 
 declare global {
   interface Window {
@@ -36,26 +55,28 @@ function updateConsent(granted: boolean) {
 }
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(
-    () => typeof window !== 'undefined' && !localStorage.getItem('cookie-consent')
+  const visible = useSyncExternalStore(
+    subscribeToConsent,
+    getConsentSnapshot,
+    getServerConsentSnapshot
   )
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted')
     updateConsent(true)
-    setVisible(false)
+    window.dispatchEvent(new Event(CONSENT_CHANGE_EVENT))
   }
 
   const refuse = () => {
     localStorage.setItem('cookie-consent', 'refused')
     updateConsent(false)
-    setVisible(false)
+    window.dispatchEvent(new Event(CONSENT_CHANGE_EVENT))
   }
 
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-bark-900/95 backdrop-blur-sm border-t border-stone-200/10">
+    <div data-cookie-banner className="fixed bottom-0 left-0 right-0 z-[60] p-3 md:p-4 bg-bark-900/95 backdrop-blur-sm border-t border-stone-200/10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-4 justify-between">
         <p className="font-sans text-sm text-cream-100 leading-relaxed">
           Nous utilisons des cookies techniques nécessaires au fonctionnement du site.{' '}
@@ -63,7 +84,7 @@ export default function CookieBanner() {
             En savoir plus
           </Link>
         </p>
-        <div className="flex gap-3 shrink-0">
+        <div className="flex gap-3 shrink-0 md:mr-16">
           <button
             onClick={refuse}
             className="px-4 py-2 rounded-full font-sans text-sm text-cream-200 border border-stone-200/20 hover:bg-stone-200/10 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-400"

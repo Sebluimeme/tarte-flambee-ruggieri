@@ -30,7 +30,7 @@ export default function CtaFinal() {
           href="/contact"
           className="hidden md:inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cream-50 text-bark-900 font-sans font-medium text-base hover:bg-cream-100 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2 focus:ring-offset-bark-900"
         >
-          Vérifier ma disponibilité
+          Vérifier ma date
         </Link>
         <a
           href="tel:+33785621089"

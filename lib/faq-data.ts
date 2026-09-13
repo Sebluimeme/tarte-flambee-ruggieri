@@ -48,3 +48,7 @@ export const faqs: FaqItem[] = [
     a: "Oui. L'annulation est gratuite, sans frais. Pour une modification (date, nombre de convives, lieu), signalez-le par écrit le plus tôt possible — nous ferons tout pour l'accommoder sous réserve de disponibilité.",
   },
 ]
+
+// Sélection courte pour l'accueil : les questions qui lèvent les principaux
+// freins avant une demande de devis. Les autres réponses restent traitées au contact.
+export const homeFaqs = [faqs[0], faqs[1], faqs[2], faqs[3], faqs[5], faqs[8]]

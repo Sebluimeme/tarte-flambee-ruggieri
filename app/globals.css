@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body:has([data-cookie-banner]) .whatsapp-float {
+  bottom: 6.5rem;
+}
+
 @theme inline {
   /* ── Palette ── */
   --color-cream-50:  #FDFBF5;

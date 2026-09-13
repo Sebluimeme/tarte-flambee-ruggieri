@@ -21,9 +21,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bark-900/40 to-bark-900/80" />
 
       {/* Contenu */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-44 md:pb-24 w-full min-w-0 -translate-y-10 md:translate-y-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-44 md:pb-32 w-full min-w-0 -translate-y-10 md:translate-y-0">
         <div className="max-w-3xl min-w-0">
-          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6 break-words">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.0] text-cream-50 mb-6 break-words">
             La vraie <em>Flammekueche</em><br />
             <span className="block">au feu de bois,</span>
             <span className="block">chez vous.</span>
@@ -37,7 +37,7 @@ export default function Hero() {
               href="/contact"
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base text-center hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
             >
-              Demander un devis gratuit
+              Vérifier ma date
             </Link>
             <a
               href="tel:+33785621089"

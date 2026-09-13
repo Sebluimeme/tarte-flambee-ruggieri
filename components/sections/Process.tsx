@@ -30,9 +30,9 @@ const STEPS = [
   {
     number: '04',
     Icon: Utensils,
-    title: 'Le service à volonté',
+    title: 'Le service selon votre formule',
     description:
-      "Tartes salées et sucrées se succèdent tant qu'il y a de l'appétit. Vous ne gérez rien — on est là du début à la fin.",
+      "Nous adaptons le rythme et les quantités à la formule choisie. Vous ne gérez rien — on est là du début à la fin.",
   },
 ]
 
@@ -89,7 +89,7 @@ export default function Process() {
             href="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base hover:bg-copper-400 transition-all shadow-sm hover:shadow-md"
           >
-            Demander mon devis gratuit
+            Vérifier ma date
           </Link>
         </div>
       </div>

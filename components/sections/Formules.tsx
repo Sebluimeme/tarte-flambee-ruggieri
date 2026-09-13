@@ -13,12 +13,9 @@ const formules = [
     label: 'La formule simple et conviviale — dès 30 personnes',
     badge: null,
     features: [
-      'Four à bois mobile et cuisson sur place',
       'Service par notre équipe',
       '1 tarte flambée salée par personne',
-      'Pâtes laminées fines',
       'Garnitures classiques : nature, gratinée, forestière',
-      'Ingrédients frais',
       'Déplacement inclus en zone principale (20 km autour de Colmar, au-delà participation aux frais de déplacements sur devis)',
     ],
     highlight: false,
@@ -32,12 +29,9 @@ const formules = [
     label: 'La formule à volonté — dès 30 personnes',
     badge: null,
     features: [
-      'Four à bois mobile et cuisson sur place',
       'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
-      'Pâtes laminées fines',
       'Garnitures classiques et variées',
-      'Ingrédients frais',
       'Animation autour du four',
     ],
     highlight: false,
@@ -51,13 +45,11 @@ const formules = [
     label: 'Salées à volonté + dessert — dès 30 personnes',
     badge: 'Le plus populaire',
     features: [
-      'Four à bois mobile et cuisson sur place',
       'Service complet par notre équipe',
       'Tartes flambées salées à volonté',
       'Garnitures classiques et variées',
       'Tartes flambées sucrées en dessert : pommes-cannelle, myrtilles',
       '1 verre de bière offert par personne',
-      'Pâtes laminées fines',
       'Animation complète autour du four',
     ],
     highlight: true,
@@ -72,7 +64,6 @@ const formules = [
     badge: null,
     features: [
       'Formule tartes flambées au choix',
-      'Four à bois mobile installé sur place',
       'Tables, chaises, mange-debout et tonnelles selon disponibilité',
       'Vaisselle, verrerie et matériel de service',
       'Boissons complémentaires en option',
@@ -101,6 +92,9 @@ export default function Formules() {
           </h2>
           <p className="font-sans text-base leading-relaxed text-bark-700 max-w-2xl mx-auto mt-4">
             Soirées d&apos;entreprise, mariages, anniversaires, repas d&apos;association — nous nous adaptons à chaque occasion, y compris en mode animation de soirée.
+          </p>
+          <p className="font-sans text-sm text-bark-700 max-w-2xl mx-auto mt-3 font-medium">
+            Toutes nos formules incluent le four mobile, la cuisson sur place, une pâte fine et des ingrédients frais.
           </p>
         </div>
 
@@ -142,7 +136,7 @@ export default function Formules() {
                     : 'bg-transparent text-bark-900 border border-bark-900/20 hover:border-bark-900/40 focus:ring-bark-900'
                 }`}
               >
-                Demander un devis
+                Vérifier ma date
               </Link>
             </motion.div>
           ))}

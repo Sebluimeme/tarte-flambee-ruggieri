@@ -8,7 +8,7 @@ import { useRef } from 'react'
 const features = [
   { icon: Flame, label: 'Cuisson au feu de bois' },
   { icon: Wheat, label: 'Pâte fine de qualité' },
-  { icon: Users, label: 'À volonté pendant 2h' },
+  { icon: Users, label: 'Animation autour du four' },
 ]
 
 export default function Concept() {
@@ -37,7 +37,7 @@ export default function Concept() {
               Notre four mobile s&apos;installe sur votre lieu de réception — jardin, salle des fêtes,
               parking d&apos;entreprise. Ingrédients d&apos;Alsace : fromage blanc fermier, oignons et lardons du pays.
               Vous accueillez vos invités, on s&apos;occupe de la préparation, de la cuisson et du service.
-              Les tartes sortent du four toutes les 90 secondes, croustillantes, à volonté.
+              Les tartes sortent du four toutes les 90 secondes, croustillantes et servies au fil de la cuisson.
             </p>
             <div className="flex flex-col gap-4">
               {features.map((feat) => (
