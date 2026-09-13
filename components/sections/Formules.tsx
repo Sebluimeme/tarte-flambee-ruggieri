@@ -93,9 +93,6 @@ export default function Formules() {
           <p className="font-sans text-base leading-relaxed text-bark-700 max-w-2xl mx-auto mt-4">
             Soirées d&apos;entreprise, mariages, anniversaires, repas d&apos;association — nous nous adaptons à chaque occasion, y compris en mode animation de soirée.
           </p>
-          <p className="font-sans text-sm text-bark-700 max-w-2xl mx-auto mt-3 font-medium">
-            Toutes nos formules incluent le four mobile, la cuisson sur place, une pâte fine et des ingrédients frais.
-          </p>
         </div>
 
         <div
