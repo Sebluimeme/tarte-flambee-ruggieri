@@ -8,7 +8,16 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string | string[] }>;
+}) {
+  const requestedType = (await searchParams).type;
+  const initialEventType = requestedType === "entreprise" || requestedType === "inauguration"
+    ? requestedType
+    : "";
+
   return (
     <>
       {/* Hero */}
@@ -26,7 +35,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Contact />
+      <Contact initialEventType={initialEventType} />
     </>
   );
 }

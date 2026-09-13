@@ -66,8 +66,15 @@ function newSubmissionId(): string {
   return `sub-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export default function Contact() {
-  const [form, setForm] = useState<FormState>(initialState);
+export default function Contact({
+  initialEventType = "",
+}: {
+  initialEventType?: "entreprise" | "inauguration" | "";
+}) {
+  const [form, setForm] = useState<FormState>({
+    ...initialState,
+    typeEvenement: initialEventType,
+  });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [submissionId, setSubmissionId] = useState<string>(newSubmissionId);
 
