@@ -32,14 +32,14 @@ export default function Home() {
       />
       <Hero />
       <TrustBar />
+      <Concept />
       <Formules />
-      <Temoignages />
       <OffreComplete />
       <UrgencyBanner />
-      <Concept />
       <Process />
       <Occasions />
       <Galerie />
+      <Temoignages />
       <Faq />
       <Zone />
       <CtaFinal />
