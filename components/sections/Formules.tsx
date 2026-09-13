@@ -174,9 +174,6 @@ export default function Formules() {
         <p className="font-sans text-sm text-center text-bark-700 mt-3 max-w-2xl mx-auto">
           En dessous du seuil indiqué, la prestation reste possible selon nos disponibilités. Un forfait minimum de prestation et des frais de déplacement peuvent s&apos;appliquer selon le lieu ; ils sont toujours précisés dans le devis.
         </p>
-        <p className="font-sans text-xs text-center text-stone-400 mt-2">
-          * Tarifs TTC pour les particuliers, HT pour les professionnels
-        </p>
       </div>
     </section>
   )
