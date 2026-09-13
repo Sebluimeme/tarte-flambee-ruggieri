@@ -11,7 +11,7 @@ const STEPS = [
     Icon: Truck,
     title: 'Le four arrive',
     description:
-      "Notre four à bois mobile s'installe en 30 minutes sur votre lieu de réception. Jardin, salle des fêtes, parking d'entreprise : on s'adapte à votre espace.",
+      "Notre four à bois mobile s'installe en environ 1 heure sur votre lieu de réception. Jardin, salle des fêtes, parking d'entreprise : on s'adapte à votre espace.",
   },
   {
     number: '02',

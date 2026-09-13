@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { MapPin } from 'lucide-react'
 
 const villes = [
   'Strasbourg', 'Colmar', 'Mulhouse', 'Sélestat',
@@ -10,6 +11,57 @@ const villes = [
   'Épinal', 'Saint-Dié-des-Vosges', 'Gérardmer', 'Remiremont',
   'Belfort',
 ]
+
+const mapTiles = [87, 88, 89].flatMap((y) =>
+  [131, 132, 133, 134].map((x) => ({ x, y }))
+)
+
+function ServiceAreaMap() {
+  return (
+    <a
+      href="https://www.openstreetmap.org/?mlat=48.1743&mlon=7.1278#map=8/48.1743/7.1278"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Voir Le Bonhomme et notre zone d'intervention sur OpenStreetMap"
+      className="group relative block order-2 lg:order-1 rounded-2xl overflow-hidden border border-stone-200/15 aspect-[4/3] bg-cream-100 focus:outline-none focus:ring-2 focus:ring-copper-400"
+    >
+      <div
+        className="absolute left-1/2 top-1/2 w-[1024px] h-[768px]"
+        style={{ transform: 'translate(-530px, -462px)' }}
+        aria-hidden="true"
+      >
+        {mapTiles.map(({ x, y }) => (
+          <div
+            key={`${x}-${y}`}
+            className="absolute size-64 bg-cover"
+            style={{
+              left: `${(x - 131) * 256}px`,
+              top: `${(y - 87) * 256}px`,
+              backgroundImage: `url(https://tile.openstreetmap.org/8/${x}/${y}.png)`,
+            }}
+          />
+        ))}
+
+        <div className="absolute left-[530px] top-[462px] size-72 md:size-[390px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-copper-500 bg-copper-500/15 shadow-[0_0_0_1px_rgba(255,255,255,0.65)]" />
+        <MapPin
+          className="absolute left-[530px] top-[462px] -translate-x-1/2 -translate-y-full text-copper-600 fill-cream-50 drop-shadow-md"
+          size={38}
+          strokeWidth={2.5}
+        />
+      </div>
+
+      <span className="absolute left-3 top-3 rounded-full bg-cream-50/95 px-3 py-1.5 font-sans text-xs font-semibold text-bark-900 shadow-sm">
+        Le Bonhomme · zone principale
+      </span>
+      <span className="absolute bottom-2 right-2 rounded bg-cream-50/90 px-2 py-1 font-sans text-[10px] text-bark-700">
+        © OpenStreetMap contributors
+      </span>
+      <span className="absolute bottom-3 left-3 rounded-full bg-bark-900/85 px-3 py-1.5 font-sans text-xs font-medium text-cream-50 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+        Ouvrir la carte
+      </span>
+    </a>
+  )
+}
 
 export default function Zone() {
   const ref = useRef(null)
@@ -25,16 +77,7 @@ export default function Zone() {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Carte interactive OpenStreetMap */}
-          <div className="order-2 lg:order-1 rounded-2xl overflow-hidden border border-stone-200/15 aspect-[4/3]">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=6.85%2C47.35%2C8.05%2C49.05&layer=mapnik&marker=48.1743%2C7.1278"
-              className="w-full h-full"
-              title="Zone d'intervention Poivre & Salé en Alsace"
-              loading="lazy"
-              aria-label="Carte interactive de la zone d'intervention de Poivre & Salé en Alsace"
-            />
-          </div>
+          <ServiceAreaMap />
 
           {/* Texte + villes */}
           <div className="order-1 lg:order-2">
