@@ -8,6 +8,7 @@ import {
   Boxes,
   ChevronLeft,
   ChevronRight,
+  Coffee,
   Flame,
   Pause,
   Play,
@@ -83,6 +84,16 @@ const EQUIPMENT = [
     description: 'Les éléments de table peuvent être prévus pour garder une réception cohérente et bien présentée.',
     icon: UtensilsCrossed,
     tone: 'from-[#b7906b] via-copper-700 to-bark-900',
+    image: null,
+    imageAlt: '',
+    imagePosition: 'object-center',
+  },
+  {
+    name: 'Machine à café',
+    badge: 'En option',
+    description: 'Pour terminer le repas avec un café chaud servi simplement à vos collaborateurs et à vos invités.',
+    icon: Coffee,
+    tone: 'from-[#a97b55] via-bark-600 to-bark-900',
     image: null,
     imageAlt: '',
     imagePosition: 'object-center',
@@ -271,7 +282,7 @@ export default function EquipmentCarousel() {
               {isPaused ? 'Relancer' : 'Mettre en pause'}
             </button>
             <span className="font-sans text-xs font-semibold text-copper-600">
-              8 possibilités
+              {EQUIPMENT.length} possibilités
             </span>
           </div>
         </div>
