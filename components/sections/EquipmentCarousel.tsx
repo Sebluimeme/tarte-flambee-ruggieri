@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import {
   Armchair,
@@ -9,6 +9,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Flame,
+  Pause,
+  Play,
   Table2,
   TentTree,
   UtensilsCrossed,
@@ -99,18 +101,41 @@ const EQUIPMENT = [
 
 export default function EquipmentCarousel() {
   const trackRef = useRef<HTMLUListElement>(null)
+  const interactionPausedRef = useRef(false)
+  const [isPaused, setIsPaused] = useState(false)
 
-  const move = (direction: -1 | 1) => {
+  const move = useCallback((direction: -1 | 1, loop = false) => {
     const track = trackRef.current
     const firstCard = track?.firstElementChild as HTMLElement | null
     if (!track || !firstCard) return
 
     const gap = Number.parseFloat(window.getComputedStyle(track).columnGap) || 20
-    track.scrollBy({
-      left: direction * (firstCard.getBoundingClientRect().width + gap),
+    const step = firstCard.getBoundingClientRect().width + gap
+    const maxScroll = track.scrollWidth - track.clientWidth
+    const shouldReturnToStart =
+      loop && direction === 1 && track.scrollLeft >= maxScroll - 2
+
+    track.scrollTo({
+      left: shouldReturnToStart
+        ? 0
+        : Math.max(0, Math.min(track.scrollLeft + direction * step, maxScroll)),
       behavior: 'smooth',
     })
-  }
+  }, [])
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
+
+    if (isPaused || prefersReducedMotion) return
+
+    const timer = window.setInterval(() => {
+      if (!interactionPausedRef.current) move(1, true)
+    }, 2000)
+
+    return () => window.clearInterval(timer)
+  }, [isPaused, move])
 
   return (
     <section className="overflow-hidden bg-cream-100 py-20 md:py-24" aria-labelledby="equipment-title">
@@ -148,7 +173,29 @@ export default function EquipmentCarousel() {
           </div>
         </div>
 
-        <div role="region" aria-roledescription="carrousel" aria-label="Équipements disponibles">
+        <div
+          role="region"
+          aria-roledescription="carrousel"
+          aria-label="Équipements disponibles"
+          onMouseEnter={() => {
+            interactionPausedRef.current = true
+          }}
+          onMouseLeave={() => {
+            interactionPausedRef.current = false
+          }}
+          onFocusCapture={() => {
+            interactionPausedRef.current = true
+          }}
+          onBlurCapture={() => {
+            interactionPausedRef.current = false
+          }}
+          onTouchStart={() => {
+            interactionPausedRef.current = true
+          }}
+          onTouchEnd={() => {
+            interactionPausedRef.current = false
+          }}
+        >
           <ul
             ref={trackRef}
             className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 scrollbar-hide md:mx-0 md:px-0"
@@ -205,13 +252,28 @@ export default function EquipmentCarousel() {
           </ul>
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-4">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
           <p className="font-sans text-xs leading-relaxed text-bark-500">
-            Faites glisser pour découvrir tout le matériel.
+            Une nouvelle carte apparaît toutes les 2 secondes. Vous pouvez aussi faire glisser le carrousel.
           </p>
-          <span className="font-sans text-xs font-semibold text-copper-600">
-            8 possibilités
-          </span>
+          <div className="flex shrink-0 items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setIsPaused((paused) => !paused)}
+              aria-pressed={isPaused}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-bark-900/15 bg-cream-50 px-4 font-sans text-xs font-semibold text-bark-900 transition-colors hover:border-copper-500 hover:text-copper-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2"
+            >
+              {isPaused ? (
+                <Play className="h-3.5 w-3.5" aria-hidden="true" />
+              ) : (
+                <Pause className="h-3.5 w-3.5" aria-hidden="true" />
+              )}
+              {isPaused ? 'Relancer' : 'Mettre en pause'}
+            </button>
+            <span className="font-sans text-xs font-semibold text-copper-600">
+              8 possibilités
+            </span>
+          </div>
         </div>
       </div>
     </section>
