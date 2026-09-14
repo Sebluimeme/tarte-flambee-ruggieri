@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
 import ClientLogos from '@/components/sections/ClientLogos'
+import EquipmentCarousel from '@/components/sections/EquipmentCarousel'
 
 export const metadata: Metadata = {
   title: 'Traiteur tarte flambée entreprise clé en main | Alsace',
@@ -279,55 +280,7 @@ export default function SoireeEntreprisePage() {
         </div>
       </section>
 
-      <section className="bg-cream-100 px-6 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
-              Sur votre lieu
-            </p>
-            <h2 className="mb-5 font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
-              Le four fait le spectacle. L’organisation fait la différence.
-            </h2>
-            <p className="font-sans text-base leading-relaxed text-bark-600 md:text-lg">
-              Nous transformons une cour, un parking ou une terrasse en point de rencontre accueillant. Vos invités voient les tartes sortir du four pendant que vous restez disponible pour eux.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-[1.15fr_0.85fr]">
-            <figure className="overflow-hidden rounded-3xl bg-bark-900 shadow-lg">
-              <div className="relative min-h-[380px] md:min-h-[520px]">
-                <Image
-                  src="/media/four-bois-action.jpg"
-                  fill
-                  className="object-cover object-center"
-                  alt="Cuisson de tartes flambées au feu de bois pendant un événement"
-                  sizes="(min-width: 768px) 58vw, 100vw"
-                />
-              </div>
-              <figcaption className="p-6 text-cream-50">
-                <p className="font-display text-2xl font-medium">Préparées et servies minute</p>
-                <p className="mt-2 font-sans text-sm leading-relaxed text-cream-100/70">Une animation gourmande qui rassemble naturellement les équipes.</p>
-              </figcaption>
-            </figure>
-
-            <figure className="overflow-hidden rounded-3xl bg-bark-900 shadow-lg">
-              <div className="relative min-h-[380px] md:min-h-[520px]">
-                <Image
-                  src="/media/accueil-cafe-entreprise.jpg"
-                  fill
-                  className="object-cover object-center"
-                  alt="Stand d’accueil propre et soigné installé pour une réception"
-                  sizes="(min-width: 768px) 42vw, 100vw"
-                />
-              </div>
-              <figcaption className="p-6 text-cream-50">
-                <p className="font-display text-2xl font-medium">Un accueil propre et soigné</p>
-                <p className="mt-2 font-sans text-sm leading-relaxed text-cream-100/70">Le matériel utile est installé avant l’arrivée de vos collaborateurs ou clients.</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+      <EquipmentCarousel />
 
       <section className="bg-cream-50 px-6 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
