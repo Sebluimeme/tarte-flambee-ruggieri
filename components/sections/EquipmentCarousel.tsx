@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import {
   Armchair,
   Beer,
@@ -20,6 +21,9 @@ const EQUIPMENT = [
     description: 'Le cœur de l’animation : les tartes flambées sont préparées, cuites et servies devant vos invités.',
     icon: Flame,
     tone: 'from-copper-400 via-copper-600 to-bark-900',
+    image: '/media/entreprise-cuisson-four-bois.webp',
+    imageAlt: 'Tartes flambées en cuisson devant les flammes du four à bois mobile',
+    imagePosition: 'object-[center_45%]',
   },
   {
     name: 'Tireuse à bière',
@@ -27,6 +31,9 @@ const EQUIPMENT = [
     description: 'Une solution simple pour servir la bière pendant un repas d’équipe, un afterwork ou une soirée.',
     icon: Beer,
     tone: 'from-[#d89c45] via-copper-500 to-bark-900',
+    image: '/media/entreprise-tireuse-biere.webp',
+    imageAlt: 'Tireuse à bière installée sur une table nappée pour un événement',
+    imagePosition: 'object-[center_52%]',
   },
   {
     name: 'Tables hautes et mange-debout',
@@ -34,6 +41,9 @@ const EQUIPMENT = [
     description: 'Pour créer des points de rencontre et faciliter les échanges pendant les formats debout.',
     icon: Table2,
     tone: 'from-stone-400 via-bark-600 to-bark-900',
+    image: '/media/entreprise-installation-barnums-mobilier.webp',
+    imageAlt: 'Tables hautes nappées installées sous des barnums devant une entreprise',
+    imagePosition: 'object-[45%_58%]',
   },
   {
     name: 'Barnum et tonnelle',
@@ -41,6 +51,9 @@ const EQUIPMENT = [
     description: 'Un espace abrité pour installer le stand et anticiper les conditions météo de votre événement.',
     icon: TentTree,
     tone: 'from-[#77856d] via-bark-600 to-bark-900',
+    image: '/media/entreprise-barnums-mange-debout.webp',
+    imageAlt: 'Barnums et mange-debout installés dans un jardin pour recevoir les invités',
+    imagePosition: 'object-center',
   },
   {
     name: 'Tables de réception',
@@ -48,6 +61,9 @@ const EQUIPMENT = [
     description: 'Des tables adaptées à un repas assis, à un buffet ou à la présentation des boissons et du service.',
     icon: Table2,
     tone: 'from-copper-300 via-bark-600 to-bark-900',
+    image: null,
+    imageAlt: '',
+    imagePosition: 'object-center',
   },
   {
     name: 'Chaises',
@@ -55,6 +71,9 @@ const EQUIPMENT = [
     description: 'Le mobilier nécessaire pour accueillir confortablement vos collaborateurs, clients ou partenaires.',
     icon: Armchair,
     tone: 'from-stone-500 via-bark-700 to-bark-900',
+    image: null,
+    imageAlt: '',
+    imagePosition: 'object-center',
   },
   {
     name: 'Vaisselle, couverts et verrerie',
@@ -62,6 +81,9 @@ const EQUIPMENT = [
     description: 'Les éléments de table peuvent être prévus pour garder une réception cohérente et bien présentée.',
     icon: UtensilsCrossed,
     tone: 'from-[#b7906b] via-copper-700 to-bark-900',
+    image: null,
+    imageAlt: '',
+    imagePosition: 'object-center',
   },
   {
     name: 'Installation complète',
@@ -69,6 +91,9 @@ const EQUIPMENT = [
     description: 'Nous mettons en place le matériel retenu avant l’arrivée des invités, puis nous rangeons après le service.',
     icon: Boxes,
     tone: 'from-copper-500 via-bark-700 to-bark-900',
+    image: '/media/entreprise-four-mobile-stand.webp',
+    imageAlt: 'Four à bois mobile et tables de service installés avant une réception',
+    imagePosition: 'object-[center_55%]',
   },
 ]
 
@@ -136,17 +161,30 @@ export default function EquipmentCarousel() {
                   className="flex-[0_0_84%] snap-start sm:flex-[0_0_48%] lg:flex-[0_0_32%]"
                 >
                   <article className="group flex h-full min-h-[410px] flex-col overflow-hidden rounded-3xl border border-stone-200 bg-cream-50 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
-                    <div className={['relative flex min-h-52 items-center justify-center overflow-hidden bg-gradient-to-br', item.tone].join(' ')}>
+                    <div className={['relative flex min-h-56 items-center justify-center overflow-hidden bg-gradient-to-br', item.tone].join(' ')}>
+                      {item.image ? (
+                        <>
+                          <Image
+                            src={item.image}
+                            alt={item.imageAlt}
+                            fill
+                            sizes="(max-width: 639px) 84vw, (max-width: 1023px) 48vw, 32vw"
+                            className={['object-cover transition-transform duration-500 group-hover:scale-[1.03]', item.imagePosition].join(' ')}
+                          />
+                          <span className="absolute inset-0 bg-gradient-to-t from-bark-900/55 via-transparent to-bark-900/10" aria-hidden="true" />
+                        </>
+                      ) : (
+                        <Icon
+                          size={74}
+                          strokeWidth={1.25}
+                          className="relative text-cream-50 drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                          aria-hidden="true"
+                        />
+                      )}
                       <span className="absolute left-5 top-4 font-sans text-sm font-semibold text-cream-50/55">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                       <span className="absolute -bottom-16 -right-12 h-48 w-48 rounded-full border-[28px] border-cream-50/5" aria-hidden="true" />
-                      <Icon
-                        size={74}
-                        strokeWidth={1.25}
-                        className="relative text-cream-50 drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
-                        aria-hidden="true"
-                      />
                     </div>
 
                     <div className="flex flex-1 flex-col p-6">
