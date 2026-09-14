@@ -20,8 +20,8 @@ const OCCASIONS = [
     href: "/tarte-flambee-soiree-entreprise",
     description:
       "Une formule chaleureuse pour réunir vos collaborateurs autrement.",
-    img: "/media/ambiance-soiree.jpg",
-    alt: "Buffet de soirée d'entreprise animé par Poivre & Salé sous éclairage violet",
+    img: "/media/buffet-traiteur-soiree-retouche.webp",
+    alt: "Chef derrière un buffet de soirée d'entreprise sous un éclairage violet",
   },
   {
     title: "Anniversaires & fêtes de famille",

@@ -13,10 +13,18 @@ const SOCIAL = {
 
 const navLinks = [
   { href: '/formules',      label: 'Nos formules' },
+  { href: '/galerie',       label: 'Galerie' },
   { href: '/#avis',         label: 'Témoignages' },
   { href: '/contact',       label: 'Contact' },
   { href: '/conseils',      label: 'Conseils' },
   { href: '/allergenes',    label: 'Allergènes' },
+]
+
+const eventLinks = [
+  { href: '/tarte-flambee-mariage', label: 'Mariage' },
+  { href: '/tarte-flambee-soiree-entreprise', label: 'Entreprise' },
+  { href: '/tarte-flambee-anniversaire', label: 'Anniversaire' },
+  { href: '/tarte-flambee-association', label: 'Association & club' },
 ]
 
 function IconInstagram() {
@@ -49,7 +57,7 @@ export default function Footer() {
   return (
     <footer className="bg-bark-900 border-t border-stone-200/10">
       <div className="max-w-6xl mx-auto px-6 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 gap-10 mb-12 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Col 1 — Marque + réseaux (si activés) */}
           <div>
@@ -103,7 +111,25 @@ export default function Footer() {
             )}
           </div>
 
-          {/* Col 2 — Navigation */}
+          {/* Col 2 — Événements */}
+          <div>
+            <p className="text-sm font-sans font-medium text-cream-200 uppercase tracking-widest mb-4">
+              Vos événements
+            </p>
+            <nav className="flex flex-col gap-3" aria-label="Pages par type d’événement">
+              {eventLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-stone-400 hover:text-cream-50 transition-colors focus:outline-none focus:ring-2 focus:ring-copper-500 rounded-sm"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Col 3 — Navigation */}
           <div>
             <p className="text-sm font-sans font-medium text-cream-200 uppercase tracking-widest mb-4">
               Navigation
@@ -131,7 +157,7 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Col 3 — Contact */}
+          {/* Col 4 — Contact */}
           <div>
             <p className="text-sm font-sans font-medium text-cream-200 uppercase tracking-widest mb-4">
               Contact

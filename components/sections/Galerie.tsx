@@ -1,37 +1,10 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRef, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-
-function InstagramIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  )
-}
-
-type GalleryItem = {
-  src: string
-  alt: string
-  imageClassName?: string
-}
-
-const GALLERY_ITEMS: GalleryItem[] = [
-  { src: '/media/prestation-tarte-flambee.jpg', alt: 'Stand Poivre & Salé installé en extérieur avec four à bois et tables de service' },
-  { src: '/media/service-tarte-flambee.jpg', alt: 'Four à bois mobile ouvert avec bûches empilées sous la chambre de cuisson' },
-  { src: '/media/tarte-flambee-artisanale.jpg', alt: 'Tables dressées sous tente pour une réception servie par Poivre & Salé' },
-  { src: '/media/cuisson-four-a-bois.jpg', alt: 'Stand de cuisson Poivre & Salé monté sur une place extérieure avec four à bois mobile', imageClassName: 'object-right scale-125 origin-right' },
-  { src: '/media/ambiance-soiree.jpg', alt: 'Buffet de soirée d’entreprise animé par Poivre & Salé sous éclairage violet' },
-  { src: '/media/tarte-flambee-cuisson-flammes-four-bois.jpg', alt: 'Tarte flambée en cuisson devant les flammes du four à bois' },
-  { src: '/media/tartes-flambees-four-bois-traiteur.jpg', alt: 'Plusieurs tartes flambées cuisent côte à côte dans le four à bois mobile' },
-  { src: '/media/marc-poivre-sale-four-bois-mobile.jpg', alt: 'Marc de Poivre & Salé souriant devant son four à bois mobile' },
-  { src: '/media/hero-mariage.jpg', alt: 'Four à bois pour mariage en Alsace' },
-  { src: '/media/tarte-anniversaire-famille.jpg', alt: 'Tarte flambée au four à bois pour un anniversaire en famille' },
-]
+import { FEATURED_GALLERY_ITEMS, GALLERY_ITEMS } from '@/lib/gallery-data'
 
 const SCROLL_AMOUNT = 336
 const AUTO_INTERVAL = 4000
@@ -104,7 +77,7 @@ export default function Galerie() {
           onMouseLeave={startAuto}
           className="flex gap-4 overflow-x-auto pb-4 -mx-6 md:-mx-8 px-6 md:px-8 snap-x snap-mandatory scrollbar-hide"
         >
-          {GALLERY_ITEMS.map((item) => (
+          {FEATURED_GALLERY_ITEMS.map((item) => (
             <div
               key={item.src}
               className="flex-none w-64 md:w-80 aspect-square rounded-2xl overflow-hidden group hover:shadow-md transition-all duration-200 relative snap-start"
@@ -121,15 +94,13 @@ export default function Galerie() {
         </div>
 
         <div className="mt-8 flex items-center justify-center">
-          <a
-            href="https://www.instagram.com/poivre.et.sale"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/galerie"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent text-bark-900 font-sans font-medium text-base border border-bark-900/15 hover:border-bark-900/30 hover:bg-cream-100 transition-all"
           >
-            <InstagramIcon />
-            Voir toutes les photos
-          </a>
+            Voir les {GALLERY_ITEMS.length} photos
+            <ChevronRight size={17} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

@@ -49,6 +49,33 @@ const EVENTS = [
   },
 ]
 
+const RECEPTION_IDEAS = [
+  {
+    label: 'Avant le repas',
+    title: 'Accueil café',
+    desc: 'Une mise en place simple pour accueillir vos équipes, vos clients ou les participants à un séminaire.',
+    image: '/media/accueil-cafe-entreprise.jpg',
+    alt: 'Machine à café et tasses installées pour l’accueil des invités',
+    imagePosition: 'object-[center_45%]',
+  },
+  {
+    label: 'Moment convivial',
+    title: 'Buffet et cocktail',
+    desc: 'Des bouchées, verrines et boissons peuvent compléter la réception selon le format retenu.',
+    image: '/media/cocktail-buffet-champagne-entreprise.webp',
+    alt: 'Verrines, verres et bouteilles disposés sur un buffet de réception',
+    imagePosition: 'object-center',
+  },
+  {
+    label: 'Réception complète',
+    title: 'Dîner et tables dressées',
+    desc: 'Mobilier, vaisselle et présentation sont pensés ensemble pour recevoir vos invités dans de bonnes conditions.',
+    image: '/media/reception-table-dressee-exterieur.webp',
+    alt: 'Tables nappées et dressées sous un barnum dans un jardin',
+    imagePosition: 'object-[center_65%]',
+  },
+]
+
 const STEPS = [
   {
     title: 'Vous décrivez votre événement',
@@ -283,6 +310,47 @@ export default function SoireeEntreprisePage() {
       <EquipmentCarousel />
 
       <section className="bg-cream-50 px-6 py-20 md:px-8 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 grid gap-6 md:grid-cols-[1fr_0.72fr] md:items-end">
+            <div>
+              <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
+                Au-delà de la tarte flambée
+              </p>
+              <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-bark-900 md:text-5xl">
+                De l’accueil café au dîner, composez le format qui vous ressemble
+              </h2>
+            </div>
+            <p className="font-sans text-sm leading-relaxed text-bark-600 md:text-base">
+              Ces compléments sont proposés sur demande et selon votre devis. Ils permettent de garder une seule équipe pour coordonner les temps forts de votre réception.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {RECEPTION_IDEAS.map((idea) => (
+              <article key={idea.title} className="group overflow-hidden rounded-3xl border border-stone-200 bg-cream-100 shadow-sm">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={idea.image}
+                    alt={idea.alt}
+                    fill
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                    className={`object-cover transition-transform duration-500 group-hover:scale-[1.03] ${idea.imagePosition}`}
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-copper-600">
+                    {idea.label}
+                  </span>
+                  <h3 className="mt-3 font-display text-2xl font-medium text-bark-900">{idea.title}</h3>
+                  <p className="mt-3 font-sans text-sm leading-relaxed text-bark-600">{idea.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-100 px-6 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 max-w-3xl">
             <p className="mb-4 font-sans text-sm font-medium uppercase tracking-[0.18em] text-copper-500">
