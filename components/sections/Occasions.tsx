@@ -28,8 +28,8 @@ const OCCASIONS = [
     href: "/tarte-flambee-anniversaire",
     description:
       "Un repas généreux qui rassemble petits et grands autour du four.",
-    img: "/media/tarte-anniversaire-famille.jpg",
-    alt: "Tarte flambée garnie posée sur une table en bois pour une fête familiale",
+    img: "/media/anniversaire-famille-partage.webp",
+    alt: "Famille partageant des tartes flambées autour d'une table lors d'un anniversaire",
   },
   {
     title: "Associations & clubs",
