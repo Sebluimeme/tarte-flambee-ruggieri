@@ -3,36 +3,29 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import { Truck, Wheat, Flame, Utensils } from 'lucide-react'
+import { Truck, Flame, Sparkles } from 'lucide-react'
 
 const STEPS = [
   {
     number: '01',
     Icon: Truck,
-    title: 'Le four arrive',
+    title: 'Installation',
     description:
-      "Notre four à bois mobile s'installe en environ 1 heure sur votre lieu de réception. Jardin, salle des fêtes, parking d'entreprise : on s'adapte à votre espace.",
+      "Nous installons le four mobile sur votre lieu de réception en environ 1 heure.",
   },
   {
     number: '02',
-    Icon: Wheat,
-    title: 'Une pâte laminée de qualité',
+    Icon: Flame,
+    title: 'Cuisson sur place',
     description:
-      'Fine, croustillante, sélectionnée avec soin pour un résultat authentique à chaque fois.',
+      'Les tartes flambées sont préparées et cuites au feu de bois devant vos invités.',
   },
   {
     number: '03',
-    Icon: Flame,
-    title: 'La cuisson en direct',
+    Icon: Sparkles,
+    title: 'Fin de prestation',
     description:
-      "Vos invités voient, sentent et entendent la cuisson. C'est le spectacle en plus du repas. La convivialité commence avant même la première bouchée.",
-  },
-  {
-    number: '04',
-    Icon: Utensils,
-    title: 'Le service selon votre formule',
-    description:
-      "Nous adaptons le rythme et les quantités à la formule choisie. Vous ne gérez rien — on est là du début à la fin.",
+      'Nous rangeons notre installation et vous profitez pleinement de votre événement.',
   },
 ]
 
@@ -43,17 +36,17 @@ export default function Process() {
   return (
     <section id="comment-ca-marche" className="bg-cream-100 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-12">
           <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
             Comment ça marche ?
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
-            Vous recevez, on s&apos;occupe du reste
+            Simple, du début à la fin
           </h2>
         </div>
 
         <div ref={ref} className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative">
             {STEPS.map((step, i) => (
               <motion.div
                 key={step.number}
@@ -62,18 +55,18 @@ export default function Process() {
                 transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.1 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 rounded-full bg-copper-500/10 flex items-center justify-center">
-                    <step.Icon size={28} strokeWidth={1.5} className="text-copper-500" aria-hidden="true" />
+                <div className="relative mb-4">
+                  <div className="w-14 h-14 rounded-full bg-copper-500/10 flex items-center justify-center">
+                    <step.Icon size={25} strokeWidth={1.5} className="text-copper-500" aria-hidden="true" />
                   </div>
                   <span className="absolute -top-2 -right-2 font-sans text-xs font-medium text-stone-400 bg-cream-100 px-1">
                     {step.number}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl font-medium text-bark-900 mb-3">
+                <h3 className="font-display text-xl md:text-2xl font-medium text-bark-900 mb-2">
                   {step.title}
                 </h3>
-                <p className="font-sans text-base leading-relaxed text-bark-700">
+                <p className="font-sans text-sm md:text-base leading-relaxed text-bark-700 max-w-xs">
                   {step.description}
                 </p>
               </motion.div>
@@ -81,8 +74,8 @@ export default function Process() {
           </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="font-sans text-sm text-stone-400 mb-8">
+        <div className="mt-10 text-center">
+          <p className="font-sans text-sm text-stone-400 mb-6">
             Règlement le jour de la prestation · Annulation gratuite
           </p>
           <Link

@@ -23,7 +23,7 @@ export default function Concept() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center"
         >
           {/* Texte */}
           <div>
@@ -33,11 +33,10 @@ export default function Concept() {
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-6">
               Un four à bois qui s&apos;invite chez vous
             </h2>
-            <p className="font-sans text-base leading-relaxed text-bark-700 mb-8">
+            <p className="font-sans text-base leading-relaxed text-bark-700 mb-7">
               Notre four mobile s&apos;installe sur votre lieu de réception — jardin, salle des fêtes,
-              parking d&apos;entreprise. Ingrédients d&apos;Alsace : fromage blanc fermier, oignons et lardons du pays.
-              Vous accueillez vos invités, on s&apos;occupe de la préparation, de la cuisson et du service.
-              Les tartes sortent du four toutes les 90 secondes, croustillantes et servies au fil de la cuisson.
+              parking d&apos;entreprise. Nous préparons et cuisons devant vos invités des tartes
+              fines et croustillantes, avec des ingrédients d&apos;Alsace.
             </p>
             <div className="flex flex-col gap-4">
               {features.map((feat) => (
@@ -51,7 +50,7 @@ export default function Concept() {
             </div>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] md:aspect-[4/5]">
             <Image
               src="/media/four-bois-action.jpg"
               fill

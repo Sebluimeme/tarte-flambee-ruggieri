@@ -5,11 +5,7 @@ import { useRef } from 'react'
 import { MapPin } from 'lucide-react'
 
 const villes = [
-  'Strasbourg', 'Colmar', 'Mulhouse', 'Sélestat',
-  'Obernai', 'Haguenau', 'Saverne', 'Ribeauvillé',
-  'Guebwiller', 'Wissembourg', 'Barr', 'Munster',
-  'Épinal', 'Saint-Dié-des-Vosges', 'Gérardmer', 'Remiremont',
-  'Belfort',
+  'Strasbourg', 'Colmar', 'Mulhouse', 'Sélestat', 'Épinal', 'Belfort',
 ]
 
 const mapTiles = [87, 88, 89].flatMap((y) =>
@@ -23,7 +19,7 @@ function ServiceAreaMap() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Voir Le Bonhomme et notre zone d'intervention sur OpenStreetMap"
-      className="group relative block order-2 lg:order-1 rounded-2xl overflow-hidden border border-stone-200/15 aspect-[4/3] bg-cream-100 focus:outline-none focus:ring-2 focus:ring-copper-400"
+      className="group relative block order-2 lg:order-1 rounded-2xl overflow-hidden border border-stone-200/15 aspect-[16/10] lg:aspect-[4/3] bg-cream-100 focus:outline-none focus:ring-2 focus:ring-copper-400"
     >
       <div
         className="absolute left-1/2 top-1/2 w-[1024px] h-[768px]"
@@ -75,7 +71,7 @@ export default function Zone() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
           <ServiceAreaMap />
 
@@ -87,10 +83,10 @@ export default function Zone() {
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-cream-50 mb-6">
               Alsace et alentours
             </h2>
-            <p className="font-sans text-base leading-relaxed text-cream-200 mb-8">
+            <p className="font-sans text-base leading-relaxed text-cream-200 mb-6">
               Nous nous déplaçons principalement en Alsace (Bas-Rhin 67 et Haut-Rhin 68), dans les Vosges (88) et le Territoire de Belfort (90), dans un rayon d&apos;environ 80 km autour du Bonhomme. Des déplacements plus lointains dans le Grand Est et le sillon rhénan sont possibles — contactez-nous.
             </p>
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-5">
               {villes.map((ville) => (
                 <span
                   key={ville}

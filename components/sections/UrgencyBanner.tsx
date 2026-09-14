@@ -12,7 +12,7 @@ export default function UrgencyBanner() {
         >
           <span className="inline-flex items-center gap-2 font-sans text-sm md:text-base font-medium text-center">
             <CalendarClock size={18} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
-            Le calendrier estival se remplit vite — Bloquez votre date sans engagement
+            Les dates les plus demandées se remplissent vite — Vérifiez la vôtre sans engagement
           </span>
           <span className="inline-flex items-center gap-1 font-sans text-sm md:text-base font-semibold underline underline-offset-4 decoration-cream-50/50 group-hover:decoration-cream-50">
             07 85 62 10 89

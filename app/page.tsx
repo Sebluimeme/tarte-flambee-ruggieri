@@ -5,7 +5,6 @@ import Concept from '@/components/sections/Concept'
 import Occasions from '@/components/sections/Occasions'
 import Process from '@/components/sections/Process'
 import Formules from '@/components/sections/Formules'
-import OffreComplete from '@/components/sections/OffreComplete'
 import Galerie from '@/components/sections/Galerie'
 import Temoignages from '@/components/sections/Temoignages'
 import Zone from '@/components/sections/Zone'
@@ -34,14 +33,13 @@ export default function Home() {
       <TrustBar />
       <Concept />
       <Formules />
-      <OffreComplete />
       <UrgencyBanner />
       <Process />
+      <Temoignages />
       <Occasions />
       <Galerie />
-      <Temoignages />
-      <Faq />
       <Zone />
+      <Faq />
       <CtaFinal />
     </>
   )

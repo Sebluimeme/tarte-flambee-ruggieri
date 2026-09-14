@@ -29,8 +29,8 @@ export default function Hero() {
             <span className="block">chez vous.</span>
           </h1>
           <p className="font-sans text-base sm:text-lg leading-relaxed text-cream-50 mb-8 w-full max-w-[19rem] sm:max-w-xl min-w-0 break-words">
-            La tarte flambée au feu de bois, c&apos;est notre spécialité. Et parce que chaque événement est différent,
-            nous composons avec vous l&apos;apéritif et le dessert, pour un repas complet entièrement adapté à vos souhaits.
+            Traiteur spécialisé dans la tarte flambée au feu de bois pour vos mariages,
+            anniversaires, entreprises et associations en Alsace.
           </p>
           <div className="flex w-full max-w-[19rem] sm:max-w-full min-w-0 flex-col sm:flex-row gap-4 mb-8">
             <Link
