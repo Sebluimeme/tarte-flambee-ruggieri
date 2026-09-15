@@ -154,7 +154,7 @@ export default function Formules() {
                 href="/contact"
                 className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-sans font-medium text-sm transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                   formule.highlight
-                    ? 'bg-copper-500 text-cream-50 hover:bg-copper-400 focus:ring-copper-500'
+                    ? 'bg-copper-600 text-cream-50 hover:bg-copper-700 focus:ring-copper-600'
                     : 'bg-transparent text-bark-900 border border-bark-900/20 hover:border-bark-900/40 focus:ring-bark-900'
                 }`}
               >
@@ -164,7 +164,7 @@ export default function Formules() {
           ))}
         </div>
 
-        <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-400" aria-hidden="true">
+        <p className="md:hidden mt-2 text-center font-sans text-xs text-stone-500" aria-hidden="true">
           ← Faites glisser les cartes ou utilisez les flèches →
         </p>
 

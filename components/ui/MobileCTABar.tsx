@@ -35,7 +35,7 @@ export default function MobileCTABar() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => pushGTM('whatsapp_click')}
-        className="min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 text-[#25D366] hover:bg-cream-100 transition-colors active:bg-cream-200"
+        className="min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 text-[#075E54] hover:bg-cream-100 transition-colors active:bg-cream-200"
         aria-label="Contacter sur WhatsApp"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
