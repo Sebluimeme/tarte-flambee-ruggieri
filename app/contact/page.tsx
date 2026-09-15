@@ -4,7 +4,7 @@ import Contact from "../../components/sections/Contact";
 export const metadata: Metadata = {
   title: 'Devis gratuit tarte flambée à domicile',
   description:
-    "Prestation tarte flambée à domicile pour mariages, anniversaires et événements d'entreprise en Alsace. Devis gratuit.",
+    "Demandez votre devis gratuit pour une prestation de tartes flambées au feu de bois en Alsace. Réponse rapide et offre adaptée à votre événement.",
   alternates: { canonical: '/contact' },
 };
 
@@ -23,7 +23,7 @@ export default async function ContactPage({
       {/* Hero */}
       <section className="bg-cream-100 pt-24 py-20 md:py-28 px-6 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
             Contact
           </p>
           <h1 className="font-display text-5xl md:text-7xl font-medium tracking-tight leading-[1.05] text-bark-900 mb-4">

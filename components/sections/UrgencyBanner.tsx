@@ -4,11 +4,11 @@ import { CalendarClock, ArrowRight } from 'lucide-react'
 
 export default function UrgencyBanner() {
   return (
-    <section className="bg-copper-500 py-4 md:py-5">
+    <section className="bg-copper-600 py-4 md:py-5">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <a
           href="tel:+33785621089"
-          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-cream-50 hover:text-cream-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2 focus:ring-offset-copper-500 rounded-sm"
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-cream-50 hover:text-cream-100 transition-colors group focus:outline-none focus:ring-2 focus:ring-cream-50 focus:ring-offset-2 focus:ring-offset-copper-600 rounded-sm"
         >
           <span className="inline-flex items-center gap-2 font-sans text-sm md:text-base font-medium text-center">
             <CalendarClock size={18} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />

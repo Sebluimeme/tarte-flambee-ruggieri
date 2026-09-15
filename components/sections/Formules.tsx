@@ -82,7 +82,7 @@ export default function Formules() {
     <section id="formules" className="bg-cream-50 py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
             Pour chaque occasion
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">

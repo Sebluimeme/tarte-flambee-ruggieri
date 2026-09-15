@@ -59,7 +59,7 @@ export default function Process() {
     <section id="offre-sur-mesure" className="overflow-hidden bg-cream-100 py-14 md:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <div className="mb-9 max-w-3xl">
-          <p className="mb-3 font-sans text-sm uppercase tracking-[0.18em] text-copper-500">
+          <p className="mb-3 font-sans text-sm uppercase tracking-[0.18em] text-copper-600">
             Prestation à la carte
           </p>
           <h2 className="font-display text-3xl font-medium tracking-tight text-bark-900 md:text-5xl">
@@ -111,7 +111,10 @@ export default function Process() {
                       src={photo.src}
                       alt={photo.alt}
                       fill
-                      sizes="(max-width: 768px) 55vw, 33vw"
+                      sizes={index === 0
+                        ? '(max-width: 768px) 54vw, 28vw'
+                        : '(max-width: 768px) 30vw, 16vw'}
+                      quality={65}
                       className="object-cover"
                     />
                   </div>
@@ -142,7 +145,7 @@ export default function Process() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-copper-500 px-6 py-3 font-sans text-sm font-medium text-cream-50 shadow-sm transition-all hover:bg-copper-400 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-copper-600 px-6 py-3 font-sans text-sm font-medium text-cream-50 shadow-sm transition-all hover:bg-copper-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-600 focus:ring-offset-2"
           >
             Composer ma prestation
             <ArrowRight size={16} aria-hidden="true" />

@@ -3,126 +3,28 @@ import { MetadataRoute } from "next";
 const SITE_URL = "https://flamme-traiteur.fr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/formules`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/galerie`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/a-propos`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/particuliers`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/tarte-flambee-soiree-entreprise`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/tarte-flambee-mariage`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/tarte-flambee-anniversaire`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/tarte-flambee-association`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE_URL}/allergenes`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-    {
-      url: `${SITE_URL}/conseils`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/guide-traiteur-tarte-flambee-alsace`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/prix-traiteur-tarte-flambee`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/four-a-bois-mobile-evenement`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/tarte-flambee-allergies-sans-gluten`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${SITE_URL}/cgv`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${SITE_URL}/mentions-legales`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${SITE_URL}/confidentialite`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${SITE_URL}/cookies`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
+  const pages = [
+    { path: "", changeFrequency: "monthly" as const, priority: 1 },
+    { path: "/formules", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/galerie", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/a-propos", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/contact", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/particuliers", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/tarte-flambee-soiree-entreprise", changeFrequency: "monthly" as const, priority: 0.9 },
+    { path: "/tarte-flambee-mariage", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/tarte-flambee-anniversaire", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/tarte-flambee-association", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/allergenes", changeFrequency: "yearly" as const, priority: 0.4 },
+    { path: "/conseils", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/guide-traiteur-tarte-flambee-alsace", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/prix-traiteur-tarte-flambee", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/four-a-bois-mobile-evenement", changeFrequency: "monthly" as const, priority: 0.6 },
+    { path: "/tarte-flambee-allergies-sans-gluten", changeFrequency: "monthly" as const, priority: 0.5 },
+    { path: "/cgv", changeFrequency: "yearly" as const, priority: 0.2 },
   ];
+
+  return pages.map(({ path, ...metadata }) => ({
+    url: `${SITE_URL}${path}`,
+    ...metadata,
+  }));
 }

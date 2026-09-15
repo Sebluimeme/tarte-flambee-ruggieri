@@ -92,15 +92,6 @@ const jsonLd = {
   },
   servesCuisine: 'Alsatian',
   priceRange: '€€',
-  // Note Google Business Profile confirmée par Sébastien le 2026-09-13 : 4,9/5 sur 22 avis.
-  // Les avis affichés sur le site restent une sélection et ne représentent pas le total Google.
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    bestRating: '5',
-    worstRating: '1',
-    reviewCount: '22',
-  },
   areaServed: [
     { '@type': 'State', name: 'Bas-Rhin' },
     { '@type': 'State', name: 'Haut-Rhin' },

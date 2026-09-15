@@ -136,7 +136,7 @@ export default function Temoignages() {
     <section id="avis" className="bg-cream-100 py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <div className="text-center mb-10">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
             Avis clients
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-5">
@@ -206,7 +206,7 @@ export default function Temoignages() {
               <ChevronLeft size={18} className="text-bark-900" />
             </button>
 
-            <div className="flex items-center gap-2" role="tablist" aria-label="Sélectionner un avis">
+            <div className="flex items-center gap-1" role="tablist" aria-label="Sélectionner un avis">
               {temoignages.map((t, i) => (
                 <button
                   key={t.nom}
@@ -214,10 +214,15 @@ export default function Temoignages() {
                   aria-selected={active === i}
                   aria-label={`Aller à l'avis ${i + 1}`}
                   onClick={() => { stopAuto(); scrollToIndex(i); startAuto() }}
-                  className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-500 focus-visible:ring-offset-2 ${
-                    active === i ? 'w-6 bg-copper-500' : 'w-2 bg-bark-900/20 hover:bg-bark-900/35'
-                  }`}
-                />
+                  className="group inline-flex size-6 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper-600 focus-visible:ring-offset-2"
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`h-2 rounded-full transition-all ${
+                      active === i ? 'w-5 bg-copper-600' : 'w-2 bg-bark-900/20 group-hover:bg-bark-900/35'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
 

@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="flex w-full max-w-[19rem] sm:max-w-full min-w-0 flex-col sm:flex-row gap-4 mb-8">
             <Link
               href="/contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-base text-center hover:bg-copper-400 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-copper-600 text-cream-50 font-sans font-medium text-base text-center hover:bg-copper-700 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-600 focus:ring-offset-2"
             >
               Vérifier ma date
             </Link>

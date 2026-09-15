@@ -27,7 +27,7 @@ export default function Concept() {
         >
           {/* Texte */}
           <div>
-            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
               Le concept
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-6">

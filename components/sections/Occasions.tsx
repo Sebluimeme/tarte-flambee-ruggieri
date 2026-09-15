@@ -55,7 +55,7 @@ export default function Occasions() {
     <section id="occasions" className="bg-cream-50 py-16 md:py-20 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-10">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
             Pour qui
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900 mb-3">

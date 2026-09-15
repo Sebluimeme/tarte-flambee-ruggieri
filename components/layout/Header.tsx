@@ -194,7 +194,7 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-copper-500 text-cream-50 font-sans font-medium text-sm hover:bg-copper-400 active:bg-copper-600 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-500 focus:ring-offset-2"
+              className="inline-flex items-center px-5 py-2.5 rounded-full bg-copper-600 text-cream-50 font-sans font-medium text-sm hover:bg-copper-700 active:bg-copper-700 transition-all shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-copper-600 focus:ring-offset-2"
             >
               Vérifier ma date
             </Link>

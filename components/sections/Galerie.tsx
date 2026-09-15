@@ -46,7 +46,7 @@ export default function Galerie() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 mb-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-4">
+            <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-4">
               En images
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">

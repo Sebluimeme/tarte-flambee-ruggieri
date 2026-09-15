@@ -49,7 +49,7 @@ export default function Faq() {
     <section className="bg-cream-50 py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center mb-7 md:mb-9">
-          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-500 mb-3">
+          <p className="font-sans text-sm uppercase tracking-[0.18em] text-copper-600 mb-3">
             Questions fréquentes
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight text-bark-900">
